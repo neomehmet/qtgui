@@ -1,0 +1,9 @@
+
+
+delimiters "<", ">"
+
+					
+Exceptionalsignal ::= [		
+		"BMS_PackTemp" : "sint16",
+			default:"float32"
+]

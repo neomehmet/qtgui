@@ -1,0 +1,6246 @@
+#ifndef CAP_CANAPI_PUB_DEFINED
+#define CAP_CANAPI_PUB_DEFINED
+/**
+ * @file cap_canApi_pub.h
+ * 
+ * Project: Tamkin (e-VCU)
+ * \file    cap_canApi.h
+ * \author  Sonuzun C., Culhacioglu F.
+ * \brief   Module for CAN Api functions
+ * \details	This file declares a set of CAN Api functions.
+ *          
+ *
+ * \copyright Copyright (c) 2023 FEV GmbH, Türkiye.
+ *
+ * This file has been created with comFramework - codeGenerator version 1.9.0,
+ * see http://sourceforge.net/projects/comframe/
+ *
+ * Copyright (C) 2023 FEV Europe GmbH (mailto:Peter.Vranken@FEV.com)
+ *
+ * All rights reserved. Reproduction in whole or in part is prohibited without the written
+ * consent of the copyright owner.
+ */
+
+/*
+ * Include files
+ */
+
+#include "Platform_Types.h"
+
+/*
+ * Defines
+ */
+
+/*Get macros*/
+#define get_BCAN_STAT_ANHAENGER_ST_TRAI() (cap_canApiMsg_STAT_ANHAENGER_BCAN.ST_TRAI_phy )
+
+
+#define get_BCAN_ST_GWS_CRC_ST_GWS() (cap_canApiMsg_ST_GWS_BCAN.CRC_ST_GWS_phy )
+
+#define get_BCAN_ST_GWS_ALIV_ST_GWS() (cap_canApiMsg_ST_GWS_BCAN.ALIV_ST_GWS_phy )
+
+#define get_BCAN_ST_GWS_OP_GWS() (cap_canApiMsg_ST_GWS_BCAN.OP_GWS_phy )
+
+#define get_BCAN_ST_GWS_OP_GWS_PUBU_PKG() (cap_canApiMsg_ST_GWS_BCAN.OP_GWS_PUBU_PKG_phy )
+
+
+#define get_BCAN_RELATIVZEIT_T_SEC_COU_REL() (cap_canApiMsg_RELATIVZEIT_BCAN.T_SEC_COU_REL_phy )
+
+
+#define get_BCAN_KILOMETERSTAND_MILE_KM() (cap_canApiMsg_KILOMETERSTAND_BCAN.MILE_KM_phy )
+
+
+#define get_BCAN_FZZSTD_ST_ENERG_FZM() (cap_canApiMsg_FZZSTD_BCAN.ST_ENERG_FZM_phy )
+
+#define get_BCAN_FZZSTD_ST_ILK_ERRM_FZM() (cap_canApiMsg_FZZSTD_BCAN.ST_ILK_ERRM_FZM_phy )
+
+
+#define get_BCAN_FZU_ChargingControl_FZU_ChargingStopReq() (cap_canApiMsg_FZU_ChargingControl_BCAN.FZU_ChargingStopReq_phy )
+
+
+#define get_BCAN_FAHRGESTELLNUMMER_NO_VECH_1() (cap_canApiMsg_FAHRGESTELLNUMMER_BCAN.NO_VECH_1_phy )
+
+#define get_BCAN_FAHRGESTELLNUMMER_NO_VECH_2() (cap_canApiMsg_FAHRGESTELLNUMMER_BCAN.NO_VECH_2_phy )
+
+#define get_BCAN_FAHRGESTELLNUMMER_NO_VECH_3() (cap_canApiMsg_FAHRGESTELLNUMMER_BCAN.NO_VECH_3_phy )
+
+#define get_BCAN_FAHRGESTELLNUMMER_NO_VECH_4() (cap_canApiMsg_FAHRGESTELLNUMMER_BCAN.NO_VECH_4_phy )
+
+#define get_BCAN_FAHRGESTELLNUMMER_NO_VECH_5() (cap_canApiMsg_FAHRGESTELLNUMMER_BCAN.NO_VECH_5_phy )
+
+#define get_BCAN_FAHRGESTELLNUMMER_NO_VECH_6() (cap_canApiMsg_FAHRGESTELLNUMMER_BCAN.NO_VECH_6_phy )
+
+#define get_BCAN_FAHRGESTELLNUMMER_NO_VECH_7() (cap_canApiMsg_FAHRGESTELLNUMMER_BCAN.NO_VECH_7_phy )
+
+
+#define get_BCAN_ERRM_BN_U_CTR_ERRM_BN_U() (cap_canApiMsg_ERRM_BN_U_BCAN.CTR_ERRM_BN_U_phy )
+
+
+#define get_BCAN_CON_VEH_CRC_CON_VEH() (cap_canApiMsg_CON_VEH_BCAN.CRC_CON_VEH_phy )
+
+#define get_BCAN_CON_VEH_ALIV_CON_VEH() (cap_canApiMsg_CON_VEH_BCAN.ALIV_CON_VEH_phy )
+
+#define get_BCAN_CON_VEH_CTR_BS_PRTNT() (cap_canApiMsg_CON_VEH_BCAN.CTR_BS_PRTNT_phy )
+
+#define get_BCAN_CON_VEH_CTR_FKTN_PRTNT() (cap_canApiMsg_CON_VEH_BCAN.CTR_FKTN_PRTNT_phy )
+
+#define get_BCAN_CON_VEH_ST_CON_VEH() (cap_canApiMsg_CON_VEH_BCAN.ST_CON_VEH_phy )
+
+#define get_BCAN_CON_VEH_QU_ST_CON_VEH() (cap_canApiMsg_CON_VEH_BCAN.QU_ST_CON_VEH_phy )
+
+
+#define get_BCAN_A_TEMP_TEMP_EX() ((float32)cap_canApiMsg_A_TEMP_BCAN.TEMP_EX_phy * cap_A_TEMP_TEMP_EX_BCAN_Factor_C + cap_A_TEMP_TEMP_EX_BCAN_Offset_C)
+
+
+#define get_BCAN_Kilometerstand_2_MILE_KM_TOT() ((float32)cap_canApiMsg_Kilometerstand_2_BCAN.MILE_KM_TOT_phy * cap_Kilometerstand_2_MILE_KM_TOT_BCAN_Factor_C + cap_Kilometerstand_2_MILE_KM_TOT_BCAN_Offset_C)
+
+
+#define get_BCAN_CLAMP_STAT_CRC_CLAMP_STAT() (cap_canApiMsg_CLAMP_STAT_BCAN.CRC_CLAMP_STAT_phy )
+
+#define get_BCAN_CLAMP_STAT_ALIV_CLAMP_STAT() (cap_canApiMsg_CLAMP_STAT_BCAN.ALIV_CLAMP_STAT_phy )
+
+#define get_BCAN_CLAMP_STAT_STAT_CL15_L() (cap_canApiMsg_CLAMP_STAT_BCAN.STAT_CL15_L_phy )
+
+#define get_BCAN_CLAMP_STAT_STAT_CL30S_L() (cap_canApiMsg_CLAMP_STAT_BCAN.STAT_CL30S_L_phy )
+
+#define get_BCAN_CLAMP_STAT_STAT_CL30S_Light() (cap_canApiMsg_CLAMP_STAT_BCAN.STAT_CL30S_Light_phy )
+
+#define get_BCAN_CLAMP_STAT_STAT_CL15_WUPL() (cap_canApiMsg_CLAMP_STAT_BCAN.STAT_CL15_WUPL_phy )
+
+
+#define get_CHS1_CLAMP_STAT_CRC_CLAMP_STAT() (cap_canApiMsg_CLAMP_STAT_CHS1.CRC_CLAMP_STAT_phy )
+
+#define get_CHS1_CLAMP_STAT_ALIV_CLAMP_STAT() (cap_canApiMsg_CLAMP_STAT_CHS1.ALIV_CLAMP_STAT_phy )
+
+#define get_CHS1_CLAMP_STAT_STAT_CL15_L() (cap_canApiMsg_CLAMP_STAT_CHS1.STAT_CL15_L_phy )
+
+#define get_CHS1_CLAMP_STAT_STAT_CL30S_L() (cap_canApiMsg_CLAMP_STAT_CHS1.STAT_CL30S_L_phy )
+
+#define get_CHS1_CLAMP_STAT_STAT_CL30S_Light() (cap_canApiMsg_CLAMP_STAT_CHS1.STAT_CL30S_Light_phy )
+
+#define get_CHS1_CLAMP_STAT_STAT_CL15_WUPL() (cap_canApiMsg_CLAMP_STAT_CHS1.STAT_CL15_WUPL_phy )
+
+
+#define get_CHS1_ESC_A_AD3_PrsrVal_Fl() (cap_canApiMsg_ESC_A_CHS1.AD3_PrsrVal_Fl_phy )
+
+#define get_CHS1_ESC_A_AD3_PrsrVal_Fr() (cap_canApiMsg_ESC_A_CHS1.AD3_PrsrVal_Fr_phy )
+
+#define get_CHS1_ESC_A_AD3_PrsrVal_Rl() (cap_canApiMsg_ESC_A_CHS1.AD3_PrsrVal_Rl_phy )
+
+#define get_CHS1_ESC_A_AD3_PrsrVal_Rr() (cap_canApiMsg_ESC_A_CHS1.AD3_PrsrVal_Rr_phy )
+
+
+#define get_CHS1_ABS_ESC_01_ABS_ACTIVE() (cap_canApiMsg_ABS_ESC_01_CHS1.ABS_ACTIVE_phy )
+
+
+#define get_CHS1_IEB_01_WEstTot_Nm() (cap_canApiMsg_IEB_01_CHS1.WEstTot_Nm_phy )
+
+
+#define get_CHS1_EBCM_ACC_LONG_LAT_YAW_CRC_EBCM_ACC_LONG_LAT_YAW() (cap_canApiMsg_EBCM_ACC_LONG_LAT_YAW_CHS1.CRC_EBCM_ACC_LONG_LAT_YAW_phy )
+
+#define get_CHS1_EBCM_ACC_LONG_LAT_YAW_ALIV_EBCM_ACC_LONG_LAT_YAW() (cap_canApiMsg_EBCM_ACC_LONG_LAT_YAW_CHS1.ALIV_EBCM_ACC_LONG_LAT_YAW_phy )
+
+#define get_CHS1_EBCM_ACC_LONG_LAT_YAW_VYAW_VEH() ((float32)cap_canApiMsg_EBCM_ACC_LONG_LAT_YAW_CHS1.VYAW_VEH_phy * cap_EBCM_ACC_LONG_LAT_YAW_VYAW_VEH_CHS1_Factor_C + cap_EBCM_ACC_LONG_LAT_YAW_VYAW_VEH_CHS1_Offset_C)
+
+#define get_CHS1_EBCM_ACC_LONG_LAT_YAW_QU_VYAW_VEH() (cap_canApiMsg_EBCM_ACC_LONG_LAT_YAW_CHS1.QU_VYAW_VEH_phy )
+
+
+#define get_CHS1_EBCM_STATUS_CRC_EBCM_STATUS() (cap_canApiMsg_EBCM_STATUS_CHS1.CRC_EBCM_STATUS_phy )
+
+#define get_CHS1_EBCM_STATUS_ALIV_EBCM_STATUS() (cap_canApiMsg_EBCM_STATUS_CHS1.ALIV_EBCM_STATUS_phy )
+
+#define get_CHS1_EBCM_STATUS_MCPressure() ((float32)cap_canApiMsg_EBCM_STATUS_CHS1.MCPressure_phy * cap_EBCM_STATUS_MCPressure_CHS1_Factor_C + cap_EBCM_STATUS_MCPressure_CHS1_Offset_C)
+
+#define get_CHS1_EBCM_STATUS_BreakPedalPercent() ((float32)cap_canApiMsg_EBCM_STATUS_CHS1.BreakPedalPercent_phy * cap_EBCM_STATUS_BreakPedalPercent_CHS1_Factor_C + cap_EBCM_STATUS_BreakPedalPercent_CHS1_Offset_C)
+
+#define get_CHS1_EBCM_STATUS_EPBStatus() (cap_canApiMsg_EBCM_STATUS_CHS1.EPBStatus_phy )
+
+#define get_CHS1_EBCM_STATUS_HillholderStatus() (cap_canApiMsg_EBCM_STATUS_CHS1.HillholderStatus_phy )
+
+#define get_CHS1_EBCM_STATUS_TCSAvailable() (cap_canApiMsg_EBCM_STATUS_CHS1.TCSAvailable_phy )
+
+#define get_CHS1_EBCM_STATUS_TCSActive() (cap_canApiMsg_EBCM_STATUS_CHS1.TCSActive_phy )
+
+#define get_CHS1_EBCM_STATUS_BreakPedalPercentValid() (cap_canApiMsg_EBCM_STATUS_CHS1.BreakPedalPercentValid_phy )
+
+#define get_CHS1_EBCM_STATUS_MCPressureSts() (cap_canApiMsg_EBCM_STATUS_CHS1.MCPressureSts_phy )
+
+#define get_CHS1_EBCM_STATUS_HillholderFault() (cap_canApiMsg_EBCM_STATUS_CHS1.HillholderFault_phy )
+
+#define get_CHS1_EBCM_STATUS_EPBFault() (cap_canApiMsg_EBCM_STATUS_CHS1.EPBFault_phy )
+
+#define get_CHS1_EBCM_STATUS_EBCM_BrkPedlSts() (cap_canApiMsg_EBCM_STATUS_CHS1.EBCM_BrkPedlSts_phy )
+
+
+#define get_CHS1_TLT_RW_CRC_TLT_RW() (cap_canApiMsg_TLT_RW_CHS1.CRC_TLT_RW_phy )
+
+#define get_CHS1_TLT_RW_ALIV_TLT_RW() (cap_canApiMsg_TLT_RW_CHS1.ALIV_TLT_RW_phy )
+
+#define get_CHS1_TLT_RW_AVL_LOGR_RW() ((float32)cap_canApiMsg_TLT_RW_CHS1.AVL_LOGR_RW_phy * cap_TLT_RW_AVL_LOGR_RW_CHS1_Factor_C + cap_TLT_RW_AVL_LOGR_RW_CHS1_Offset_C)
+
+#define get_CHS1_TLT_RW_QU_AVL_LOGR_RW() (cap_canApiMsg_TLT_RW_CHS1.QU_AVL_LOGR_RW_phy )
+
+
+#define get_CHS1_ST_STAB_DSC_2_ST_SLIP_THO() (cap_canApiMsg_ST_STAB_DSC_2_CHS1.ST_SLIP_THO_phy )
+
+
+#define get_CHS1_ST_STAB_DSC_CRC_ST_STAB_DSC() (cap_canApiMsg_ST_STAB_DSC_CHS1.CRC_ST_STAB_DSC_phy )
+
+#define get_CHS1_ST_STAB_DSC_ALIV_ST_STAB_DSC() (cap_canApiMsg_ST_STAB_DSC_CHS1.ALIV_ST_STAB_DSC_phy )
+
+#define get_CHS1_ST_STAB_DSC_QU_FN_FDR() (cap_canApiMsg_ST_STAB_DSC_CHS1.QU_FN_FDR_phy )
+
+#define get_CHS1_ST_STAB_DSC_QU_FN_ABS() (cap_canApiMsg_ST_STAB_DSC_CHS1.QU_FN_ABS_phy )
+
+#define get_CHS1_ST_STAB_DSC_QU_FN_ASC() (cap_canApiMsg_ST_STAB_DSC_CHS1.QU_FN_ASC_phy )
+
+#define get_CHS1_ST_STAB_DSC_ST_BRG_DV() (cap_canApiMsg_ST_STAB_DSC_CHS1.ST_BRG_DV_phy )
+
+
+#define get_CHS1_BundleEAFlexrayToAECANFD20msNo2_CRC_ACLNX_COG() (cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_CHS1.CRC_ACLNX_COG_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD20msNo2_ALIV_ACLNX_COG() (cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_CHS1.ALIV_ACLNX_COG_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD20msNo2_ACLNX_COG() ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_CHS1.ACLNX_COG_phy * cap_BundleEAFlexrayToAECANFD20msNo2_ACLNX_COG_CHS1_Factor_C + cap_BundleEAFlexrayToAECANFD20msNo2_ACLNX_COG_CHS1_Offset_C)
+
+#define get_CHS1_BundleEAFlexrayToAECANFD20msNo2_QU_ACLNX_COG() (cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_CHS1.QU_ACLNX_COG_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD20msNo2_CRC_ACLNY_COG() (cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_CHS1.CRC_ACLNY_COG_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD20msNo2_ALIV_ACLNY_COG() (cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_CHS1.ALIV_ACLNY_COG_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD20msNo2_ACLNY_COG() ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_CHS1.ACLNY_COG_phy * cap_BundleEAFlexrayToAECANFD20msNo2_ACLNY_COG_CHS1_Factor_C + cap_BundleEAFlexrayToAECANFD20msNo2_ACLNY_COG_CHS1_Offset_C)
+
+#define get_CHS1_BundleEAFlexrayToAECANFD20msNo2_QU_ACLNY_COG() (cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_CHS1.QU_ACLNY_COG_phy )
+
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_CRC_EXTS_ARB_INTF() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.CRC_EXTS_ARB_INTF_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_ALIV_EXTS_ARB_INTF() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.ALIV_EXTS_ARB_INTF_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_CHL_EXTS_ARB_INTF() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.CHL_EXTS_ARB_INTF_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_LH_EXT() ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.AVL_BRTORQ_WHL_RS_LH_EXT_phy * cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_LH_EXT_CHS1_Factor_C + cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_LH_EXT_CHS1_Offset_C)
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_RH_EXT() ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.AVL_BRTORQ_WHL_RS_RH_EXT_phy * cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_RH_EXT_CHS1_Factor_C + cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_RH_EXT_CHS1_Offset_C)
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_LH_EXT() ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.AVL_BRTORQ_WHL_FS_LH_EXT_phy * cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_LH_EXT_CHS1_Factor_C + cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_LH_EXT_CHS1_Offset_C)
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_RH_EXT() ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.AVL_BRTORQ_WHL_FS_RH_EXT_phy * cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_RH_EXT_CHS1_Factor_C + cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_RH_EXT_CHS1_Offset_C)
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_CRC_RQ_RPM_BAX() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.CRC_RQ_RPM_BAX_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_ALIV_RQ_RPM_BAX() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.ALIV_RQ_RPM_BAX_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_CHL_RQ_RPM_BAX() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.CHL_RQ_RPM_BAX_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_BAX() ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.TAR_RPM_MAX_BAX_phy * cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_BAX_CHS1_Factor_C + cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_BAX_CHS1_Offset_C)
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_BAX() ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.TAR_RPM_MIN_BAX_phy * cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_BAX_CHS1_Factor_C + cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_BAX_CHS1_Offset_C)
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_ST_TAR_RPM_BAX() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.ST_TAR_RPM_BAX_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_TAR_STIF_SPCO() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.TAR_STIF_SPCO_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_CRC_RQ_RPM_FTAX() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.CRC_RQ_RPM_FTAX_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_ALIV_RQ_RPM_FTAX() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.ALIV_RQ_RPM_FTAX_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_CHL_RQ_RPM_FTAX() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.CHL_RQ_RPM_FTAX_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_FTAX() ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.TAR_RPM_MAX_FTAX_phy * cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_FTAX_CHS1_Factor_C + cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_FTAX_CHS1_Offset_C)
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_FTAX() ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.TAR_RPM_MIN_FTAX_phy * cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_FTAX_CHS1_Factor_C + cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_FTAX_CHS1_Offset_C)
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_ST_TAR_RPM_FTAX() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.ST_TAR_RPM_FTAX_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_CRC_StatusSlipThresholds() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.CRC_StatusSlipThresholds_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_ALIV_StatusSlipThresholds() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.ALIV_StatusSlipThresholds_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_CHL_StatusSlipThresholds() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.CHL_StatusSlipThresholds_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_StatusSlipThresholdsFrontAxle() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.StatusSlipThresholdsFrontAxle_phy )
+
+#define get_CHS1_BundleEAFlexrayToAECANFD10msNo1_StatusSlipThresholdsRearAxle() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1.StatusSlipThresholdsRearAxle_phy )
+
+
+#define get_CHS1_AVL_RPM_WHL_CRC_AVL_RPM_WHL() (cap_canApiMsg_AVL_RPM_WHL_CHS1.CRC_AVL_RPM_WHL_phy )
+
+#define get_CHS1_AVL_RPM_WHL_ALIV_AVL_RPM_WHL() (cap_canApiMsg_AVL_RPM_WHL_CHS1.ALIV_AVL_RPM_WHL_phy )
+
+#define get_CHS1_AVL_RPM_WHL_AVL_RPM_WHL_RLH() ((float32)cap_canApiMsg_AVL_RPM_WHL_CHS1.AVL_RPM_WHL_RLH_phy * cap_AVL_RPM_WHL_AVL_RPM_WHL_RLH_CHS1_Factor_C + cap_AVL_RPM_WHL_AVL_RPM_WHL_RLH_CHS1_Offset_C)
+
+#define get_CHS1_AVL_RPM_WHL_AVL_RPM_WHL_RRH() ((float32)cap_canApiMsg_AVL_RPM_WHL_CHS1.AVL_RPM_WHL_RRH_phy * cap_AVL_RPM_WHL_AVL_RPM_WHL_RRH_CHS1_Factor_C + cap_AVL_RPM_WHL_AVL_RPM_WHL_RRH_CHS1_Offset_C)
+
+#define get_CHS1_AVL_RPM_WHL_AVL_RPM_WHL_FLH() ((float32)cap_canApiMsg_AVL_RPM_WHL_CHS1.AVL_RPM_WHL_FLH_phy * cap_AVL_RPM_WHL_AVL_RPM_WHL_FLH_CHS1_Factor_C + cap_AVL_RPM_WHL_AVL_RPM_WHL_FLH_CHS1_Offset_C)
+
+#define get_CHS1_AVL_RPM_WHL_AVL_RPM_WHL_FRH() ((float32)cap_canApiMsg_AVL_RPM_WHL_CHS1.AVL_RPM_WHL_FRH_phy * cap_AVL_RPM_WHL_AVL_RPM_WHL_FRH_CHS1_Factor_C + cap_AVL_RPM_WHL_AVL_RPM_WHL_FRH_CHS1_Offset_C)
+
+#define get_CHS1_AVL_RPM_WHL_QU_AVL_RPM_WHL_RLH() (cap_canApiMsg_AVL_RPM_WHL_CHS1.QU_AVL_RPM_WHL_RLH_phy )
+
+#define get_CHS1_AVL_RPM_WHL_QU_AVL_RPM_WHL_RRH() (cap_canApiMsg_AVL_RPM_WHL_CHS1.QU_AVL_RPM_WHL_RRH_phy )
+
+#define get_CHS1_AVL_RPM_WHL_QU_AVL_RPM_WHL_FLH() (cap_canApiMsg_AVL_RPM_WHL_CHS1.QU_AVL_RPM_WHL_FLH_phy )
+
+#define get_CHS1_AVL_RPM_WHL_QU_AVL_RPM_WHL_FRH() (cap_canApiMsg_AVL_RPM_WHL_CHS1.QU_AVL_RPM_WHL_FRH_phy )
+
+
+#define get_CHS1_BundleEAFlexrayToCANFD20msNo1_CRC_V_VEH() (cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_CHS1.CRC_V_VEH_phy )
+
+#define get_CHS1_BundleEAFlexrayToCANFD20msNo1_ALIV_V_VEH() (cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_CHS1.ALIV_V_VEH_phy )
+
+#define get_CHS1_BundleEAFlexrayToCANFD20msNo1_V_VEH_COG() ((float32)cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_CHS1.V_VEH_COG_phy * cap_BundleEAFlexrayToCANFD20msNo1_V_VEH_COG_CHS1_Factor_C + cap_BundleEAFlexrayToCANFD20msNo1_V_VEH_COG_CHS1_Offset_C)
+
+#define get_CHS1_BundleEAFlexrayToCANFD20msNo1_QU_V_VEH_COG() (cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_CHS1.QU_V_VEH_COG_phy )
+
+#define get_CHS1_BundleEAFlexrayToCANFD20msNo1_SecOcDataP2V_VEH() (cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_CHS1.SecOcDataP2V_VEH_phy )
+
+
+#define get_CHS1_SFA_SteerWheel_Info_CRC_SFA_SteerWheel_Info() (cap_canApiMsg_SFA_SteerWheel_Info_CHS1.CRC_SFA_SteerWheel_Info_phy )
+
+#define get_CHS1_SFA_SteerWheel_Info_ALIV_SFA_SteerWheel_Info() (cap_canApiMsg_SFA_SteerWheel_Info_CHS1.ALIV_SFA_SteerWheel_Info_phy )
+
+#define get_CHS1_SFA_SteerWheel_Info_SFA_SteerWheelTorque() ((float32)cap_canApiMsg_SFA_SteerWheel_Info_CHS1.SFA_SteerWheelTorque_phy * cap_SFA_SteerWheel_Info_SFA_SteerWheelTorque_CHS1_Factor_C + cap_SFA_SteerWheel_Info_SFA_SteerWheelTorque_CHS1_Offset_C)
+
+#define get_CHS1_SFA_SteerWheel_Info_SFA_SteerWheelAngleSpeed() ((float32)cap_canApiMsg_SFA_SteerWheel_Info_CHS1.SFA_SteerWheelAngleSpeed_phy * cap_SFA_SteerWheel_Info_SFA_SteerWheelAngleSpeed_CHS1_Factor_C + cap_SFA_SteerWheel_Info_SFA_SteerWheelAngleSpeed_CHS1_Offset_C)
+
+#define get_CHS1_SFA_SteerWheel_Info_SFA_SteerWheelAngle() ((float32)cap_canApiMsg_SFA_SteerWheel_Info_CHS1.SFA_SteerWheelAngle_phy * cap_SFA_SteerWheel_Info_SFA_SteerWheelAngle_CHS1_Factor_C + cap_SFA_SteerWheel_Info_SFA_SteerWheelAngle_CHS1_Offset_C)
+
+#define get_CHS1_SFA_SteerWheel_Info_SFA_WarningLamp() (cap_canApiMsg_SFA_SteerWheel_Info_CHS1.SFA_WarningLamp_phy )
+
+#define get_CHS1_SFA_SteerWheel_Info_SFA_EmergencyRequest() (cap_canApiMsg_SFA_SteerWheel_Info_CHS1.SFA_EmergencyRequest_phy )
+
+#define get_CHS1_SFA_SteerWheel_Info_SFA_CenteringStatus() (cap_canApiMsg_SFA_SteerWheel_Info_CHS1.SFA_CenteringStatus_phy )
+
+
+#define get_CHS2_ESC_A_AD3_PrsrVal_Fl() (cap_canApiMsg_ESC_A_CHS2.AD3_PrsrVal_Fl_phy )
+
+#define get_CHS2_ESC_A_AD3_PrsrVal_Fr() (cap_canApiMsg_ESC_A_CHS2.AD3_PrsrVal_Fr_phy )
+
+#define get_CHS2_ESC_A_AD3_PrsrVal_Rl() (cap_canApiMsg_ESC_A_CHS2.AD3_PrsrVal_Rl_phy )
+
+#define get_CHS2_ESC_A_AD3_PrsrVal_Rr() (cap_canApiMsg_ESC_A_CHS2.AD3_PrsrVal_Rr_phy )
+
+
+#define get_CHS2_ABS_ESC_01_ABS_ACTIVE() (cap_canApiMsg_ABS_ESC_01_CHS2.ABS_ACTIVE_phy )
+
+
+#define get_CHS2_IEB_01_WEstTot_Nm() (cap_canApiMsg_IEB_01_CHS2.WEstTot_Nm_phy )
+
+
+#define get_CHS2_EBCM_STATUS_CRC_EBCM_STATUS() (cap_canApiMsg_EBCM_STATUS_CHS2.CRC_EBCM_STATUS_phy )
+
+#define get_CHS2_EBCM_STATUS_ALIV_EBCM_STATUS() (cap_canApiMsg_EBCM_STATUS_CHS2.ALIV_EBCM_STATUS_phy )
+
+#define get_CHS2_EBCM_STATUS_MCPressure() ((float32)cap_canApiMsg_EBCM_STATUS_CHS2.MCPressure_phy * cap_EBCM_STATUS_MCPressure_CHS2_Factor_C + cap_EBCM_STATUS_MCPressure_CHS2_Offset_C)
+
+#define get_CHS2_EBCM_STATUS_BreakPedalPercent() ((float32)cap_canApiMsg_EBCM_STATUS_CHS2.BreakPedalPercent_phy * cap_EBCM_STATUS_BreakPedalPercent_CHS2_Factor_C + cap_EBCM_STATUS_BreakPedalPercent_CHS2_Offset_C)
+
+#define get_CHS2_EBCM_STATUS_EPBStatus() (cap_canApiMsg_EBCM_STATUS_CHS2.EPBStatus_phy )
+
+#define get_CHS2_EBCM_STATUS_HillholderStatus() (cap_canApiMsg_EBCM_STATUS_CHS2.HillholderStatus_phy )
+
+#define get_CHS2_EBCM_STATUS_TCSAvailable() (cap_canApiMsg_EBCM_STATUS_CHS2.TCSAvailable_phy )
+
+#define get_CHS2_EBCM_STATUS_TCSActive() (cap_canApiMsg_EBCM_STATUS_CHS2.TCSActive_phy )
+
+#define get_CHS2_EBCM_STATUS_BreakPedalPercentValid() (cap_canApiMsg_EBCM_STATUS_CHS2.BreakPedalPercentValid_phy )
+
+#define get_CHS2_EBCM_STATUS_MCPressureSts() (cap_canApiMsg_EBCM_STATUS_CHS2.MCPressureSts_phy )
+
+#define get_CHS2_EBCM_STATUS_HillholderFault() (cap_canApiMsg_EBCM_STATUS_CHS2.HillholderFault_phy )
+
+#define get_CHS2_EBCM_STATUS_EPBFault() (cap_canApiMsg_EBCM_STATUS_CHS2.EPBFault_phy )
+
+#define get_CHS2_EBCM_STATUS_EBCM_BrkPedlSts() (cap_canApiMsg_EBCM_STATUS_CHS2.EBCM_BrkPedlSts_phy )
+
+
+#define get_CHS2_ST_STAB_DSC_2_ST_SLIP_THO() (cap_canApiMsg_ST_STAB_DSC_2_CHS2.ST_SLIP_THO_phy )
+
+
+#define get_CHS2_ST_STAB_DSC_CRC_ST_STAB_DSC() (cap_canApiMsg_ST_STAB_DSC_CHS2.CRC_ST_STAB_DSC_phy )
+
+#define get_CHS2_ST_STAB_DSC_ALIV_ST_STAB_DSC() (cap_canApiMsg_ST_STAB_DSC_CHS2.ALIV_ST_STAB_DSC_phy )
+
+#define get_CHS2_ST_STAB_DSC_QU_FN_FDR() (cap_canApiMsg_ST_STAB_DSC_CHS2.QU_FN_FDR_phy )
+
+#define get_CHS2_ST_STAB_DSC_QU_FN_ABS() (cap_canApiMsg_ST_STAB_DSC_CHS2.QU_FN_ABS_phy )
+
+#define get_CHS2_ST_STAB_DSC_QU_FN_ASC() (cap_canApiMsg_ST_STAB_DSC_CHS2.QU_FN_ASC_phy )
+
+#define get_CHS2_ST_STAB_DSC_ST_BRG_DV() (cap_canApiMsg_ST_STAB_DSC_CHS2.ST_BRG_DV_phy )
+
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_CRC_EXTS_ARB_INTF() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.CRC_EXTS_ARB_INTF_phy )
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_ALIV_EXTS_ARB_INTF() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.ALIV_EXTS_ARB_INTF_phy )
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_CHL_EXTS_ARB_INTF() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.CHL_EXTS_ARB_INTF_phy )
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_LH_EXT() ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.AVL_BRTORQ_WHL_RS_LH_EXT_phy * cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_LH_EXT_CHS2_Factor_C + cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_LH_EXT_CHS2_Offset_C)
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_RH_EXT() ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.AVL_BRTORQ_WHL_RS_RH_EXT_phy * cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_RH_EXT_CHS2_Factor_C + cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_RH_EXT_CHS2_Offset_C)
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_LH_EXT() ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.AVL_BRTORQ_WHL_FS_LH_EXT_phy * cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_LH_EXT_CHS2_Factor_C + cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_LH_EXT_CHS2_Offset_C)
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_RH_EXT() ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.AVL_BRTORQ_WHL_FS_RH_EXT_phy * cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_RH_EXT_CHS2_Factor_C + cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_RH_EXT_CHS2_Offset_C)
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_CRC_RQ_RPM_BAX() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.CRC_RQ_RPM_BAX_phy )
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_ALIV_RQ_RPM_BAX() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.ALIV_RQ_RPM_BAX_phy )
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_CHL_RQ_RPM_BAX() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.CHL_RQ_RPM_BAX_phy )
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_BAX() ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.TAR_RPM_MAX_BAX_phy * cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_BAX_CHS2_Factor_C + cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_BAX_CHS2_Offset_C)
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_BAX() ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.TAR_RPM_MIN_BAX_phy * cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_BAX_CHS2_Factor_C + cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_BAX_CHS2_Offset_C)
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_ST_TAR_RPM_BAX() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.ST_TAR_RPM_BAX_phy )
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_TAR_STIF_SPCO() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.TAR_STIF_SPCO_phy )
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_CRC_RQ_RPM_FTAX() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.CRC_RQ_RPM_FTAX_phy )
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_ALIV_RQ_RPM_FTAX() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.ALIV_RQ_RPM_FTAX_phy )
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_CHL_RQ_RPM_FTAX() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.CHL_RQ_RPM_FTAX_phy )
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_FTAX() ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.TAR_RPM_MAX_FTAX_phy * cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_FTAX_CHS2_Factor_C + cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_FTAX_CHS2_Offset_C)
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_FTAX() ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.TAR_RPM_MIN_FTAX_phy * cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_FTAX_CHS2_Factor_C + cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_FTAX_CHS2_Offset_C)
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_ST_TAR_RPM_FTAX() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.ST_TAR_RPM_FTAX_phy )
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_CRC_StatusSlipThresholds() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.CRC_StatusSlipThresholds_phy )
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_ALIV_StatusSlipThresholds() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.ALIV_StatusSlipThresholds_phy )
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_CHL_StatusSlipThresholds() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.CHL_StatusSlipThresholds_phy )
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_StatusSlipThresholdsFrontAxle() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.StatusSlipThresholdsFrontAxle_phy )
+
+#define get_CHS2_BundleEAFlexrayToAECANFD10msNo1_StatusSlipThresholdsRearAxle() (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2.StatusSlipThresholdsRearAxle_phy )
+
+
+#define get_CHS2_AVL_RPM_WHL_CRC_AVL_RPM_WHL() (cap_canApiMsg_AVL_RPM_WHL_CHS2.CRC_AVL_RPM_WHL_phy )
+
+#define get_CHS2_AVL_RPM_WHL_ALIV_AVL_RPM_WHL() (cap_canApiMsg_AVL_RPM_WHL_CHS2.ALIV_AVL_RPM_WHL_phy )
+
+#define get_CHS2_AVL_RPM_WHL_AVL_RPM_WHL_RLH() ((float32)cap_canApiMsg_AVL_RPM_WHL_CHS2.AVL_RPM_WHL_RLH_phy * cap_AVL_RPM_WHL_AVL_RPM_WHL_RLH_CHS2_Factor_C + cap_AVL_RPM_WHL_AVL_RPM_WHL_RLH_CHS2_Offset_C)
+
+#define get_CHS2_AVL_RPM_WHL_AVL_RPM_WHL_RRH() ((float32)cap_canApiMsg_AVL_RPM_WHL_CHS2.AVL_RPM_WHL_RRH_phy * cap_AVL_RPM_WHL_AVL_RPM_WHL_RRH_CHS2_Factor_C + cap_AVL_RPM_WHL_AVL_RPM_WHL_RRH_CHS2_Offset_C)
+
+#define get_CHS2_AVL_RPM_WHL_AVL_RPM_WHL_FLH() ((float32)cap_canApiMsg_AVL_RPM_WHL_CHS2.AVL_RPM_WHL_FLH_phy * cap_AVL_RPM_WHL_AVL_RPM_WHL_FLH_CHS2_Factor_C + cap_AVL_RPM_WHL_AVL_RPM_WHL_FLH_CHS2_Offset_C)
+
+#define get_CHS2_AVL_RPM_WHL_AVL_RPM_WHL_FRH() ((float32)cap_canApiMsg_AVL_RPM_WHL_CHS2.AVL_RPM_WHL_FRH_phy * cap_AVL_RPM_WHL_AVL_RPM_WHL_FRH_CHS2_Factor_C + cap_AVL_RPM_WHL_AVL_RPM_WHL_FRH_CHS2_Offset_C)
+
+#define get_CHS2_AVL_RPM_WHL_QU_AVL_RPM_WHL_RLH() (cap_canApiMsg_AVL_RPM_WHL_CHS2.QU_AVL_RPM_WHL_RLH_phy )
+
+#define get_CHS2_AVL_RPM_WHL_QU_AVL_RPM_WHL_RRH() (cap_canApiMsg_AVL_RPM_WHL_CHS2.QU_AVL_RPM_WHL_RRH_phy )
+
+#define get_CHS2_AVL_RPM_WHL_QU_AVL_RPM_WHL_FLH() (cap_canApiMsg_AVL_RPM_WHL_CHS2.QU_AVL_RPM_WHL_FLH_phy )
+
+#define get_CHS2_AVL_RPM_WHL_QU_AVL_RPM_WHL_FRH() (cap_canApiMsg_AVL_RPM_WHL_CHS2.QU_AVL_RPM_WHL_FRH_phy )
+
+
+#define get_CHS2_BundleEAFlexrayToCANFD20msNo1_CRC_V_VEH() (cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_CHS2.CRC_V_VEH_phy )
+
+#define get_CHS2_BundleEAFlexrayToCANFD20msNo1_ALIV_V_VEH() (cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_CHS2.ALIV_V_VEH_phy )
+
+#define get_CHS2_BundleEAFlexrayToCANFD20msNo1_V_VEH_COG() ((float32)cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_CHS2.V_VEH_COG_phy * cap_BundleEAFlexrayToCANFD20msNo1_V_VEH_COG_CHS2_Factor_C + cap_BundleEAFlexrayToCANFD20msNo1_V_VEH_COG_CHS2_Offset_C)
+
+#define get_CHS2_BundleEAFlexrayToCANFD20msNo1_QU_V_VEH_COG() (cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_CHS2.QU_V_VEH_COG_phy )
+
+#define get_CHS2_BundleEAFlexrayToCANFD20msNo1_SecOcDataP2V_VEH() (cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_CHS2.SecOcDataP2V_VEH_phy )
+
+
+#define get_CHS2_SFA_SteerWheel_Info_CRC_SFA_SteerWheel_Info() (cap_canApiMsg_SFA_SteerWheel_Info_CHS2.CRC_SFA_SteerWheel_Info_phy )
+
+#define get_CHS2_SFA_SteerWheel_Info_ALIV_SFA_SteerWheel_Info() (cap_canApiMsg_SFA_SteerWheel_Info_CHS2.ALIV_SFA_SteerWheel_Info_phy )
+
+#define get_CHS2_SFA_SteerWheel_Info_SFA_SteerWheelTorque() ((float32)cap_canApiMsg_SFA_SteerWheel_Info_CHS2.SFA_SteerWheelTorque_phy * cap_SFA_SteerWheel_Info_SFA_SteerWheelTorque_CHS2_Factor_C + cap_SFA_SteerWheel_Info_SFA_SteerWheelTorque_CHS2_Offset_C)
+
+#define get_CHS2_SFA_SteerWheel_Info_SFA_SteerWheelAngleSpeed() ((float32)cap_canApiMsg_SFA_SteerWheel_Info_CHS2.SFA_SteerWheelAngleSpeed_phy * cap_SFA_SteerWheel_Info_SFA_SteerWheelAngleSpeed_CHS2_Factor_C + cap_SFA_SteerWheel_Info_SFA_SteerWheelAngleSpeed_CHS2_Offset_C)
+
+#define get_CHS2_SFA_SteerWheel_Info_SFA_SteerWheelAngle() ((float32)cap_canApiMsg_SFA_SteerWheel_Info_CHS2.SFA_SteerWheelAngle_phy * cap_SFA_SteerWheel_Info_SFA_SteerWheelAngle_CHS2_Factor_C + cap_SFA_SteerWheel_Info_SFA_SteerWheelAngle_CHS2_Offset_C)
+
+#define get_CHS2_SFA_SteerWheel_Info_SFA_WarningLamp() (cap_canApiMsg_SFA_SteerWheel_Info_CHS2.SFA_WarningLamp_phy )
+
+#define get_CHS2_SFA_SteerWheel_Info_SFA_EmergencyRequest() (cap_canApiMsg_SFA_SteerWheel_Info_CHS2.SFA_EmergencyRequest_phy )
+
+#define get_CHS2_SFA_SteerWheel_Info_SFA_CenteringStatus() (cap_canApiMsg_SFA_SteerWheel_Info_CHS2.SFA_CenteringStatus_phy )
+
+
+#define get_PT_OBC_01_100ms_OBC_HvIntlkStatus() (cap_canApiMsg_OBC_01_100ms_PT.OBC_HvIntlkStatus_phy )
+
+#define get_PT_OBC_01_100ms_OBC_SeqSta() (cap_canApiMsg_OBC_01_100ms_PT.OBC_SeqSta_phy )
+
+
+#define get_PT_DCDC_01_100ms_DCDC_HvIntlkStatus() (cap_canApiMsg_DCDC_01_100ms_PT.DCDC_HvIntlkStatus_phy )
+
+#define get_PT_DCDC_01_100ms_DCDC_SysOpSta() (cap_canApiMsg_DCDC_01_100ms_PT.DCDC_SysOpSta_phy )
+
+
+#define get_PT_BMS_CellTempMeas2_CRC_BMS_CellTempMeas2() (cap_canApiMsg_BMS_CellTempMeas2_PT.CRC_BMS_CellTempMeas2_phy )
+
+#define get_PT_BMS_CellTempMeas2_ALV_BMS_CellTempMeas2() (cap_canApiMsg_BMS_CellTempMeas2_PT.ALV_BMS_CellTempMeas2_phy )
+
+#define get_PT_BMS_CellTempMeas2_BMS_CellTemp42() ((float32)cap_canApiMsg_BMS_CellTempMeas2_PT.BMS_CellTemp42_phy * cap_BMS_CellTempMeas2_BMS_CellTemp42_PT_Factor_C + cap_BMS_CellTempMeas2_BMS_CellTemp42_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas2_BMS_CellTemp43() ((float32)cap_canApiMsg_BMS_CellTempMeas2_PT.BMS_CellTemp43_phy * cap_BMS_CellTempMeas2_BMS_CellTemp43_PT_Factor_C + cap_BMS_CellTempMeas2_BMS_CellTemp43_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas2_BMS_CellTemp44() ((float32)cap_canApiMsg_BMS_CellTempMeas2_PT.BMS_CellTemp44_phy * cap_BMS_CellTempMeas2_BMS_CellTemp44_PT_Factor_C + cap_BMS_CellTempMeas2_BMS_CellTemp44_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas2_BMS_CellTemp45() ((float32)cap_canApiMsg_BMS_CellTempMeas2_PT.BMS_CellTemp45_phy * cap_BMS_CellTempMeas2_BMS_CellTemp45_PT_Factor_C + cap_BMS_CellTempMeas2_BMS_CellTemp45_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas2_BMS_CellTemp46() ((float32)cap_canApiMsg_BMS_CellTempMeas2_PT.BMS_CellTemp46_phy * cap_BMS_CellTempMeas2_BMS_CellTemp46_PT_Factor_C + cap_BMS_CellTempMeas2_BMS_CellTemp46_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas2_BMS_CellTemp47() ((float32)cap_canApiMsg_BMS_CellTempMeas2_PT.BMS_CellTemp47_phy * cap_BMS_CellTempMeas2_BMS_CellTemp47_PT_Factor_C + cap_BMS_CellTempMeas2_BMS_CellTemp47_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas2_BMS_CellTemp48() ((float32)cap_canApiMsg_BMS_CellTempMeas2_PT.BMS_CellTemp48_phy * cap_BMS_CellTempMeas2_BMS_CellTemp48_PT_Factor_C + cap_BMS_CellTempMeas2_BMS_CellTemp48_PT_Offset_C)
+
+
+#define get_PT_BMS_ChgParamReq_CRC_BMS_ChgParamReq() (cap_canApiMsg_BMS_ChgParamReq_PT.CRC_BMS_ChgParamReq_phy )
+
+#define get_PT_BMS_ChgParamReq_ALV_BMS_ChgParamReq() (cap_canApiMsg_BMS_ChgParamReq_PT.ALV_BMS_ChgParamReq_phy )
+
+#define get_PT_BMS_ChgParamReq_BMS_ChargeStopReq() (cap_canApiMsg_BMS_ChgParamReq_PT.BMS_ChargeStopReq_phy )
+
+#define get_PT_BMS_ChgParamReq_BMS_ChgVoltageReq() ((float32)cap_canApiMsg_BMS_ChgParamReq_PT.BMS_ChgVoltageReq_phy * cap_BMS_ChgParamReq_BMS_ChgVoltageReq_PT_Factor_C + cap_BMS_ChgParamReq_BMS_ChgVoltageReq_PT_Offset_C)
+
+#define get_PT_BMS_ChgParamReq_BMS_ChgCurrentReq() ((float32)cap_canApiMsg_BMS_ChgParamReq_PT.BMS_ChgCurrentReq_phy * cap_BMS_ChgParamReq_BMS_ChgCurrentReq_PT_Factor_C + cap_BMS_ChgParamReq_BMS_ChgCurrentReq_PT_Offset_C)
+
+#define get_PT_BMS_ChgParamReq_BMS_RemainChargeTime() (cap_canApiMsg_BMS_ChgParamReq_PT.BMS_RemainChargeTime_phy )
+
+#define get_PT_BMS_ChgParamReq_BMS_MaxChgCurrentLim() ((float32)cap_canApiMsg_BMS_ChgParamReq_PT.BMS_MaxChgCurrentLim_phy * cap_BMS_ChgParamReq_BMS_MaxChgCurrentLim_PT_Factor_C + cap_BMS_ChgParamReq_BMS_MaxChgCurrentLim_PT_Offset_C)
+
+#define get_PT_BMS_ChgParamReq_BMS_MaxChgCurrentLimPeak() ((float32)cap_canApiMsg_BMS_ChgParamReq_PT.BMS_MaxChgCurrentLimPeak_phy * cap_BMS_ChgParamReq_BMS_MaxChgCurrentLimPeak_PT_Factor_C + cap_BMS_ChgParamReq_BMS_MaxChgCurrentLimPeak_PT_Offset_C)
+
+#define get_PT_BMS_ChgParamReq_BMS_MaxChgCurrent2s() ((float32)cap_canApiMsg_BMS_ChgParamReq_PT.BMS_MaxChgCurrent2s_phy * cap_BMS_ChgParamReq_BMS_MaxChgCurrent2s_PT_Factor_C + cap_BMS_ChgParamReq_BMS_MaxChgCurrent2s_PT_Offset_C)
+
+#define get_PT_BMS_ChgParamReq_BMS_MaxChgCurrent10s() ((float32)cap_canApiMsg_BMS_ChgParamReq_PT.BMS_MaxChgCurrent10s_phy * cap_BMS_ChgParamReq_BMS_MaxChgCurrent10s_PT_Factor_C + cap_BMS_ChgParamReq_BMS_MaxChgCurrent10s_PT_Offset_C)
+
+#define get_PT_BMS_ChgParamReq_BMS_MaxChgCurrent30s() ((float32)cap_canApiMsg_BMS_ChgParamReq_PT.BMS_MaxChgCurrent30s_phy * cap_BMS_ChgParamReq_BMS_MaxChgCurrent30s_PT_Factor_C + cap_BMS_ChgParamReq_BMS_MaxChgCurrent30s_PT_Offset_C)
+
+#define get_PT_BMS_ChgParamReq_BMS_MaxChgPwrLim() ((float32)cap_canApiMsg_BMS_ChgParamReq_PT.BMS_MaxChgPwrLim_phy * cap_BMS_ChgParamReq_BMS_MaxChgPwrLim_PT_Factor_C + cap_BMS_ChgParamReq_BMS_MaxChgPwrLim_PT_Offset_C)
+
+#define get_PT_BMS_ChgParamReq_BMS_MaxChgPwrLimPeak() ((float32)cap_canApiMsg_BMS_ChgParamReq_PT.BMS_MaxChgPwrLimPeak_phy * cap_BMS_ChgParamReq_BMS_MaxChgPwrLimPeak_PT_Factor_C + cap_BMS_ChgParamReq_BMS_MaxChgPwrLimPeak_PT_Offset_C)
+
+#define get_PT_BMS_ChgParamReq_BMS_MaxChgPwr2s() ((float32)cap_canApiMsg_BMS_ChgParamReq_PT.BMS_MaxChgPwr2s_phy * cap_BMS_ChgParamReq_BMS_MaxChgPwr2s_PT_Factor_C + cap_BMS_ChgParamReq_BMS_MaxChgPwr2s_PT_Offset_C)
+
+#define get_PT_BMS_ChgParamReq_BMS_MaxChgPwr10s() ((float32)cap_canApiMsg_BMS_ChgParamReq_PT.BMS_MaxChgPwr10s_phy * cap_BMS_ChgParamReq_BMS_MaxChgPwr10s_PT_Factor_C + cap_BMS_ChgParamReq_BMS_MaxChgPwr10s_PT_Offset_C)
+
+#define get_PT_BMS_ChgParamReq_BMS_MaxChgPwr30s() ((float32)cap_canApiMsg_BMS_ChgParamReq_PT.BMS_MaxChgPwr30s_phy * cap_BMS_ChgParamReq_BMS_MaxChgPwr30s_PT_Factor_C + cap_BMS_ChgParamReq_BMS_MaxChgPwr30s_PT_Offset_C)
+
+
+#define get_PT_BMS_CurMeas_CRC_BMS_CurMeas() (cap_canApiMsg_BMS_CurMeas_PT.CRC_BMS_CurMeas_phy )
+
+#define get_PT_BMS_CurMeas_ALV_BMS_CurMeas() (cap_canApiMsg_BMS_CurMeas_PT.ALV_BMS_CurMeas_phy )
+
+#define get_PT_BMS_CurMeas_BMS_StartOfMeasument_STS() (cap_canApiMsg_BMS_CurMeas_PT.BMS_StartOfMeasument_STS_phy )
+
+#define get_PT_BMS_CurMeas_BMS_PackCurMeas() ((float32)cap_canApiMsg_BMS_CurMeas_PT.BMS_PackCurMeas_phy * cap_BMS_CurMeas_BMS_PackCurMeas_PT_Factor_C + cap_BMS_CurMeas_BMS_PackCurMeas_PT_Offset_C)
+
+
+#define get_PT_HighVoltageStorage10msNo2_CRC_HighVoltageStorage10msNo2() (cap_canApiMsg_HighVoltageStorage10msNo2_PT.CRC_HighVoltageStorage10msNo2_phy )
+
+#define get_PT_HighVoltageStorage10msNo2_ALIV_HighVoltageStorage10msNo2() (cap_canApiMsg_HighVoltageStorage10msNo2_PT.ALIV_HighVoltageStorage10msNo2_phy )
+
+#define get_PT_HighVoltageStorage10msNo2_ActualValueVoltageLinkVerified() ((float32)cap_canApiMsg_HighVoltageStorage10msNo2_PT.ActualValueVoltageLinkVerified_phy * cap_HighVoltageStorage10msNo2_ActualValueVoltageLinkVerified_PT_Factor_C + cap_HighVoltageStorage10msNo2_ActualValueVoltageLinkVerified_PT_Offset_C)
+
+
+#define get_PT_TracEMacElectc1Time10msNo1_CRC_TracEMacElectc1Time10msNo1() (cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.CRC_TracEMacElectc1Time10msNo1_phy )
+
+#define get_PT_TracEMacElectc1Time10msNo1_ALIV_TracEMacElectc1Time10msNo1() (cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.ALIV_TracEMacElectc1Time10msNo1_phy )
+
+#define get_PT_TracEMacElectc1Time10msNo1_CurrDrctCurrETractSys1ActVal() ((float32)cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.CurrDrctCurrETractSys1ActVal_phy * cap_TracEMacElectc1Time10msNo1_CurrDrctCurrETractSys1ActVal_PT_Factor_C + cap_TracEMacElectc1Time10msNo1_CurrDrctCurrETractSys1ActVal_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time10msNo1_VolDrctCurrETractSys1ActVal() ((float32)cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.VolDrctCurrETractSys1ActVal_phy * cap_TracEMacElectc1Time10msNo1_VolDrctCurrETractSys1ActVal_PT_Factor_C + cap_TracEMacElectc1Time10msNo1_VolDrctCurrETractSys1ActVal_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time10msNo1_RpmEmETractSys1MaximumLimit() ((float32)cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.RpmEmETractSys1MaximumLimit_phy * cap_TracEMacElectc1Time10msNo1_RpmEmETractSys1MaximumLimit_PT_Factor_C + cap_TracEMacElectc1Time10msNo1_RpmEmETractSys1MaximumLimit_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time10msNo1_RpmEmETractSys1MinimumLimit() ((float32)cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.RpmEmETractSys1MinimumLimit_phy * cap_TracEMacElectc1Time10msNo1_RpmEmETractSys1MinimumLimit_PT_Factor_C + cap_TracEMacElectc1Time10msNo1_RpmEmETractSys1MinimumLimit_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time10msNo1_TqEmETractSys1VibrationDampSusp() ((float32)cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.TqEmETractSys1VibrationDampSusp_phy * cap_TracEMacElectc1Time10msNo1_TqEmETractSys1VibrationDampSusp_PT_Factor_C + cap_TracEMacElectc1Time10msNo1_TqEmETractSys1VibrationDampSusp_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time10msNo1_RpmEmETractSys1ActualValue() ((float32)cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.RpmEmETractSys1ActualValue_phy * cap_TracEMacElectc1Time10msNo1_RpmEmETractSys1ActualValue_PT_Factor_C + cap_TracEMacElectc1Time10msNo1_RpmEmETractSys1ActualValue_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time10msNo1_TqEmETractSys1GeneratorStatic() ((float32)cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.TqEmETractSys1GeneratorStatic_phy * cap_TracEMacElectc1Time10msNo1_TqEmETractSys1GeneratorStatic_PT_Factor_C + cap_TracEMacElectc1Time10msNo1_TqEmETractSys1GeneratorStatic_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time10msNo1_TqEmETractSys1GeneratorDynamic() ((float32)cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.TqEmETractSys1GeneratorDynamic_phy * cap_TracEMacElectc1Time10msNo1_TqEmETractSys1GeneratorDynamic_PT_Factor_C + cap_TracEMacElectc1Time10msNo1_TqEmETractSys1GeneratorDynamic_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time10msNo1_TorqueEmETractSys1MotorStatic() ((float32)cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.TorqueEmETractSys1MotorStatic_phy * cap_TracEMacElectc1Time10msNo1_TorqueEmETractSys1MotorStatic_PT_Factor_C + cap_TracEMacElectc1Time10msNo1_TorqueEmETractSys1MotorStatic_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time10msNo1_TorqueEmETractSys1MotorDynamic() ((float32)cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.TorqueEmETractSys1MotorDynamic_phy * cap_TracEMacElectc1Time10msNo1_TorqueEmETractSys1MotorDynamic_PT_Factor_C + cap_TracEMacElectc1Time10msNo1_TorqueEmETractSys1MotorDynamic_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time10msNo1_TorqueEmETractSys1ActualValue() ((float32)cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.TorqueEmETractSys1ActualValue_phy * cap_TracEMacElectc1Time10msNo1_TorqueEmETractSys1ActualValue_PT_Factor_C + cap_TracEMacElectc1Time10msNo1_TorqueEmETractSys1ActualValue_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time10msNo1_StatusLockPositionPbWETractSys1() (cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.StatusLockPositionPbWETractSys1_phy )
+
+#define get_PT_TracEMacElectc1Time10msNo1_TqEmETractSys1MotorSumLimTarget() ((float32)cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.TqEmETractSys1MotorSumLimTarget_phy * cap_TracEMacElectc1Time10msNo1_TqEmETractSys1MotorSumLimTarget_PT_Factor_C + cap_TracEMacElectc1Time10msNo1_TqEmETractSys1MotorSumLimTarget_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time10msNo1_DirOfRotETractSys1ActVal() (cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.DirOfRotETractSys1ActVal_phy )
+
+#define get_PT_TracEMacElectc1Time10msNo1_OVCUrrenceStatorPWMETractSys1() (cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.OVCUrrenceStatorPWMETractSys1_phy )
+
+#define get_PT_TracEMacElectc1Time10msNo1_StatusPbWETractSys1() (cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.StatusPbWETractSys1_phy )
+
+#define get_PT_TracEMacElectc1Time10msNo1_QualifierTqEmETractSys1ActVal() (cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.QualifierTqEmETractSys1ActVal_phy )
+
+#define get_PT_TracEMacElectc1Time10msNo1_QualifierRpmEmETractSys1ActVal() (cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.QualifierRpmEmETractSys1ActVal_phy )
+
+#define get_PT_TracEMacElectc1Time10msNo1_Qu_CurrDrctCurrETractSys1ActVal() (cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.Qu_CurrDrctCurrETractSys1ActVal_phy )
+
+#define get_PT_TracEMacElectc1Time10msNo1_StatusArbRpmETractSys1Limit() (cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.StatusArbRpmETractSys1Limit_phy )
+
+#define get_PT_TracEMacElectc1Time10msNo1_SumWhlTqIntvETractSys1() ((float32)cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.SumWhlTqIntvETractSys1_phy * cap_TracEMacElectc1Time10msNo1_SumWhlTqIntvETractSys1_PT_Factor_C + cap_TracEMacElectc1Time10msNo1_SumWhlTqIntvETractSys1_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time10msNo1_StETractSys1Asd() (cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.StETractSys1Asd_phy )
+
+#define get_PT_TracEMacElectc1Time10msNo1_PowerETractSys1LossActualValue() ((float32)cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.PowerETractSys1LossActualValue_phy * cap_TracEMacElectc1Time10msNo1_PowerETractSys1LossActualValue_PT_Factor_C + cap_TracEMacElectc1Time10msNo1_PowerETractSys1LossActualValue_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time10msNo1_TarTqETractSys1NControlStatic() ((float32)cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.TarTqETractSys1NControlStatic_phy * cap_TracEMacElectc1Time10msNo1_TarTqETractSys1NControlStatic_PT_Factor_C + cap_TracEMacElectc1Time10msNo1_TarTqETractSys1NControlStatic_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time10msNo1_PwrLossPrednETractSys1Mot() ((float32)cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.PwrLossPrednETractSys1Mot_phy * cap_TracEMacElectc1Time10msNo1_PwrLossPrednETractSys1Mot_PT_Factor_C + cap_TracEMacElectc1Time10msNo1_PwrLossPrednETractSys1Mot_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time10msNo1_PwrLossPrednETractSys1Genr() ((float32)cap_canApiMsg_TracEMacElectc1Time10msNo1_PT.PwrLossPrednETractSys1Genr_phy * cap_TracEMacElectc1Time10msNo1_PwrLossPrednETractSys1Genr_PT_Factor_C + cap_TracEMacElectc1Time10msNo1_PwrLossPrednETractSys1Genr_PT_Offset_C)
+
+
+#define get_PT_BMS_Error_CRC_BMS_Error() (cap_canApiMsg_BMS_Error_PT.CRC_BMS_Error_phy )
+
+#define get_PT_BMS_Error_ALV_BMS_Error() (cap_canApiMsg_BMS_Error_PT.ALV_BMS_Error_phy )
+
+#define get_PT_BMS_Error_BMS_CellLowVolErr() (cap_canApiMsg_BMS_Error_PT.BMS_CellLowVolErr_phy )
+
+#define get_PT_BMS_Error_BMS_HVILErr() (cap_canApiMsg_BMS_Error_PT.BMS_HVILErr_phy )
+
+#define get_PT_BMS_Error_BMS_PackInsuErr() (cap_canApiMsg_BMS_Error_PT.BMS_PackInsuErr_phy )
+
+#define get_PT_BMS_Error_BMS_CellVoltDiffErr() (cap_canApiMsg_BMS_Error_PT.BMS_CellVoltDiffErr_phy )
+
+#define get_PT_BMS_Error_BMS_ProbeTempDiffErr() (cap_canApiMsg_BMS_Error_PT.BMS_ProbeTempDiffErr_phy )
+
+#define get_PT_BMS_Error_BMS_PackHighVolErr() (cap_canApiMsg_BMS_Error_PT.BMS_PackHighVolErr_phy )
+
+#define get_PT_BMS_Error_BMS_PackLowVolErr() (cap_canApiMsg_BMS_Error_PT.BMS_PackLowVolErr_phy )
+
+#define get_PT_BMS_Error_BMS_CellHighVolErr() (cap_canApiMsg_BMS_Error_PT.BMS_CellHighVolErr_phy )
+
+#define get_PT_BMS_Error_BMS_ProbeHighTempErr() (cap_canApiMsg_BMS_Error_PT.BMS_ProbeHighTempErr_phy )
+
+#define get_PT_BMS_Error_BMS_FuseStatusErr() (cap_canApiMsg_BMS_Error_PT.BMS_FuseStatusErr_phy )
+
+#define get_PT_BMS_Error_BMS_PackOverCurrErr() (cap_canApiMsg_BMS_Error_PT.BMS_PackOverCurrErr_phy )
+
+#define get_PT_BMS_Error_BMS_ProbeLowTempErr() (cap_canApiMsg_BMS_Error_PT.BMS_ProbeLowTempErr_phy )
+
+
+#define get_PT_BMS_HVMeas_CRC_BMS_HVMeas() (cap_canApiMsg_BMS_HVMeas_PT.CRC_BMS_HVMeas_phy )
+
+#define get_PT_BMS_HVMeas_ALV_BMS_HVMeas() (cap_canApiMsg_BMS_HVMeas_PT.ALV_BMS_HVMeas_phy )
+
+#define get_PT_BMS_HVMeas_BMS_HVPackVol() ((float32)cap_canApiMsg_BMS_HVMeas_PT.BMS_HVPackVol_phy * cap_BMS_HVMeas_BMS_HVPackVol_PT_Factor_C + cap_BMS_HVMeas_BMS_HVPackVol_PT_Offset_C)
+
+#define get_PT_BMS_HVMeas_BMS_HVLinkVol() ((float32)cap_canApiMsg_BMS_HVMeas_PT.BMS_HVLinkVol_phy * cap_BMS_HVMeas_BMS_HVLinkVol_PT_Factor_C + cap_BMS_HVMeas_BMS_HVLinkVol_PT_Offset_C)
+
+#define get_PT_BMS_HVMeas_BMS_HVBusVol() ((float32)cap_canApiMsg_BMS_HVMeas_PT.BMS_HVBusVol_phy * cap_BMS_HVMeas_BMS_HVBusVol_PT_Factor_C + cap_BMS_HVMeas_BMS_HVBusVol_PT_Offset_C)
+
+#define get_PT_BMS_HVMeas_BMS_HVFuseVol() ((float32)cap_canApiMsg_BMS_HVMeas_PT.BMS_HVFuseVol_phy * cap_BMS_HVMeas_BMS_HVFuseVol_PT_Factor_C + cap_BMS_HVMeas_BMS_HVFuseVol_PT_Offset_C)
+
+#define get_PT_BMS_HVMeas_BMS_DCPlugVol() ((float32)cap_canApiMsg_BMS_HVMeas_PT.BMS_DCPlugVol_phy * cap_BMS_HVMeas_BMS_DCPlugVol_PT_Factor_C + cap_BMS_HVMeas_BMS_DCPlugVol_PT_Offset_C)
+
+
+#define get_PT_TracEMacElectc2Time10msNo1_CRC_TracEMacElectc2Time10msNo1() (cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.CRC_TracEMacElectc2Time10msNo1_phy )
+
+#define get_PT_TracEMacElectc2Time10msNo1_ALIV_TracEMacElectc2Time10msNo1() (cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.ALIV_TracEMacElectc2Time10msNo1_phy )
+
+#define get_PT_TracEMacElectc2Time10msNo1_CurrDrctCurrETractSys2ActVal() ((float32)cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.CurrDrctCurrETractSys2ActVal_phy * cap_TracEMacElectc2Time10msNo1_CurrDrctCurrETractSys2ActVal_PT_Factor_C + cap_TracEMacElectc2Time10msNo1_CurrDrctCurrETractSys2ActVal_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time10msNo1_VolDrctCurrETractSys2ActVal() ((float32)cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.VolDrctCurrETractSys2ActVal_phy * cap_TracEMacElectc2Time10msNo1_VolDrctCurrETractSys2ActVal_PT_Factor_C + cap_TracEMacElectc2Time10msNo1_VolDrctCurrETractSys2ActVal_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time10msNo1_RpmEmETractSys2MaximumLimit() ((float32)cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.RpmEmETractSys2MaximumLimit_phy * cap_TracEMacElectc2Time10msNo1_RpmEmETractSys2MaximumLimit_PT_Factor_C + cap_TracEMacElectc2Time10msNo1_RpmEmETractSys2MaximumLimit_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time10msNo1_RpmEmETractSys2MinimumLimit() ((float32)cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.RpmEmETractSys2MinimumLimit_phy * cap_TracEMacElectc2Time10msNo1_RpmEmETractSys2MinimumLimit_PT_Factor_C + cap_TracEMacElectc2Time10msNo1_RpmEmETractSys2MinimumLimit_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time10msNo1_TqEmETractSys2VibrationDampSusp() ((float32)cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.TqEmETractSys2VibrationDampSusp_phy * cap_TracEMacElectc2Time10msNo1_TqEmETractSys2VibrationDampSusp_PT_Factor_C + cap_TracEMacElectc2Time10msNo1_TqEmETractSys2VibrationDampSusp_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time10msNo1_RpmEmETractSys2ActualValue() ((float32)cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.RpmEmETractSys2ActualValue_phy * cap_TracEMacElectc2Time10msNo1_RpmEmETractSys2ActualValue_PT_Factor_C + cap_TracEMacElectc2Time10msNo1_RpmEmETractSys2ActualValue_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time10msNo1_TqEmETractSys2GeneratorStatic() ((float32)cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.TqEmETractSys2GeneratorStatic_phy * cap_TracEMacElectc2Time10msNo1_TqEmETractSys2GeneratorStatic_PT_Factor_C + cap_TracEMacElectc2Time10msNo1_TqEmETractSys2GeneratorStatic_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time10msNo1_TqEmETractSys2GeneratorDynamic() ((float32)cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.TqEmETractSys2GeneratorDynamic_phy * cap_TracEMacElectc2Time10msNo1_TqEmETractSys2GeneratorDynamic_PT_Factor_C + cap_TracEMacElectc2Time10msNo1_TqEmETractSys2GeneratorDynamic_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time10msNo1_TorqueEmETractSys2MotorStatic() ((float32)cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.TorqueEmETractSys2MotorStatic_phy * cap_TracEMacElectc2Time10msNo1_TorqueEmETractSys2MotorStatic_PT_Factor_C + cap_TracEMacElectc2Time10msNo1_TorqueEmETractSys2MotorStatic_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time10msNo1_TorqueEmETractSys2MotorDynamic() ((float32)cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.TorqueEmETractSys2MotorDynamic_phy * cap_TracEMacElectc2Time10msNo1_TorqueEmETractSys2MotorDynamic_PT_Factor_C + cap_TracEMacElectc2Time10msNo1_TorqueEmETractSys2MotorDynamic_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time10msNo1_TorqueEmETractSys2ActualValue() ((float32)cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.TorqueEmETractSys2ActualValue_phy * cap_TracEMacElectc2Time10msNo1_TorqueEmETractSys2ActualValue_PT_Factor_C + cap_TracEMacElectc2Time10msNo1_TorqueEmETractSys2ActualValue_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time10msNo1_StatusLockPositionPbWETractSys2() (cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.StatusLockPositionPbWETractSys2_phy )
+
+#define get_PT_TracEMacElectc2Time10msNo1_TqEmETractSys2MotorSumLimTarget() ((float32)cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.TqEmETractSys2MotorSumLimTarget_phy * cap_TracEMacElectc2Time10msNo1_TqEmETractSys2MotorSumLimTarget_PT_Factor_C + cap_TracEMacElectc2Time10msNo1_TqEmETractSys2MotorSumLimTarget_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time10msNo1_DirOfRotETractSys2ActVal() (cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.DirOfRotETractSys2ActVal_phy )
+
+#define get_PT_TracEMacElectc2Time10msNo1_OVCUrrenceStatorPWMETractSys2() (cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.OVCUrrenceStatorPWMETractSys2_phy )
+
+#define get_PT_TracEMacElectc2Time10msNo1_StatusPbWETractSys2() (cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.StatusPbWETractSys2_phy )
+
+#define get_PT_TracEMacElectc2Time10msNo1_QualifierTqEmETractSys2ActVal() (cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.QualifierTqEmETractSys2ActVal_phy )
+
+#define get_PT_TracEMacElectc2Time10msNo1_QualifierRpmEmETractSys2ActVal() (cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.QualifierRpmEmETractSys2ActVal_phy )
+
+#define get_PT_TracEMacElectc2Time10msNo1_Qu_CurrDrctCurrETractSys2ActVal() (cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.Qu_CurrDrctCurrETractSys2ActVal_phy )
+
+#define get_PT_TracEMacElectc2Time10msNo1_StatusArbRpmETractSys2Limit() (cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.StatusArbRpmETractSys2Limit_phy )
+
+#define get_PT_TracEMacElectc2Time10msNo1_SumWhlTqIntvETractSys2() ((float32)cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.SumWhlTqIntvETractSys2_phy * cap_TracEMacElectc2Time10msNo1_SumWhlTqIntvETractSys2_PT_Factor_C + cap_TracEMacElectc2Time10msNo1_SumWhlTqIntvETractSys2_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time10msNo1_StETractSys2Asd() (cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.StETractSys2Asd_phy )
+
+#define get_PT_TracEMacElectc2Time10msNo1_PowerETractSys2LossActualValue() ((float32)cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.PowerETractSys2LossActualValue_phy * cap_TracEMacElectc2Time10msNo1_PowerETractSys2LossActualValue_PT_Factor_C + cap_TracEMacElectc2Time10msNo1_PowerETractSys2LossActualValue_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time10msNo1_TarTqETractSys2NControlStatic() ((float32)cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.TarTqETractSys2NControlStatic_phy * cap_TracEMacElectc2Time10msNo1_TarTqETractSys2NControlStatic_PT_Factor_C + cap_TracEMacElectc2Time10msNo1_TarTqETractSys2NControlStatic_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time10msNo1_PwrLossPrednETractSys2Mot() ((float32)cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.PwrLossPrednETractSys2Mot_phy * cap_TracEMacElectc2Time10msNo1_PwrLossPrednETractSys2Mot_PT_Factor_C + cap_TracEMacElectc2Time10msNo1_PwrLossPrednETractSys2Mot_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time10msNo1_PwrLossPrednETractSys2Genr() ((float32)cap_canApiMsg_TracEMacElectc2Time10msNo1_PT.PwrLossPrednETractSys2Genr_phy * cap_TracEMacElectc2Time10msNo1_PwrLossPrednETractSys2Genr_PT_Factor_C + cap_TracEMacElectc2Time10msNo1_PwrLossPrednETractSys2Genr_PT_Offset_C)
+
+
+#define get_PT_BMS_PowerCont_CRC_BMS_PowerCont() (cap_canApiMsg_BMS_PowerCont_PT.CRC_BMS_PowerCont_phy )
+
+#define get_PT_BMS_PowerCont_ALV_BMS_PowerCont() (cap_canApiMsg_BMS_PowerCont_PT.ALV_BMS_PowerCont_phy )
+
+#define get_PT_BMS_PowerCont_BMS_MaxDischgCurrentLim() ((float32)cap_canApiMsg_BMS_PowerCont_PT.BMS_MaxDischgCurrentLim_phy * cap_BMS_PowerCont_BMS_MaxDischgCurrentLim_PT_Factor_C + cap_BMS_PowerCont_BMS_MaxDischgCurrentLim_PT_Offset_C)
+
+#define get_PT_BMS_PowerCont_BMS_MaxDischgCurrentLimPeak() ((float32)cap_canApiMsg_BMS_PowerCont_PT.BMS_MaxDischgCurrentLimPeak_phy * cap_BMS_PowerCont_BMS_MaxDischgCurrentLimPeak_PT_Factor_C + cap_BMS_PowerCont_BMS_MaxDischgCurrentLimPeak_PT_Offset_C)
+
+#define get_PT_BMS_PowerCont_BMS_MaxDischgCurrent2s() ((float32)cap_canApiMsg_BMS_PowerCont_PT.BMS_MaxDischgCurrent2s_phy * cap_BMS_PowerCont_BMS_MaxDischgCurrent2s_PT_Factor_C + cap_BMS_PowerCont_BMS_MaxDischgCurrent2s_PT_Offset_C)
+
+#define get_PT_BMS_PowerCont_BMS_MaxDischgCurrent10s() ((float32)cap_canApiMsg_BMS_PowerCont_PT.BMS_MaxDischgCurrent10s_phy * cap_BMS_PowerCont_BMS_MaxDischgCurrent10s_PT_Factor_C + cap_BMS_PowerCont_BMS_MaxDischgCurrent10s_PT_Offset_C)
+
+#define get_PT_BMS_PowerCont_BMS_MaxDischgCurrent30s() ((float32)cap_canApiMsg_BMS_PowerCont_PT.BMS_MaxDischgCurrent30s_phy * cap_BMS_PowerCont_BMS_MaxDischgCurrent30s_PT_Factor_C + cap_BMS_PowerCont_BMS_MaxDischgCurrent30s_PT_Offset_C)
+
+#define get_PT_BMS_PowerCont_BMS_MaxDischgPwrLim() ((float32)cap_canApiMsg_BMS_PowerCont_PT.BMS_MaxDischgPwrLim_phy * cap_BMS_PowerCont_BMS_MaxDischgPwrLim_PT_Factor_C + cap_BMS_PowerCont_BMS_MaxDischgPwrLim_PT_Offset_C)
+
+#define get_PT_BMS_PowerCont_BMS_MaxDischgPwrLimPeak() ((float32)cap_canApiMsg_BMS_PowerCont_PT.BMS_MaxDischgPwrLimPeak_phy * cap_BMS_PowerCont_BMS_MaxDischgPwrLimPeak_PT_Factor_C + cap_BMS_PowerCont_BMS_MaxDischgPwrLimPeak_PT_Offset_C)
+
+#define get_PT_BMS_PowerCont_BMS_MaxDischgPwr2s() ((float32)cap_canApiMsg_BMS_PowerCont_PT.BMS_MaxDischgPwr2s_phy * cap_BMS_PowerCont_BMS_MaxDischgPwr2s_PT_Factor_C + cap_BMS_PowerCont_BMS_MaxDischgPwr2s_PT_Offset_C)
+
+#define get_PT_BMS_PowerCont_BMS_MaxDischgPwr10s() ((float32)cap_canApiMsg_BMS_PowerCont_PT.BMS_MaxDischgPwr10s_phy * cap_BMS_PowerCont_BMS_MaxDischgPwr10s_PT_Factor_C + cap_BMS_PowerCont_BMS_MaxDischgPwr10s_PT_Offset_C)
+
+#define get_PT_BMS_PowerCont_BMS_MaxDischgPwr30s() ((float32)cap_canApiMsg_BMS_PowerCont_PT.BMS_MaxDischgPwr30s_phy * cap_BMS_PowerCont_BMS_MaxDischgPwr30s_PT_Factor_C + cap_BMS_PowerCont_BMS_MaxDischgPwr30s_PT_Offset_C)
+
+
+#define get_PT_BMS_RelayStatus_CRC_BMS_RelayStatus() (cap_canApiMsg_BMS_RelayStatus_PT.CRC_BMS_RelayStatus_phy )
+
+#define get_PT_BMS_RelayStatus_ALV_BMS_RelayStatus() (cap_canApiMsg_BMS_RelayStatus_PT.ALV_BMS_RelayStatus_phy )
+
+#define get_PT_BMS_RelayStatus_BMS_MainPosRelayStatus() (cap_canApiMsg_BMS_RelayStatus_PT.BMS_MainPosRelayStatus_phy )
+
+#define get_PT_BMS_RelayStatus_BMS_PreChgRelayStatus() (cap_canApiMsg_BMS_RelayStatus_PT.BMS_PreChgRelayStatus_phy )
+
+#define get_PT_BMS_RelayStatus_BMS_TotalNegRelayStatus() (cap_canApiMsg_BMS_RelayStatus_PT.BMS_TotalNegRelayStatus_phy )
+
+#define get_PT_BMS_RelayStatus_BMS_MainPosRelayErr() (cap_canApiMsg_BMS_RelayStatus_PT.BMS_MainPosRelayErr_phy )
+
+#define get_PT_BMS_RelayStatus_BMS_TotalNegRelayErr() (cap_canApiMsg_BMS_RelayStatus_PT.BMS_TotalNegRelayErr_phy )
+
+#define get_PT_BMS_RelayStatus_BMS_PreChgRelayErr() (cap_canApiMsg_BMS_RelayStatus_PT.BMS_PreChgRelayErr_phy )
+
+#define get_PT_BMS_RelayStatus_BMS_DCFCPosRelayStatus() (cap_canApiMsg_BMS_RelayStatus_PT.BMS_DCFCPosRelayStatus_phy )
+
+#define get_PT_BMS_RelayStatus_BMS_DCFCNegRelayStatus() (cap_canApiMsg_BMS_RelayStatus_PT.BMS_DCFCNegRelayStatus_phy )
+
+#define get_PT_BMS_RelayStatus_BMS_DCFCPosRelayErr() (cap_canApiMsg_BMS_RelayStatus_PT.BMS_DCFCPosRelayErr_phy )
+
+#define get_PT_BMS_RelayStatus_BMS_DCFCNegRelayErr() (cap_canApiMsg_BMS_RelayStatus_PT.BMS_DCFCNegRelayErr_phy )
+
+
+#define get_PT_BMS_Sts_CRC_BMS_Sts() (cap_canApiMsg_BMS_Sts_PT.CRC_BMS_Sts_phy )
+
+#define get_PT_BMS_Sts_ALV_BMS_Sts() (cap_canApiMsg_BMS_Sts_PT.ALV_BMS_Sts_phy )
+
+#define get_PT_BMS_Sts_BMS_HVOnOffSts() (cap_canApiMsg_BMS_Sts_PT.BMS_HVOnOffSts_phy )
+
+#define get_PT_BMS_Sts_BMS_HVILSts() (cap_canApiMsg_BMS_Sts_PT.BMS_HVILSts_phy )
+
+#define get_PT_BMS_Sts_BMS_ErrLev() (cap_canApiMsg_BMS_Sts_PT.BMS_ErrLev_phy )
+
+#define get_PT_BMS_Sts_BMS_SysSts() (cap_canApiMsg_BMS_Sts_PT.BMS_SysSts_phy )
+
+#define get_PT_BMS_Sts_BMS_SocActualEst() ((float32)cap_canApiMsg_BMS_Sts_PT.BMS_SocActualEst_phy * cap_BMS_Sts_BMS_SocActualEst_PT_Factor_C + cap_BMS_Sts_BMS_SocActualEst_PT_Offset_C)
+
+#define get_PT_BMS_Sts_BMS_HWCrashSts() (cap_canApiMsg_BMS_Sts_PT.BMS_HWCrashSts_phy )
+
+#define get_PT_BMS_Sts_BMS_BatBalanceErr() (cap_canApiMsg_BMS_Sts_PT.BMS_BatBalanceErr_phy )
+
+#define get_PT_BMS_Sts_BMS_BalanceSts() (cap_canApiMsg_BMS_Sts_PT.BMS_BalanceSts_phy )
+
+#define get_PT_BMS_Sts_BMS_IGNSts() (cap_canApiMsg_BMS_Sts_PT.BMS_IGNSts_phy )
+
+#define get_PT_BMS_Sts_BMS_SocRelativeEst() ((float32)cap_canApiMsg_BMS_Sts_PT.BMS_SocRelativeEst_phy * cap_BMS_Sts_BMS_SocRelativeEst_PT_Factor_C + cap_BMS_Sts_BMS_SocRelativeEst_PT_Offset_C)
+
+#define get_PT_BMS_Sts_BMS_SOH() ((float32)cap_canApiMsg_BMS_Sts_PT.BMS_SOH_phy * cap_BMS_Sts_BMS_SOH_PT_Factor_C + cap_BMS_Sts_BMS_SOH_PT_Offset_C)
+
+#define get_PT_BMS_Sts_BMS_SOE() ((float32)cap_canApiMsg_BMS_Sts_PT.BMS_SOE_phy * cap_BMS_Sts_BMS_SOE_PT_Factor_C + cap_BMS_Sts_BMS_SOE_PT_Offset_C)
+
+#define get_PT_BMS_Sts_BMS_DisconnectRequestRsn() (cap_canApiMsg_BMS_Sts_PT.BMS_DisconnectRequestRsn_phy )
+
+#define get_PT_BMS_Sts_BMS_EmergencyDisconnectRsn() (cap_canApiMsg_BMS_Sts_PT.BMS_EmergencyDisconnectRsn_phy )
+
+#define get_PT_BMS_Sts_BMS_LimpHomeRsn() (cap_canApiMsg_BMS_Sts_PT.BMS_LimpHomeRsn_phy )
+
+
+#define get_PT_BMS_WarnMsg_CHSKM_BMS_WarnMsg() (cap_canApiMsg_BMS_WarnMsg_PT.CHSKM_BMS_WarnMsg_phy )
+
+#define get_PT_BMS_WarnMsg_ALV_BMS_WarnMsg() (cap_canApiMsg_BMS_WarnMsg_PT.ALV_BMS_WarnMsg_phy )
+
+#define get_PT_BMS_WarnMsg_BMS_PackTempSts() (cap_canApiMsg_BMS_WarnMsg_PT.BMS_PackTempSts_phy )
+
+#define get_PT_BMS_WarnMsg_BMS_ThermalRunaway() (cap_canApiMsg_BMS_WarnMsg_PT.BMS_ThermalRunaway_phy )
+
+#define get_PT_BMS_WarnMsg_BMS_BatteryReplacement() (cap_canApiMsg_BMS_WarnMsg_PT.BMS_BatteryReplacement_phy )
+
+#define get_PT_BMS_WarnMsg_BMS_Warning_Flag_5() (cap_canApiMsg_BMS_WarnMsg_PT.BMS_Warning_Flag_5_phy )
+
+#define get_PT_BMS_WarnMsg_BMS_Warning_Flag_6() (cap_canApiMsg_BMS_WarnMsg_PT.BMS_Warning_Flag_6_phy )
+
+#define get_PT_BMS_WarnMsg_BMS_Warning_Flag_7() (cap_canApiMsg_BMS_WarnMsg_PT.BMS_Warning_Flag_7_phy )
+
+#define get_PT_BMS_WarnMsg_BMS_Warning_Flag_8() (cap_canApiMsg_BMS_WarnMsg_PT.BMS_Warning_Flag_8_phy )
+
+#define get_PT_BMS_WarnMsg_BMS_Warning_Flag_9() (cap_canApiMsg_BMS_WarnMsg_PT.BMS_Warning_Flag_9_phy )
+
+#define get_PT_BMS_WarnMsg_BMS_MalfunctionSts() (cap_canApiMsg_BMS_WarnMsg_PT.BMS_MalfunctionSts_phy )
+
+#define get_PT_BMS_WarnMsg_BMS_LowBattery() (cap_canApiMsg_BMS_WarnMsg_PT.BMS_LowBattery_phy )
+
+#define get_PT_BMS_WarnMsg_BMS_Reserved_signal1() (cap_canApiMsg_BMS_WarnMsg_PT.BMS_Reserved_signal1_phy )
+
+#define get_PT_BMS_WarnMsg_BMS_Reserved_signal2() (cap_canApiMsg_BMS_WarnMsg_PT.BMS_Reserved_signal2_phy )
+
+#define get_PT_BMS_WarnMsg_BMS_Reserved_signal3() (cap_canApiMsg_BMS_WarnMsg_PT.BMS_Reserved_signal3_phy )
+
+#define get_PT_BMS_WarnMsg_BMS_Reserved_signal4() (cap_canApiMsg_BMS_WarnMsg_PT.BMS_Reserved_signal4_phy )
+
+#define get_PT_BMS_WarnMsg_BMS_Reserved_signal5() (cap_canApiMsg_BMS_WarnMsg_PT.BMS_Reserved_signal5_phy )
+
+
+#define get_PT_DCDC_VCU_Measure_Fbk_DCDC_MeasVs() ((float32)cap_canApiMsg_DCDC_VCU_Measure_Fbk_PT.DCDC_MeasVs_phy * cap_DCDC_VCU_Measure_Fbk_DCDC_MeasVs_PT_Factor_C + cap_DCDC_VCU_Measure_Fbk_DCDC_MeasVs_PT_Offset_C)
+
+#define get_PT_DCDC_VCU_Measure_Fbk_DCDC_MeasOutCurr() ((float32)cap_canApiMsg_DCDC_VCU_Measure_Fbk_PT.DCDC_MeasOutCurr_phy * cap_DCDC_VCU_Measure_Fbk_DCDC_MeasOutCurr_PT_Factor_C + cap_DCDC_VCU_Measure_Fbk_DCDC_MeasOutCurr_PT_Offset_C)
+
+#define get_PT_DCDC_VCU_Measure_Fbk_DCDC_MeasInVltg() ((float32)cap_canApiMsg_DCDC_VCU_Measure_Fbk_PT.DCDC_MeasInVltg_phy * cap_DCDC_VCU_Measure_Fbk_DCDC_MeasInVltg_PT_Factor_C + cap_DCDC_VCU_Measure_Fbk_DCDC_MeasInVltg_PT_Offset_C)
+
+#define get_PT_DCDC_VCU_Measure_Fbk_DCDC_MeasInCurrent() ((float32)cap_canApiMsg_DCDC_VCU_Measure_Fbk_PT.DCDC_MeasInCurrent_phy * cap_DCDC_VCU_Measure_Fbk_DCDC_MeasInCurrent_PT_Factor_C + cap_DCDC_VCU_Measure_Fbk_DCDC_MeasInCurrent_PT_Offset_C)
+
+
+#define get_PT_DCDC_VCU_Req_Fbk_DCDC_EnableDCDCFbk() (cap_canApiMsg_DCDC_VCU_Req_Fbk_PT.DCDC_EnableDCDCFbk_phy )
+
+#define get_PT_DCDC_VCU_Req_Fbk_DCDC_Status() (cap_canApiMsg_DCDC_VCU_Req_Fbk_PT.DCDC_Status_phy )
+
+#define get_PT_DCDC_VCU_Req_Fbk_DCDC_OutVltgReqFbk() ((float32)cap_canApiMsg_DCDC_VCU_Req_Fbk_PT.DCDC_OutVltgReqFbk_phy * cap_DCDC_VCU_Req_Fbk_DCDC_OutVltgReqFbk_PT_Factor_C + cap_DCDC_VCU_Req_Fbk_DCDC_OutVltgReqFbk_PT_Offset_C)
+
+#define get_PT_DCDC_VCU_Req_Fbk_DCDC_OutCurrReqFbk() ((float32)cap_canApiMsg_DCDC_VCU_Req_Fbk_PT.DCDC_OutCurrReqFbk_phy * cap_DCDC_VCU_Req_Fbk_DCDC_OutCurrReqFbk_PT_Factor_C + cap_DCDC_VCU_Req_Fbk_DCDC_OutCurrReqFbk_PT_Offset_C)
+
+#define get_PT_DCDC_VCU_Req_Fbk_DCDC_MaxCurrentOut() ((float32)cap_canApiMsg_DCDC_VCU_Req_Fbk_PT.DCDC_MaxCurrentOut_phy * cap_DCDC_VCU_Req_Fbk_DCDC_MaxCurrentOut_PT_Factor_C + cap_DCDC_VCU_Req_Fbk_DCDC_MaxCurrentOut_PT_Offset_C)
+
+
+#define get_PT_TracEMacElectc1Time100msNo1_CRC_TracEMacElectc1Time100msNo1() (cap_canApiMsg_TracEMacElectc1Time100msNo1_PT.CRC_TracEMacElectc1Time100msNo1_phy )
+
+#define get_PT_TracEMacElectc1Time100msNo1_ALIV_TracEMacElectc1Time100msNo1() (cap_canApiMsg_TracEMacElectc1Time100msNo1_PT.ALIV_TracEMacElectc1Time100msNo1_phy )
+
+#define get_PT_TracEMacElectc1Time100msNo1_StatusETractSys1Error() (cap_canApiMsg_TracEMacElectc1Time100msNo1_PT.StatusETractSys1Error_phy )
+
+#define get_PT_TracEMacElectc1Time100msNo1_StatusETractSys1Degradation() (cap_canApiMsg_TracEMacElectc1Time100msNo1_PT.StatusETractSys1Degradation_phy )
+
+#define get_PT_TracEMacElectc1Time100msNo1_ActStatMeclLossesGbxETractSys1() (cap_canApiMsg_TracEMacElectc1Time100msNo1_PT.ActStatMeclLossesGbxETractSys1_phy )
+
+#define get_PT_TracEMacElectc1Time100msNo1_TETractSys1CoolantWaterInpActVal() ((float32)cap_canApiMsg_TracEMacElectc1Time100msNo1_PT.TETractSys1CoolantWaterInpActVal_phy * cap_TracEMacElectc1Time100msNo1_TETractSys1CoolantWaterInpActVal_PT_Factor_C + cap_TracEMacElectc1Time100msNo1_TETractSys1CoolantWaterInpActVal_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time100msNo1_StatusETractSys1CoolingActVal() (cap_canApiMsg_TracEMacElectc1Time100msNo1_PT.StatusETractSys1CoolingActVal_phy )
+
+#define get_PT_TracEMacElectc1Time100msNo1_OpModETractSys1ActVal() (cap_canApiMsg_TracEMacElectc1Time100msNo1_PT.OpModETractSys1ActVal_phy )
+
+#define get_PT_TracEMacElectc1Time100msNo1_StatusETractSys1LossActive() (cap_canApiMsg_TracEMacElectc1Time100msNo1_PT.StatusETractSys1LossActive_phy )
+
+#define get_PT_TracEMacElectc1Time100msNo1_PowerETractSys1MaximumLossActive() ((float32)cap_canApiMsg_TracEMacElectc1Time100msNo1_PT.PowerETractSys1MaximumLossActive_phy * cap_TracEMacElectc1Time100msNo1_PowerETractSys1MaximumLossActive_PT_Factor_C + cap_TracEMacElectc1Time100msNo1_PowerETractSys1MaximumLossActive_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time100msNo1_WhlRatElAxlEtractSys1ActVal() ((float32)cap_canApiMsg_TracEMacElectc1Time100msNo1_PT.WhlRatElAxlEtractSys1ActVal_phy * cap_TracEMacElectc1Time100msNo1_WhlRatElAxlEtractSys1ActVal_PT_Factor_C + cap_TracEMacElectc1Time100msNo1_WhlRatElAxlEtractSys1ActVal_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time100msNo1_PercentUsedExtraBoostETractSys1() ((float32)cap_canApiMsg_TracEMacElectc1Time100msNo1_PT.PercentUsedExtraBoostETractSys1_phy * cap_TracEMacElectc1Time100msNo1_PercentUsedExtraBoostETractSys1_PT_Factor_C + cap_TracEMacElectc1Time100msNo1_PercentUsedExtraBoostETractSys1_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time100msNo1_StatusExtraBoostETractSys1() (cap_canApiMsg_TracEMacElectc1Time100msNo1_PT.StatusExtraBoostETractSys1_phy )
+
+#define get_PT_TracEMacElectc1Time100msNo1_TETractSys1EmRotorActVal() ((float32)cap_canApiMsg_TracEMacElectc1Time100msNo1_PT.TETractSys1EmRotorActVal_phy * cap_TracEMacElectc1Time100msNo1_TETractSys1EmRotorActVal_PT_Factor_C + cap_TracEMacElectc1Time100msNo1_TETractSys1EmRotorActVal_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time100msNo1_ThermalStressLevelETractSys1() ((float32)cap_canApiMsg_TracEMacElectc1Time100msNo1_PT.ThermalStressLevelETractSys1_phy * cap_TracEMacElectc1Time100msNo1_ThermalStressLevelETractSys1_PT_Factor_C + cap_TracEMacElectc1Time100msNo1_ThermalStressLevelETractSys1_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time100msNo1_TETractSys1EmStatorActVal() ((float32)cap_canApiMsg_TracEMacElectc1Time100msNo1_PT.TETractSys1EmStatorActVal_phy * cap_TracEMacElectc1Time100msNo1_TETractSys1EmStatorActVal_PT_Factor_C + cap_TracEMacElectc1Time100msNo1_TETractSys1EmStatorActVal_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time100msNo1_TETractSys1InverterActVal() ((float32)cap_canApiMsg_TracEMacElectc1Time100msNo1_PT.TETractSys1InverterActVal_phy * cap_TracEMacElectc1Time100msNo1_TETractSys1InverterActVal_PT_Factor_C + cap_TracEMacElectc1Time100msNo1_TETractSys1InverterActVal_PT_Offset_C)
+
+#define get_PT_TracEMacElectc1Time100msNo1_TETractSys1GbxOilActVal() ((float32)cap_canApiMsg_TracEMacElectc1Time100msNo1_PT.TETractSys1GbxOilActVal_phy * cap_TracEMacElectc1Time100msNo1_TETractSys1GbxOilActVal_PT_Factor_C + cap_TracEMacElectc1Time100msNo1_TETractSys1GbxOilActVal_PT_Offset_C)
+
+
+#define get_PT_TracEMacElectc2Time100msNo1_CRC_TracEMacElectc2Time100msNo1() (cap_canApiMsg_TracEMacElectc2Time100msNo1_PT.CRC_TracEMacElectc2Time100msNo1_phy )
+
+#define get_PT_TracEMacElectc2Time100msNo1_ALIV_TracEMacElectc2Time100msNo1() (cap_canApiMsg_TracEMacElectc2Time100msNo1_PT.ALIV_TracEMacElectc2Time100msNo1_phy )
+
+#define get_PT_TracEMacElectc2Time100msNo1_StatusETractSys2Error() (cap_canApiMsg_TracEMacElectc2Time100msNo1_PT.StatusETractSys2Error_phy )
+
+#define get_PT_TracEMacElectc2Time100msNo1_StatusETractSys2Degradation() (cap_canApiMsg_TracEMacElectc2Time100msNo1_PT.StatusETractSys2Degradation_phy )
+
+#define get_PT_TracEMacElectc2Time100msNo1_ActStatMeclLossesGbxETractSys2() (cap_canApiMsg_TracEMacElectc2Time100msNo1_PT.ActStatMeclLossesGbxETractSys2_phy )
+
+#define get_PT_TracEMacElectc2Time100msNo1_TETractSys2CoolantWaterInpActVal() ((float32)cap_canApiMsg_TracEMacElectc2Time100msNo1_PT.TETractSys2CoolantWaterInpActVal_phy * cap_TracEMacElectc2Time100msNo1_TETractSys2CoolantWaterInpActVal_PT_Factor_C + cap_TracEMacElectc2Time100msNo1_TETractSys2CoolantWaterInpActVal_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time100msNo1_StatusETractSys2CoolingActVal() (cap_canApiMsg_TracEMacElectc2Time100msNo1_PT.StatusETractSys2CoolingActVal_phy )
+
+#define get_PT_TracEMacElectc2Time100msNo1_OpModETractSys2ActVal() (cap_canApiMsg_TracEMacElectc2Time100msNo1_PT.OpModETractSys2ActVal_phy )
+
+#define get_PT_TracEMacElectc2Time100msNo1_StatusETractSys2LossActive() (cap_canApiMsg_TracEMacElectc2Time100msNo1_PT.StatusETractSys2LossActive_phy )
+
+#define get_PT_TracEMacElectc2Time100msNo1_PowerETractSys2MaximumLossActive() ((float32)cap_canApiMsg_TracEMacElectc2Time100msNo1_PT.PowerETractSys2MaximumLossActive_phy * cap_TracEMacElectc2Time100msNo1_PowerETractSys2MaximumLossActive_PT_Factor_C + cap_TracEMacElectc2Time100msNo1_PowerETractSys2MaximumLossActive_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time100msNo1_WhlRatElAxlEtractSys2ActVal() ((float32)cap_canApiMsg_TracEMacElectc2Time100msNo1_PT.WhlRatElAxlEtractSys2ActVal_phy * cap_TracEMacElectc2Time100msNo1_WhlRatElAxlEtractSys2ActVal_PT_Factor_C + cap_TracEMacElectc2Time100msNo1_WhlRatElAxlEtractSys2ActVal_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time100msNo1_PercentUsedExtraBoostETractSys2() ((float32)cap_canApiMsg_TracEMacElectc2Time100msNo1_PT.PercentUsedExtraBoostETractSys2_phy * cap_TracEMacElectc2Time100msNo1_PercentUsedExtraBoostETractSys2_PT_Factor_C + cap_TracEMacElectc2Time100msNo1_PercentUsedExtraBoostETractSys2_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time100msNo1_StatusExtraBoostETractSys2() (cap_canApiMsg_TracEMacElectc2Time100msNo1_PT.StatusExtraBoostETractSys2_phy )
+
+#define get_PT_TracEMacElectc2Time100msNo1_TETractSys2EmRotorActVal() ((float32)cap_canApiMsg_TracEMacElectc2Time100msNo1_PT.TETractSys2EmRotorActVal_phy * cap_TracEMacElectc2Time100msNo1_TETractSys2EmRotorActVal_PT_Factor_C + cap_TracEMacElectc2Time100msNo1_TETractSys2EmRotorActVal_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time100msNo1_ThermalStressLevelETractSys2() ((float32)cap_canApiMsg_TracEMacElectc2Time100msNo1_PT.ThermalStressLevelETractSys2_phy * cap_TracEMacElectc2Time100msNo1_ThermalStressLevelETractSys2_PT_Factor_C + cap_TracEMacElectc2Time100msNo1_ThermalStressLevelETractSys2_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time100msNo1_TETractSys2EmStatorActVal() ((float32)cap_canApiMsg_TracEMacElectc2Time100msNo1_PT.TETractSys2EmStatorActVal_phy * cap_TracEMacElectc2Time100msNo1_TETractSys2EmStatorActVal_PT_Factor_C + cap_TracEMacElectc2Time100msNo1_TETractSys2EmStatorActVal_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time100msNo1_TETractSys2InverterActVal() ((float32)cap_canApiMsg_TracEMacElectc2Time100msNo1_PT.TETractSys2InverterActVal_phy * cap_TracEMacElectc2Time100msNo1_TETractSys2InverterActVal_PT_Factor_C + cap_TracEMacElectc2Time100msNo1_TETractSys2InverterActVal_PT_Offset_C)
+
+#define get_PT_TracEMacElectc2Time100msNo1_TETractSys2GbxOilActVal() ((float32)cap_canApiMsg_TracEMacElectc2Time100msNo1_PT.TETractSys2GbxOilActVal_phy * cap_TracEMacElectc2Time100msNo1_TETractSys2GbxOilActVal_PT_Factor_C + cap_TracEMacElectc2Time100msNo1_TETractSys2GbxOilActVal_PT_Offset_C)
+
+
+#define get_PT_BMS_CellTemp_CRC_BMS_CellTemp() (cap_canApiMsg_BMS_CellTemp_PT.CRC_BMS_CellTemp_phy )
+
+#define get_PT_BMS_CellTemp_ALV_BMS_CellTemp() (cap_canApiMsg_BMS_CellTemp_PT.ALV_BMS_CellTemp_phy )
+
+#define get_PT_BMS_CellTemp_BMS_MinCellTemp() ((float32)cap_canApiMsg_BMS_CellTemp_PT.BMS_MinCellTemp_phy * cap_BMS_CellTemp_BMS_MinCellTemp_PT_Factor_C + cap_BMS_CellTemp_BMS_MinCellTemp_PT_Offset_C)
+
+#define get_PT_BMS_CellTemp_BMS_PackTemp() ((float32)cap_canApiMsg_BMS_CellTemp_PT.BMS_PackTemp_phy * cap_BMS_CellTemp_BMS_PackTemp_PT_Factor_C + cap_BMS_CellTemp_BMS_PackTemp_PT_Offset_C)
+
+#define get_PT_BMS_CellTemp_BMS_MaxCellTemp() ((float32)cap_canApiMsg_BMS_CellTemp_PT.BMS_MaxCellTemp_phy * cap_BMS_CellTemp_BMS_MaxCellTemp_PT_Factor_C + cap_BMS_CellTemp_BMS_MaxCellTemp_PT_Offset_C)
+
+#define get_PT_BMS_CellTemp_BMS_ProbeNumMaxCellTemp() (cap_canApiMsg_BMS_CellTemp_PT.BMS_ProbeNumMaxCellTemp_phy )
+
+#define get_PT_BMS_CellTemp_BMS_ProbeNumMinCellTemp() (cap_canApiMsg_BMS_CellTemp_PT.BMS_ProbeNumMinCellTemp_phy )
+
+#define get_PT_BMS_CellTemp_BMS_MaxMinDiffCellTemp() ((float32)cap_canApiMsg_BMS_CellTemp_PT.BMS_MaxMinDiffCellTemp_phy * cap_BMS_CellTemp_BMS_MaxMinDiffCellTemp_PT_Factor_C + cap_BMS_CellTemp_BMS_MaxMinDiffCellTemp_PT_Offset_C)
+
+
+#define get_PT_BMS_CellTempMeas_CRC_BMS_CellTempMeas() (cap_canApiMsg_BMS_CellTempMeas_PT.CRC_BMS_CellTempMeas_phy )
+
+#define get_PT_BMS_CellTempMeas_ALV_BMS_CellTempMeas() (cap_canApiMsg_BMS_CellTempMeas_PT.ALV_BMS_CellTempMeas_phy )
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp1() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp1_phy * cap_BMS_CellTempMeas_BMS_CellTemp1_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp1_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp2() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp2_phy * cap_BMS_CellTempMeas_BMS_CellTemp2_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp2_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp3() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp3_phy * cap_BMS_CellTempMeas_BMS_CellTemp3_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp3_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp4() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp4_phy * cap_BMS_CellTempMeas_BMS_CellTemp4_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp4_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp5() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp5_phy * cap_BMS_CellTempMeas_BMS_CellTemp5_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp5_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp6() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp6_phy * cap_BMS_CellTempMeas_BMS_CellTemp6_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp6_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp7() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp7_phy * cap_BMS_CellTempMeas_BMS_CellTemp7_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp7_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp8() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp8_phy * cap_BMS_CellTempMeas_BMS_CellTemp8_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp8_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp9() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp9_phy * cap_BMS_CellTempMeas_BMS_CellTemp9_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp9_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp10() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp10_phy * cap_BMS_CellTempMeas_BMS_CellTemp10_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp10_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp11() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp11_phy * cap_BMS_CellTempMeas_BMS_CellTemp11_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp11_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp12() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp12_phy * cap_BMS_CellTempMeas_BMS_CellTemp12_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp12_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp13() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp13_phy * cap_BMS_CellTempMeas_BMS_CellTemp13_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp13_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp14() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp14_phy * cap_BMS_CellTempMeas_BMS_CellTemp14_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp14_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp15() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp15_phy * cap_BMS_CellTempMeas_BMS_CellTemp15_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp15_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp16() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp16_phy * cap_BMS_CellTempMeas_BMS_CellTemp16_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp16_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp17() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp17_phy * cap_BMS_CellTempMeas_BMS_CellTemp17_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp17_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp18() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp18_phy * cap_BMS_CellTempMeas_BMS_CellTemp18_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp18_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp19() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp19_phy * cap_BMS_CellTempMeas_BMS_CellTemp19_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp19_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp20() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp20_phy * cap_BMS_CellTempMeas_BMS_CellTemp20_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp20_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp21() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp21_phy * cap_BMS_CellTempMeas_BMS_CellTemp21_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp21_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp22() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp22_phy * cap_BMS_CellTempMeas_BMS_CellTemp22_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp22_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp23() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp23_phy * cap_BMS_CellTempMeas_BMS_CellTemp23_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp23_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp24() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp24_phy * cap_BMS_CellTempMeas_BMS_CellTemp24_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp24_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp25() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp25_phy * cap_BMS_CellTempMeas_BMS_CellTemp25_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp25_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp26() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp26_phy * cap_BMS_CellTempMeas_BMS_CellTemp26_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp26_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp27() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp27_phy * cap_BMS_CellTempMeas_BMS_CellTemp27_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp27_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp28() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp28_phy * cap_BMS_CellTempMeas_BMS_CellTemp28_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp28_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp29() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp29_phy * cap_BMS_CellTempMeas_BMS_CellTemp29_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp29_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp30() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp30_phy * cap_BMS_CellTempMeas_BMS_CellTemp30_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp30_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp31() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp31_phy * cap_BMS_CellTempMeas_BMS_CellTemp31_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp31_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp32() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp32_phy * cap_BMS_CellTempMeas_BMS_CellTemp32_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp32_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp33() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp33_phy * cap_BMS_CellTempMeas_BMS_CellTemp33_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp33_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp34() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp34_phy * cap_BMS_CellTempMeas_BMS_CellTemp34_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp34_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp35() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp35_phy * cap_BMS_CellTempMeas_BMS_CellTemp35_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp35_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp36() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp36_phy * cap_BMS_CellTempMeas_BMS_CellTemp36_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp36_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp37() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp37_phy * cap_BMS_CellTempMeas_BMS_CellTemp37_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp37_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp38() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp38_phy * cap_BMS_CellTempMeas_BMS_CellTemp38_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp38_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp39() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp39_phy * cap_BMS_CellTempMeas_BMS_CellTemp39_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp39_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp40() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp40_phy * cap_BMS_CellTempMeas_BMS_CellTemp40_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp40_PT_Offset_C)
+
+#define get_PT_BMS_CellTempMeas_BMS_CellTemp41() ((float32)cap_canApiMsg_BMS_CellTempMeas_PT.BMS_CellTemp41_phy * cap_BMS_CellTempMeas_BMS_CellTemp41_PT_Factor_C + cap_BMS_CellTempMeas_BMS_CellTemp41_PT_Offset_C)
+
+
+#define get_PT_BMS_CellVolMeas1_CRC_BMS_CellVolMeas() (cap_canApiMsg_BMS_CellVolMeas1_PT.CRC_BMS_CellVolMeas_phy )
+
+#define get_PT_BMS_CellVolMeas1_ALV_BMS_CellVolMeas() (cap_canApiMsg_BMS_CellVolMeas1_PT.ALV_BMS_CellVolMeas_phy )
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol1() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol1_phy * cap_BMS_CellVolMeas1_BMS_CellVol1_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol1_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol2() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol2_phy * cap_BMS_CellVolMeas1_BMS_CellVol2_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol2_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol3() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol3_phy * cap_BMS_CellVolMeas1_BMS_CellVol3_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol3_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol4() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol4_phy * cap_BMS_CellVolMeas1_BMS_CellVol4_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol4_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol5() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol5_phy * cap_BMS_CellVolMeas1_BMS_CellVol5_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol5_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol6() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol6_phy * cap_BMS_CellVolMeas1_BMS_CellVol6_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol6_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol7() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol7_phy * cap_BMS_CellVolMeas1_BMS_CellVol7_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol7_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol8() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol8_phy * cap_BMS_CellVolMeas1_BMS_CellVol8_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol8_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol9() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol9_phy * cap_BMS_CellVolMeas1_BMS_CellVol9_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol9_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol10() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol10_phy * cap_BMS_CellVolMeas1_BMS_CellVol10_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol10_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol11() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol11_phy * cap_BMS_CellVolMeas1_BMS_CellVol11_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol11_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol12() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol12_phy * cap_BMS_CellVolMeas1_BMS_CellVol12_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol12_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol13() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol13_phy * cap_BMS_CellVolMeas1_BMS_CellVol13_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol13_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol14() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol14_phy * cap_BMS_CellVolMeas1_BMS_CellVol14_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol14_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol15() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol15_phy * cap_BMS_CellVolMeas1_BMS_CellVol15_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol15_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol16() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol16_phy * cap_BMS_CellVolMeas1_BMS_CellVol16_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol16_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol17() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol17_phy * cap_BMS_CellVolMeas1_BMS_CellVol17_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol17_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol18() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol18_phy * cap_BMS_CellVolMeas1_BMS_CellVol18_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol18_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol19() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol19_phy * cap_BMS_CellVolMeas1_BMS_CellVol19_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol19_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol20() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol20_phy * cap_BMS_CellVolMeas1_BMS_CellVol20_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol20_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol21() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol21_phy * cap_BMS_CellVolMeas1_BMS_CellVol21_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol21_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol22() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol22_phy * cap_BMS_CellVolMeas1_BMS_CellVol22_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol22_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol23() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol23_phy * cap_BMS_CellVolMeas1_BMS_CellVol23_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol23_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol24() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol24_phy * cap_BMS_CellVolMeas1_BMS_CellVol24_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol24_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol25() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol25_phy * cap_BMS_CellVolMeas1_BMS_CellVol25_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol25_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol26() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol26_phy * cap_BMS_CellVolMeas1_BMS_CellVol26_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol26_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol27() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol27_phy * cap_BMS_CellVolMeas1_BMS_CellVol27_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol27_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol28() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol28_phy * cap_BMS_CellVolMeas1_BMS_CellVol28_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol28_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol29() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol29_phy * cap_BMS_CellVolMeas1_BMS_CellVol29_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol29_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas1_BMS_CellVol30() ((float32)cap_canApiMsg_BMS_CellVolMeas1_PT.BMS_CellVol30_phy * cap_BMS_CellVolMeas1_BMS_CellVol30_PT_Factor_C + cap_BMS_CellVolMeas1_BMS_CellVol30_PT_Offset_C)
+
+
+#define get_PT_BMS_CellVolMeas2_CRC_BMS_CellVolMeas2() (cap_canApiMsg_BMS_CellVolMeas2_PT.CRC_BMS_CellVolMeas2_phy )
+
+#define get_PT_BMS_CellVolMeas2_ALV_BMS_CellVolMeas2() (cap_canApiMsg_BMS_CellVolMeas2_PT.ALV_BMS_CellVolMeas2_phy )
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol31() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol31_phy * cap_BMS_CellVolMeas2_BMS_CellVol31_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol31_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol32() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol32_phy * cap_BMS_CellVolMeas2_BMS_CellVol32_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol32_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol33() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol33_phy * cap_BMS_CellVolMeas2_BMS_CellVol33_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol33_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol34() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol34_phy * cap_BMS_CellVolMeas2_BMS_CellVol34_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol34_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol35() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol35_phy * cap_BMS_CellVolMeas2_BMS_CellVol35_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol35_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol36() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol36_phy * cap_BMS_CellVolMeas2_BMS_CellVol36_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol36_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol37() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol37_phy * cap_BMS_CellVolMeas2_BMS_CellVol37_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol37_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol38() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol38_phy * cap_BMS_CellVolMeas2_BMS_CellVol38_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol38_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol39() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol39_phy * cap_BMS_CellVolMeas2_BMS_CellVol39_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol39_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol40() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol40_phy * cap_BMS_CellVolMeas2_BMS_CellVol40_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol40_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol41() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol41_phy * cap_BMS_CellVolMeas2_BMS_CellVol41_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol41_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol42() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol42_phy * cap_BMS_CellVolMeas2_BMS_CellVol42_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol42_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol43() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol43_phy * cap_BMS_CellVolMeas2_BMS_CellVol43_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol43_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol44() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol44_phy * cap_BMS_CellVolMeas2_BMS_CellVol44_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol44_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol45() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol45_phy * cap_BMS_CellVolMeas2_BMS_CellVol45_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol45_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol46() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol46_phy * cap_BMS_CellVolMeas2_BMS_CellVol46_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol46_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol47() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol47_phy * cap_BMS_CellVolMeas2_BMS_CellVol47_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol47_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol48() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol48_phy * cap_BMS_CellVolMeas2_BMS_CellVol48_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol48_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol49() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol49_phy * cap_BMS_CellVolMeas2_BMS_CellVol49_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol49_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol50() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol50_phy * cap_BMS_CellVolMeas2_BMS_CellVol50_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol50_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol51() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol51_phy * cap_BMS_CellVolMeas2_BMS_CellVol51_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol51_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol52() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol52_phy * cap_BMS_CellVolMeas2_BMS_CellVol52_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol52_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol53() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol53_phy * cap_BMS_CellVolMeas2_BMS_CellVol53_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol53_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol54() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol54_phy * cap_BMS_CellVolMeas2_BMS_CellVol54_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol54_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol55() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol55_phy * cap_BMS_CellVolMeas2_BMS_CellVol55_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol55_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol56() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol56_phy * cap_BMS_CellVolMeas2_BMS_CellVol56_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol56_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol57() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol57_phy * cap_BMS_CellVolMeas2_BMS_CellVol57_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol57_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol58() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol58_phy * cap_BMS_CellVolMeas2_BMS_CellVol58_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol58_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol59() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol59_phy * cap_BMS_CellVolMeas2_BMS_CellVol59_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol59_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol60() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol60_phy * cap_BMS_CellVolMeas2_BMS_CellVol60_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol60_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol61() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol61_phy * cap_BMS_CellVolMeas2_BMS_CellVol61_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol61_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas2_BMS_CellVol62() ((float32)cap_canApiMsg_BMS_CellVolMeas2_PT.BMS_CellVol62_phy * cap_BMS_CellVolMeas2_BMS_CellVol62_PT_Factor_C + cap_BMS_CellVolMeas2_BMS_CellVol62_PT_Offset_C)
+
+
+#define get_PT_OBC_Status_OBC_VCU_Status() (cap_canApiMsg_OBC_Status_PT.OBC_VCU_Status_phy )
+
+#define get_PT_OBC_Status_OBC_Max_Current_Out() ((float32)cap_canApiMsg_OBC_Status_PT.OBC_Max_Current_Out_phy * cap_OBC_Status_OBC_Max_Current_Out_PT_Factor_C + cap_OBC_Status_OBC_Max_Current_Out_PT_Offset_C)
+
+#define get_PT_OBC_Status_OBC_VCU_iAC_L1() ((float32)cap_canApiMsg_OBC_Status_PT.OBC_VCU_iAC_L1_phy * cap_OBC_Status_OBC_VCU_iAC_L1_PT_Factor_C + cap_OBC_Status_OBC_VCU_iAC_L1_PT_Offset_C)
+
+#define get_PT_OBC_Status_OBC_VCU_vAC_L1() (cap_canApiMsg_OBC_Status_PT.OBC_VCU_vAC_L1_phy )
+
+#define get_PT_OBC_Status_OBC_VCU_iAC_L2() ((float32)cap_canApiMsg_OBC_Status_PT.OBC_VCU_iAC_L2_phy * cap_OBC_Status_OBC_VCU_iAC_L2_PT_Factor_C + cap_OBC_Status_OBC_VCU_iAC_L2_PT_Offset_C)
+
+#define get_PT_OBC_Status_OBC_VCU_vAC_L2() (cap_canApiMsg_OBC_Status_PT.OBC_VCU_vAC_L2_phy )
+
+#define get_PT_OBC_Status_OBC_VCU_iAC_L3() ((float32)cap_canApiMsg_OBC_Status_PT.OBC_VCU_iAC_L3_phy * cap_OBC_Status_OBC_VCU_iAC_L3_PT_Factor_C + cap_OBC_Status_OBC_VCU_iAC_L3_PT_Offset_C)
+
+#define get_PT_OBC_Status_OBC_VCU_vAC_L3() (cap_canApiMsg_OBC_Status_PT.OBC_VCU_vAC_L3_phy )
+
+#define get_PT_OBC_Status_OBC_VCU_iDC() ((float32)cap_canApiMsg_OBC_Status_PT.OBC_VCU_iDC_phy * cap_OBC_Status_OBC_VCU_iDC_PT_Factor_C + cap_OBC_Status_OBC_VCU_iDC_PT_Offset_C)
+
+#define get_PT_OBC_Status_OBC_VCU_vDC() (cap_canApiMsg_OBC_Status_PT.OBC_VCU_vDC_phy )
+
+
+#define get_PT_BMS_CellVolMeas3_CRC_BMS_CellVolMeas3() (cap_canApiMsg_BMS_CellVolMeas3_PT.CRC_BMS_CellVolMeas3_phy )
+
+#define get_PT_BMS_CellVolMeas3_ALV_BMS_CellVolMeas3() (cap_canApiMsg_BMS_CellVolMeas3_PT.ALV_BMS_CellVolMeas3_phy )
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol63() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol63_phy * cap_BMS_CellVolMeas3_BMS_CellVol63_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol63_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol64() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol64_phy * cap_BMS_CellVolMeas3_BMS_CellVol64_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol64_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol65() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol65_phy * cap_BMS_CellVolMeas3_BMS_CellVol65_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol65_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol66() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol66_phy * cap_BMS_CellVolMeas3_BMS_CellVol66_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol66_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol67() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol67_phy * cap_BMS_CellVolMeas3_BMS_CellVol67_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol67_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol68() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol68_phy * cap_BMS_CellVolMeas3_BMS_CellVol68_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol68_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol69() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol69_phy * cap_BMS_CellVolMeas3_BMS_CellVol69_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol69_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol70() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol70_phy * cap_BMS_CellVolMeas3_BMS_CellVol70_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol70_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol71() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol71_phy * cap_BMS_CellVolMeas3_BMS_CellVol71_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol71_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol72() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol72_phy * cap_BMS_CellVolMeas3_BMS_CellVol72_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol72_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol73() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol73_phy * cap_BMS_CellVolMeas3_BMS_CellVol73_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol73_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol74() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol74_phy * cap_BMS_CellVolMeas3_BMS_CellVol74_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol74_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol75() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol75_phy * cap_BMS_CellVolMeas3_BMS_CellVol75_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol75_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol76() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol76_phy * cap_BMS_CellVolMeas3_BMS_CellVol76_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol76_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol77() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol77_phy * cap_BMS_CellVolMeas3_BMS_CellVol77_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol77_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol78() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol78_phy * cap_BMS_CellVolMeas3_BMS_CellVol78_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol78_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol79() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol79_phy * cap_BMS_CellVolMeas3_BMS_CellVol79_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol79_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol80() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol80_phy * cap_BMS_CellVolMeas3_BMS_CellVol80_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol80_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol81() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol81_phy * cap_BMS_CellVolMeas3_BMS_CellVol81_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol81_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol82() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol82_phy * cap_BMS_CellVolMeas3_BMS_CellVol82_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol82_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol83() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol83_phy * cap_BMS_CellVolMeas3_BMS_CellVol83_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol83_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol84() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol84_phy * cap_BMS_CellVolMeas3_BMS_CellVol84_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol84_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol85() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol85_phy * cap_BMS_CellVolMeas3_BMS_CellVol85_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol85_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol86() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol86_phy * cap_BMS_CellVolMeas3_BMS_CellVol86_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol86_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol87() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol87_phy * cap_BMS_CellVolMeas3_BMS_CellVol87_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol87_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol88() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol88_phy * cap_BMS_CellVolMeas3_BMS_CellVol88_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol88_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol89() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol89_phy * cap_BMS_CellVolMeas3_BMS_CellVol89_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol89_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol90() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol90_phy * cap_BMS_CellVolMeas3_BMS_CellVol90_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol90_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol91() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol91_phy * cap_BMS_CellVolMeas3_BMS_CellVol91_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol91_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol92() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol92_phy * cap_BMS_CellVolMeas3_BMS_CellVol92_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol92_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol93() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol93_phy * cap_BMS_CellVolMeas3_BMS_CellVol93_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol93_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol94() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol94_phy * cap_BMS_CellVolMeas3_BMS_CellVol94_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol94_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol95() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol95_phy * cap_BMS_CellVolMeas3_BMS_CellVol95_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol95_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol96() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol96_phy * cap_BMS_CellVolMeas3_BMS_CellVol96_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol96_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol97() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol97_phy * cap_BMS_CellVolMeas3_BMS_CellVol97_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol97_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol98() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol98_phy * cap_BMS_CellVolMeas3_BMS_CellVol98_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol98_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol99() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol99_phy * cap_BMS_CellVolMeas3_BMS_CellVol99_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol99_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol100() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol100_phy * cap_BMS_CellVolMeas3_BMS_CellVol100_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol100_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol101() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol101_phy * cap_BMS_CellVolMeas3_BMS_CellVol101_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol101_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol102() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol102_phy * cap_BMS_CellVolMeas3_BMS_CellVol102_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol102_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol103() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol103_phy * cap_BMS_CellVolMeas3_BMS_CellVol103_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol103_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol104() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol104_phy * cap_BMS_CellVolMeas3_BMS_CellVol104_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol104_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol105() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol105_phy * cap_BMS_CellVolMeas3_BMS_CellVol105_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol105_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol106() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol106_phy * cap_BMS_CellVolMeas3_BMS_CellVol106_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol106_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol107() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol107_phy * cap_BMS_CellVolMeas3_BMS_CellVol107_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol107_PT_Offset_C)
+
+#define get_PT_BMS_CellVolMeas3_BMS_CellVol108() ((float32)cap_canApiMsg_BMS_CellVolMeas3_PT.BMS_CellVol108_phy * cap_BMS_CellVolMeas3_BMS_CellVol108_PT_Factor_C + cap_BMS_CellVolMeas3_BMS_CellVol108_PT_Offset_C)
+
+
+#define get_PT_BMS_CoolantInletOutletTmp_CRC_BMS_CoolantInletOutletTmp() (cap_canApiMsg_BMS_CoolantInletOutletTmp_PT.CRC_BMS_CoolantInletOutletTmp_phy )
+
+#define get_PT_BMS_CoolantInletOutletTmp_ALV_BMS_CoolantInletOutletTmp() (cap_canApiMsg_BMS_CoolantInletOutletTmp_PT.ALV_BMS_CoolantInletOutletTmp_phy )
+
+#define get_PT_BMS_CoolantInletOutletTmp_BMS_CoolantInletTemp() ((float32)cap_canApiMsg_BMS_CoolantInletOutletTmp_PT.BMS_CoolantInletTemp_phy * cap_BMS_CoolantInletOutletTmp_BMS_CoolantInletTemp_PT_Factor_C + cap_BMS_CoolantInletOutletTmp_BMS_CoolantInletTemp_PT_Offset_C)
+
+#define get_PT_BMS_CoolantInletOutletTmp_BMS_CoolantOutletTemp() ((float32)cap_canApiMsg_BMS_CoolantInletOutletTmp_PT.BMS_CoolantOutletTemp_phy * cap_BMS_CoolantInletOutletTmp_BMS_CoolantOutletTemp_PT_Factor_C + cap_BMS_CoolantInletOutletTmp_BMS_CoolantOutletTemp_PT_Offset_C)
+
+
+#define get_PT_BMS_Insulation_CRC_BMS_Insulation() (cap_canApiMsg_BMS_Insulation_PT.CRC_BMS_Insulation_phy )
+
+#define get_PT_BMS_Insulation_ALV_BMS_Insulation() (cap_canApiMsg_BMS_Insulation_PT.ALV_BMS_Insulation_phy )
+
+#define get_PT_BMS_Insulation_BMS_VCU_InsulationMonSts() (cap_canApiMsg_BMS_Insulation_PT.BMS_VCU_InsulationMonSts_phy )
+
+#define get_PT_BMS_Insulation_BMS_PackInsuRes() (cap_canApiMsg_BMS_Insulation_PT.BMS_PackInsuRes_phy )
+
+
+#define get_PT_BMS_VCU_THMReq_CRC_BMS_VCU_THMReq() (cap_canApiMsg_BMS_VCU_THMReq_PT.CRC_BMS_VCU_THMReq_phy )
+
+#define get_PT_BMS_VCU_THMReq_ALV_BMS_VCU_THMReq() (cap_canApiMsg_BMS_VCU_THMReq_PT.ALV_BMS_VCU_THMReq_phy )
+
+#define get_PT_BMS_VCU_THMReq_BMS_FlowRateReq() (cap_canApiMsg_BMS_VCU_THMReq_PT.BMS_FlowRateReq_phy )
+
+#define get_PT_BMS_VCU_THMReq_BMS_CoolPwrDemand() ((float32)cap_canApiMsg_BMS_VCU_THMReq_PT.BMS_CoolPwrDemand_phy * cap_BMS_VCU_THMReq_BMS_CoolPwrDemand_PT_Factor_C + cap_BMS_VCU_THMReq_BMS_CoolPwrDemand_PT_Offset_C)
+
+#define get_PT_BMS_VCU_THMReq_BMS_HeatPwrDemand() ((float32)cap_canApiMsg_BMS_VCU_THMReq_PT.BMS_HeatPwrDemand_phy * cap_BMS_VCU_THMReq_BMS_HeatPwrDemand_PT_Factor_C + cap_BMS_VCU_THMReq_BMS_HeatPwrDemand_PT_Offset_C)
+
+#define get_PT_BMS_VCU_THMReq_BMS_VCU_CoolingOnOffReq() (cap_canApiMsg_BMS_VCU_THMReq_PT.BMS_VCU_CoolingOnOffReq_phy )
+
+#define get_PT_BMS_VCU_THMReq_BMS_VCU_HeatingOnOffReq() (cap_canApiMsg_BMS_VCU_THMReq_PT.BMS_VCU_HeatingOnOffReq_phy )
+
+
+#define get_PT_BMS_VolMeas_CRC_BMS_VolMeas() (cap_canApiMsg_BMS_VolMeas_PT.CRC_BMS_VolMeas_phy )
+
+#define get_PT_BMS_VolMeas_ALV_BMS_VolMeas() (cap_canApiMsg_BMS_VolMeas_PT.ALV_BMS_VolMeas_phy )
+
+#define get_PT_BMS_VolMeas_BMS_CellNumMinCellVol() (cap_canApiMsg_BMS_VolMeas_PT.BMS_CellNumMinCellVol_phy )
+
+#define get_PT_BMS_VolMeas_BMS_CellNumMaxCellVol() (cap_canApiMsg_BMS_VolMeas_PT.BMS_CellNumMaxCellVol_phy )
+
+#define get_PT_BMS_VolMeas_BMS_MinCellVol() ((float32)cap_canApiMsg_BMS_VolMeas_PT.BMS_MinCellVol_phy * cap_BMS_VolMeas_BMS_MinCellVol_PT_Factor_C + cap_BMS_VolMeas_BMS_MinCellVol_PT_Offset_C)
+
+#define get_PT_BMS_VolMeas_BMS_MaxCellVol() ((float32)cap_canApiMsg_BMS_VolMeas_PT.BMS_MaxCellVol_phy * cap_BMS_VolMeas_BMS_MaxCellVol_PT_Factor_C + cap_BMS_VolMeas_BMS_MaxCellVol_PT_Offset_C)
+
+#define get_PT_BMS_VolMeas_BMS_MaxMinDiffCellVol() ((float32)cap_canApiMsg_BMS_VolMeas_PT.BMS_MaxMinDiffCellVol_phy * cap_BMS_VolMeas_BMS_MaxMinDiffCellVol_PT_Factor_C + cap_BMS_VolMeas_BMS_MaxMinDiffCellVol_PT_Offset_C)
+
+
+#define get_PT_DCDC_VCU_Temperature_Fbk_DCDC_InternalTempA() ((float32)cap_canApiMsg_DCDC_VCU_Temperature_Fbk_PT.DCDC_InternalTempA_phy * cap_DCDC_VCU_Temperature_Fbk_DCDC_InternalTempA_PT_Factor_C + cap_DCDC_VCU_Temperature_Fbk_DCDC_InternalTempA_PT_Offset_C)
+
+#define get_PT_DCDC_VCU_Temperature_Fbk_DCDC_InternalTempB() ((float32)cap_canApiMsg_DCDC_VCU_Temperature_Fbk_PT.DCDC_InternalTempB_phy * cap_DCDC_VCU_Temperature_Fbk_DCDC_InternalTempB_PT_Factor_C + cap_DCDC_VCU_Temperature_Fbk_DCDC_InternalTempB_PT_Offset_C)
+
+#define get_PT_DCDC_VCU_Temperature_Fbk_DCDC_InternalTempC() ((float32)cap_canApiMsg_DCDC_VCU_Temperature_Fbk_PT.DCDC_InternalTempC_phy * cap_DCDC_VCU_Temperature_Fbk_DCDC_InternalTempC_PT_Factor_C + cap_DCDC_VCU_Temperature_Fbk_DCDC_InternalTempC_PT_Offset_C)
+
+#define get_PT_DCDC_VCU_Temperature_Fbk_DCDC_CoolPwrDemand() ((float32)cap_canApiMsg_DCDC_VCU_Temperature_Fbk_PT.DCDC_CoolPwrDemand_phy * cap_DCDC_VCU_Temperature_Fbk_DCDC_CoolPwrDemand_PT_Factor_C + cap_DCDC_VCU_Temperature_Fbk_DCDC_CoolPwrDemand_PT_Offset_C)
+
+#define get_PT_DCDC_VCU_Temperature_Fbk_DCDC_FlowRateReq() (cap_canApiMsg_DCDC_VCU_Temperature_Fbk_PT.DCDC_FlowRateReq_phy )
+
+
+#define get_PT_BMS_HistData_CRC_BMS_HistData() (cap_canApiMsg_BMS_HistData_PT.CRC_BMS_HistData_phy )
+
+#define get_PT_BMS_HistData_ALV_BMS_HistData() (cap_canApiMsg_BMS_HistData_PT.ALV_BMS_HistData_phy )
+
+#define get_PT_BMS_HistData_BMS_ContactorAging() (cap_canApiMsg_BMS_HistData_PT.BMS_ContactorAging_phy )
+
+
+#define get_PT_OBC_Temperature_OBC_InternalTemp() ((float32)cap_canApiMsg_OBC_Temperature_PT.OBC_InternalTemp_phy * cap_OBC_Temperature_OBC_InternalTemp_PT_Factor_C + cap_OBC_Temperature_OBC_InternalTemp_PT_Offset_C)
+
+#define get_PT_OBC_Temperature_OBC_FlowRateReq() (cap_canApiMsg_OBC_Temperature_PT.OBC_FlowRateReq_phy )
+
+#define get_PT_OBC_Temperature_OBC_CoolPwrDemand() ((float32)cap_canApiMsg_OBC_Temperature_PT.OBC_CoolPwrDemand_phy * cap_OBC_Temperature_OBC_CoolPwrDemand_PT_Factor_C + cap_OBC_Temperature_OBC_CoolPwrDemand_PT_Offset_C)
+
+
+#define get_PT_HighVoltageStorage200msNo1_StatusServiceDisconnectionPlug() (cap_canApiMsg_HighVoltageStorage200msNo1_PT.StatusServiceDisconnectionPlug_phy )
+
+#define get_PT_HighVoltageStorage200msNo1_StsDisconnectingSwtHighVoltStorg() (cap_canApiMsg_HighVoltageStorage200msNo1_PT.StsDisconnectingSwtHighVoltStorg_phy )
+
+
+#define get_PT_StatusCrashIdentETractSys1_CRC_StatusCrashIdentETractSys1() (cap_canApiMsg_StatusCrashIdentETractSys1_PT.CRC_StatusCrashIdentETractSys1_phy )
+
+#define get_PT_StatusCrashIdentETractSys1_ALIV_StatusCrashIdentETractSys1() (cap_canApiMsg_StatusCrashIdentETractSys1_PT.ALIV_StatusCrashIdentETractSys1_phy )
+
+#define get_PT_StatusCrashIdentETractSys1_CHL_StatusCrashIdentETractSys1() (cap_canApiMsg_StatusCrashIdentETractSys1_PT.CHL_StatusCrashIdentETractSys1_phy )
+
+#define get_PT_StatusCrashIdentETractSys1_StatusCrashShutDownETractSys1() (cap_canApiMsg_StatusCrashIdentETractSys1_PT.StatusCrashShutDownETractSys1_phy )
+
+#define get_PT_StatusCrashIdentETractSys1_TempETractSys1DirectCurrentPlug() ((float32)cap_canApiMsg_StatusCrashIdentETractSys1_PT.TempETractSys1DirectCurrentPlug_phy * cap_StatusCrashIdentETractSys1_TempETractSys1DirectCurrentPlug_PT_Factor_C + cap_StatusCrashIdentETractSys1_TempETractSys1DirectCurrentPlug_PT_Offset_C)
+
+#define get_PT_StatusCrashIdentETractSys1_StsLimpHomeNotifETractSys1() (cap_canApiMsg_StatusCrashIdentETractSys1_PT.StsLimpHomeNotifETractSys1_phy )
+
+
+#define get_PT_StatusCrashIdentETractSys2_CRC_StatusCrashIdentETractSys2() (cap_canApiMsg_StatusCrashIdentETractSys2_PT.CRC_StatusCrashIdentETractSys2_phy )
+
+#define get_PT_StatusCrashIdentETractSys2_ALIV_StatusCrashIdentETractSys2() (cap_canApiMsg_StatusCrashIdentETractSys2_PT.ALIV_StatusCrashIdentETractSys2_phy )
+
+#define get_PT_StatusCrashIdentETractSys2_CHL_StatusCrashIdentETractSys2() (cap_canApiMsg_StatusCrashIdentETractSys2_PT.CHL_StatusCrashIdentETractSys2_phy )
+
+#define get_PT_StatusCrashIdentETractSys2_StatusCrashShutDownETractSys2() (cap_canApiMsg_StatusCrashIdentETractSys2_PT.StatusCrashShutDownETractSys2_phy )
+
+#define get_PT_StatusCrashIdentETractSys2_TempETractSys2DirectCurrentPlug() ((float32)cap_canApiMsg_StatusCrashIdentETractSys2_PT.TempETractSys2DirectCurrentPlug_phy * cap_StatusCrashIdentETractSys2_TempETractSys2DirectCurrentPlug_PT_Factor_C + cap_StatusCrashIdentETractSys2_TempETractSys2DirectCurrentPlug_PT_Offset_C)
+
+#define get_PT_StatusCrashIdentETractSys2_StsLimpHomeNotifETractSys2() (cap_canApiMsg_StatusCrashIdentETractSys2_PT.StsLimpHomeNotifETractSys2_phy )
+
+
+/*Set Macros*/
+#define set_BCAN_VCU_WarnMsg_CRC_VCU_WarnMsg(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.CRC_VCU_WarnMsg_phy = ((val )))
+
+#define set_BCAN_VCU_WarnMsg_ALV_VCU_WarnMsg(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.ALV_VCU_WarnMsg_phy = ((val )))
+
+#define set_BCAN_VCU_WarnMsg_VCU_GearPAtStationaryOnly(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.VCU_GearPAtStationaryOnly_phy = ((val )))
+
+#define set_BCAN_VCU_WarnMsg_VCU_GearPNotPossible(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.VCU_GearPNotPossible_phy = ((val )))
+
+#define set_BCAN_VCU_WarnMsg_VCU_PressBreakToEngageGear(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.VCU_PressBreakToEngageGear_phy = ((val )))
+
+#define set_BCAN_VCU_WarnMsg_VCU_CantChangeGear(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.VCU_CantChangeGear_phy = ((val )))
+
+#define set_BCAN_VCU_WarnMsg_VCU_MotorCoolantPumpErr(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.VCU_MotorCoolantPumpErr_phy = ((val )))
+
+#define set_BCAN_VCU_WarnMsg_VCU_EmergencyShutdown(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.VCU_EmergencyShutdown_phy = ((val )))
+
+#define set_BCAN_VCU_WarnMsg_VCU_HeatLoopTempSensorErr(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.VCU_HeatLoopTempSensorErr_phy = ((val )))
+
+#define set_BCAN_VCU_WarnMsg_VCU_GearMalfunc(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.VCU_GearMalfunc_phy = ((val )))
+
+#define set_BCAN_VCU_WarnMsg_VCU_CoolingTempExceedLimit(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.VCU_CoolingTempExceedLimit_phy = ((val )))
+
+#define set_BCAN_VCU_WarnMsg_VCU_TransmissionMalfunction(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.VCU_TransmissionMalfunction_phy = ((val )))
+
+#define set_BCAN_VCU_WarnMsg_VCU_ParkLockNotEngaged(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.VCU_ParkLockNotEngaged_phy = ((val )))
+
+#define set_BCAN_VCU_WarnMsg_VCU_CoolantTempHigh(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.VCU_CoolantTempHigh_phy = ((val )))
+
+#define set_BCAN_VCU_WarnMsg_VCU_CheckDriveTrain(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.VCU_CheckDriveTrain_phy = ((val )))
+
+#define set_BCAN_VCU_WarnMsg_VCU_OBCTempHigh(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.VCU_OBCTempHigh_phy = ((val )))
+
+#define set_BCAN_VCU_WarnMsg_VCU_DCDC_TempHigh(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.VCU_DCDC_TempHigh_phy = ((val )))
+
+#define set_BCAN_VCU_WarnMsg_VCU_ChargingInletTempHigh(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.VCU_ChargingInletTempHigh_phy = ((val )))
+
+#define set_BCAN_VCU_WarnMsg_VCU_HVILErr(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.VCU_HVILErr_phy = ((val )))
+
+#define set_BCAN_VCU_WarnMsg_VCU_Limphome(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.VCU_Limphome_phy = ((val )))
+
+#define set_BCAN_VCU_WarnMsg_VCU_HVSystemReduced(val) (cap_canApiMsg_VCU_WarnMsg_BCAN.VCU_HVSystemReduced_phy = ((val )))
+
+
+#define set_BCAN_VCU_StatusDCDC_CRC_VCU_StatusDCDC(val) (cap_canApiMsg_VCU_StatusDCDC_BCAN.CRC_VCU_StatusDCDC_phy = ((val )))
+
+#define set_BCAN_VCU_StatusDCDC_ALV_VCU_StatusDCDC(val) (cap_canApiMsg_VCU_StatusDCDC_BCAN.ALV_VCU_StatusDCDC_phy = ((val )))
+
+#define set_BCAN_VCU_StatusDCDC_DCDC_status(val) (cap_canApiMsg_VCU_StatusDCDC_BCAN.DCDC_status_phy = ((val )))
+
+#define set_BCAN_VCU_StatusDCDC_DCDC_maxCurrentOut(val) ((float32)cap_canApiMsg_VCU_StatusDCDC_BCAN.DCDC_maxCurrentOut_phy = ((val - cap_VCU_StatusDCDC_DCDC_maxCurrentOut_BCAN_Offset_C)/cap_VCU_StatusDCDC_DCDC_maxCurrentOut_BCAN_Factor_C))
+
+#define set_BCAN_VCU_StatusDCDC_DCDC_iOutput(val) ((float32)cap_canApiMsg_VCU_StatusDCDC_BCAN.DCDC_iOutput_phy = ((val - cap_VCU_StatusDCDC_DCDC_iOutput_BCAN_Offset_C)/cap_VCU_StatusDCDC_DCDC_iOutput_BCAN_Factor_C))
+
+#define set_BCAN_VCU_StatusDCDC_DCDC_vDCInput(val) ((float32)cap_canApiMsg_VCU_StatusDCDC_BCAN.DCDC_vDCInput_phy = ((val - cap_VCU_StatusDCDC_DCDC_vDCInput_BCAN_Offset_C)/cap_VCU_StatusDCDC_DCDC_vDCInput_BCAN_Factor_C))
+
+#define set_BCAN_VCU_StatusDCDC_DCDC_vOutput(val) ((float32)cap_canApiMsg_VCU_StatusDCDC_BCAN.DCDC_vOutput_phy = ((val - cap_VCU_StatusDCDC_DCDC_vOutput_BCAN_Offset_C)/cap_VCU_StatusDCDC_DCDC_vOutput_BCAN_Factor_C))
+
+
+#define set_BCAN_VCU_MHU_info_CRC_VCU_MHU_info(val) (cap_canApiMsg_VCU_MHU_info_BCAN.CRC_VCU_MHU_info_phy = ((val )))
+
+#define set_BCAN_VCU_MHU_info_ALV_VCU_MHU_info(val) (cap_canApiMsg_VCU_MHU_info_BCAN.ALV_VCU_MHU_info_phy = ((val )))
+
+#define set_BCAN_VCU_MHU_info_VCU_CurPwrConsum(val) (cap_canApiMsg_VCU_MHU_info_BCAN.VCU_CurPwrConsum_phy = ((val )))
+
+#define set_BCAN_VCU_MHU_info_VCU_RemainingRange(val) ((float32)cap_canApiMsg_VCU_MHU_info_BCAN.VCU_RemainingRange_phy = ((val - cap_VCU_MHU_info_VCU_RemainingRange_BCAN_Offset_C)/cap_VCU_MHU_info_VCU_RemainingRange_BCAN_Factor_C))
+
+#define set_BCAN_VCU_MHU_info_VCU_ChgGun_Status(val) (cap_canApiMsg_VCU_MHU_info_BCAN.VCU_ChgGun_Status_phy = ((val )))
+
+#define set_BCAN_VCU_MHU_info_VCU_BattChargingStatus(val) (cap_canApiMsg_VCU_MHU_info_BCAN.VCU_BattChargingStatus_phy = ((val )))
+
+#define set_BCAN_VCU_MHU_info_VCU_VehChg_STS(val) (cap_canApiMsg_VCU_MHU_info_BCAN.VCU_VehChg_STS_phy = ((val )))
+
+#define set_BCAN_VCU_MHU_info_VCU_ChgGunConnStatus(val) (cap_canApiMsg_VCU_MHU_info_BCAN.VCU_ChgGunConnStatus_phy = ((val )))
+
+#define set_BCAN_VCU_MHU_info_VCU_BattSOC(val) ((float32)cap_canApiMsg_VCU_MHU_info_BCAN.VCU_BattSOC_phy = ((val - cap_VCU_MHU_info_VCU_BattSOC_BCAN_Offset_C)/cap_VCU_MHU_info_VCU_BattSOC_BCAN_Factor_C))
+
+
+#define set_BCAN_VCU_HVsystem_status_CRC_VCU_HVsystem_status(val) (cap_canApiMsg_VCU_HVsystem_status_BCAN.CRC_VCU_HVsystem_status_phy = ((val )))
+
+#define set_BCAN_VCU_HVsystem_status_ALIV_VCU_HVsystem_status(val) (cap_canApiMsg_VCU_HVsystem_status_BCAN.ALIV_VCU_HVsystem_status_phy = ((val )))
+
+#define set_BCAN_VCU_HVsystem_status_VCU_RunningRange_chrg_estSts(val) (cap_canApiMsg_VCU_HVsystem_status_BCAN.VCU_RunningRange_chrg_estSts_phy = ((val )))
+
+#define set_BCAN_VCU_HVsystem_status_VCU_HVbatSoc_charged_estStatus(val) (cap_canApiMsg_VCU_HVsystem_status_BCAN.VCU_HVbatSoc_charged_estStatus_phy = ((val )))
+
+#define set_BCAN_VCU_HVsystem_status_VCU_RunningRange_charged(val) ((float32)cap_canApiMsg_VCU_HVsystem_status_BCAN.VCU_RunningRange_charged_phy = ((val - cap_VCU_HVsystem_status_VCU_RunningRange_charged_BCAN_Offset_C)/cap_VCU_HVsystem_status_VCU_RunningRange_charged_BCAN_Factor_C))
+
+#define set_BCAN_VCU_HVsystem_status_VCU_HVbatSoc_charged(val) ((float32)cap_canApiMsg_VCU_HVsystem_status_BCAN.VCU_HVbatSoc_charged_phy = ((val - cap_VCU_HVsystem_status_VCU_HVbatSoc_charged_BCAN_Offset_C)/cap_VCU_HVsystem_status_VCU_HVbatSoc_charged_BCAN_Factor_C))
+
+
+#define set_BCAN_VCU_HV_DrvSys_status_CRC_VCU_HV_DrvSys_status(val) (cap_canApiMsg_VCU_HV_DrvSys_status_BCAN.CRC_VCU_HV_DrvSys_status_phy = ((val )))
+
+#define set_BCAN_VCU_HV_DrvSys_status_ALV_VCU_HV_DrvSys_bstatus(val) (cap_canApiMsg_VCU_HV_DrvSys_status_BCAN.ALV_VCU_HV_DrvSys_bstatus_phy = ((val )))
+
+#define set_BCAN_VCU_HV_DrvSys_status_VCU_HV_SystemStatus(val) (cap_canApiMsg_VCU_HV_DrvSys_status_BCAN.VCU_HV_SystemStatus_phy = ((val )))
+
+#define set_BCAN_VCU_HV_DrvSys_status_VCU_HV_DrvSystemStatus(val) (cap_canApiMsg_VCU_HV_DrvSys_status_BCAN.VCU_HV_DrvSystemStatus_phy = ((val )))
+
+#define set_BCAN_VCU_HV_DrvSys_status_VCU_ACT_Gear(val) (cap_canApiMsg_VCU_HV_DrvSys_status_BCAN.VCU_ACT_Gear_phy = ((val )))
+
+#define set_BCAN_VCU_HV_DrvSys_status_VCU_ACT_GearValid(val) (cap_canApiMsg_VCU_HV_DrvSys_status_BCAN.VCU_ACT_GearValid_phy = ((val )))
+
+#define set_BCAN_VCU_HV_DrvSys_status_VCU_ACPD_Percent(val) ((float32)cap_canApiMsg_VCU_HV_DrvSys_status_BCAN.VCU_ACPD_Percent_phy = ((val - cap_VCU_HV_DrvSys_status_VCU_ACPD_Percent_BCAN_Offset_C)/cap_VCU_HV_DrvSys_status_VCU_ACPD_Percent_BCAN_Factor_C))
+
+#define set_BCAN_VCU_HV_DrvSys_status_VCU_ACPD_Percent_Valid(val) (cap_canApiMsg_VCU_HV_DrvSys_status_BCAN.VCU_ACPD_Percent_Valid_phy = ((val )))
+
+#define set_BCAN_VCU_HV_DrvSys_status_VCU_ACT_DriveMode(val) (cap_canApiMsg_VCU_HV_DrvSys_status_BCAN.VCU_ACT_DriveMode_phy = ((val )))
+
+#define set_BCAN_VCU_HV_DrvSys_status_VCU_ACT_DriveModeValid(val) (cap_canApiMsg_VCU_HV_DrvSys_status_BCAN.VCU_ACT_DriveModeValid_phy = ((val )))
+
+
+#define set_BCAN_VCU_ChargingConnection_CRC_VCU_ChargingConnection(val) (cap_canApiMsg_VCU_ChargingConnection_BCAN.CRC_VCU_ChargingConnection_phy = ((val )))
+
+#define set_BCAN_VCU_ChargingConnection_ALV_VCU_ChargingConnection(val) (cap_canApiMsg_VCU_ChargingConnection_BCAN.ALV_VCU_ChargingConnection_phy = ((val )))
+
+#define set_BCAN_VCU_ChargingConnection_VCU_DCChgGunIn(val) (cap_canApiMsg_VCU_ChargingConnection_BCAN.VCU_DCChgGunIn_phy = ((val )))
+
+#define set_BCAN_VCU_ChargingConnection_VCU_AcChgGunIn(val) (cap_canApiMsg_VCU_ChargingConnection_BCAN.VCU_AcChgGunIn_phy = ((val )))
+
+#define set_BCAN_VCU_ChargingConnection_VCU_CPValue(val) (cap_canApiMsg_VCU_ChargingConnection_BCAN.VCU_CPValue_phy = ((val )))
+
+#define set_BCAN_VCU_ChargingConnection_VCU_ACChargingVoltage(val) (cap_canApiMsg_VCU_ChargingConnection_BCAN.VCU_ACChargingVoltage_phy = ((val )))
+
+#define set_BCAN_VCU_ChargingConnection_VCU_MaxCurrentOfACCharging(val) (cap_canApiMsg_VCU_ChargingConnection_BCAN.VCU_MaxCurrentOfACCharging_phy = ((val )))
+
+
+#define set_BCAN_VCU_Batt_WarnMsg_CHSKM_VCU_Batt_WarnMsg(val) (cap_canApiMsg_VCU_Batt_WarnMsg_BCAN.CHSKM_VCU_Batt_WarnMsg_phy = ((val )))
+
+#define set_BCAN_VCU_Batt_WarnMsg_ALV_VCU_Batt_WarnMsg(val) (cap_canApiMsg_VCU_Batt_WarnMsg_BCAN.ALV_VCU_Batt_WarnMsg_phy = ((val )))
+
+#define set_BCAN_VCU_Batt_WarnMsg_BMS_PackTempSts(val) (cap_canApiMsg_VCU_Batt_WarnMsg_BCAN.BMS_PackTempSts_phy = ((val )))
+
+#define set_BCAN_VCU_Batt_WarnMsg_BMS_ThermalRunaway(val) (cap_canApiMsg_VCU_Batt_WarnMsg_BCAN.BMS_ThermalRunaway_phy = ((val )))
+
+#define set_BCAN_VCU_Batt_WarnMsg_BMS_CellTempErr(val) (cap_canApiMsg_VCU_Batt_WarnMsg_BCAN.BMS_CellTempErr_phy = ((val )))
+
+#define set_BCAN_VCU_Batt_WarnMsg_BMS_HVILErr(val) (cap_canApiMsg_VCU_Batt_WarnMsg_BCAN.BMS_HVILErr_phy = ((val )))
+
+#define set_BCAN_VCU_Batt_WarnMsg_BMS_PackInsuErr(val) (cap_canApiMsg_VCU_Batt_WarnMsg_BCAN.BMS_PackInsuErr_phy = ((val )))
+
+#define set_BCAN_VCU_Batt_WarnMsg_BMS_MalfunctionSts(val) (cap_canApiMsg_VCU_Batt_WarnMsg_BCAN.BMS_MalfunctionSts_phy = ((val )))
+
+#define set_BCAN_VCU_Batt_WarnMsg_BMS_LowBattery(val) (cap_canApiMsg_VCU_Batt_WarnMsg_BCAN.BMS_LowBattery_phy = ((val )))
+
+#define set_BCAN_VCU_Batt_WarnMsg_BMS_FuseStatusErr(val) (cap_canApiMsg_VCU_Batt_WarnMsg_BCAN.BMS_FuseStatusErr_phy = ((val )))
+
+#define set_BCAN_VCU_Batt_WarnMsg_BMS_CellVoltErr(val) (cap_canApiMsg_VCU_Batt_WarnMsg_BCAN.BMS_CellVoltErr_phy = ((val )))
+
+#define set_BCAN_VCU_Batt_WarnMsg_BMS_PackVolErr(val) (cap_canApiMsg_VCU_Batt_WarnMsg_BCAN.BMS_PackVolErr_phy = ((val )))
+
+#define set_BCAN_VCU_Batt_WarnMsg_BMS_PackOverCurrErr(val) (cap_canApiMsg_VCU_Batt_WarnMsg_BCAN.BMS_PackOverCurrErr_phy = ((val )))
+
+#define set_BCAN_VCU_Batt_WarnMsg_BMS_Reserved_signal1(val) (cap_canApiMsg_VCU_Batt_WarnMsg_BCAN.BMS_Reserved_signal1_phy = ((val )))
+
+#define set_BCAN_VCU_Batt_WarnMsg_BMS_Reserved_signal2(val) (cap_canApiMsg_VCU_Batt_WarnMsg_BCAN.BMS_Reserved_signal2_phy = ((val )))
+
+#define set_BCAN_VCU_Batt_WarnMsg_BMS_Reserved_signal3(val) (cap_canApiMsg_VCU_Batt_WarnMsg_BCAN.BMS_Reserved_signal3_phy = ((val )))
+
+#define set_BCAN_VCU_Batt_WarnMsg_BMS_Reserved_signal4(val) (cap_canApiMsg_VCU_Batt_WarnMsg_BCAN.BMS_Reserved_signal4_phy = ((val )))
+
+#define set_BCAN_VCU_Batt_WarnMsg_BMS_Reserved_signal5(val) (cap_canApiMsg_VCU_Batt_WarnMsg_BCAN.BMS_Reserved_signal5_phy = ((val )))
+
+
+#define set_BCAN_VCU_Batt_Info_CRC_VCU_Batt_Info(val) (cap_canApiMsg_VCU_Batt_Info_BCAN.CRC_VCU_Batt_Info_phy = ((val )))
+
+#define set_BCAN_VCU_Batt_Info_ALV_VCU_Batt_Info(val) (cap_canApiMsg_VCU_Batt_Info_BCAN.ALV_VCU_Batt_Info_phy = ((val )))
+
+#define set_BCAN_VCU_Batt_Info_BMS_PackCur(val) ((float32)cap_canApiMsg_VCU_Batt_Info_BCAN.BMS_PackCur_phy = ((val - cap_VCU_Batt_Info_BMS_PackCur_BCAN_Offset_C)/cap_VCU_Batt_Info_BMS_PackCur_BCAN_Factor_C))
+
+#define set_BCAN_VCU_Batt_Info_BMS_PackVoltage(val) ((float32)cap_canApiMsg_VCU_Batt_Info_BCAN.BMS_PackVoltage_phy = ((val - cap_VCU_Batt_Info_BMS_PackVoltage_BCAN_Offset_C)/cap_VCU_Batt_Info_BMS_PackVoltage_BCAN_Factor_C))
+
+#define set_BCAN_VCU_Batt_Info_BMS_PackTemp(val) ((sint16)cap_canApiMsg_VCU_Batt_Info_BCAN.BMS_PackTemp_phy = ((val - cap_VCU_Batt_Info_BMS_PackTemp_BCAN_Offset_C)/cap_VCU_Batt_Info_BMS_PackTemp_BCAN_Factor_C))
+
+#define set_BCAN_VCU_Batt_Info_BMS_RemainChargeTime(val) (cap_canApiMsg_VCU_Batt_Info_BCAN.BMS_RemainChargeTime_phy = ((val )))
+
+#define set_BCAN_VCU_Batt_Info_BMS_ChargingVoltage(val) ((float32)cap_canApiMsg_VCU_Batt_Info_BCAN.BMS_ChargingVoltage_phy = ((val - cap_VCU_Batt_Info_BMS_ChargingVoltage_BCAN_Offset_C)/cap_VCU_Batt_Info_BMS_ChargingVoltage_BCAN_Factor_C))
+
+#define set_BCAN_VCU_Batt_Info_BMS_ChargingCurrent(val) ((float32)cap_canApiMsg_VCU_Batt_Info_BCAN.BMS_ChargingCurrent_phy = ((val - cap_VCU_Batt_Info_BMS_ChargingCurrent_BCAN_Offset_C)/cap_VCU_Batt_Info_BMS_ChargingCurrent_BCAN_Factor_C))
+
+
+#define set_BCAN_HighVoltageStorage200msNo1_StatusServiceDisconnectionPlug(val) (cap_canApiMsg_HighVoltageStorage200msNo1_BCAN.StatusServiceDisconnectionPlug_phy = ((val )))
+
+#define set_BCAN_HighVoltageStorage200msNo1_StsDisconnectingSwtHighVoltStorg(val) (cap_canApiMsg_HighVoltageStorage200msNo1_BCAN.StsDisconnectingSwtHighVoltStorg_phy = ((val )))
+
+
+#define set_BCAN_HighVoltageStorage10msNo2_CRC_HighVoltageStorage10msNo2(val) (cap_canApiMsg_HighVoltageStorage10msNo2_BCAN.CRC_HighVoltageStorage10msNo2_phy = ((val )))
+
+#define set_BCAN_HighVoltageStorage10msNo2_ALIV_HighVoltageStorage10msNo2(val) (cap_canApiMsg_HighVoltageStorage10msNo2_BCAN.ALIV_HighVoltageStorage10msNo2_phy = ((val )))
+
+#define set_BCAN_HighVoltageStorage10msNo2_ActualValueVoltageLinkVerified(val) ((float32)cap_canApiMsg_HighVoltageStorage10msNo2_BCAN.ActualValueVoltageLinkVerified_phy = ((val - cap_HighVoltageStorage10msNo2_ActualValueVoltageLinkVerified_BCAN_Offset_C)/cap_HighVoltageStorage10msNo2_ActualValueVoltageLinkVerified_BCAN_Factor_C))
+
+
+#define set_BCAN_DT_DISP_GRDT_CRC_DT_DISP_GRDT(val) (cap_canApiMsg_DT_DISP_GRDT_BCAN.CRC_DT_DISP_GRDT_phy = ((val )))
+
+#define set_BCAN_DT_DISP_GRDT_ALIV_DT_DISP_GRDT(val) (cap_canApiMsg_DT_DISP_GRDT_BCAN.ALIV_DT_DISP_GRDT_phy = ((val )))
+
+#define set_BCAN_DT_DISP_GRDT_DISP_PRG_GRB(val) (cap_canApiMsg_DT_DISP_GRDT_BCAN.DISP_PRG_GRB_phy = ((val )))
+
+#define set_BCAN_DT_DISP_GRDT_DISP_PO_IDC_GRB(val) (cap_canApiMsg_DT_DISP_GRDT_BCAN.DISP_PO_IDC_GRB_phy = ((val )))
+
+#define set_BCAN_DT_DISP_GRDT_DISP_PO_GRB(val) (cap_canApiMsg_DT_DISP_GRDT_BCAN.DISP_PO_GRB_phy = ((val )))
+
+
+#define set_BCAN_CombinedChargerUnit10msNo2_PowerETractSys2LimMotMax(val) ((sint32)cap_canApiMsg_CombinedChargerUnit10msNo2_BCAN.PowerETractSys2LimMotMax_phy = ((val - cap_CombinedChargerUnit10msNo2_PowerETractSys2LimMotMax_BCAN_Offset_C)/cap_CombinedChargerUnit10msNo2_PowerETractSys2LimMotMax_BCAN_Factor_C))
+
+#define set_BCAN_CombinedChargerUnit10msNo2_PowerETractSys1LimGenMax(val) ((sint32)cap_canApiMsg_CombinedChargerUnit10msNo2_BCAN.PowerETractSys1LimGenMax_phy = ((val - cap_CombinedChargerUnit10msNo2_PowerETractSys1LimGenMax_BCAN_Offset_C)/cap_CombinedChargerUnit10msNo2_PowerETractSys1LimGenMax_BCAN_Factor_C))
+
+#define set_BCAN_CombinedChargerUnit10msNo2_PowerETractSys2LimGenMax(val) ((sint32)cap_canApiMsg_CombinedChargerUnit10msNo2_BCAN.PowerETractSys2LimGenMax_phy = ((val - cap_CombinedChargerUnit10msNo2_PowerETractSys2LimGenMax_BCAN_Offset_C)/cap_CombinedChargerUnit10msNo2_PowerETractSys2LimGenMax_BCAN_Factor_C))
+
+#define set_BCAN_CombinedChargerUnit10msNo2_PowerETractSys1LimMotMax(val) ((sint32)cap_canApiMsg_CombinedChargerUnit10msNo2_BCAN.PowerETractSys1LimMotMax_phy = ((val - cap_CombinedChargerUnit10msNo2_PowerETractSys1LimMotMax_BCAN_Offset_C)/cap_CombinedChargerUnit10msNo2_PowerETractSys1LimMotMax_BCAN_Factor_C))
+
+#define set_BCAN_CombinedChargerUnit10msNo2_OperatingModeEANActualValue(val) (cap_canApiMsg_CombinedChargerUnit10msNo2_BCAN.OperatingModeEANActualValue_phy = ((val )))
+
+#define set_BCAN_CombinedChargerUnit10msNo2_RequestExtraBoostETractSys1(val) (cap_canApiMsg_CombinedChargerUnit10msNo2_BCAN.RequestExtraBoostETractSys1_phy = ((val )))
+
+#define set_BCAN_CombinedChargerUnit10msNo2_RequestExtraBoostETractSys2(val) (cap_canApiMsg_CombinedChargerUnit10msNo2_BCAN.RequestExtraBoostETractSys2_phy = ((val )))
+
+
+#define set_BCAN_TracEMacElectc1Time100msNo1_OpModETractSys1ActVal(val) (cap_canApiMsg_TracEMacElectc1Time100msNo1_BCAN.OpModETractSys1ActVal_phy = ((val )))
+
+
+#define set_BCAN_TracEMacElectc2Time100msNo1_OpModETractSys2ActVal(val) (cap_canApiMsg_TracEMacElectc2Time100msNo1_BCAN.OpModETractSys2ActVal_phy = ((val )))
+
+
+#define set_CHS1_VCU_TractionEMachine2_10ms_CRC_TractionEMachine2_10ms(val) (cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS1.CRC_TractionEMachine2_10ms_phy = ((val )))
+
+#define set_CHS1_VCU_TractionEMachine2_10ms_ALIV_TractionEMachine2_10ms(val) (cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS1.ALIV_TractionEMachine2_10ms_phy = ((val )))
+
+#define set_CHS1_VCU_TractionEMachine2_10ms_RpmEmETractSys2ActualValue(val) ((sint16)cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS1.RpmEmETractSys2ActualValue_phy = ((val - cap_VCU_TractionEMachine2_10ms_RpmEmETractSys2ActualValue_CHS1_Offset_C)/cap_VCU_TractionEMachine2_10ms_RpmEmETractSys2ActualValue_CHS1_Factor_C))
+
+#define set_CHS1_VCU_TractionEMachine2_10ms_TorqueEmETractSys2GeneratorDyn(val) ((float32)cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS1.TorqueEmETractSys2GeneratorDyn_phy = ((val - cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2GeneratorDyn_CHS1_Offset_C)/cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2GeneratorDyn_CHS1_Factor_C))
+
+#define set_CHS1_VCU_TractionEMachine2_10ms_TorqueEmETractSys2MotorDyn(val) ((float32)cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS1.TorqueEmETractSys2MotorDyn_phy = ((val - cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2MotorDyn_CHS1_Offset_C)/cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2MotorDyn_CHS1_Factor_C))
+
+#define set_CHS1_VCU_TractionEMachine2_10ms_TorqueEmETractSys2ActualValue(val) ((float32)cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS1.TorqueEmETractSys2ActualValue_phy = ((val - cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2ActualValue_CHS1_Offset_C)/cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2ActualValue_CHS1_Factor_C))
+
+#define set_CHS1_VCU_TractionEMachine2_10ms_QualifierRpmEmETractSys2ActVal(val) (cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS1.QualifierRpmEmETractSys2ActVal_phy = ((val )))
+
+
+#define set_CHS1_VCU_TractionEMachine1_10ms_CRC_TractionEMachine1_10ms(val) (cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS1.CRC_TractionEMachine1_10ms_phy = ((val )))
+
+#define set_CHS1_VCU_TractionEMachine1_10ms_ALIV_TractionEMachine1_10ms(val) (cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS1.ALIV_TractionEMachine1_10ms_phy = ((val )))
+
+#define set_CHS1_VCU_TractionEMachine1_10ms_RpmEmETractSys1ActualValue(val) ((sint16)cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS1.RpmEmETractSys1ActualValue_phy = ((val - cap_VCU_TractionEMachine1_10ms_RpmEmETractSys1ActualValue_CHS1_Offset_C)/cap_VCU_TractionEMachine1_10ms_RpmEmETractSys1ActualValue_CHS1_Factor_C))
+
+#define set_CHS1_VCU_TractionEMachine1_10ms_TorqueEmETractSys1GeneratorDyn(val) ((float32)cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS1.TorqueEmETractSys1GeneratorDyn_phy = ((val - cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1GeneratorDyn_CHS1_Offset_C)/cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1GeneratorDyn_CHS1_Factor_C))
+
+#define set_CHS1_VCU_TractionEMachine1_10ms_TorqueEmETractSys1MotorDyn(val) ((float32)cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS1.TorqueEmETractSys1MotorDyn_phy = ((val - cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1MotorDyn_CHS1_Offset_C)/cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1MotorDyn_CHS1_Factor_C))
+
+#define set_CHS1_VCU_TractionEMachine1_10ms_TorqueEmETractSys1ActualValue(val) ((float32)cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS1.TorqueEmETractSys1ActualValue_phy = ((val - cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1ActualValue_CHS1_Offset_C)/cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1ActualValue_CHS1_Factor_C))
+
+#define set_CHS1_VCU_TractionEMachine1_10ms_QualifierRpmEmETractSys1ActVal(val) (cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS1.QualifierRpmEmETractSys1ActVal_phy = ((val )))
+
+
+#define set_CHS1_VCU_TractionEMachine2_100ms_CRC_TractionEMachine2_100ms(val) (cap_canApiMsg_VCU_TractionEMachine2_100ms_CHS1.CRC_TractionEMachine2_100ms_phy = ((val )))
+
+#define set_CHS1_VCU_TractionEMachine2_100ms_ALIV_TractionEMachine2_100ms(val) (cap_canApiMsg_VCU_TractionEMachine2_100ms_CHS1.ALIV_TractionEMachine2_100ms_phy = ((val )))
+
+#define set_CHS1_VCU_TractionEMachine2_100ms_WheelRatioEAxlEtractSys2ActVal(val) ((float32)cap_canApiMsg_VCU_TractionEMachine2_100ms_CHS1.WheelRatioEAxlEtractSys2ActVal_phy = ((val - cap_VCU_TractionEMachine2_100ms_WheelRatioEAxlEtractSys2ActVal_CHS1_Offset_C)/cap_VCU_TractionEMachine2_100ms_WheelRatioEAxlEtractSys2ActVal_CHS1_Factor_C))
+
+
+#define set_CHS1_VCU_TractionEMachine1_100ms_CRC_TractionEMachine1_100ms(val) (cap_canApiMsg_VCU_TractionEMachine1_100ms_CHS1.CRC_TractionEMachine1_100ms_phy = ((val )))
+
+#define set_CHS1_VCU_TractionEMachine1_100ms_ALIV_TractionEMachine1_100ms(val) (cap_canApiMsg_VCU_TractionEMachine1_100ms_CHS1.ALIV_TractionEMachine1_100ms_phy = ((val )))
+
+#define set_CHS1_VCU_TractionEMachine1_100ms_WheelRatioEAxlEtractSys1ActVal(val) ((float32)cap_canApiMsg_VCU_TractionEMachine1_100ms_CHS1.WheelRatioEAxlEtractSys1ActVal_phy = ((val - cap_VCU_TractionEMachine1_100ms_WheelRatioEAxlEtractSys1ActVal_CHS1_Offset_C)/cap_VCU_TractionEMachine1_100ms_WheelRatioEAxlEtractSys1ActVal_CHS1_Factor_C))
+
+
+#define set_CHS1_VCU_Status_CRC_VCU_Status(val) (cap_canApiMsg_VCU_Status_CHS1.CRC_VCU_Status_phy = ((val )))
+
+#define set_CHS1_VCU_Status_ALIV_VCU_Status(val) (cap_canApiMsg_VCU_Status_CHS1.ALIV_VCU_Status_phy = ((val )))
+
+#define set_CHS1_VCU_Status_VCU_ACPD_Percent(val) ((float32)cap_canApiMsg_VCU_Status_CHS1.VCU_ACPD_Percent_phy = ((val - cap_VCU_Status_VCU_ACPD_Percent_CHS1_Offset_C)/cap_VCU_Status_VCU_ACPD_Percent_CHS1_Factor_C))
+
+#define set_CHS1_VCU_Status_VCU_ACPD_Percent_Valid(val) (cap_canApiMsg_VCU_Status_CHS1.VCU_ACPD_Percent_Valid_phy = ((val )))
+
+#define set_CHS1_VCU_Status_VCU_ACT_Gear(val) (cap_canApiMsg_VCU_Status_CHS1.VCU_ACT_Gear_phy = ((val )))
+
+#define set_CHS1_VCU_Status_VCU_ACT_GearValid(val) (cap_canApiMsg_VCU_Status_CHS1.VCU_ACT_GearValid_phy = ((val )))
+
+#define set_CHS1_VCU_Status_VCU_ACT_DriveMode(val) (cap_canApiMsg_VCU_Status_CHS1.VCU_ACT_DriveMode_phy = ((val )))
+
+#define set_CHS1_VCU_Status_VCU_ACT_DriveModeValid(val) (cap_canApiMsg_VCU_Status_CHS1.VCU_ACT_DriveModeValid_phy = ((val )))
+
+
+#define set_CHS1_VCU_HV_Status_CRC_VCU_HV_Status(val) (cap_canApiMsg_VCU_HV_Status_CHS1.CRC_VCU_HV_Status_phy = ((val )))
+
+#define set_CHS1_VCU_HV_Status_ALIV_VCU_HV_Status(val) (cap_canApiMsg_VCU_HV_Status_CHS1.ALIV_VCU_HV_Status_phy = ((val )))
+
+#define set_CHS1_VCU_HV_Status_VCU_VehicleHVStatus(val) (cap_canApiMsg_VCU_HV_Status_CHS1.VCU_VehicleHVStatus_phy = ((val )))
+
+
+#define set_CHS1_VCU_CombinedChargerUnit_CRC_VCU_CombinedChargerUnit(val) (cap_canApiMsg_VCU_CombinedChargerUnit_CHS1.CRC_VCU_CombinedChargerUnit_phy = ((val )))
+
+#define set_CHS1_VCU_CombinedChargerUnit_ALIV_VCU_CombinedChargerUnit(val) (cap_canApiMsg_VCU_CombinedChargerUnit_CHS1.ALIV_VCU_CombinedChargerUnit_phy = ((val )))
+
+#define set_CHS1_VCU_CombinedChargerUnit_TargetTorqueEmETractSys1(val) ((float32)cap_canApiMsg_VCU_CombinedChargerUnit_CHS1.TargetTorqueEmETractSys1_phy = ((val - cap_VCU_CombinedChargerUnit_TargetTorqueEmETractSys1_CHS1_Offset_C)/cap_VCU_CombinedChargerUnit_TargetTorqueEmETractSys1_CHS1_Factor_C))
+
+#define set_CHS1_VCU_CombinedChargerUnit_TargetTorqueEmETractSys2(val) ((float32)cap_canApiMsg_VCU_CombinedChargerUnit_CHS1.TargetTorqueEmETractSys2_phy = ((val - cap_VCU_CombinedChargerUnit_TargetTorqueEmETractSys2_CHS1_Offset_C)/cap_VCU_CombinedChargerUnit_TargetTorqueEmETractSys2_CHS1_Factor_C))
+
+
+#define set_CHS1_HighVoltageStorage200msNo1_HV_ONOFF_status(val) (cap_canApiMsg_HighVoltageStorage200msNo1_CHS1.HV_ONOFF_status_phy = ((val )))
+
+#define set_CHS1_HighVoltageStorage200msNo1_HV_Positive_Path_Status(val) (cap_canApiMsg_HighVoltageStorage200msNo1_CHS1.HV_Positive_Path_Status_phy = ((val )))
+
+#define set_CHS1_HighVoltageStorage200msNo1_HV_Negative_Path_Status(val) (cap_canApiMsg_HighVoltageStorage200msNo1_CHS1.HV_Negative_Path_Status_phy = ((val )))
+
+#define set_CHS1_HighVoltageStorage200msNo1_HV_Last_Cont_Opening_Diagnosis(val) (cap_canApiMsg_HighVoltageStorage200msNo1_CHS1.HV_Last_Cont_Opening_Diagnosis_phy = ((val )))
+
+#define set_CHS1_HighVoltageStorage200msNo1_HV_ONOFF_Err_Status(val) (cap_canApiMsg_HighVoltageStorage200msNo1_CHS1.HV_ONOFF_Err_Status_phy = ((val )))
+
+
+#define set_CHS2_CLAMP_STAT_CRC_CLAMP_STAT(val) (cap_canApiMsg_CLAMP_STAT_CHS2.CRC_CLAMP_STAT_phy = ((val )))
+
+#define set_CHS2_CLAMP_STAT_ALIV_CLAMP_STAT(val) (cap_canApiMsg_CLAMP_STAT_CHS2.ALIV_CLAMP_STAT_phy = ((val )))
+
+#define set_CHS2_CLAMP_STAT_STAT_CL15_L(val) (cap_canApiMsg_CLAMP_STAT_CHS2.STAT_CL15_L_phy = ((val )))
+
+#define set_CHS2_CLAMP_STAT_STAT_CL30S_L(val) (cap_canApiMsg_CLAMP_STAT_CHS2.STAT_CL30S_L_phy = ((val )))
+
+#define set_CHS2_CLAMP_STAT_STAT_CL30S_Light(val) (cap_canApiMsg_CLAMP_STAT_CHS2.STAT_CL30S_Light_phy = ((val )))
+
+#define set_CHS2_CLAMP_STAT_STAT_CL15_WUPL(val) (cap_canApiMsg_CLAMP_STAT_CHS2.STAT_CL15_WUPL_phy = ((val )))
+
+
+#define set_CHS2_VCU_TractionEMachine2_10ms_CRC_TractionEMachine2_10ms(val) (cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS2.CRC_TractionEMachine2_10ms_phy = ((val )))
+
+#define set_CHS2_VCU_TractionEMachine2_10ms_ALIV_TractionEMachine2_10ms(val) (cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS2.ALIV_TractionEMachine2_10ms_phy = ((val )))
+
+#define set_CHS2_VCU_TractionEMachine2_10ms_RpmEmETractSys2ActualValue(val) ((sint16)cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS2.RpmEmETractSys2ActualValue_phy = ((val - cap_VCU_TractionEMachine2_10ms_RpmEmETractSys2ActualValue_CHS2_Offset_C)/cap_VCU_TractionEMachine2_10ms_RpmEmETractSys2ActualValue_CHS2_Factor_C))
+
+#define set_CHS2_VCU_TractionEMachine2_10ms_TorqueEmETractSys2GeneratorDyn(val) ((float32)cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS2.TorqueEmETractSys2GeneratorDyn_phy = ((val - cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2GeneratorDyn_CHS2_Offset_C)/cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2GeneratorDyn_CHS2_Factor_C))
+
+#define set_CHS2_VCU_TractionEMachine2_10ms_TorqueEmETractSys2MotorDyn(val) ((float32)cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS2.TorqueEmETractSys2MotorDyn_phy = ((val - cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2MotorDyn_CHS2_Offset_C)/cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2MotorDyn_CHS2_Factor_C))
+
+#define set_CHS2_VCU_TractionEMachine2_10ms_TorqueEmETractSys2ActualValue(val) ((float32)cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS2.TorqueEmETractSys2ActualValue_phy = ((val - cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2ActualValue_CHS2_Offset_C)/cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2ActualValue_CHS2_Factor_C))
+
+#define set_CHS2_VCU_TractionEMachine2_10ms_QualifierRpmEmETractSys2ActVal(val) (cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS2.QualifierRpmEmETractSys2ActVal_phy = ((val )))
+
+
+#define set_CHS2_VCU_TractionEMachine1_10ms_CRC_TractionEMachine1_10ms(val) (cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS2.CRC_TractionEMachine1_10ms_phy = ((val )))
+
+#define set_CHS2_VCU_TractionEMachine1_10ms_ALIV_TractionEMachine1_10ms(val) (cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS2.ALIV_TractionEMachine1_10ms_phy = ((val )))
+
+#define set_CHS2_VCU_TractionEMachine1_10ms_RpmEmETractSys1ActualValue(val) ((sint16)cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS2.RpmEmETractSys1ActualValue_phy = ((val - cap_VCU_TractionEMachine1_10ms_RpmEmETractSys1ActualValue_CHS2_Offset_C)/cap_VCU_TractionEMachine1_10ms_RpmEmETractSys1ActualValue_CHS2_Factor_C))
+
+#define set_CHS2_VCU_TractionEMachine1_10ms_TorqueEmETractSys1GeneratorDyn(val) ((float32)cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS2.TorqueEmETractSys1GeneratorDyn_phy = ((val - cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1GeneratorDyn_CHS2_Offset_C)/cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1GeneratorDyn_CHS2_Factor_C))
+
+#define set_CHS2_VCU_TractionEMachine1_10ms_TorqueEmETractSys1MotorDyn(val) ((float32)cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS2.TorqueEmETractSys1MotorDyn_phy = ((val - cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1MotorDyn_CHS2_Offset_C)/cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1MotorDyn_CHS2_Factor_C))
+
+#define set_CHS2_VCU_TractionEMachine1_10ms_TorqueEmETractSys1ActualValue(val) ((float32)cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS2.TorqueEmETractSys1ActualValue_phy = ((val - cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1ActualValue_CHS2_Offset_C)/cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1ActualValue_CHS2_Factor_C))
+
+#define set_CHS2_VCU_TractionEMachine1_10ms_QualifierRpmEmETractSys1ActVal(val) (cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS2.QualifierRpmEmETractSys1ActVal_phy = ((val )))
+
+
+#define set_CHS2_VCU_TractionEMachine2_100ms_CRC_TractionEMachine2_100ms(val) (cap_canApiMsg_VCU_TractionEMachine2_100ms_CHS2.CRC_TractionEMachine2_100ms_phy = ((val )))
+
+#define set_CHS2_VCU_TractionEMachine2_100ms_ALIV_TractionEMachine2_100ms(val) (cap_canApiMsg_VCU_TractionEMachine2_100ms_CHS2.ALIV_TractionEMachine2_100ms_phy = ((val )))
+
+#define set_CHS2_VCU_TractionEMachine2_100ms_WheelRatioEAxlEtractSys2ActVal(val) ((float32)cap_canApiMsg_VCU_TractionEMachine2_100ms_CHS2.WheelRatioEAxlEtractSys2ActVal_phy = ((val - cap_VCU_TractionEMachine2_100ms_WheelRatioEAxlEtractSys2ActVal_CHS2_Offset_C)/cap_VCU_TractionEMachine2_100ms_WheelRatioEAxlEtractSys2ActVal_CHS2_Factor_C))
+
+
+#define set_CHS2_VCU_TractionEMachine1_100ms_CRC_TractionEMachine1_100ms(val) (cap_canApiMsg_VCU_TractionEMachine1_100ms_CHS2.CRC_TractionEMachine1_100ms_phy = ((val )))
+
+#define set_CHS2_VCU_TractionEMachine1_100ms_ALIV_TractionEMachine1_100ms(val) (cap_canApiMsg_VCU_TractionEMachine1_100ms_CHS2.ALIV_TractionEMachine1_100ms_phy = ((val )))
+
+#define set_CHS2_VCU_TractionEMachine1_100ms_WheelRatioEAxlEtractSys1ActVal(val) ((float32)cap_canApiMsg_VCU_TractionEMachine1_100ms_CHS2.WheelRatioEAxlEtractSys1ActVal_phy = ((val - cap_VCU_TractionEMachine1_100ms_WheelRatioEAxlEtractSys1ActVal_CHS2_Offset_C)/cap_VCU_TractionEMachine1_100ms_WheelRatioEAxlEtractSys1ActVal_CHS2_Factor_C))
+
+
+#define set_CHS2_VCU_Status_CRC_VCU_Status(val) (cap_canApiMsg_VCU_Status_CHS2.CRC_VCU_Status_phy = ((val )))
+
+#define set_CHS2_VCU_Status_ALIV_VCU_Status(val) (cap_canApiMsg_VCU_Status_CHS2.ALIV_VCU_Status_phy = ((val )))
+
+#define set_CHS2_VCU_Status_VCU_ACPD_Percent(val) ((float32)cap_canApiMsg_VCU_Status_CHS2.VCU_ACPD_Percent_phy = ((val - cap_VCU_Status_VCU_ACPD_Percent_CHS2_Offset_C)/cap_VCU_Status_VCU_ACPD_Percent_CHS2_Factor_C))
+
+#define set_CHS2_VCU_Status_VCU_ACPD_Percent_Valid(val) (cap_canApiMsg_VCU_Status_CHS2.VCU_ACPD_Percent_Valid_phy = ((val )))
+
+#define set_CHS2_VCU_Status_VCU_ACT_Gear(val) (cap_canApiMsg_VCU_Status_CHS2.VCU_ACT_Gear_phy = ((val )))
+
+#define set_CHS2_VCU_Status_VCU_ACT_GearValid(val) (cap_canApiMsg_VCU_Status_CHS2.VCU_ACT_GearValid_phy = ((val )))
+
+#define set_CHS2_VCU_Status_VCU_ACT_DriveMode(val) (cap_canApiMsg_VCU_Status_CHS2.VCU_ACT_DriveMode_phy = ((val )))
+
+#define set_CHS2_VCU_Status_VCU_ACT_DriveModeValid(val) (cap_canApiMsg_VCU_Status_CHS2.VCU_ACT_DriveModeValid_phy = ((val )))
+
+
+#define set_CHS2_VCU_HV_Status_CRC_VCU_HV_Status(val) (cap_canApiMsg_VCU_HV_Status_CHS2.CRC_VCU_HV_Status_phy = ((val )))
+
+#define set_CHS2_VCU_HV_Status_ALIV_VCU_HV_Status(val) (cap_canApiMsg_VCU_HV_Status_CHS2.ALIV_VCU_HV_Status_phy = ((val )))
+
+#define set_CHS2_VCU_HV_Status_VCU_VehicleHVStatus(val) (cap_canApiMsg_VCU_HV_Status_CHS2.VCU_VehicleHVStatus_phy = ((val )))
+
+
+#define set_CHS2_VCU_CombinedChargerUnit_CRC_VCU_CombinedChargerUnit(val) (cap_canApiMsg_VCU_CombinedChargerUnit_CHS2.CRC_VCU_CombinedChargerUnit_phy = ((val )))
+
+#define set_CHS2_VCU_CombinedChargerUnit_ALIV_VCU_CombinedChargerUnit(val) (cap_canApiMsg_VCU_CombinedChargerUnit_CHS2.ALIV_VCU_CombinedChargerUnit_phy = ((val )))
+
+#define set_CHS2_VCU_CombinedChargerUnit_TargetTorqueEmETractSys1(val) ((float32)cap_canApiMsg_VCU_CombinedChargerUnit_CHS2.TargetTorqueEmETractSys1_phy = ((val - cap_VCU_CombinedChargerUnit_TargetTorqueEmETractSys1_CHS2_Offset_C)/cap_VCU_CombinedChargerUnit_TargetTorqueEmETractSys1_CHS2_Factor_C))
+
+#define set_CHS2_VCU_CombinedChargerUnit_TargetTorqueEmETractSys2(val) ((float32)cap_canApiMsg_VCU_CombinedChargerUnit_CHS2.TargetTorqueEmETractSys2_phy = ((val - cap_VCU_CombinedChargerUnit_TargetTorqueEmETractSys2_CHS2_Offset_C)/cap_VCU_CombinedChargerUnit_TargetTorqueEmETractSys2_CHS2_Factor_C))
+
+
+#define set_CHS2_HighVoltageStorage200msNo1_HV_ONOFF_status(val) (cap_canApiMsg_HighVoltageStorage200msNo1_CHS2.HV_ONOFF_status_phy = ((val )))
+
+#define set_CHS2_HighVoltageStorage200msNo1_HV_Positive_Path_Status(val) (cap_canApiMsg_HighVoltageStorage200msNo1_CHS2.HV_Positive_Path_Status_phy = ((val )))
+
+#define set_CHS2_HighVoltageStorage200msNo1_HV_Negative_Path_Status(val) (cap_canApiMsg_HighVoltageStorage200msNo1_CHS2.HV_Negative_Path_Status_phy = ((val )))
+
+#define set_CHS2_HighVoltageStorage200msNo1_HV_Last_Cont_Opening_Diagnosis(val) (cap_canApiMsg_HighVoltageStorage200msNo1_CHS2.HV_Last_Cont_Opening_Diagnosis_phy = ((val )))
+
+#define set_CHS2_HighVoltageStorage200msNo1_HV_ONOFF_Err_Status(val) (cap_canApiMsg_HighVoltageStorage200msNo1_CHS2.HV_ONOFF_Err_Status_phy = ((val )))
+
+
+#define set_PT_VCU_HV_DrvSys_status_VCU_HV_SystemStatus(val) (cap_canApiMsg_VCU_HV_DrvSys_status_PT.VCU_HV_SystemStatus_phy = ((val )))
+
+
+#define set_PT_VCU_Thermal_Status_VCU_LTROutLetTemp(val) ((sint16)cap_canApiMsg_VCU_Thermal_Status_PT.VCU_LTROutLetTemp_phy = ((val - cap_VCU_Thermal_Status_VCU_LTROutLetTemp_PT_Offset_C)/cap_VCU_Thermal_Status_VCU_LTROutLetTemp_PT_Factor_C))
+
+
+#define set_PT_CLAMP_STAT_CRC_CLAMP_STAT(val) (cap_canApiMsg_CLAMP_STAT_PT.CRC_CLAMP_STAT_phy = ((val )))
+
+#define set_PT_CLAMP_STAT_ALIV_CLAMP_STAT(val) (cap_canApiMsg_CLAMP_STAT_PT.ALIV_CLAMP_STAT_phy = ((val )))
+
+#define set_PT_CLAMP_STAT_STAT_CL15_L(val) (cap_canApiMsg_CLAMP_STAT_PT.STAT_CL15_L_phy = ((val )))
+
+#define set_PT_CLAMP_STAT_STAT_CL30S_L(val) (cap_canApiMsg_CLAMP_STAT_PT.STAT_CL30S_L_phy = ((val )))
+
+#define set_PT_CLAMP_STAT_STAT_CL30S_Light(val) (cap_canApiMsg_CLAMP_STAT_PT.STAT_CL30S_Light_phy = ((val )))
+
+#define set_PT_CLAMP_STAT_STAT_CL15_WUPL(val) (cap_canApiMsg_CLAMP_STAT_PT.STAT_CL15_WUPL_phy = ((val )))
+
+
+#define set_PT_CON_VEH_CRC_CON_VEH(val) (cap_canApiMsg_CON_VEH_PT.CRC_CON_VEH_phy = ((val )))
+
+#define set_PT_CON_VEH_ALIV_CON_VEH(val) (cap_canApiMsg_CON_VEH_PT.ALIV_CON_VEH_phy = ((val )))
+
+#define set_PT_CON_VEH_CTR_BS_PRTNT(val) (cap_canApiMsg_CON_VEH_PT.CTR_BS_PRTNT_phy = ((val )))
+
+#define set_PT_CON_VEH_CTR_FKTN_PRTNT(val) (cap_canApiMsg_CON_VEH_PT.CTR_FKTN_PRTNT_phy = ((val )))
+
+#define set_PT_CON_VEH_ST_CON_VEH(val) (cap_canApiMsg_CON_VEH_PT.ST_CON_VEH_phy = ((val )))
+
+#define set_PT_CON_VEH_QU_ST_CON_VEH(val) (cap_canApiMsg_CON_VEH_PT.QU_ST_CON_VEH_phy = ((val )))
+
+
+#define set_PT_ST_CR_CRC_ST_CR(val) (cap_canApiMsg_ST_CR_PT.CRC_ST_CR_phy = ((val )))
+
+#define set_PT_ST_CR_ALIV_ST_CR(val) (cap_canApiMsg_ST_CR_PT.ALIV_ST_CR_phy = ((val )))
+
+#define set_PT_ST_CR_ST_CRSE_FRT(val) (cap_canApiMsg_ST_CR_PT.ST_CRSE_FRT_phy = ((val )))
+
+#define set_PT_ST_CR_ST_CRSE_SIDE_RH(val) (cap_canApiMsg_ST_CR_PT.ST_CRSE_SIDE_RH_phy = ((val )))
+
+#define set_PT_ST_CR_ST_CRSE_SIDE_LH(val) (cap_canApiMsg_ST_CR_PT.ST_CRSE_SIDE_LH_phy = ((val )))
+
+#define set_PT_ST_CR_ST_CRSE_REAR(val) (cap_canApiMsg_ST_CR_PT.ST_CRSE_REAR_phy = ((val )))
+
+#define set_PT_ST_CR_ST_CRSE_ROV(val) (cap_canApiMsg_ST_CR_PT.ST_CRSE_ROV_phy = ((val )))
+
+
+#define set_PT_AVL_RPM_WHL_CRC_AVL_RPM_WHL(val) (cap_canApiMsg_AVL_RPM_WHL_PT.CRC_AVL_RPM_WHL_phy = ((val )))
+
+#define set_PT_AVL_RPM_WHL_ALIV_AVL_RPM_WHL(val) (cap_canApiMsg_AVL_RPM_WHL_PT.ALIV_AVL_RPM_WHL_phy = ((val )))
+
+#define set_PT_AVL_RPM_WHL_AVL_RPM_WHL_RLH(val) ((float32)cap_canApiMsg_AVL_RPM_WHL_PT.AVL_RPM_WHL_RLH_phy = ((val - cap_AVL_RPM_WHL_AVL_RPM_WHL_RLH_PT_Offset_C)/cap_AVL_RPM_WHL_AVL_RPM_WHL_RLH_PT_Factor_C))
+
+#define set_PT_AVL_RPM_WHL_AVL_RPM_WHL_RRH(val) ((float32)cap_canApiMsg_AVL_RPM_WHL_PT.AVL_RPM_WHL_RRH_phy = ((val - cap_AVL_RPM_WHL_AVL_RPM_WHL_RRH_PT_Offset_C)/cap_AVL_RPM_WHL_AVL_RPM_WHL_RRH_PT_Factor_C))
+
+#define set_PT_AVL_RPM_WHL_AVL_RPM_WHL_FLH(val) ((float32)cap_canApiMsg_AVL_RPM_WHL_PT.AVL_RPM_WHL_FLH_phy = ((val - cap_AVL_RPM_WHL_AVL_RPM_WHL_FLH_PT_Offset_C)/cap_AVL_RPM_WHL_AVL_RPM_WHL_FLH_PT_Factor_C))
+
+#define set_PT_AVL_RPM_WHL_AVL_RPM_WHL_FRH(val) ((float32)cap_canApiMsg_AVL_RPM_WHL_PT.AVL_RPM_WHL_FRH_phy = ((val - cap_AVL_RPM_WHL_AVL_RPM_WHL_FRH_PT_Offset_C)/cap_AVL_RPM_WHL_AVL_RPM_WHL_FRH_PT_Factor_C))
+
+#define set_PT_AVL_RPM_WHL_QU_AVL_RPM_WHL_RLH(val) (cap_canApiMsg_AVL_RPM_WHL_PT.QU_AVL_RPM_WHL_RLH_phy = ((val )))
+
+#define set_PT_AVL_RPM_WHL_QU_AVL_RPM_WHL_RRH(val) (cap_canApiMsg_AVL_RPM_WHL_PT.QU_AVL_RPM_WHL_RRH_phy = ((val )))
+
+#define set_PT_AVL_RPM_WHL_QU_AVL_RPM_WHL_FLH(val) (cap_canApiMsg_AVL_RPM_WHL_PT.QU_AVL_RPM_WHL_FLH_phy = ((val )))
+
+#define set_PT_AVL_RPM_WHL_QU_AVL_RPM_WHL_FRH(val) (cap_canApiMsg_AVL_RPM_WHL_PT.QU_AVL_RPM_WHL_FRH_phy = ((val )))
+
+
+#define set_PT_CombinedChargerUnit10msNo3_CRC_CombinedChargerUnit10msNo3(val) (cap_canApiMsg_CombinedChargerUnit10msNo3_PT.CRC_CombinedChargerUnit10msNo3_phy = ((val )))
+
+#define set_PT_CombinedChargerUnit10msNo3_ALIV_CombinedChargerUnit10msNo3(val) (cap_canApiMsg_CombinedChargerUnit10msNo3_PT.ALIV_CombinedChargerUnit10msNo3_phy = ((val )))
+
+#define set_PT_CombinedChargerUnit10msNo3_OperatingModeETract1Target(val) (cap_canApiMsg_CombinedChargerUnit10msNo3_PT.OperatingModeETract1Target_phy = ((val )))
+
+#define set_PT_CombinedChargerUnit10msNo3_OperatingModeETract2Target(val) (cap_canApiMsg_CombinedChargerUnit10msNo3_PT.OperatingModeETract2Target_phy = ((val )))
+
+
+#define set_PT_CombinedChargerUnit10msNo1_CRC_CombinedChargerUnit10msNo1(val) (cap_canApiMsg_CombinedChargerUnit10msNo1_PT.CRC_CombinedChargerUnit10msNo1_phy = ((val )))
+
+#define set_PT_CombinedChargerUnit10msNo1_ALIV_CombinedChargerUnit10msNo1(val) (cap_canApiMsg_CombinedChargerUnit10msNo1_PT.ALIV_CombinedChargerUnit10msNo1_phy = ((val )))
+
+#define set_PT_CombinedChargerUnit10msNo1_TargetTorqueEmETractSys1(val) ((float32)cap_canApiMsg_CombinedChargerUnit10msNo1_PT.TargetTorqueEmETractSys1_phy = ((val - cap_CombinedChargerUnit10msNo1_TargetTorqueEmETractSys1_PT_Offset_C)/cap_CombinedChargerUnit10msNo1_TargetTorqueEmETractSys1_PT_Factor_C))
+
+#define set_PT_CombinedChargerUnit10msNo1_TargetTorqueEmETractSys2(val) ((float32)cap_canApiMsg_CombinedChargerUnit10msNo1_PT.TargetTorqueEmETractSys2_phy = ((val - cap_CombinedChargerUnit10msNo1_TargetTorqueEmETractSys2_PT_Offset_C)/cap_CombinedChargerUnit10msNo1_TargetTorqueEmETractSys2_PT_Factor_C))
+
+#define set_PT_CombinedChargerUnit10msNo1_TorqBoundaryETractSys1EmNCtrlMax(val) ((float32)cap_canApiMsg_CombinedChargerUnit10msNo1_PT.TorqBoundaryETractSys1EmNCtrlMax_phy = ((val - cap_CombinedChargerUnit10msNo1_TorqBoundaryETractSys1EmNCtrlMax_PT_Offset_C)/cap_CombinedChargerUnit10msNo1_TorqBoundaryETractSys1EmNCtrlMax_PT_Factor_C))
+
+#define set_PT_CombinedChargerUnit10msNo1_TorqBoundaryETractSys1EmNCtrlMin(val) ((float32)cap_canApiMsg_CombinedChargerUnit10msNo1_PT.TorqBoundaryETractSys1EmNCtrlMin_phy = ((val - cap_CombinedChargerUnit10msNo1_TorqBoundaryETractSys1EmNCtrlMin_PT_Offset_C)/cap_CombinedChargerUnit10msNo1_TorqBoundaryETractSys1EmNCtrlMin_PT_Factor_C))
+
+#define set_PT_CombinedChargerUnit10msNo1_TorqBoundaryETractSys2EmNCtrlMax(val) ((float32)cap_canApiMsg_CombinedChargerUnit10msNo1_PT.TorqBoundaryETractSys2EmNCtrlMax_phy = ((val - cap_CombinedChargerUnit10msNo1_TorqBoundaryETractSys2EmNCtrlMax_PT_Offset_C)/cap_CombinedChargerUnit10msNo1_TorqBoundaryETractSys2EmNCtrlMax_PT_Factor_C))
+
+#define set_PT_CombinedChargerUnit10msNo1_TorqBoundaryETractSys2EmNCtrlMin(val) ((float32)cap_canApiMsg_CombinedChargerUnit10msNo1_PT.TorqBoundaryETractSys2EmNCtrlMin_phy = ((val - cap_CombinedChargerUnit10msNo1_TorqBoundaryETractSys2EmNCtrlMin_PT_Offset_C)/cap_CombinedChargerUnit10msNo1_TorqBoundaryETractSys2EmNCtrlMin_PT_Factor_C))
+
+#define set_PT_CombinedChargerUnit10msNo1_StatusDampingVibration(val) (cap_canApiMsg_CombinedChargerUnit10msNo1_PT.StatusDampingVibration_phy = ((val )))
+
+#define set_PT_CombinedChargerUnit10msNo1_SecOcDtP2CmbdChrgUnit10msNo1_1(val) (cap_canApiMsg_CombinedChargerUnit10msNo1_PT.SecOcDtP2CmbdChrgUnit10msNo1_1_phy = ((val )))
+
+#define set_PT_CombinedChargerUnit10msNo1_TargetEMRpmETractSys1(val) ((sint16)cap_canApiMsg_CombinedChargerUnit10msNo1_PT.TargetEMRpmETractSys1_phy = ((val - cap_CombinedChargerUnit10msNo1_TargetEMRpmETractSys1_PT_Offset_C)/cap_CombinedChargerUnit10msNo1_TargetEMRpmETractSys1_PT_Factor_C))
+
+#define set_PT_CombinedChargerUnit10msNo1_TargetEMRpmETractSys2(val) ((sint16)cap_canApiMsg_CombinedChargerUnit10msNo1_PT.TargetEMRpmETractSys2_phy = ((val - cap_CombinedChargerUnit10msNo1_TargetEMRpmETractSys2_PT_Offset_C)/cap_CombinedChargerUnit10msNo1_TargetEMRpmETractSys2_PT_Factor_C))
+
+#define set_PT_CombinedChargerUnit10msNo1_SecOcDtP2CmbdChrgUnit10msNo1_2(val) (cap_canApiMsg_CombinedChargerUnit10msNo1_PT.SecOcDtP2CmbdChrgUnit10msNo1_2_phy = ((val )))
+
+#define set_PT_CombinedChargerUnit10msNo1_StatusReleaseTorqueVerified(val) (cap_canApiMsg_CombinedChargerUnit10msNo1_PT.StatusReleaseTorqueVerified_phy = ((val )))
+
+#define set_PT_CombinedChargerUnit10msNo1_SecOcDtP2CmbdChrgUnit10msNo1_0(val) (cap_canApiMsg_CombinedChargerUnit10msNo1_PT.SecOcDtP2CmbdChrgUnit10msNo1_0_phy = ((val )))
+
+#define set_PT_CombinedChargerUnit10msNo1_SecOcDtP2CmbdChrgUnit10msNo1_3(val) (cap_canApiMsg_CombinedChargerUnit10msNo1_PT.SecOcDtP2CmbdChrgUnit10msNo1_3_phy = ((val )))
+
+
+#define set_PT_ERRM_BN_U_CTR_ERRM_BN_U(val) (cap_canApiMsg_ERRM_BN_U_PT.CTR_ERRM_BN_U_phy = ((val )))
+
+
+#define set_PT_WMOM_DRV_9_TAR_WMOM_PT_SUM_COOTD(val) (cap_canApiMsg_WMOM_DRV_9_PT.TAR_WMOM_PT_SUM_COOTD_phy = (sint32)((val - cap_WMOM_DRV_9_TAR_WMOM_PT_SUM_COOTD_PT_Offset_C)/cap_WMOM_DRV_9_TAR_WMOM_PT_SUM_COOTD_PT_Factor_C))
+#define set_PT_WMOM_DRV_9_CRC_WMOM_DRV_9(val) (cap_canApiMsg_WMOM_DRV_9_PT.CRC_WMOM_DRV_9_phy = ((val )))
+
+#define set_PT_WMOM_DRV_9_ALIV_WMOM_DRV_9(val) (cap_canApiMsg_WMOM_DRV_9_PT.ALIV_WMOM_DRV_9_phy = ((val )))
+
+#define set_PT_WMOM_DRV_9_CHL_WMOM_DRV_9(val) (cap_canApiMsg_WMOM_DRV_9_PT.CHL_WMOM_DRV_9_phy = ((val )))
+
+
+
+
+#define set_PT_ST_STAB_DSC_CRC_ST_STAB_DSC(val) (cap_canApiMsg_ST_STAB_DSC_PT.CRC_ST_STAB_DSC_phy = ((val )))
+
+#define set_PT_ST_STAB_DSC_ALIV_ST_STAB_DSC(val) (cap_canApiMsg_ST_STAB_DSC_PT.ALIV_ST_STAB_DSC_phy = ((val )))
+
+#define set_PT_ST_STAB_DSC_QU_FN_FDR(val) (cap_canApiMsg_ST_STAB_DSC_PT.QU_FN_FDR_phy = ((val )))
+
+#define set_PT_ST_STAB_DSC_QU_FN_ABS(val) (cap_canApiMsg_ST_STAB_DSC_PT.QU_FN_ABS_phy = ((val )))
+
+#define set_PT_ST_STAB_DSC_QU_FN_ASC(val) (cap_canApiMsg_ST_STAB_DSC_PT.QU_FN_ASC_phy = ((val )))
+
+#define set_PT_ST_STAB_DSC_ST_BRG_DV(val) (cap_canApiMsg_ST_STAB_DSC_PT.ST_BRG_DV_phy = ((val )))
+
+
+#define set_PT_ST_STAB_DSC_2_ST_SLIP_THO(val) (cap_canApiMsg_ST_STAB_DSC_2_PT.ST_SLIP_THO_phy = ((val )))
+
+
+#define set_PT_WMOM_PT_AVL_CRC_WMOM_PT_AVL(val) (cap_canApiMsg_WMOM_PT_AVL_PT.CRC_WMOM_PT_AVL_phy = ((val )))
+
+#define set_PT_WMOM_PT_AVL_ALIV_WMOM_PT_AVL(val) (cap_canApiMsg_WMOM_PT_AVL_PT.ALIV_WMOM_PT_AVL_phy = ((val )))
+
+#define set_PT_WMOM_PT_AVL_CHL_WMOM_PT_AVL(val) (cap_canApiMsg_WMOM_PT_AVL_PT.CHL_WMOM_PT_AVL_phy = ((val )))
+
+#define set_PT_WMOM_PT_AVL_AVL_WMOM_PT_SUM(val) ((sint32)cap_canApiMsg_WMOM_PT_AVL_PT.AVL_WMOM_PT_SUM_phy = ((val - cap_WMOM_PT_AVL_AVL_WMOM_PT_SUM_PT_Offset_C)/cap_WMOM_PT_AVL_AVL_WMOM_PT_SUM_PT_Factor_C))
+
+#define set_PT_WMOM_PT_AVL_QU_AVL_WMOM_PT_SUM(val) (cap_canApiMsg_WMOM_PT_AVL_PT.QU_AVL_WMOM_PT_SUM_phy = ((val )))
+
+
+#define set_PT_VCU_ChargingConnectionSts_CRC_VCU_ChargingConnectionSts(val) (cap_canApiMsg_VCU_ChargingConnectionSts_PT.CRC_VCU_ChargingConnectionSts_phy = ((val )))
+
+#define set_PT_VCU_ChargingConnectionSts_ALV_VCU_ChargingConnectionSts(val) (cap_canApiMsg_VCU_ChargingConnectionSts_PT.ALV_VCU_ChargingConnectionSts_phy = ((val )))
+
+#define set_PT_VCU_ChargingConnectionSts_VCU_AcChgGunIn(val) (cap_canApiMsg_VCU_ChargingConnectionSts_PT.VCU_AcChgGunIn_phy = ((val )))
+
+#define set_PT_VCU_ChargingConnectionSts_VCU_DCChgGunIn(val) (cap_canApiMsg_VCU_ChargingConnectionSts_PT.VCU_DCChgGunIn_phy = ((val )))
+
+
+#define set_PT_BundleEAFlexrayToCANFD20msNo1_CRC_V_VEH(val) (cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_PT.CRC_V_VEH_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToCANFD20msNo1_ALIV_V_VEH(val) (cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_PT.ALIV_V_VEH_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToCANFD20msNo1_V_VEH_COG(val) ((float32)cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_PT.V_VEH_COG_phy = ((val - cap_BundleEAFlexrayToCANFD20msNo1_V_VEH_COG_PT_Offset_C)/cap_BundleEAFlexrayToCANFD20msNo1_V_VEH_COG_PT_Factor_C))
+
+#define set_PT_BundleEAFlexrayToCANFD20msNo1_QU_V_VEH_COG(val) (cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_PT.QU_V_VEH_COG_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToCANFD20msNo1_SecOcDataP2V_VEH(val) (cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_PT.SecOcDataP2V_VEH_phy = ((val )))
+
+
+#define set_PT_CombinedChargerUnit10msNo2_PowerETractSys2LimGenMax(val) ((sint32)cap_canApiMsg_CombinedChargerUnit10msNo2_PT.PowerETractSys2LimGenMax_phy = ((val - cap_CombinedChargerUnit10msNo2_PowerETractSys2LimGenMax_PT_Offset_C)/cap_CombinedChargerUnit10msNo2_PowerETractSys2LimGenMax_PT_Factor_C))
+
+#define set_PT_CombinedChargerUnit10msNo2_PowerETractSys2LimMotMax(val) ((sint32)cap_canApiMsg_CombinedChargerUnit10msNo2_PT.PowerETractSys2LimMotMax_phy = ((val - cap_CombinedChargerUnit10msNo2_PowerETractSys2LimMotMax_PT_Offset_C)/cap_CombinedChargerUnit10msNo2_PowerETractSys2LimMotMax_PT_Factor_C))
+
+#define set_PT_CombinedChargerUnit10msNo2_PowerETractSys1LimGenMax(val) ((sint32)cap_canApiMsg_CombinedChargerUnit10msNo2_PT.PowerETractSys1LimGenMax_phy = ((val - cap_CombinedChargerUnit10msNo2_PowerETractSys1LimGenMax_PT_Offset_C)/cap_CombinedChargerUnit10msNo2_PowerETractSys1LimGenMax_PT_Factor_C))
+
+#define set_PT_CombinedChargerUnit10msNo2_PowerETractSys1LimMotMax(val) ((sint32)cap_canApiMsg_CombinedChargerUnit10msNo2_PT.PowerETractSys1LimMotMax_phy = ((val - cap_CombinedChargerUnit10msNo2_PowerETractSys1LimMotMax_PT_Offset_C)/cap_CombinedChargerUnit10msNo2_PowerETractSys1LimMotMax_PT_Factor_C))
+
+#define set_PT_CombinedChargerUnit10msNo2_OperatingModeEANActualValue(val) (cap_canApiMsg_CombinedChargerUnit10msNo2_PT.OperatingModeEANActualValue_phy = ((val )))
+
+#define set_PT_CombinedChargerUnit10msNo2_RequestExtraBoostETractSys1(val) (cap_canApiMsg_CombinedChargerUnit10msNo2_PT.RequestExtraBoostETractSys1_phy = ((val )))
+
+#define set_PT_CombinedChargerUnit10msNo2_RequestExtraBoostETractSys2(val) (cap_canApiMsg_CombinedChargerUnit10msNo2_PT.RequestExtraBoostETractSys2_phy = ((val )))
+
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_CRC_EXTS_ARB_INTF(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.CRC_EXTS_ARB_INTF_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_ALIV_EXTS_ARB_INTF(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.ALIV_EXTS_ARB_INTF_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_CHL_EXTS_ARB_INTF(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.CHL_EXTS_ARB_INTF_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_LH_EXT(val) ((sint32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.AVL_BRTORQ_WHL_RS_LH_EXT_phy = ((val - cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_LH_EXT_PT_Offset_C)/cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_LH_EXT_PT_Factor_C))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_RH_EXT(val) ((sint32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.AVL_BRTORQ_WHL_RS_RH_EXT_phy = ((val - cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_RH_EXT_PT_Offset_C)/cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_RH_EXT_PT_Factor_C))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_LH_EXT(val) ((sint32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.AVL_BRTORQ_WHL_FS_LH_EXT_phy = ((val - cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_LH_EXT_PT_Offset_C)/cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_LH_EXT_PT_Factor_C))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_RH_EXT(val) ((sint32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.AVL_BRTORQ_WHL_FS_RH_EXT_phy = ((val - cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_RH_EXT_PT_Offset_C)/cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_RH_EXT_PT_Factor_C))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_CRC_RQ_RPM_BAX(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.CRC_RQ_RPM_BAX_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_ALIV_RQ_RPM_BAX(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.ALIV_RQ_RPM_BAX_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_CHL_RQ_RPM_BAX(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.CHL_RQ_RPM_BAX_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_BAX(val) ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.TAR_RPM_MAX_BAX_phy = ((val - cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_BAX_PT_Offset_C)/cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_BAX_PT_Factor_C))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_BAX(val) ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.TAR_RPM_MIN_BAX_phy = ((val - cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_BAX_PT_Offset_C)/cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_BAX_PT_Factor_C))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_ST_TAR_RPM_BAX(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.ST_TAR_RPM_BAX_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_TAR_STIF_SPCO(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.TAR_STIF_SPCO_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_CRC_RQ_RPM_FTAX(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.CRC_RQ_RPM_FTAX_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_ALIV_RQ_RPM_FTAX(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.ALIV_RQ_RPM_FTAX_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_CHL_RQ_RPM_FTAX(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.CHL_RQ_RPM_FTAX_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_FTAX(val) ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.TAR_RPM_MAX_FTAX_phy = ((val - cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_FTAX_PT_Offset_C)/cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_FTAX_PT_Factor_C))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_FTAX(val) ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.TAR_RPM_MIN_FTAX_phy = ((val - cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_FTAX_PT_Offset_C)/cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_FTAX_PT_Factor_C))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_ST_TAR_RPM_FTAX(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.ST_TAR_RPM_FTAX_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_CRC_StatusSlipThresholds(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.CRC_StatusSlipThresholds_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_ALIV_StatusSlipThresholds(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.ALIV_StatusSlipThresholds_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_CHL_StatusSlipThresholds(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.CHL_StatusSlipThresholds_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_StatusSlipThresholdsFrontAxle(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.StatusSlipThresholdsFrontAxle_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD10msNo1_StatusSlipThresholdsRearAxle(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT.StatusSlipThresholdsRearAxle_phy = ((val )))
+
+
+#define set_PT_BundleEAFlexrayToAECANFD20msNo2_CRC_ACLNX_COG(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_PT.CRC_ACLNX_COG_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD20msNo2_ALIV_ACLNX_COG(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_PT.ALIV_ACLNX_COG_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD20msNo2_ACLNX_COG(val) ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_PT.ACLNX_COG_phy = ((val - cap_BundleEAFlexrayToAECANFD20msNo2_ACLNX_COG_PT_Offset_C)/cap_BundleEAFlexrayToAECANFD20msNo2_ACLNX_COG_PT_Factor_C))
+
+#define set_PT_BundleEAFlexrayToAECANFD20msNo2_QU_ACLNX_COG(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_PT.QU_ACLNX_COG_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD20msNo2_CRC_ACLNY_COG(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_PT.CRC_ACLNY_COG_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD20msNo2_ALIV_ACLNY_COG(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_PT.ALIV_ACLNY_COG_phy = ((val )))
+
+#define set_PT_BundleEAFlexrayToAECANFD20msNo2_ACLNY_COG(val) ((float32)cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_PT.ACLNY_COG_phy = ((val - cap_BundleEAFlexrayToAECANFD20msNo2_ACLNY_COG_PT_Offset_C)/cap_BundleEAFlexrayToAECANFD20msNo2_ACLNY_COG_PT_Factor_C))
+
+#define set_PT_BundleEAFlexrayToAECANFD20msNo2_QU_ACLNY_COG(val) (cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_PT.QU_ACLNY_COG_phy = ((val )))
+
+
+#define set_PT_VCU_BMS_ThermalStatus_CRC_VCU_BMS_ThermalStatus(val) (cap_canApiMsg_VCU_BMS_ThermalStatus_PT.CRC_VCU_BMS_ThermalStatus_phy = ((val )))
+
+#define set_PT_VCU_BMS_ThermalStatus_ALV_VCU_BMS_ThermalStatus(val) (cap_canApiMsg_VCU_BMS_ThermalStatus_PT.ALV_VCU_BMS_ThermalStatus_phy = ((val )))
+
+#define set_PT_VCU_BMS_ThermalStatus_VCU_BMS_ActCoolingSts(val) (cap_canApiMsg_VCU_BMS_ThermalStatus_PT.VCU_BMS_ActCoolingSts_phy = ((val )))
+
+#define set_PT_VCU_BMS_ThermalStatus_VCU_BMS_HeatingSts(val) (cap_canApiMsg_VCU_BMS_ThermalStatus_PT.VCU_BMS_HeatingSts_phy = ((val )))
+
+
+#define set_PT_VCU_OBC_Req_VCU_OBC_iLineLimit(val) ((float32)cap_canApiMsg_VCU_OBC_Req_PT.VCU_OBC_iLineLimit_phy = ((val - cap_VCU_OBC_Req_VCU_OBC_iLineLimit_PT_Offset_C)/cap_VCU_OBC_Req_VCU_OBC_iLineLimit_PT_Factor_C))
+
+#define set_PT_VCU_OBC_Req_VCU_OBC_Enable(val) (cap_canApiMsg_VCU_OBC_Req_PT.VCU_OBC_Enable_phy = ((val )))
+
+#define set_PT_VCU_OBC_Req_VCU_ChgDirType(val) (cap_canApiMsg_VCU_OBC_Req_PT.VCU_ChgDirType_phy = ((val )))
+
+#define set_PT_VCU_OBC_Req_VCU_OBC_vOBC_Request(val) ((float32)cap_canApiMsg_VCU_OBC_Req_PT.VCU_OBC_vOBC_Request_phy = ((val - cap_VCU_OBC_Req_VCU_OBC_vOBC_Request_PT_Offset_C)/cap_VCU_OBC_Req_VCU_OBC_vOBC_Request_PT_Factor_C))
+
+#define set_PT_VCU_OBC_Req_VCU_OBC_iOBC_Request(val) ((float32)cap_canApiMsg_VCU_OBC_Req_PT.VCU_OBC_iOBC_Request_phy = ((val - cap_VCU_OBC_Req_VCU_OBC_iOBC_Request_PT_Offset_C)/cap_VCU_OBC_Req_VCU_OBC_iOBC_Request_PT_Factor_C))
+
+
+#define set_PT_VCU_BMS_ChargingParams_CRC_VCU_BMS_ChargingParams(val) (cap_canApiMsg_VCU_BMS_ChargingParams_PT.CRC_VCU_BMS_ChargingParams_phy = ((val )))
+
+#define set_PT_VCU_BMS_ChargingParams_ALV_VCU_BMS_ChargingParams(val) (cap_canApiMsg_VCU_BMS_ChargingParams_PT.ALV_VCU_BMS_ChargingParams_phy = ((val )))
+
+#define set_PT_VCU_BMS_ChargingParams_VCU_TargetASOC(val) ((float32)cap_canApiMsg_VCU_BMS_ChargingParams_PT.VCU_TargetASOC_phy = ((val - cap_VCU_BMS_ChargingParams_VCU_TargetASOC_PT_Offset_C)/cap_VCU_BMS_ChargingParams_VCU_TargetASOC_PT_Factor_C))
+
+
+#define set_PT_VCU_BMS_ChargingControl_CRC_VCU_BMS_ChargingControl(val) (cap_canApiMsg_VCU_BMS_ChargingControl_PT.CRC_VCU_BMS_ChargingControl_phy = ((val )))
+
+#define set_PT_VCU_BMS_ChargingControl_ALV_VCU_BMS_ChargingControl(val) (cap_canApiMsg_VCU_BMS_ChargingControl_PT.ALV_VCU_BMS_ChargingControl_phy = ((val )))
+
+#define set_PT_VCU_BMS_ChargingControl_VCU_BMS_InsulationMonReq(val) (cap_canApiMsg_VCU_BMS_ChargingControl_PT.VCU_BMS_InsulationMonReq_phy = ((val )))
+
+#define set_PT_VCU_BMS_ChargingControl_VCU_BMS_ChargeAllow(val) (cap_canApiMsg_VCU_BMS_ChargingControl_PT.VCU_BMS_ChargeAllow_phy = ((val )))
+
+
+#define set_PT_VCU_BMS_HVCoordination_CRC_VCU_BMS_HVCoordination(val) (cap_canApiMsg_VCU_BMS_HVCoordination_PT.CRC_VCU_BMS_HVCoordination_phy = ((val )))
+
+#define set_PT_VCU_BMS_HVCoordination_ALV_VCU_BMS_HVCoordination(val) (cap_canApiMsg_VCU_BMS_HVCoordination_PT.ALV_VCU_BMS_HVCoordination_phy = ((val )))
+
+#define set_PT_VCU_BMS_HVCoordination_VCU_BMS_HVOnOffReq(val) (cap_canApiMsg_VCU_BMS_HVCoordination_PT.VCU_BMS_HVOnOffReq_phy = ((val )))
+
+
+#define set_PT_Kilometerstand_2_MILE_KM_TOT(val) ((float32)cap_canApiMsg_Kilometerstand_2_PT.MILE_KM_TOT_phy = ((val - cap_Kilometerstand_2_MILE_KM_TOT_PT_Offset_C)/cap_Kilometerstand_2_MILE_KM_TOT_PT_Factor_C))
+
+
+#define set_PT_VCU_DCDC_Req_VCU_EnableDCDC(val) (cap_canApiMsg_VCU_DCDC_Req_PT.VCU_EnableDCDC_phy = ((val )))
+
+#define set_PT_VCU_DCDC_Req_VCU_OutVltgReq(val) ((float32)cap_canApiMsg_VCU_DCDC_Req_PT.VCU_OutVltgReq_phy = ((val - cap_VCU_DCDC_Req_VCU_OutVltgReq_PT_Offset_C)/cap_VCU_DCDC_Req_VCU_OutVltgReq_PT_Factor_C))
+
+#define set_PT_VCU_DCDC_Req_VCU_OutCurReq(val) ((float32)cap_canApiMsg_VCU_DCDC_Req_PT.VCU_OutCurReq_phy = ((val - cap_VCU_DCDC_Req_VCU_OutCurReq_PT_Offset_C)/cap_VCU_DCDC_Req_VCU_OutCurReq_PT_Factor_C))
+
+
+#define set_PT_ParkByWire50msNo1_CRC_ParkByWire50msNo1(val) (cap_canApiMsg_ParkByWire50msNo1_PT.CRC_ParkByWire50msNo1_phy = ((val )))
+
+#define set_PT_ParkByWire50msNo1_ALIV_ParkByWire50msNo1(val) (cap_canApiMsg_ParkByWire50msNo1_PT.ALIV_ParkByWire50msNo1_phy = ((val )))
+
+#define set_PT_ParkByWire50msNo1_CHL_ParkByWire50msNo1(val) (cap_canApiMsg_ParkByWire50msNo1_PT.CHL_ParkByWire50msNo1_phy = ((val )))
+
+#define set_PT_ParkByWire50msNo1_RequestParkByWireHeat(val) (cap_canApiMsg_ParkByWire50msNo1_PT.RequestParkByWireHeat_phy = ((val )))
+
+
+#define set_PT_FZZSTD_ST_ENERG_FZM(val) (cap_canApiMsg_FZZSTD_PT.ST_ENERG_FZM_phy = ((val )))
+
+#define set_PT_FZZSTD_ST_ILK_ERRM_FZM(val) (cap_canApiMsg_FZZSTD_PT.ST_ILK_ERRM_FZM_phy = ((val )))
+
+
+#define set_PT_STAT_ANHAENGER_ST_TRAI(val) (cap_canApiMsg_STAT_ANHAENGER_PT.ST_TRAI_phy = ((val )))
+
+
+#define set_PT_A_TEMP_TEMP_EX(val) ((float32)cap_canApiMsg_A_TEMP_PT.TEMP_EX_phy = ((val - cap_A_TEMP_TEMP_EX_PT_Offset_C)/cap_A_TEMP_TEMP_EX_PT_Factor_C))
+
+
+#define set_PT_DMEBK100_ActValVolFlowCoolantETractSys2(val) ((uint16)cap_canApiMsg_DMEBK100_PT.ActValVolFlowCoolantETractSys2_phy = ((val - cap_DMEBK100_ActValVolFlowCoolantETractSys2_PT_Offset_C)/cap_DMEBK100_ActValVolFlowCoolantETractSys2_PT_Factor_C))
+
+#define set_PT_DMEBK100_ActValVolFlowCoolantETractSys1(val) ((uint16)cap_canApiMsg_DMEBK100_PT.ActValVolFlowCoolantETractSys1_phy = ((val - cap_DMEBK100_ActValVolFlowCoolantETractSys1_PT_Offset_C)/cap_DMEBK100_ActValVolFlowCoolantETractSys1_PT_Factor_C))
+
+
+#define set_PT_CombinedChargerUnit100msNo1_CRC_CombinedChargerUnit100msNo1(val) (cap_canApiMsg_CombinedChargerUnit100msNo1_PT.CRC_CombinedChargerUnit100msNo1_phy = ((val )))
+
+#define set_PT_CombinedChargerUnit100msNo1_ALIV_CombinedChargerUnit100msNo1(val) (cap_canApiMsg_CombinedChargerUnit100msNo1_PT.ALIV_CombinedChargerUnit100msNo1_phy = ((val )))
+
+#define set_PT_CombinedChargerUnit100msNo1_RequestPowerETractSys1Loss(val) ((uint16)cap_canApiMsg_CombinedChargerUnit100msNo1_PT.RequestPowerETractSys1Loss_phy = ((val - cap_CombinedChargerUnit100msNo1_RequestPowerETractSys1Loss_PT_Offset_C)/cap_CombinedChargerUnit100msNo1_RequestPowerETractSys1Loss_PT_Factor_C))
+
+#define set_PT_CombinedChargerUnit100msNo1_RequestPowerETractSys2Loss(val) ((uint16)cap_canApiMsg_CombinedChargerUnit100msNo1_PT.RequestPowerETractSys2Loss_phy = ((val - cap_CombinedChargerUnit100msNo1_RequestPowerETractSys2Loss_PT_Offset_C)/cap_CombinedChargerUnit100msNo1_RequestPowerETractSys2Loss_PT_Factor_C))
+
+
+#define set_PT_FAHRGESTELLNUMMER_NO_VECH_1(val) (cap_canApiMsg_FAHRGESTELLNUMMER_PT.NO_VECH_1_phy = ((val )))
+
+#define set_PT_FAHRGESTELLNUMMER_NO_VECH_2(val) (cap_canApiMsg_FAHRGESTELLNUMMER_PT.NO_VECH_2_phy = ((val )))
+
+#define set_PT_FAHRGESTELLNUMMER_NO_VECH_3(val) (cap_canApiMsg_FAHRGESTELLNUMMER_PT.NO_VECH_3_phy = ((val )))
+
+#define set_PT_FAHRGESTELLNUMMER_NO_VECH_4(val) (cap_canApiMsg_FAHRGESTELLNUMMER_PT.NO_VECH_4_phy = ((val )))
+
+#define set_PT_FAHRGESTELLNUMMER_NO_VECH_5(val) (cap_canApiMsg_FAHRGESTELLNUMMER_PT.NO_VECH_5_phy = ((val )))
+
+#define set_PT_FAHRGESTELLNUMMER_NO_VECH_6(val) (cap_canApiMsg_FAHRGESTELLNUMMER_PT.NO_VECH_6_phy = ((val )))
+
+#define set_PT_FAHRGESTELLNUMMER_NO_VECH_7(val) (cap_canApiMsg_FAHRGESTELLNUMMER_PT.NO_VECH_7_phy = ((val )))
+
+
+#define set_PT_TLT_RW_CRC_TLT_RW(val) (cap_canApiMsg_TLT_RW_PT.CRC_TLT_RW_phy = ((val )))
+
+#define set_PT_TLT_RW_ALIV_TLT_RW(val) (cap_canApiMsg_TLT_RW_PT.ALIV_TLT_RW_phy = ((val )))
+
+#define set_PT_TLT_RW_AVL_LOGR_RW(val) ((float32)cap_canApiMsg_TLT_RW_PT.AVL_LOGR_RW_phy = ((val - cap_TLT_RW_AVL_LOGR_RW_PT_Offset_C)/cap_TLT_RW_AVL_LOGR_RW_PT_Factor_C))
+
+#define set_PT_TLT_RW_QU_AVL_LOGR_RW(val) (cap_canApiMsg_TLT_RW_PT.QU_AVL_LOGR_RW_phy = ((val )))
+
+
+#define set_PT_KILOMETERSTAND_MILE_KM(val) (cap_canApiMsg_KILOMETERSTAND_PT.MILE_KM_phy = ((val )))
+
+
+#define set_PT_RELATIVZEIT_T_SEC_COU_REL(val) (cap_canApiMsg_RELATIVZEIT_PT.T_SEC_COU_REL_phy = ((val )))
+
+
+#define set_PT_EnergyStorageMeasurementValues_EnergyStorageClamp30VoltageValue(val) ((float32)cap_canApiMsg_EnergyStorageMeasurementValues_PT.EnergyStorageClamp30VoltageValue_phy = ((val - cap_EnergyStorageMeasurementValues_EnergyStorageClamp30VoltageValue_PT_Offset_C)/cap_EnergyStorageMeasurementValues_EnergyStorageClamp30VoltageValue_PT_Factor_C))
+
+
+#define set_PT_CombinedChargerUnit1000msNo1_TemperatureCoolantOutput(val) ((float32)cap_canApiMsg_CombinedChargerUnit1000msNo1_PT.TemperatureCoolantOutput_phy = ((val - cap_CombinedChargerUnit1000msNo1_TemperatureCoolantOutput_PT_Offset_C)/cap_CombinedChargerUnit1000msNo1_TemperatureCoolantOutput_PT_Factor_C))
+
+
+#define set_PT_Networkmanagement3_NM3ControlBitVector(val) (cap_canApiMsg_Networkmanagement3_PT.NM3ControlBitVector_phy = ((val )))
+
+#define set_PT_Networkmanagement3_NM3SenderECUId(val) (cap_canApiMsg_Networkmanagement3_PT.NM3SenderECUId_phy = ((val )))
+
+#define set_PT_Networkmanagement3_NM3BasePartialNetworks(val) (cap_canApiMsg_Networkmanagement3_PT.NM3BasePartialNetworks_phy = ((val )))
+
+#define set_PT_Networkmanagement3_NM3FunctionalPartialNetworks(val) (cap_canApiMsg_Networkmanagement3_PT.NM3FunctionalPartialNetworks_phy = ((val )))
+
+
+ 
+
+/*
+ * Type definitions
+ */
+
+/*881*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_WarnMsg_BCAN_tag {
+boolean CanBUS_st; 
+uint8 CRC_VCU_WarnMsg_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_VCU_WarnMsg_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_GearPAtStationaryOnly_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_GearPNotPossible_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_PressBreakToEngageGear_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_CantChangeGear_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_MotorCoolantPumpErr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_EmergencyShutdown_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_HeatLoopTempSensorErr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_GearMalfunc_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_CoolingTempExceedLimit_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_TransmissionMalfunction_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_ParkLockNotEngaged_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_CoolantTempHigh_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_CheckDriveTrain_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_OBCTempHigh_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_DCDC_TempHigh_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_ChargingInletTempHigh_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_HVILErr_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_Limphome_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_HVSystemReduced_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 raw_data[5];
+}cap_canApiMsg_VCU_WarnMsg_BCAN_t;
+
+
+
+/*433*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_StatusDCDC_BCAN_tag {
+boolean CanBUS_st; 
+uint8 CRC_VCU_StatusDCDC_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_VCU_StatusDCDC_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 DCDC_status_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 DCDC_maxCurrentOut_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 DCDC_iOutput_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 DCDC_vDCInput_phy; /*fact:0.0625//offset:0.0  DBCType:uint16*/
+float32 DCDC_vOutput_phy; /*fact:0.0625//offset:0.0  DBCType:uint16*/
+uint8 raw_data[12];
+}cap_canApiMsg_VCU_StatusDCDC_BCAN_t;
+
+
+
+/*498*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_MHU_info_BCAN_tag {
+boolean CanBUS_st; 
+uint8 CRC_VCU_MHU_info_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_VCU_MHU_info_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_CurPwrConsum_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 VCU_RemainingRange_phy; /*fact:0.5//offset:0.0  DBCType:uint16*/
+uint8 VCU_ChgGun_Status_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_BattChargingStatus_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_VehChg_STS_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_ChgGunConnStatus_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+float32 VCU_BattSOC_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+uint8 raw_data[7];
+}cap_canApiMsg_VCU_MHU_info_BCAN_t;
+
+
+
+/*151*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_HVsystem_status_BCAN_tag {
+boolean CanBUS_st; 
+uint8 CRC_VCU_HVsystem_status_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_VCU_HVsystem_status_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_RunningRange_chrg_estSts_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_HVbatSoc_charged_estStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 VCU_RunningRange_charged_phy; /*fact:0.5//offset:0.0  DBCType:uint16*/
+float32 VCU_HVbatSoc_charged_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+uint8 raw_data[6];
+}cap_canApiMsg_VCU_HVsystem_status_BCAN_t;
+
+
+
+/*273*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_HV_DrvSys_status_BCAN_tag {
+boolean CanBUS_st; 
+uint8 CRC_VCU_HV_DrvSys_status_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_VCU_HV_DrvSys_bstatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_HV_SystemStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_HV_DrvSystemStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_ACT_Gear_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_ACT_GearValid_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+float32 VCU_ACPD_Percent_phy; /*fact:0.0625//offset:0.0  DBCType:uint16*/
+uint8 VCU_ACPD_Percent_Valid_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_ACT_DriveMode_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_ACT_DriveModeValid_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 raw_data[6];
+}cap_canApiMsg_VCU_HV_DrvSys_status_BCAN_t;
+
+
+
+/*277*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_ChargingConnection_BCAN_tag {
+boolean CanBUS_st; 
+uint8 CRC_VCU_ChargingConnection_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_VCU_ChargingConnection_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_DCChgGunIn_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_AcChgGunIn_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_CPValue_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_ACChargingVoltage_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_MaxCurrentOfACCharging_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[5];
+}cap_canApiMsg_VCU_ChargingConnection_BCAN_t;
+
+
+
+/*882*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_Batt_WarnMsg_BCAN_tag {
+boolean CanBUS_st; 
+uint8 CHSKM_VCU_Batt_WarnMsg_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_VCU_Batt_WarnMsg_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_PackTempSts_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_ThermalRunaway_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_CellTempErr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_HVILErr_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_PackInsuErr_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_MalfunctionSts_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_LowBattery_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_FuseStatusErr_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_CellVoltErr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_PackVolErr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_PackOverCurrErr_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_Reserved_signal1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_Reserved_signal2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_Reserved_signal3_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_Reserved_signal4_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_Reserved_signal5_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[8];
+}cap_canApiMsg_VCU_Batt_WarnMsg_BCAN_t;
+
+
+
+/*514*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_Batt_Info_BCAN_tag {
+boolean CanBUS_st; 
+uint8 CRC_VCU_Batt_Info_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_VCU_Batt_Info_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 BMS_PackCur_phy; /*fact:0.1//offset:-1500.0  DBCType:uint16*/
+float32 BMS_PackVoltage_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+sint16 BMS_PackTemp_phy; /*fact:1.0//offset:-40.0  DBCType:uint8*/
+uint16 BMS_RemainChargeTime_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+float32 BMS_ChargingVoltage_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_ChargingCurrent_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+uint8 raw_data[16];
+}cap_canApiMsg_VCU_Batt_Info_BCAN_t;
+
+
+
+/*632*//*ReceivedMsg */
+typedef struct cap_canApiMsg_STAT_ANHAENGER_BCAN_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 ST_TRAI_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[8];
+}cap_canApiMsg_STAT_ANHAENGER_BCAN_t;
+
+
+
+/*407*//*ReceivedMsg */
+typedef struct cap_canApiMsg_ST_GWS_BCAN_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_ST_GWS_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_ST_GWS_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 OP_GWS_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 OP_GWS_PUBU_PKG_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[4];
+}cap_canApiMsg_ST_GWS_BCAN_t;
+
+
+
+/*1090*//*ReceivedMsg */
+typedef struct cap_canApiMsg_RELATIVZEIT_BCAN_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint32 T_SEC_COU_REL_phy; /*fact:1.0//offset:0.0  DBCType:uint32*/
+ uint8 raw_data[4];
+}cap_canApiMsg_RELATIVZEIT_BCAN_t;
+
+
+
+/*816*//*ReceivedMsg */
+typedef struct cap_canApiMsg_KILOMETERSTAND_BCAN_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint32 MILE_KM_phy; /*fact:1.0//offset:0.0  DBCType:uint32*/
+ uint8 raw_data[8];
+}cap_canApiMsg_KILOMETERSTAND_BCAN_t;
+
+
+
+/*1107*//*SentMsg*/
+typedef struct cap_canApiMsg_HighVoltageStorage200msNo1_BCAN_tag {
+boolean CanBUS_st; 
+uint8 StatusServiceDisconnectionPlug_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 StsDisconnectingSwtHighVoltStorg_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[8];
+}cap_canApiMsg_HighVoltageStorage200msNo1_BCAN_t;
+
+
+
+/*143*//*SentMsg*/
+typedef struct cap_canApiMsg_HighVoltageStorage10msNo2_BCAN_tag {
+boolean CanBUS_st; 
+uint16 CRC_HighVoltageStorage10msNo2_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ALIV_HighVoltageStorage10msNo2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 ActualValueVoltageLinkVerified_phy; /*fact:0.25//offset:0.0  DBCType:uint16*/
+uint8 raw_data[48];
+}cap_canApiMsg_HighVoltageStorage10msNo2_BCAN_t;
+
+
+
+/*630*//*ReceivedMsg */
+typedef struct cap_canApiMsg_FZZSTD_BCAN_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 ST_ENERG_FZM_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ST_ILK_ERRM_FZM_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[8];
+}cap_canApiMsg_FZZSTD_BCAN_t;
+
+
+
+/*451*//*ReceivedMsg */
+typedef struct cap_canApiMsg_FZU_ChargingControl_BCAN_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 FZU_ChargingStopReq_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[1];
+}cap_canApiMsg_FZU_ChargingControl_BCAN_t;
+
+
+
+/*896*//*ReceivedMsg */
+typedef struct cap_canApiMsg_FAHRGESTELLNUMMER_BCAN_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 NO_VECH_1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 NO_VECH_2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 NO_VECH_3_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 NO_VECH_4_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 NO_VECH_5_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 NO_VECH_6_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 NO_VECH_7_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[7];
+}cap_canApiMsg_FAHRGESTELLNUMMER_BCAN_t;
+
+
+
+/*146*//*ReceivedMsg */
+typedef struct cap_canApiMsg_ERRM_BN_U_BCAN_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CTR_ERRM_BN_U_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[2];
+}cap_canApiMsg_ERRM_BN_U_BCAN_t;
+
+
+
+/*1021*//*SentMsg*/
+typedef struct cap_canApiMsg_DT_DISP_GRDT_BCAN_tag {
+boolean CanBUS_st; 
+uint8 CRC_DT_DISP_GRDT_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_DT_DISP_GRDT_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 DISP_PRG_GRB_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 DISP_PO_IDC_GRB_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 DISP_PO_GRB_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[5];
+}cap_canApiMsg_DT_DISP_GRDT_BCAN_t;
+
+
+
+/*60*//*ReceivedMsg */
+typedef struct cap_canApiMsg_CON_VEH_BCAN_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_CON_VEH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_CON_VEH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CTR_BS_PRTNT_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint32 CTR_FKTN_PRTNT_phy; /*fact:1.0//offset:0.0  DBCType:uint32*/
+uint8 ST_CON_VEH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 QU_ST_CON_VEH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[8];
+}cap_canApiMsg_CON_VEH_BCAN_t;
+
+
+
+/*293*//*SentMsg*/
+typedef struct cap_canApiMsg_CombinedChargerUnit10msNo2_BCAN_tag {
+boolean CanBUS_st; 
+sint32 PowerETractSys2LimMotMax_phy; /*fact:50.0//offset:-1638300.0  DBCType:uint16*/
+sint32 PowerETractSys1LimGenMax_phy; /*fact:50.0//offset:-1638300.0  DBCType:uint16*/
+sint32 PowerETractSys2LimGenMax_phy; /*fact:50.0//offset:-1638300.0  DBCType:uint16*/
+sint32 PowerETractSys1LimMotMax_phy; /*fact:50.0//offset:-1638300.0  DBCType:uint16*/
+uint8 OperatingModeEANActualValue_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 RequestExtraBoostETractSys1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 RequestExtraBoostETractSys2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[20];
+}cap_canApiMsg_CombinedChargerUnit10msNo2_BCAN_t;
+
+
+
+/*749*//*ReceivedMsg */
+typedef struct cap_canApiMsg_A_TEMP_BCAN_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+float32 TEMP_EX_phy; /*fact:0.5//offset:-40.0  DBCType:uint8*/
+ uint8 raw_data[2];
+}cap_canApiMsg_A_TEMP_BCAN_t;
+
+
+
+/*490*//*ReceivedMsg */
+typedef struct cap_canApiMsg_Kilometerstand_2_BCAN_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+float32 MILE_KM_TOT_phy; /*fact:0.001//offset:0.0  DBCType:uint32*/
+ uint8 raw_data[8];
+}cap_canApiMsg_Kilometerstand_2_BCAN_t;
+
+
+
+/*314*//*SentMsg*/
+typedef struct cap_canApiMsg_TracEMacElectc1Time100msNo1_BCAN_tag {
+boolean CanBUS_st; 
+uint8 OpModETractSys1ActVal_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[32];
+}cap_canApiMsg_TracEMacElectc1Time100msNo1_BCAN_t;
+
+
+
+/*326*//*SentMsg*/
+typedef struct cap_canApiMsg_TracEMacElectc2Time100msNo1_BCAN_tag {
+boolean CanBUS_st; 
+uint8 OpModETractSys2ActVal_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[32];
+}cap_canApiMsg_TracEMacElectc2Time100msNo1_BCAN_t;
+
+
+
+/*497*//*ReceivedMsg */
+typedef struct cap_canApiMsg_CLAMP_STAT_BCAN_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_CLAMP_STAT_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_CLAMP_STAT_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 STAT_CL15_L_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 STAT_CL30S_L_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 STAT_CL30S_Light_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 STAT_CL15_WUPL_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[3];
+}cap_canApiMsg_CLAMP_STAT_BCAN_t;
+
+
+
+/*497*//*ReceivedMsg */
+typedef struct cap_canApiMsg_CLAMP_STAT_CHS1_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_CLAMP_STAT_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_CLAMP_STAT_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 STAT_CL15_L_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 STAT_CL30S_L_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 STAT_CL30S_Light_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 STAT_CL15_WUPL_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[3];
+}cap_canApiMsg_CLAMP_STAT_CHS1_t;
+
+
+
+/*200*//*ReceivedMsg */
+typedef struct cap_canApiMsg_ESC_A_CHS1_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 AD3_PrsrVal_Fl_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 AD3_PrsrVal_Fr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 AD3_PrsrVal_Rl_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 AD3_PrsrVal_Rr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[4];
+}cap_canApiMsg_ESC_A_CHS1_t;
+
+
+
+/*170*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS1_tag {
+boolean CanBUS_st; 
+uint16 CRC_TractionEMachine2_10ms_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ALIV_TractionEMachine2_10ms_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+sint16 RpmEmETractSys2ActualValue_phy; /*fact:1.0//offset:-32768.0  DBCType:uint16*/
+float32 TorqueEmETractSys2GeneratorDyn_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TorqueEmETractSys2MotorDyn_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TorqueEmETractSys2ActualValue_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+uint8 QualifierRpmEmETractSys2ActVal_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[12];
+}cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS1_t;
+
+
+
+/*145*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS1_tag {
+boolean CanBUS_st; 
+uint16 CRC_TractionEMachine1_10ms_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ALIV_TractionEMachine1_10ms_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+sint16 RpmEmETractSys1ActualValue_phy; /*fact:1.0//offset:-32768.0  DBCType:uint16*/
+float32 TorqueEmETractSys1GeneratorDyn_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TorqueEmETractSys1MotorDyn_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TorqueEmETractSys1ActualValue_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+uint8 QualifierRpmEmETractSys1ActVal_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[16];
+}cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS1_t;
+
+
+
+/*326*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_TractionEMachine2_100ms_CHS1_tag {
+boolean CanBUS_st; 
+uint16 CRC_TractionEMachine2_100ms_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ALIV_TractionEMachine2_100ms_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 WheelRatioEAxlEtractSys2ActVal_phy; /*fact:0.001//offset:0.0  DBCType:uint16*/
+uint8 raw_data[8];
+}cap_canApiMsg_VCU_TractionEMachine2_100ms_CHS1_t;
+
+
+
+/*314*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_TractionEMachine1_100ms_CHS1_tag {
+boolean CanBUS_st; 
+uint16 CRC_TractionEMachine1_100ms_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ALIV_TractionEMachine1_100ms_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 WheelRatioEAxlEtractSys1ActVal_phy; /*fact:0.001//offset:0.0  DBCType:uint16*/
+uint8 raw_data[8];
+}cap_canApiMsg_VCU_TractionEMachine1_100ms_CHS1_t;
+
+
+
+/*300*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_Status_CHS1_tag {
+boolean CanBUS_st; 
+uint8 CRC_VCU_Status_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_VCU_Status_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 VCU_ACPD_Percent_phy; /*fact:0.0625//offset:0.0  DBCType:uint16*/
+uint8 VCU_ACPD_Percent_Valid_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_ACT_Gear_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_ACT_GearValid_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_ACT_DriveMode_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_ACT_DriveModeValid_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 raw_data[8];
+}cap_canApiMsg_VCU_Status_CHS1_t;
+
+
+
+/*275*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_HV_Status_CHS1_tag {
+boolean CanBUS_st; 
+uint8 CRC_VCU_HV_Status_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_VCU_HV_Status_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_VehicleHVStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[2];
+}cap_canApiMsg_VCU_HV_Status_CHS1_t;
+
+
+
+/*138*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_CombinedChargerUnit_CHS1_tag {
+boolean CanBUS_st; 
+uint16 CRC_VCU_CombinedChargerUnit_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ALIV_VCU_CombinedChargerUnit_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 TargetTorqueEmETractSys1_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TargetTorqueEmETractSys2_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+uint8 raw_data[8];
+}cap_canApiMsg_VCU_CombinedChargerUnit_CHS1_t;
+
+
+
+/*180*//*ReceivedMsg */
+typedef struct cap_canApiMsg_ABS_ESC_01_CHS1_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 ABS_ACTIVE_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[1];
+}cap_canApiMsg_ABS_ESC_01_CHS1_t;
+
+
+
+/*210*//*ReceivedMsg */
+typedef struct cap_canApiMsg_IEB_01_CHS1_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint16 WEstTot_Nm_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+ uint8 raw_data[2];
+}cap_canApiMsg_IEB_01_CHS1_t;
+
+
+
+/*140*//*ReceivedMsg */
+typedef struct cap_canApiMsg_EBCM_ACC_LONG_LAT_YAW_CHS1_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_EBCM_ACC_LONG_LAT_YAW_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_EBCM_ACC_LONG_LAT_YAW_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 VYAW_VEH_phy; /*fact:0.005//offset:-163.84  DBCType:uint16*/
+uint8 QU_VYAW_VEH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[5];
+}cap_canApiMsg_EBCM_ACC_LONG_LAT_YAW_CHS1_t;
+
+
+
+/*150*//*ReceivedMsg */
+typedef struct cap_canApiMsg_EBCM_STATUS_CHS1_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_EBCM_STATUS_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_EBCM_STATUS_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 MCPressure_phy; /*fact:1.0//offset:-42.5  DBCType:uint16*/
+float32 BreakPedalPercent_phy; /*fact:0.0625//offset:0.0  DBCType:uint16*/
+uint8 EPBStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 HillholderStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 TCSAvailable_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 TCSActive_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BreakPedalPercentValid_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 MCPressureSts_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 HillholderFault_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 EPBFault_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 EBCM_BrkPedlSts_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[7];
+}cap_canApiMsg_EBCM_STATUS_CHS1_t;
+
+
+
+/*911*//*ReceivedMsg */
+typedef struct cap_canApiMsg_TLT_RW_CHS1_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_TLT_RW_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_TLT_RW_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 AVL_LOGR_RW_phy; /*fact:0.05//offset:-64.0  DBCType:uint16*/
+uint8 QU_AVL_LOGR_RW_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[8];
+}cap_canApiMsg_TLT_RW_CHS1_t;
+
+
+
+/*214*//*ReceivedMsg */
+typedef struct cap_canApiMsg_ST_STAB_DSC_2_CHS1_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 ST_SLIP_THO_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[8];
+}cap_canApiMsg_ST_STAB_DSC_2_CHS1_t;
+
+
+
+/*213*//*ReceivedMsg */
+typedef struct cap_canApiMsg_ST_STAB_DSC_CHS1_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_ST_STAB_DSC_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_ST_STAB_DSC_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint16 QU_FN_FDR_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint16 QU_FN_ABS_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint16 QU_FN_ASC_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ST_BRG_DV_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[8];
+}cap_canApiMsg_ST_STAB_DSC_CHS1_t;
+
+
+
+/*297*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_CHS1_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_ACLNX_COG_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_ACLNX_COG_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 ACLNX_COG_phy; /*fact:0.002//offset:-65.0  DBCType:uint16*/
+uint8 QU_ACLNX_COG_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CRC_ACLNY_COG_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_ACLNY_COG_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 ACLNY_COG_phy; /*fact:0.002//offset:-65.0  DBCType:uint16*/
+uint8 QU_ACLNY_COG_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[20];
+}cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_CHS1_t;
+
+
+
+/*296*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_EXTS_ARB_INTF_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_EXTS_ARB_INTF_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CHL_EXTS_ARB_INTF_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+sint32 AVL_BRTORQ_WHL_RS_LH_EXT_phy; /*fact:1.0//offset:-32000.0  DBCType:uint16*/
+sint32 AVL_BRTORQ_WHL_RS_RH_EXT_phy; /*fact:1.0//offset:-32000.0  DBCType:uint16*/
+sint32 AVL_BRTORQ_WHL_FS_LH_EXT_phy; /*fact:1.0//offset:-32000.0  DBCType:uint16*/
+sint32 AVL_BRTORQ_WHL_FS_RH_EXT_phy; /*fact:1.0//offset:-32000.0  DBCType:uint16*/
+uint8 CRC_RQ_RPM_BAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_RQ_RPM_BAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CHL_RQ_RPM_BAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 TAR_RPM_MAX_BAX_phy; /*fact:0.01//offset:0.0  DBCType:uint16*/
+float32 TAR_RPM_MIN_BAX_phy; /*fact:0.01//offset:0.0  DBCType:uint16*/
+uint8 ST_TAR_RPM_BAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 TAR_STIF_SPCO_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CRC_RQ_RPM_FTAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_RQ_RPM_FTAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CHL_RQ_RPM_FTAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 TAR_RPM_MAX_FTAX_phy; /*fact:0.01//offset:0.0  DBCType:uint16*/
+float32 TAR_RPM_MIN_FTAX_phy; /*fact:0.01//offset:0.0  DBCType:uint16*/
+uint8 ST_TAR_RPM_FTAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CRC_StatusSlipThresholds_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_StatusSlipThresholds_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CHL_StatusSlipThresholds_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 StatusSlipThresholdsFrontAxle_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 StatusSlipThresholdsRearAxle_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[64];
+}cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1_t;
+
+
+
+/*131*//*ReceivedMsg */
+typedef struct cap_canApiMsg_AVL_RPM_WHL_CHS1_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_AVL_RPM_WHL_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_AVL_RPM_WHL_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 AVL_RPM_WHL_RLH_phy; /*fact:0.015625//offset:-511.984375  DBCType:uint16*/
+float32 AVL_RPM_WHL_RRH_phy; /*fact:0.015625//offset:-511.984375  DBCType:uint16*/
+float32 AVL_RPM_WHL_FLH_phy; /*fact:0.015625//offset:-511.984375  DBCType:uint16*/
+float32 AVL_RPM_WHL_FRH_phy; /*fact:0.015625//offset:-511.984375  DBCType:uint16*/
+uint8 QU_AVL_RPM_WHL_RLH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 QU_AVL_RPM_WHL_RRH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 QU_AVL_RPM_WHL_FLH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 QU_AVL_RPM_WHL_FRH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[12];
+}cap_canApiMsg_AVL_RPM_WHL_CHS1_t;
+
+
+
+/*1107*//*SentMsg*/
+typedef struct cap_canApiMsg_HighVoltageStorage200msNo1_CHS1_tag {
+boolean CanBUS_st; 
+uint8 HV_ONOFF_status_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 HV_Positive_Path_Status_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 HV_Negative_Path_Status_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 HV_Last_Cont_Opening_Diagnosis_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 HV_ONOFF_Err_Status_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 raw_data[8];
+}cap_canApiMsg_HighVoltageStorage200msNo1_CHS1_t;
+
+
+
+/*289*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_CHS1_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_V_VEH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_V_VEH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 V_VEH_COG_phy; /*fact:0.015625//offset:0.0  DBCType:uint16*/
+uint8 QU_V_VEH_COG_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint64 SecOcDataP2V_VEH_phy; /*fact:1.0//offset:0.0  DBCType:uint64*/
+ uint8 raw_data[32];
+}cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_CHS1_t;
+
+
+
+/*88*//*ReceivedMsg */
+typedef struct cap_canApiMsg_SFA_SteerWheel_Info_CHS1_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_SFA_SteerWheel_Info_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_SFA_SteerWheel_Info_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 SFA_SteerWheelTorque_phy; /*fact:0.02//offset:0.0  DBCType:sint16*/
+uint16 SFA_SteerWheelAngleSpeed_phy; /*fact:4.0//offset:0.0  DBCType:uint8*/
+float32 SFA_SteerWheelAngle_phy; /*fact:0.02//offset:0.0  DBCType:sint16*/
+uint8 SFA_WarningLamp_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 SFA_EmergencyRequest_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 SFA_CenteringStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[8];
+}cap_canApiMsg_SFA_SteerWheel_Info_CHS1_t;
+
+
+
+/*497*//*SentMsg*/
+typedef struct cap_canApiMsg_CLAMP_STAT_CHS2_tag {
+boolean CanBUS_st; 
+uint8 CRC_CLAMP_STAT_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_CLAMP_STAT_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 STAT_CL15_L_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 STAT_CL30S_L_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 STAT_CL30S_Light_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 STAT_CL15_WUPL_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[3];
+}cap_canApiMsg_CLAMP_STAT_CHS2_t;
+
+
+
+/*200*//*ReceivedMsg */
+typedef struct cap_canApiMsg_ESC_A_CHS2_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 AD3_PrsrVal_Fl_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 AD3_PrsrVal_Fr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 AD3_PrsrVal_Rl_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 AD3_PrsrVal_Rr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[4];
+}cap_canApiMsg_ESC_A_CHS2_t;
+
+
+
+/*170*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS2_tag {
+boolean CanBUS_st; 
+uint16 CRC_TractionEMachine2_10ms_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ALIV_TractionEMachine2_10ms_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+sint16 RpmEmETractSys2ActualValue_phy; /*fact:1.0//offset:-32768.0  DBCType:uint16*/
+float32 TorqueEmETractSys2GeneratorDyn_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TorqueEmETractSys2MotorDyn_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TorqueEmETractSys2ActualValue_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+uint8 QualifierRpmEmETractSys2ActVal_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[12];
+}cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS2_t;
+
+
+
+/*145*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS2_tag {
+boolean CanBUS_st; 
+uint16 CRC_TractionEMachine1_10ms_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ALIV_TractionEMachine1_10ms_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+sint16 RpmEmETractSys1ActualValue_phy; /*fact:1.0//offset:-32768.0  DBCType:uint16*/
+float32 TorqueEmETractSys1GeneratorDyn_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TorqueEmETractSys1MotorDyn_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TorqueEmETractSys1ActualValue_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+uint8 QualifierRpmEmETractSys1ActVal_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[16];
+}cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS2_t;
+
+
+
+/*326*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_TractionEMachine2_100ms_CHS2_tag {
+boolean CanBUS_st; 
+uint16 CRC_TractionEMachine2_100ms_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ALIV_TractionEMachine2_100ms_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 WheelRatioEAxlEtractSys2ActVal_phy; /*fact:0.001//offset:0.0  DBCType:uint16*/
+uint8 raw_data[8];
+}cap_canApiMsg_VCU_TractionEMachine2_100ms_CHS2_t;
+
+
+
+/*314*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_TractionEMachine1_100ms_CHS2_tag {
+boolean CanBUS_st; 
+uint16 CRC_TractionEMachine1_100ms_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ALIV_TractionEMachine1_100ms_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 WheelRatioEAxlEtractSys1ActVal_phy; /*fact:0.001//offset:0.0  DBCType:uint16*/
+uint8 raw_data[8];
+}cap_canApiMsg_VCU_TractionEMachine1_100ms_CHS2_t;
+
+
+
+/*300*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_Status_CHS2_tag {
+boolean CanBUS_st; 
+uint8 CRC_VCU_Status_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_VCU_Status_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 VCU_ACPD_Percent_phy; /*fact:0.0625//offset:0.0  DBCType:uint16*/
+uint8 VCU_ACPD_Percent_Valid_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_ACT_Gear_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_ACT_GearValid_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_ACT_DriveMode_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_ACT_DriveModeValid_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 raw_data[8];
+}cap_canApiMsg_VCU_Status_CHS2_t;
+
+
+
+/*275*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_HV_Status_CHS2_tag {
+boolean CanBUS_st; 
+uint8 CRC_VCU_HV_Status_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_VCU_HV_Status_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_VehicleHVStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[2];
+}cap_canApiMsg_VCU_HV_Status_CHS2_t;
+
+
+
+/*138*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_CombinedChargerUnit_CHS2_tag {
+boolean CanBUS_st; 
+uint16 CRC_VCU_CombinedChargerUnit_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ALIV_VCU_CombinedChargerUnit_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 TargetTorqueEmETractSys1_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TargetTorqueEmETractSys2_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+uint8 raw_data[8];
+}cap_canApiMsg_VCU_CombinedChargerUnit_CHS2_t;
+
+
+
+/*180*//*ReceivedMsg */
+typedef struct cap_canApiMsg_ABS_ESC_01_CHS2_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 ABS_ACTIVE_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[1];
+}cap_canApiMsg_ABS_ESC_01_CHS2_t;
+
+
+
+/*210*//*ReceivedMsg */
+typedef struct cap_canApiMsg_IEB_01_CHS2_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint16 WEstTot_Nm_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+ uint8 raw_data[2];
+}cap_canApiMsg_IEB_01_CHS2_t;
+
+
+
+/*150*//*ReceivedMsg */
+typedef struct cap_canApiMsg_EBCM_STATUS_CHS2_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_EBCM_STATUS_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_EBCM_STATUS_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 MCPressure_phy; /*fact:1.0//offset:-42.5  DBCType:uint16*/
+float32 BreakPedalPercent_phy; /*fact:0.0625//offset:0.0  DBCType:uint16*/
+uint8 EPBStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 HillholderStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 TCSAvailable_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 TCSActive_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BreakPedalPercentValid_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 MCPressureSts_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 HillholderFault_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 EPBFault_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 EBCM_BrkPedlSts_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[7];
+}cap_canApiMsg_EBCM_STATUS_CHS2_t;
+
+
+
+/*214*//*ReceivedMsg */
+typedef struct cap_canApiMsg_ST_STAB_DSC_2_CHS2_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 ST_SLIP_THO_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[8];
+}cap_canApiMsg_ST_STAB_DSC_2_CHS2_t;
+
+
+
+/*213*//*ReceivedMsg */
+typedef struct cap_canApiMsg_ST_STAB_DSC_CHS2_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_ST_STAB_DSC_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_ST_STAB_DSC_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint16 QU_FN_FDR_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint16 QU_FN_ABS_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint16 QU_FN_ASC_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ST_BRG_DV_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[8];
+}cap_canApiMsg_ST_STAB_DSC_CHS2_t;
+
+
+
+/*296*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_EXTS_ARB_INTF_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_EXTS_ARB_INTF_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CHL_EXTS_ARB_INTF_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+sint32 AVL_BRTORQ_WHL_RS_LH_EXT_phy; /*fact:1.0//offset:-32000.0  DBCType:uint16*/
+sint32 AVL_BRTORQ_WHL_RS_RH_EXT_phy; /*fact:1.0//offset:-32000.0  DBCType:uint16*/
+sint32 AVL_BRTORQ_WHL_FS_LH_EXT_phy; /*fact:1.0//offset:-32000.0  DBCType:uint16*/
+sint32 AVL_BRTORQ_WHL_FS_RH_EXT_phy; /*fact:1.0//offset:-32000.0  DBCType:uint16*/
+uint8 CRC_RQ_RPM_BAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_RQ_RPM_BAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CHL_RQ_RPM_BAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 TAR_RPM_MAX_BAX_phy; /*fact:0.01//offset:0.0  DBCType:uint16*/
+float32 TAR_RPM_MIN_BAX_phy; /*fact:0.01//offset:0.0  DBCType:uint16*/
+uint8 ST_TAR_RPM_BAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 TAR_STIF_SPCO_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CRC_RQ_RPM_FTAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_RQ_RPM_FTAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CHL_RQ_RPM_FTAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 TAR_RPM_MAX_FTAX_phy; /*fact:0.01//offset:0.0  DBCType:uint16*/
+float32 TAR_RPM_MIN_FTAX_phy; /*fact:0.01//offset:0.0  DBCType:uint16*/
+uint8 ST_TAR_RPM_FTAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CRC_StatusSlipThresholds_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_StatusSlipThresholds_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CHL_StatusSlipThresholds_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 StatusSlipThresholdsFrontAxle_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 StatusSlipThresholdsRearAxle_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[64];
+}cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2_t;
+
+
+
+/*131*//*ReceivedMsg */
+typedef struct cap_canApiMsg_AVL_RPM_WHL_CHS2_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_AVL_RPM_WHL_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_AVL_RPM_WHL_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 AVL_RPM_WHL_RLH_phy; /*fact:0.015625//offset:-511.984375  DBCType:uint16*/
+float32 AVL_RPM_WHL_RRH_phy; /*fact:0.015625//offset:-511.984375  DBCType:uint16*/
+float32 AVL_RPM_WHL_FLH_phy; /*fact:0.015625//offset:-511.984375  DBCType:uint16*/
+float32 AVL_RPM_WHL_FRH_phy; /*fact:0.015625//offset:-511.984375  DBCType:uint16*/
+uint8 QU_AVL_RPM_WHL_RLH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 QU_AVL_RPM_WHL_RRH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 QU_AVL_RPM_WHL_FLH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 QU_AVL_RPM_WHL_FRH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[12];
+}cap_canApiMsg_AVL_RPM_WHL_CHS2_t;
+
+
+
+/*1107*//*SentMsg*/
+typedef struct cap_canApiMsg_HighVoltageStorage200msNo1_CHS2_tag {
+boolean CanBUS_st; 
+uint8 HV_ONOFF_status_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 HV_Positive_Path_Status_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 HV_Negative_Path_Status_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 HV_Last_Cont_Opening_Diagnosis_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 HV_ONOFF_Err_Status_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 raw_data[8];
+}cap_canApiMsg_HighVoltageStorage200msNo1_CHS2_t;
+
+
+
+/*289*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_CHS2_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_V_VEH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_V_VEH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 V_VEH_COG_phy; /*fact:0.015625//offset:0.0  DBCType:uint16*/
+uint8 QU_V_VEH_COG_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint64 SecOcDataP2V_VEH_phy; /*fact:1.0//offset:0.0  DBCType:uint64*/
+ uint8 raw_data[32];
+}cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_CHS2_t;
+
+
+
+/*88*//*ReceivedMsg */
+typedef struct cap_canApiMsg_SFA_SteerWheel_Info_CHS2_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_SFA_SteerWheel_Info_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_SFA_SteerWheel_Info_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 SFA_SteerWheelTorque_phy; /*fact:0.02//offset:0.0  DBCType:sint16*/
+uint16 SFA_SteerWheelAngleSpeed_phy; /*fact:4.0//offset:0.0  DBCType:uint8*/
+float32 SFA_SteerWheelAngle_phy; /*fact:0.02//offset:0.0  DBCType:sint16*/
+uint8 SFA_WarningLamp_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 SFA_EmergencyRequest_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 SFA_CenteringStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[8];
+}cap_canApiMsg_SFA_SteerWheel_Info_CHS2_t;
+
+
+
+/*501*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_HV_DrvSys_status_PT_tag {
+boolean CanBUS_st; 
+uint8 VCU_HV_SystemStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[1];
+}cap_canApiMsg_VCU_HV_DrvSys_status_PT_t;
+
+
+
+/*451*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_Thermal_Status_PT_tag {
+boolean CanBUS_st; 
+sint16 VCU_LTROutLetTemp_phy; /*fact:1.0//offset:-50.0  DBCType:uint8*/
+uint8 raw_data[1];
+}cap_canApiMsg_VCU_Thermal_Status_PT_t;
+
+
+
+/*411*//*ReceivedMsg */
+typedef struct cap_canApiMsg_OBC_01_100ms_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 OBC_HvIntlkStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 OBC_SeqSta_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[2];
+}cap_canApiMsg_OBC_01_100ms_PT_t;
+
+
+
+/*634*//*ReceivedMsg */
+typedef struct cap_canApiMsg_DCDC_01_100ms_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 DCDC_HvIntlkStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 DCDC_SysOpSta_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[2];
+}cap_canApiMsg_DCDC_01_100ms_PT_t;
+
+
+
+/*395*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BMS_CellTempMeas2_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_BMS_CellTempMeas2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_BMS_CellTempMeas2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 BMS_CellTemp42_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp43_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp44_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp45_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp46_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp47_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp48_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+ uint8 raw_data[12];
+}cap_canApiMsg_BMS_CellTempMeas2_PT_t;
+
+
+
+/*497*//*SentMsg*/
+typedef struct cap_canApiMsg_CLAMP_STAT_PT_tag {
+boolean CanBUS_st; 
+uint8 CRC_CLAMP_STAT_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_CLAMP_STAT_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 STAT_CL15_L_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 STAT_CL30S_L_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 STAT_CL30S_Light_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 STAT_CL15_WUPL_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[3];
+}cap_canApiMsg_CLAMP_STAT_PT_t;
+
+
+
+/*60*//*SentMsg*/
+typedef struct cap_canApiMsg_CON_VEH_PT_tag {
+boolean CanBUS_st; 
+uint8 CRC_CON_VEH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_CON_VEH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CTR_BS_PRTNT_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint32 CTR_FKTN_PRTNT_phy; /*fact:1.0//offset:0.0  DBCType:uint32*/
+uint8 ST_CON_VEH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 QU_ST_CON_VEH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[8];
+}cap_canApiMsg_CON_VEH_PT_t;
+
+
+
+/*130*//*SentMsg*/
+typedef struct cap_canApiMsg_ST_CR_PT_tag {
+boolean CanBUS_st; 
+uint8 CRC_ST_CR_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_ST_CR_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ST_CRSE_FRT_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ST_CRSE_SIDE_RH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ST_CRSE_SIDE_LH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ST_CRSE_REAR_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ST_CRSE_ROV_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[8];
+}cap_canApiMsg_ST_CR_PT_t;
+
+
+
+/*131*//*SentMsg*/
+typedef struct cap_canApiMsg_AVL_RPM_WHL_PT_tag {
+boolean CanBUS_st; 
+uint8 CRC_AVL_RPM_WHL_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_AVL_RPM_WHL_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 AVL_RPM_WHL_RLH_phy; /*fact:0.015625//offset:-511.984375  DBCType:uint16*/
+float32 AVL_RPM_WHL_RRH_phy; /*fact:0.015625//offset:-511.984375  DBCType:uint16*/
+float32 AVL_RPM_WHL_FLH_phy; /*fact:0.015625//offset:-511.984375  DBCType:uint16*/
+float32 AVL_RPM_WHL_FRH_phy; /*fact:0.015625//offset:-511.984375  DBCType:uint16*/
+uint8 QU_AVL_RPM_WHL_RLH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 QU_AVL_RPM_WHL_RRH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 QU_AVL_RPM_WHL_FLH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 QU_AVL_RPM_WHL_FRH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[12];
+}cap_canApiMsg_AVL_RPM_WHL_PT_t;
+
+
+
+/*132*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BMS_ChgParamReq_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_BMS_ChgParamReq_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_BMS_ChgParamReq_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_ChargeStopReq_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 BMS_ChgVoltageReq_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_ChgCurrentReq_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+uint16 BMS_RemainChargeTime_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxChgCurrentLim_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxChgCurrentLimPeak_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxChgCurrent2s_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxChgCurrent10s_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxChgCurrent30s_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxChgPwrLim_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxChgPwrLimPeak_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxChgPwr2s_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxChgPwr10s_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxChgPwr30s_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+ uint8 raw_data[32];
+}cap_canApiMsg_BMS_ChgParamReq_PT_t;
+
+
+
+/*137*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BMS_CurMeas_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_BMS_CurMeas_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_BMS_CurMeas_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_StartOfMeasument_STS_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+float32 BMS_PackCurMeas_phy; /*fact:0.1//offset:-1500.0  DBCType:uint16*/
+ uint8 raw_data[4];
+}cap_canApiMsg_BMS_CurMeas_PT_t;
+
+
+
+/*138*//*SentMsg*/
+typedef struct cap_canApiMsg_CombinedChargerUnit10msNo3_PT_tag {
+boolean CanBUS_st; 
+uint16 CRC_CombinedChargerUnit10msNo3_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ALIV_CombinedChargerUnit10msNo3_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 OperatingModeETract1Target_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 OperatingModeETract2Target_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[12];
+}cap_canApiMsg_CombinedChargerUnit10msNo3_PT_t;
+
+
+
+/*141*//*SentMsg*/
+typedef struct cap_canApiMsg_CombinedChargerUnit10msNo1_PT_tag {
+boolean CanBUS_st; 
+uint16 CRC_CombinedChargerUnit10msNo1_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ALIV_CombinedChargerUnit10msNo1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 TargetTorqueEmETractSys1_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TargetTorqueEmETractSys2_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TorqBoundaryETractSys1EmNCtrlMax_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TorqBoundaryETractSys1EmNCtrlMin_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TorqBoundaryETractSys2EmNCtrlMax_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TorqBoundaryETractSys2EmNCtrlMin_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+uint8 StatusDampingVibration_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint16 SecOcDtP2CmbdChrgUnit10msNo1_1_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+sint16 TargetEMRpmETractSys1_phy; /*fact:1.0//offset:-32768.0  DBCType:uint16*/
+sint16 TargetEMRpmETractSys2_phy; /*fact:1.0//offset:-32768.0  DBCType:uint16*/
+uint16 SecOcDtP2CmbdChrgUnit10msNo1_2_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 StatusReleaseTorqueVerified_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint16 SecOcDtP2CmbdChrgUnit10msNo1_0_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint16 SecOcDtP2CmbdChrgUnit10msNo1_3_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 raw_data[32];
+}cap_canApiMsg_CombinedChargerUnit10msNo1_PT_t;
+
+
+
+/*143*//*ReceivedMsg */
+typedef struct cap_canApiMsg_HighVoltageStorage10msNo2_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint16 CRC_HighVoltageStorage10msNo2_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ALIV_HighVoltageStorage10msNo2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 ActualValueVoltageLinkVerified_phy; /*fact:0.25//offset:0.0  DBCType:uint16*/
+ uint8 raw_data[48];
+}cap_canApiMsg_HighVoltageStorage10msNo2_PT_t;
+
+
+
+/*145*//*ReceivedMsg */
+typedef struct cap_canApiMsg_TracEMacElectc1Time10msNo1_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint16 CRC_TracEMacElectc1Time10msNo1_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ALIV_TracEMacElectc1Time10msNo1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 CurrDrctCurrETractSys1ActVal_phy; /*fact:0.1//offset:-1400.0  DBCType:uint16*/
+float32 VolDrctCurrETractSys1ActVal_phy; /*fact:0.5//offset:0.0  DBCType:uint16*/
+sint16 RpmEmETractSys1MaximumLimit_phy; /*fact:1.0//offset:-32768.0  DBCType:uint16*/
+sint16 RpmEmETractSys1MinimumLimit_phy; /*fact:1.0//offset:-32768.0  DBCType:uint16*/
+float32 TqEmETractSys1VibrationDampSusp_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+sint16 RpmEmETractSys1ActualValue_phy; /*fact:1.0//offset:-32768.0  DBCType:uint16*/
+float32 TqEmETractSys1GeneratorStatic_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TqEmETractSys1GeneratorDynamic_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TorqueEmETractSys1MotorStatic_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TorqueEmETractSys1MotorDynamic_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TorqueEmETractSys1ActualValue_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+uint8 StatusLockPositionPbWETractSys1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 TqEmETractSys1MotorSumLimTarget_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+uint8 DirOfRotETractSys1ActVal_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 OVCUrrenceStatorPWMETractSys1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 StatusPbWETractSys1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 QualifierTqEmETractSys1ActVal_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 QualifierRpmEmETractSys1ActVal_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 Qu_CurrDrctCurrETractSys1ActVal_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 StatusArbRpmETractSys1Limit_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint16 SumWhlTqIntvETractSys1_phy; /*fact:10.0//offset:0.0  DBCType:uint16*/
+uint16 StETractSys1Asd_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint32 PowerETractSys1LossActualValue_phy; /*fact:50.0//offset:0.0  DBCType:uint16*/
+sint16 TarTqETractSys1NControlStatic_phy; /*fact:1.0//offset:-510.0  DBCType:uint16*/
+uint32 PwrLossPrednETractSys1Mot_phy; /*fact:50.0//offset:0.0  DBCType:uint16*/
+uint32 PwrLossPrednETractSys1Genr_phy; /*fact:50.0//offset:0.0  DBCType:uint16*/
+ uint8 raw_data[48];
+}cap_canApiMsg_TracEMacElectc1Time10msNo1_PT_t;
+
+
+
+/*146*//*SentMsg*/
+typedef struct cap_canApiMsg_ERRM_BN_U_PT_tag {
+boolean CanBUS_st; 
+uint8 CTR_ERRM_BN_U_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[2];
+}cap_canApiMsg_ERRM_BN_U_PT_t;
+
+
+
+/*162*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BMS_Error_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_BMS_Error_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_BMS_Error_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_CellLowVolErr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_HVILErr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_PackInsuErr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_CellVoltDiffErr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_ProbeTempDiffErr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_PackHighVolErr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_PackLowVolErr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_CellHighVolErr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_ProbeHighTempErr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_FuseStatusErr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_PackOverCurrErr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_ProbeLowTempErr_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[5];
+}cap_canApiMsg_BMS_Error_PT_t;
+
+
+
+/*166*//*SentMsg*/
+typedef struct cap_canApiMsg_WMOM_DRV_9_PT_tag {
+boolean CanBUS_st; 
+
+sint32 TAR_WMOM_PT_SUM_COOTD_phy; /*fact:1.0//offset:-32000.0  DBCType:uint16*/
+uint8 CRC_WMOM_DRV_9_phy; /*fact:1.0//offset:0.0    DBCType:uint8*/
+uint8 ALIV_WMOM_DRV_9_phy; /*fact:1.0//offset:0.0   DBCType:uint8*/
+uint8 CHL_WMOM_DRV_9_phy; /*fact:1.0//offset:0.0    DBCType:uint8*/
+uint8 raw_data[48];
+}cap_canApiMsg_WMOM_DRV_9_PT_t;
+
+
+
+/*168*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BMS_HVMeas_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_BMS_HVMeas_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_BMS_HVMeas_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 BMS_HVPackVol_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_HVLinkVol_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_HVBusVol_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_HVFuseVol_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_DCPlugVol_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+ uint8 raw_data[12];
+}cap_canApiMsg_BMS_HVMeas_PT_t;
+
+
+
+/*170*//*ReceivedMsg */
+typedef struct cap_canApiMsg_TracEMacElectc2Time10msNo1_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint16 CRC_TracEMacElectc2Time10msNo1_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ALIV_TracEMacElectc2Time10msNo1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 CurrDrctCurrETractSys2ActVal_phy; /*fact:0.1//offset:-1400.0  DBCType:uint16*/
+float32 VolDrctCurrETractSys2ActVal_phy; /*fact:0.5//offset:0.0  DBCType:uint16*/
+sint16 RpmEmETractSys2MaximumLimit_phy; /*fact:1.0//offset:-32768.0  DBCType:uint16*/
+sint16 RpmEmETractSys2MinimumLimit_phy; /*fact:1.0//offset:-32768.0  DBCType:uint16*/
+float32 TqEmETractSys2VibrationDampSusp_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+sint16 RpmEmETractSys2ActualValue_phy; /*fact:1.0//offset:-32768.0  DBCType:uint16*/
+float32 TqEmETractSys2GeneratorStatic_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TqEmETractSys2GeneratorDynamic_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TorqueEmETractSys2MotorStatic_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TorqueEmETractSys2MotorDynamic_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+float32 TorqueEmETractSys2ActualValue_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+uint8 StatusLockPositionPbWETractSys2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 TqEmETractSys2MotorSumLimTarget_phy; /*fact:0.5//offset:-1023.0  DBCType:uint16*/
+uint8 DirOfRotETractSys2ActVal_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 OVCUrrenceStatorPWMETractSys2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 StatusPbWETractSys2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 QualifierTqEmETractSys2ActVal_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 QualifierRpmEmETractSys2ActVal_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 Qu_CurrDrctCurrETractSys2ActVal_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 StatusArbRpmETractSys2Limit_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint16 SumWhlTqIntvETractSys2_phy; /*fact:10.0//offset:0.0  DBCType:uint16*/
+uint16 StETractSys2Asd_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint32 PowerETractSys2LossActualValue_phy; /*fact:50.0//offset:0.0  DBCType:uint16*/
+sint16 TarTqETractSys2NControlStatic_phy; /*fact:1.0//offset:-510.0  DBCType:uint16*/
+uint32 PwrLossPrednETractSys2Mot_phy; /*fact:50.0//offset:0.0  DBCType:uint16*/
+uint32 PwrLossPrednETractSys2Genr_phy; /*fact:50.0//offset:0.0  DBCType:uint16*/
+ uint8 raw_data[48];
+}cap_canApiMsg_TracEMacElectc2Time10msNo1_PT_t;
+
+
+
+/*172*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BMS_PowerCont_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_BMS_PowerCont_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_BMS_PowerCont_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 BMS_MaxDischgCurrentLim_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxDischgCurrentLimPeak_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxDischgCurrent2s_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxDischgCurrent10s_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxDischgCurrent30s_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxDischgPwrLim_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxDischgPwrLimPeak_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxDischgPwr2s_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxDischgPwr10s_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxDischgPwr30s_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+ uint8 raw_data[24];
+}cap_canApiMsg_BMS_PowerCont_PT_t;
+
+
+
+/*177*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BMS_RelayStatus_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_BMS_RelayStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_BMS_RelayStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_MainPosRelayStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_PreChgRelayStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_TotalNegRelayStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_MainPosRelayErr_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_TotalNegRelayErr_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_PreChgRelayErr_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_DCFCPosRelayStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_DCFCNegRelayStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_DCFCPosRelayErr_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_DCFCNegRelayErr_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+ uint8 raw_data[4];
+}cap_canApiMsg_BMS_RelayStatus_PT_t;
+
+
+
+/*182*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BMS_Sts_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_BMS_Sts_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_BMS_Sts_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_HVOnOffSts_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_HVILSts_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_ErrLev_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_SysSts_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 BMS_SocActualEst_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+uint8 BMS_HWCrashSts_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_BatBalanceErr_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_BalanceSts_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_IGNSts_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+float32 BMS_SocRelativeEst_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_SOH_phy; /*fact:0.5//offset:0.0  DBCType:uint8*/
+float32 BMS_SOE_phy; /*fact:0.5//offset:0.0  DBCType:uint8*/
+uint8 BMS_DisconnectRequestRsn_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_EmergencyDisconnectRsn_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_LimpHomeRsn_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[12];
+}cap_canApiMsg_BMS_Sts_PT_t;
+
+
+
+/*187*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BMS_WarnMsg_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CHSKM_BMS_WarnMsg_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_BMS_WarnMsg_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_PackTempSts_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_ThermalRunaway_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_BatteryReplacement_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_Warning_Flag_5_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_Warning_Flag_6_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_Warning_Flag_7_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_Warning_Flag_8_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_Warning_Flag_9_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_MalfunctionSts_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_LowBattery_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_Reserved_signal1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_Reserved_signal2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_Reserved_signal3_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_Reserved_signal4_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_Reserved_signal5_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[8];
+}cap_canApiMsg_BMS_WarnMsg_PT_t;
+
+
+
+/*213*//*SentMsg*/
+typedef struct cap_canApiMsg_ST_STAB_DSC_PT_tag {
+boolean CanBUS_st; 
+uint8 CRC_ST_STAB_DSC_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_ST_STAB_DSC_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint16 QU_FN_FDR_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint16 QU_FN_ABS_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint16 QU_FN_ASC_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ST_BRG_DV_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[8];
+}cap_canApiMsg_ST_STAB_DSC_PT_t;
+
+
+
+/*214*//*SentMsg*/
+typedef struct cap_canApiMsg_ST_STAB_DSC_2_PT_tag {
+boolean CanBUS_st; 
+uint8 ST_SLIP_THO_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[8];
+}cap_canApiMsg_ST_STAB_DSC_2_PT_t;
+
+
+
+/*217*//*SentMsg*/
+typedef struct cap_canApiMsg_WMOM_PT_AVL_PT_tag {
+boolean CanBUS_st; 
+uint8 CRC_WMOM_PT_AVL_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_WMOM_PT_AVL_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CHL_WMOM_PT_AVL_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+sint32 AVL_WMOM_PT_SUM_phy; /*fact:1.0//offset:-32000.0  DBCType:uint16*/
+uint8 QU_AVL_WMOM_PT_SUM_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[16];
+}cap_canApiMsg_WMOM_PT_AVL_PT_t;
+
+
+
+/*249*//*ReceivedMsg */
+typedef struct cap_canApiMsg_DCDC_VCU_Measure_Fbk_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+float32 DCDC_MeasVs_phy; /*fact:0.0625//offset:0.0  DBCType:uint16*/
+float32 DCDC_MeasOutCurr_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 DCDC_MeasInVltg_phy; /*fact:0.0625//offset:0.0  DBCType:uint16*/
+float32 DCDC_MeasInCurrent_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+ uint8 raw_data[8];
+}cap_canApiMsg_DCDC_VCU_Measure_Fbk_PT_t;
+
+
+
+/*254*//*ReceivedMsg */
+typedef struct cap_canApiMsg_DCDC_VCU_Req_Fbk_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 DCDC_EnableDCDCFbk_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 DCDC_Status_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 DCDC_OutVltgReqFbk_phy; /*fact:0.0625//offset:0.0  DBCType:uint16*/
+float32 DCDC_OutCurrReqFbk_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 DCDC_MaxCurrentOut_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+ uint8 raw_data[7];
+}cap_canApiMsg_DCDC_VCU_Req_Fbk_PT_t;
+
+
+
+/*272*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_ChargingConnectionSts_PT_tag {
+boolean CanBUS_st; 
+uint8 CRC_VCU_ChargingConnectionSts_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_VCU_ChargingConnectionSts_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_AcChgGunIn_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_DCChgGunIn_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 raw_data[2];
+}cap_canApiMsg_VCU_ChargingConnectionSts_PT_t;
+
+
+
+/*289*//*SentMsg*/
+typedef struct cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_PT_tag {
+boolean CanBUS_st; 
+uint8 CRC_V_VEH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_V_VEH_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 V_VEH_COG_phy; /*fact:0.015625//offset:0.0  DBCType:uint16*/
+uint8 QU_V_VEH_COG_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint64 SecOcDataP2V_VEH_phy; /*fact:1.0//offset:0.0  DBCType:uint64*/
+uint8 raw_data[32];
+}cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_PT_t;
+
+
+
+/*293*//*SentMsg*/
+typedef struct cap_canApiMsg_CombinedChargerUnit10msNo2_PT_tag {
+boolean CanBUS_st; 
+sint32 PowerETractSys2LimGenMax_phy; /*fact:50.0//offset:-1638300.0  DBCType:uint16*/
+sint32 PowerETractSys2LimMotMax_phy; /*fact:50.0//offset:-1638300.0  DBCType:uint16*/
+sint32 PowerETractSys1LimGenMax_phy; /*fact:50.0//offset:-1638300.0  DBCType:uint16*/
+sint32 PowerETractSys1LimMotMax_phy; /*fact:50.0//offset:-1638300.0  DBCType:uint16*/
+uint8 OperatingModeEANActualValue_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 RequestExtraBoostETractSys1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 RequestExtraBoostETractSys2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[20];
+}cap_canApiMsg_CombinedChargerUnit10msNo2_PT_t;
+
+
+
+/*296*//*SentMsg*/
+typedef struct cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT_tag {
+boolean CanBUS_st; 
+uint8 CRC_EXTS_ARB_INTF_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_EXTS_ARB_INTF_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CHL_EXTS_ARB_INTF_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+sint32 AVL_BRTORQ_WHL_RS_LH_EXT_phy; /*fact:1.0//offset:-32000.0  DBCType:uint16*/
+sint32 AVL_BRTORQ_WHL_RS_RH_EXT_phy; /*fact:1.0//offset:-32000.0  DBCType:uint16*/
+sint32 AVL_BRTORQ_WHL_FS_LH_EXT_phy; /*fact:1.0//offset:-32000.0  DBCType:uint16*/
+sint32 AVL_BRTORQ_WHL_FS_RH_EXT_phy; /*fact:1.0//offset:-32000.0  DBCType:uint16*/
+uint8 CRC_RQ_RPM_BAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_RQ_RPM_BAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CHL_RQ_RPM_BAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 TAR_RPM_MAX_BAX_phy; /*fact:0.01//offset:0.0  DBCType:uint16*/
+float32 TAR_RPM_MIN_BAX_phy; /*fact:0.01//offset:0.0  DBCType:uint16*/
+uint8 ST_TAR_RPM_BAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 TAR_STIF_SPCO_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CRC_RQ_RPM_FTAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_RQ_RPM_FTAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CHL_RQ_RPM_FTAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 TAR_RPM_MAX_FTAX_phy; /*fact:0.01//offset:0.0  DBCType:uint16*/
+float32 TAR_RPM_MIN_FTAX_phy; /*fact:0.01//offset:0.0  DBCType:uint16*/
+uint8 ST_TAR_RPM_FTAX_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CRC_StatusSlipThresholds_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_StatusSlipThresholds_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CHL_StatusSlipThresholds_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 StatusSlipThresholdsFrontAxle_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 StatusSlipThresholdsRearAxle_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[64];
+}cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT_t;
+
+
+
+/*297*//*SentMsg*/
+typedef struct cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_PT_tag {
+boolean CanBUS_st; 
+uint8 CRC_ACLNX_COG_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_ACLNX_COG_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 ACLNX_COG_phy; /*fact:0.002//offset:-65.0  DBCType:uint16*/
+uint8 QU_ACLNX_COG_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CRC_ACLNY_COG_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_ACLNY_COG_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 ACLNY_COG_phy; /*fact:0.002//offset:-65.0  DBCType:uint16*/
+uint8 QU_ACLNY_COG_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[20];
+}cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_PT_t;
+
+
+
+/*314*//*ReceivedMsg */
+typedef struct cap_canApiMsg_TracEMacElectc1Time100msNo1_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint16 CRC_TracEMacElectc1Time100msNo1_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ALIV_TracEMacElectc1Time100msNo1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint32 StatusETractSys1Error_phy; /*fact:1.0//offset:0.0  DBCType:uint32*/
+uint32 StatusETractSys1Degradation_phy; /*fact:1.0//offset:0.0  DBCType:uint32*/
+uint16 ActStatMeclLossesGbxETractSys1_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+sint16 TETractSys1CoolantWaterInpActVal_phy; /*fact:1.0//offset:-48.0  DBCType:uint8*/
+uint8 StatusETractSys1CoolingActVal_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 OpModETractSys1ActVal_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 StatusETractSys1LossActive_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint16 PowerETractSys1MaximumLossActive_phy; /*fact:50.0//offset:0.0  DBCType:uint16*/
+float32 WhlRatElAxlEtractSys1ActVal_phy; /*fact:0.001//offset:0.0  DBCType:uint16*/
+float32 PercentUsedExtraBoostETractSys1_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+uint8 StatusExtraBoostETractSys1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+sint16 TETractSys1EmRotorActVal_phy; /*fact:1.0//offset:-48.0  DBCType:uint8*/
+float32 ThermalStressLevelETractSys1_phy; /*fact:0.5//offset:0.0  DBCType:uint8*/
+sint16 TETractSys1EmStatorActVal_phy; /*fact:1.0//offset:-48.0  DBCType:uint8*/
+sint16 TETractSys1InverterActVal_phy; /*fact:1.0//offset:-48.0  DBCType:uint8*/
+sint16 TETractSys1GbxOilActVal_phy; /*fact:1.0//offset:-48.0  DBCType:uint8*/
+ uint8 raw_data[32];
+}cap_canApiMsg_TracEMacElectc1Time100msNo1_PT_t;
+
+
+
+/*326*//*ReceivedMsg */
+typedef struct cap_canApiMsg_TracEMacElectc2Time100msNo1_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint16 CRC_TracEMacElectc2Time100msNo1_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ALIV_TracEMacElectc2Time100msNo1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint32 StatusETractSys2Error_phy; /*fact:1.0//offset:0.0  DBCType:uint32*/
+uint32 StatusETractSys2Degradation_phy; /*fact:1.0//offset:0.0  DBCType:uint32*/
+uint16 ActStatMeclLossesGbxETractSys2_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+sint16 TETractSys2CoolantWaterInpActVal_phy; /*fact:1.0//offset:-48.0  DBCType:uint8*/
+uint8 StatusETractSys2CoolingActVal_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 OpModETractSys2ActVal_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 StatusETractSys2LossActive_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint16 PowerETractSys2MaximumLossActive_phy; /*fact:50.0//offset:0.0  DBCType:uint16*/
+float32 WhlRatElAxlEtractSys2ActVal_phy; /*fact:0.001//offset:0.0  DBCType:uint16*/
+float32 PercentUsedExtraBoostETractSys2_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+uint8 StatusExtraBoostETractSys2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+sint16 TETractSys2EmRotorActVal_phy; /*fact:1.0//offset:-48.0  DBCType:uint8*/
+float32 ThermalStressLevelETractSys2_phy; /*fact:0.5//offset:0.0  DBCType:uint8*/
+sint16 TETractSys2EmStatorActVal_phy; /*fact:1.0//offset:-48.0  DBCType:uint8*/
+sint16 TETractSys2InverterActVal_phy; /*fact:1.0//offset:-48.0  DBCType:uint8*/
+sint16 TETractSys2GbxOilActVal_phy; /*fact:1.0//offset:-48.0  DBCType:uint8*/
+ uint8 raw_data[32];
+}cap_canApiMsg_TracEMacElectc2Time100msNo1_PT_t;
+
+
+
+/*385*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_BMS_ThermalStatus_PT_tag {
+boolean CanBUS_st; 
+uint8 CRC_VCU_BMS_ThermalStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_VCU_BMS_ThermalStatus_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_BMS_ActCoolingSts_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_BMS_HeatingSts_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[2];
+}cap_canApiMsg_VCU_BMS_ThermalStatus_PT_t;
+
+
+
+/*389*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BMS_CellTemp_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_BMS_CellTemp_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_BMS_CellTemp_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+sint16 BMS_MinCellTemp_phy; /*fact:1.0//offset:-40.0  DBCType:uint8*/
+sint16 BMS_PackTemp_phy; /*fact:1.0//offset:-40.0  DBCType:uint8*/
+sint16 BMS_MaxCellTemp_phy; /*fact:1.0//offset:-40.0  DBCType:uint8*/
+uint8 BMS_ProbeNumMaxCellTemp_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_ProbeNumMinCellTemp_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+sint16 BMS_MaxMinDiffCellTemp_phy; /*fact:1.0//offset:-40.0  DBCType:uint8*/
+ uint8 raw_data[8];
+}cap_canApiMsg_BMS_CellTemp_PT_t;
+
+
+
+/*394*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BMS_CellTempMeas_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_BMS_CellTempMeas_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_BMS_CellTempMeas_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 BMS_CellTemp1_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp2_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp3_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp4_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp5_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp6_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp7_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp8_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp9_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp10_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp11_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp12_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp13_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp14_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp15_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp16_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp17_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp18_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp19_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp20_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp21_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp22_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp23_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp24_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp25_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp26_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp27_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp28_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp29_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp30_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp31_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp32_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp33_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp34_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp35_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp36_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp37_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp38_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp39_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp40_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CellTemp41_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+ uint8 raw_data[64];
+}cap_canApiMsg_BMS_CellTempMeas_PT_t;
+
+
+
+/*399*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BMS_CellVolMeas1_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_BMS_CellVolMeas_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_BMS_CellVolMeas_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 BMS_CellVol1_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol2_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol3_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol4_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol5_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol6_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol7_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol8_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol9_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol10_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol11_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol12_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol13_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol14_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol15_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol16_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol17_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol18_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol19_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol20_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol21_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol22_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol23_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol24_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol25_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol26_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol27_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol28_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol29_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol30_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+ uint8 raw_data[48];
+}cap_canApiMsg_BMS_CellVolMeas1_PT_t;
+
+
+
+/*404*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BMS_CellVolMeas2_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_BMS_CellVolMeas2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_BMS_CellVolMeas2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 BMS_CellVol31_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol32_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol33_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol34_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol35_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol36_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol37_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol38_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol39_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol40_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol41_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol42_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol43_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol44_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol45_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol46_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol47_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol48_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol49_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol50_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol51_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol52_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol53_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol54_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol55_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol56_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol57_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol58_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol59_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol60_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol61_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol62_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+ uint8 raw_data[48];
+}cap_canApiMsg_BMS_CellVolMeas2_PT_t;
+
+
+
+/*405*//*ReceivedMsg */
+typedef struct cap_canApiMsg_OBC_Status_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 OBC_VCU_Status_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 OBC_Max_Current_Out_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 OBC_VCU_iAC_L1_phy; /*fact:0.1//offset:-102.3  DBCType:uint16*/
+uint16 OBC_VCU_vAC_L1_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+float32 OBC_VCU_iAC_L2_phy; /*fact:0.1//offset:-102.3  DBCType:uint16*/
+uint16 OBC_VCU_vAC_L2_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+float32 OBC_VCU_iAC_L3_phy; /*fact:0.1//offset:-102.3  DBCType:uint16*/
+uint16 OBC_VCU_vAC_L3_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+float32 OBC_VCU_iDC_phy; /*fact:0.1//offset:-102.3  DBCType:uint16*/
+uint16 OBC_VCU_vDC_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+ uint8 raw_data[20];
+}cap_canApiMsg_OBC_Status_PT_t;
+
+
+
+/*409*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BMS_CellVolMeas3_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_BMS_CellVolMeas3_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_BMS_CellVolMeas3_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 BMS_CellVol63_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol64_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol65_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol66_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol67_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol68_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol69_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol70_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol71_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol72_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol73_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol74_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol75_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol76_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol77_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol78_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol79_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol80_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol81_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol82_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol83_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol84_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol85_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol86_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol87_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol88_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol89_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol90_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol91_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol92_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol93_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol94_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol95_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol96_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol97_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol98_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol99_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol100_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol101_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol102_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol103_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol104_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol105_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol106_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol107_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+float32 BMS_CellVol108_phy; /*fact:0.005//offset:0.0  DBCType:uint16*/
+ uint8 raw_data[64];
+}cap_canApiMsg_BMS_CellVolMeas3_PT_t;
+
+
+
+/*193*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_OBC_Req_PT_tag {
+boolean CanBUS_st; 
+float32 VCU_OBC_iLineLimit_phy; /*fact:0.0625//offset:0.0  DBCType:uint16*/
+uint8 VCU_OBC_Enable_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_ChgDirType_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 VCU_OBC_vOBC_Request_phy; /*fact:0.0625//offset:0.0  DBCType:uint16*/
+float32 VCU_OBC_iOBC_Request_phy; /*fact:0.0625//offset:0.0  DBCType:uint16*/
+uint8 raw_data[6];
+}cap_canApiMsg_VCU_OBC_Req_PT_t;
+
+
+
+/*414*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BMS_CoolantInletOutletTmp_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_BMS_CoolantInletOutletTmp_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_BMS_CoolantInletOutletTmp_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 BMS_CoolantInletTemp_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+float32 BMS_CoolantOutletTemp_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+ uint8 raw_data[5];
+}cap_canApiMsg_BMS_CoolantInletOutletTmp_PT_t;
+
+
+
+/*418*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_BMS_ChargingParams_PT_tag {
+boolean CanBUS_st; 
+uint8 CRC_VCU_BMS_ChargingParams_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_VCU_BMS_ChargingParams_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 VCU_TargetASOC_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+uint8 raw_data[4];
+}cap_canApiMsg_VCU_BMS_ChargingParams_PT_t;
+
+
+
+/*419*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BMS_Insulation_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_BMS_Insulation_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_BMS_Insulation_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_VCU_InsulationMonSts_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint16 BMS_PackInsuRes_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+ uint8 raw_data[4];
+}cap_canApiMsg_BMS_Insulation_PT_t;
+
+
+
+/*420*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_BMS_ChargingControl_PT_tag {
+boolean CanBUS_st; 
+uint8 CRC_VCU_BMS_ChargingControl_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_VCU_BMS_ChargingControl_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_BMS_InsulationMonReq_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 VCU_BMS_ChargeAllow_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 raw_data[2];
+}cap_canApiMsg_VCU_BMS_ChargingControl_PT_t;
+
+
+
+/*424*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BMS_VCU_THMReq_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_BMS_VCU_THMReq_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_BMS_VCU_THMReq_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_FlowRateReq_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 BMS_CoolPwrDemand_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+float32 BMS_HeatPwrDemand_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+uint8 BMS_VCU_CoolingOnOffReq_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+uint8 BMS_VCU_HeatingOnOffReq_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+ uint8 raw_data[6];
+}cap_canApiMsg_BMS_VCU_THMReq_PT_t;
+
+
+
+/*429*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BMS_VolMeas_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_BMS_VolMeas_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_BMS_VolMeas_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_CellNumMinCellVol_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_CellNumMaxCellVol_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 BMS_MinCellVol_phy; /*fact:0.001//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxCellVol_phy; /*fact:0.001//offset:0.0  DBCType:uint16*/
+float32 BMS_MaxMinDiffCellVol_phy; /*fact:0.001//offset:0.0  DBCType:uint16*/
+ uint8 raw_data[12];
+}cap_canApiMsg_BMS_VolMeas_PT_t;
+
+
+
+/*433*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_BMS_HVCoordination_PT_tag {
+boolean CanBUS_st; 
+uint8 CRC_VCU_BMS_HVCoordination_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_VCU_BMS_HVCoordination_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 VCU_BMS_HVOnOffReq_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[2];
+}cap_canApiMsg_VCU_BMS_HVCoordination_PT_t;
+
+
+
+/*450*//*ReceivedMsg */
+typedef struct cap_canApiMsg_DCDC_VCU_Temperature_Fbk_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+float32 DCDC_InternalTempA_phy; /*fact:0.1//offset:-100.0  DBCType:uint16*/
+float32 DCDC_InternalTempB_phy; /*fact:0.1//offset:-100.0  DBCType:uint16*/
+float32 DCDC_InternalTempC_phy; /*fact:0.1//offset:-100.0  DBCType:uint16*/
+float32 DCDC_CoolPwrDemand_phy; /*fact:0.01//offset:0.0  DBCType:uint8*/
+uint8 DCDC_FlowRateReq_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[7];
+}cap_canApiMsg_DCDC_VCU_Temperature_Fbk_PT_t;
+
+
+
+/*490*//*SentMsg*/
+typedef struct cap_canApiMsg_Kilometerstand_2_PT_tag {
+boolean CanBUS_st; 
+float32 MILE_KM_TOT_phy; /*fact:0.001//offset:0.0  DBCType:uint32*/
+uint8 raw_data[8];
+}cap_canApiMsg_Kilometerstand_2_PT_t;
+
+
+
+/*197*//*SentMsg*/
+typedef struct cap_canApiMsg_VCU_DCDC_Req_PT_tag {
+boolean CanBUS_st; 
+uint8 VCU_EnableDCDC_phy; /*fact:1.0//offset:0.0  DBCType:boolean*/
+float32 VCU_OutVltgReq_phy; /*fact:0.0625//offset:0.0  DBCType:uint16*/
+float32 VCU_OutCurReq_phy; /*fact:0.1//offset:0.0  DBCType:uint16*/
+uint8 raw_data[8];
+}cap_canApiMsg_VCU_DCDC_Req_PT_t;
+
+
+
+/*517*//*ReceivedMsg */
+typedef struct cap_canApiMsg_BMS_HistData_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_BMS_HistData_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALV_BMS_HistData_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 BMS_ContactorAging_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[3];
+}cap_canApiMsg_BMS_HistData_PT_t;
+
+
+
+/*532*//*SentMsg*/
+typedef struct cap_canApiMsg_ParkByWire50msNo1_PT_tag {
+boolean CanBUS_st; 
+uint8 CRC_ParkByWire50msNo1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_ParkByWire50msNo1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CHL_ParkByWire50msNo1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 RequestParkByWireHeat_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[8];
+}cap_canApiMsg_ParkByWire50msNo1_PT_t;
+
+
+
+/*630*//*SentMsg*/
+typedef struct cap_canApiMsg_FZZSTD_PT_tag {
+boolean CanBUS_st; 
+uint8 ST_ENERG_FZM_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ST_ILK_ERRM_FZM_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[8];
+}cap_canApiMsg_FZZSTD_PT_t;
+
+
+
+/*632*//*SentMsg*/
+typedef struct cap_canApiMsg_STAT_ANHAENGER_PT_tag {
+boolean CanBUS_st; 
+uint8 ST_TRAI_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[8];
+}cap_canApiMsg_STAT_ANHAENGER_PT_t;
+
+
+
+/*645*//*ReceivedMsg */
+typedef struct cap_canApiMsg_OBC_Temperature_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+float32 OBC_InternalTemp_phy; /*fact:0.1//offset:-50.0  DBCType:uint16*/
+uint8 OBC_FlowRateReq_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 OBC_CoolPwrDemand_phy; /*fact:0.1//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[4];
+}cap_canApiMsg_OBC_Temperature_PT_t;
+
+
+
+/*749*//*SentMsg*/
+typedef struct cap_canApiMsg_A_TEMP_PT_tag {
+boolean CanBUS_st; 
+float32 TEMP_EX_phy; /*fact:0.5//offset:-40.0  DBCType:uint8*/
+uint8 raw_data[2];
+}cap_canApiMsg_A_TEMP_PT_t;
+
+
+
+/*811*//*SentMsg*/
+typedef struct cap_canApiMsg_DMEBK100_PT_tag {
+boolean CanBUS_st; 
+uint16 ActValVolFlowCoolantETractSys2_phy; /*fact:20.0//offset:0.0  DBCType:uint8*/
+uint16 ActValVolFlowCoolantETractSys1_phy; /*fact:20.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[24];
+}cap_canApiMsg_DMEBK100_PT_t;
+
+
+
+/*832*//*SentMsg*/
+typedef struct cap_canApiMsg_CombinedChargerUnit100msNo1_PT_tag {
+boolean CanBUS_st; 
+uint16 CRC_CombinedChargerUnit100msNo1_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint8 ALIV_CombinedChargerUnit100msNo1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint16 RequestPowerETractSys1Loss_phy; /*fact:50.0//offset:0.0  DBCType:uint16*/
+uint16 RequestPowerETractSys2Loss_phy; /*fact:50.0//offset:0.0  DBCType:uint16*/
+uint8 raw_data[12];
+}cap_canApiMsg_CombinedChargerUnit100msNo1_PT_t;
+
+
+
+/*896*//*SentMsg*/
+typedef struct cap_canApiMsg_FAHRGESTELLNUMMER_PT_tag {
+boolean CanBUS_st; 
+uint8 NO_VECH_1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 NO_VECH_2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 NO_VECH_3_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 NO_VECH_4_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 NO_VECH_5_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 NO_VECH_6_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 NO_VECH_7_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[7];
+}cap_canApiMsg_FAHRGESTELLNUMMER_PT_t;
+
+
+
+/*911*//*SentMsg*/
+typedef struct cap_canApiMsg_TLT_RW_PT_tag {
+boolean CanBUS_st; 
+uint8 CRC_TLT_RW_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_TLT_RW_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 AVL_LOGR_RW_phy; /*fact:0.05//offset:-64.0  DBCType:uint16*/
+uint8 QU_AVL_LOGR_RW_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 raw_data[8];
+}cap_canApiMsg_TLT_RW_PT_t;
+
+
+
+/*1052*//*SentMsg*/
+typedef struct cap_canApiMsg_KILOMETERSTAND_PT_tag {
+boolean CanBUS_st; 
+uint32 MILE_KM_phy; /*fact:1.0//offset:0.0  DBCType:uint32*/
+uint8 raw_data[8];
+}cap_canApiMsg_KILOMETERSTAND_PT_t;
+
+
+
+/*1090*//*SentMsg*/
+typedef struct cap_canApiMsg_RELATIVZEIT_PT_tag {
+boolean CanBUS_st; 
+uint32 T_SEC_COU_REL_phy; /*fact:1.0//offset:0.0  DBCType:uint32*/
+uint8 raw_data[6];
+}cap_canApiMsg_RELATIVZEIT_PT_t;
+
+
+
+/*1107*//*ReceivedMsg */
+typedef struct cap_canApiMsg_HighVoltageStorage200msNo1_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 StatusServiceDisconnectionPlug_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 StsDisconnectingSwtHighVoltStorg_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[4];
+}cap_canApiMsg_HighVoltageStorage200msNo1_PT_t;
+
+
+
+/*1120*//*SentMsg*/
+typedef struct cap_canApiMsg_EnergyStorageMeasurementValues_PT_tag {
+boolean CanBUS_st; 
+float32 EnergyStorageClamp30VoltageValue_phy; /*fact:0.001//offset:0.0  DBCType:uint16*/
+uint8 raw_data[8];
+}cap_canApiMsg_EnergyStorageMeasurementValues_PT_t;
+
+
+
+/*1237*//*ReceivedMsg */
+typedef struct cap_canApiMsg_StatusCrashIdentETractSys1_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_StatusCrashIdentETractSys1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_StatusCrashIdentETractSys1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CHL_StatusCrashIdentETractSys1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 StatusCrashShutDownETractSys1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 TempETractSys1DirectCurrentPlug_phy; /*fact:0.5//offset:-40.0  DBCType:uint16*/
+uint8 StsLimpHomeNotifETractSys1_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[8];
+}cap_canApiMsg_StatusCrashIdentETractSys1_PT_t;
+
+
+
+/*1239*//*ReceivedMsg */
+typedef struct cap_canApiMsg_StatusCrashIdentETractSys2_PT_tag {
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+uint8 CRC_StatusCrashIdentETractSys2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 ALIV_StatusCrashIdentETractSys2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 CHL_StatusCrashIdentETractSys2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 StatusCrashShutDownETractSys2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+float32 TempETractSys2DirectCurrentPlug_phy; /*fact:0.5//offset:-40.0  DBCType:uint16*/
+uint8 StsLimpHomeNotifETractSys2_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+ uint8 raw_data[8];
+}cap_canApiMsg_StatusCrashIdentETractSys2_PT_t;
+
+
+
+/*1272*//*SentMsg*/
+typedef struct cap_canApiMsg_CombinedChargerUnit1000msNo1_PT_tag {
+boolean CanBUS_st; 
+float32 TemperatureCoolantOutput_phy; /*fact:0.1//offset:-40.0  DBCType:uint16*/
+uint8 raw_data[24];
+}cap_canApiMsg_CombinedChargerUnit1000msNo1_PT_t;
+
+
+
+/*1296*//*SentMsg*/
+typedef struct cap_canApiMsg_Networkmanagement3_PT_tag {
+boolean CanBUS_st; 
+uint8 NM3ControlBitVector_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint8 NM3SenderECUId_phy; /*fact:1.0//offset:0.0  DBCType:uint8*/
+uint16 NM3BasePartialNetworks_phy; /*fact:1.0//offset:0.0  DBCType:uint16*/
+uint32 NM3FunctionalPartialNetworks_phy; /*fact:1.0//offset:0.0  DBCType:uint32*/
+uint8 raw_data[8];
+}cap_canApiMsg_Networkmanagement3_PT_t;
+
+
+
+ 
+
+/*
+ * Data declarations
+ */
+
+extern	uint32 tempAswIn_SecOcDataP2V_VEH1;
+extern	uint32 tempAswIn_SecOcDataP2V_VEH2;
+extern	uint32 tempAswOut_SecOcDataP2V_VEH1;
+extern	uint32 tempAswOut_SecOcDataP2V_VEH2;
+extern	uint64 Ret_SecOcDataP2V_VEH_phy_C;
+extern cap_canApiMsg_VCU_WarnMsg_BCAN_t cap_canApiMsg_VCU_WarnMsg_BCAN;
+
+
+extern cap_canApiMsg_VCU_StatusDCDC_BCAN_t cap_canApiMsg_VCU_StatusDCDC_BCAN;
+
+
+extern cap_canApiMsg_VCU_MHU_info_BCAN_t cap_canApiMsg_VCU_MHU_info_BCAN;
+
+
+extern cap_canApiMsg_VCU_HVsystem_status_BCAN_t cap_canApiMsg_VCU_HVsystem_status_BCAN;
+
+
+extern cap_canApiMsg_VCU_HV_DrvSys_status_BCAN_t cap_canApiMsg_VCU_HV_DrvSys_status_BCAN;
+
+
+extern cap_canApiMsg_VCU_ChargingConnection_BCAN_t cap_canApiMsg_VCU_ChargingConnection_BCAN;
+
+
+extern cap_canApiMsg_VCU_Batt_WarnMsg_BCAN_t cap_canApiMsg_VCU_Batt_WarnMsg_BCAN;
+
+
+extern cap_canApiMsg_VCU_Batt_Info_BCAN_t cap_canApiMsg_VCU_Batt_Info_BCAN;
+
+
+extern cap_canApiMsg_STAT_ANHAENGER_BCAN_t cap_canApiMsg_STAT_ANHAENGER_BCAN;
+
+
+extern cap_canApiMsg_ST_GWS_BCAN_t cap_canApiMsg_ST_GWS_BCAN;
+
+
+extern cap_canApiMsg_RELATIVZEIT_BCAN_t cap_canApiMsg_RELATIVZEIT_BCAN;
+
+
+extern cap_canApiMsg_KILOMETERSTAND_BCAN_t cap_canApiMsg_KILOMETERSTAND_BCAN;
+
+
+extern cap_canApiMsg_HighVoltageStorage200msNo1_BCAN_t cap_canApiMsg_HighVoltageStorage200msNo1_BCAN;
+
+
+extern cap_canApiMsg_HighVoltageStorage10msNo2_BCAN_t cap_canApiMsg_HighVoltageStorage10msNo2_BCAN;
+
+
+extern cap_canApiMsg_FZZSTD_BCAN_t cap_canApiMsg_FZZSTD_BCAN;
+
+
+extern cap_canApiMsg_FZU_ChargingControl_BCAN_t cap_canApiMsg_FZU_ChargingControl_BCAN;
+
+
+extern cap_canApiMsg_FAHRGESTELLNUMMER_BCAN_t cap_canApiMsg_FAHRGESTELLNUMMER_BCAN;
+
+
+extern cap_canApiMsg_ERRM_BN_U_BCAN_t cap_canApiMsg_ERRM_BN_U_BCAN;
+
+
+extern cap_canApiMsg_DT_DISP_GRDT_BCAN_t cap_canApiMsg_DT_DISP_GRDT_BCAN;
+
+
+extern cap_canApiMsg_CON_VEH_BCAN_t cap_canApiMsg_CON_VEH_BCAN;
+
+
+extern cap_canApiMsg_CombinedChargerUnit10msNo2_BCAN_t cap_canApiMsg_CombinedChargerUnit10msNo2_BCAN;
+
+
+extern cap_canApiMsg_A_TEMP_BCAN_t cap_canApiMsg_A_TEMP_BCAN;
+
+
+extern cap_canApiMsg_Kilometerstand_2_BCAN_t cap_canApiMsg_Kilometerstand_2_BCAN;
+
+
+extern cap_canApiMsg_TracEMacElectc1Time100msNo1_BCAN_t cap_canApiMsg_TracEMacElectc1Time100msNo1_BCAN;
+
+
+extern cap_canApiMsg_TracEMacElectc2Time100msNo1_BCAN_t cap_canApiMsg_TracEMacElectc2Time100msNo1_BCAN;
+
+
+extern cap_canApiMsg_CLAMP_STAT_BCAN_t cap_canApiMsg_CLAMP_STAT_BCAN;
+
+
+extern cap_canApiMsg_CLAMP_STAT_CHS1_t cap_canApiMsg_CLAMP_STAT_CHS1;
+
+
+extern cap_canApiMsg_ESC_A_CHS1_t cap_canApiMsg_ESC_A_CHS1;
+
+
+extern cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS1_t cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS1;
+
+
+extern cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS1_t cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS1;
+
+
+extern cap_canApiMsg_VCU_TractionEMachine2_100ms_CHS1_t cap_canApiMsg_VCU_TractionEMachine2_100ms_CHS1;
+
+
+extern cap_canApiMsg_VCU_TractionEMachine1_100ms_CHS1_t cap_canApiMsg_VCU_TractionEMachine1_100ms_CHS1;
+
+
+extern cap_canApiMsg_VCU_Status_CHS1_t cap_canApiMsg_VCU_Status_CHS1;
+
+
+extern cap_canApiMsg_VCU_HV_Status_CHS1_t cap_canApiMsg_VCU_HV_Status_CHS1;
+
+
+extern cap_canApiMsg_VCU_CombinedChargerUnit_CHS1_t cap_canApiMsg_VCU_CombinedChargerUnit_CHS1;
+
+
+extern cap_canApiMsg_ABS_ESC_01_CHS1_t cap_canApiMsg_ABS_ESC_01_CHS1;
+
+
+extern cap_canApiMsg_IEB_01_CHS1_t cap_canApiMsg_IEB_01_CHS1;
+
+
+extern cap_canApiMsg_EBCM_ACC_LONG_LAT_YAW_CHS1_t cap_canApiMsg_EBCM_ACC_LONG_LAT_YAW_CHS1;
+
+
+extern cap_canApiMsg_EBCM_STATUS_CHS1_t cap_canApiMsg_EBCM_STATUS_CHS1;
+
+
+extern cap_canApiMsg_TLT_RW_CHS1_t cap_canApiMsg_TLT_RW_CHS1;
+
+
+extern cap_canApiMsg_ST_STAB_DSC_2_CHS1_t cap_canApiMsg_ST_STAB_DSC_2_CHS1;
+
+
+extern cap_canApiMsg_ST_STAB_DSC_CHS1_t cap_canApiMsg_ST_STAB_DSC_CHS1;
+
+
+extern cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_CHS1_t cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_CHS1;
+
+
+extern cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1_t cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS1;
+
+
+extern cap_canApiMsg_AVL_RPM_WHL_CHS1_t cap_canApiMsg_AVL_RPM_WHL_CHS1;
+
+
+extern cap_canApiMsg_HighVoltageStorage200msNo1_CHS1_t cap_canApiMsg_HighVoltageStorage200msNo1_CHS1;
+
+
+extern cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_CHS1_t cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_CHS1;
+
+
+extern cap_canApiMsg_SFA_SteerWheel_Info_CHS1_t cap_canApiMsg_SFA_SteerWheel_Info_CHS1;
+
+
+extern cap_canApiMsg_CLAMP_STAT_CHS2_t cap_canApiMsg_CLAMP_STAT_CHS2;
+
+
+extern cap_canApiMsg_ESC_A_CHS2_t cap_canApiMsg_ESC_A_CHS2;
+
+
+extern cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS2_t cap_canApiMsg_VCU_TractionEMachine2_10ms_CHS2;
+
+
+extern cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS2_t cap_canApiMsg_VCU_TractionEMachine1_10ms_CHS2;
+
+
+extern cap_canApiMsg_VCU_TractionEMachine2_100ms_CHS2_t cap_canApiMsg_VCU_TractionEMachine2_100ms_CHS2;
+
+
+extern cap_canApiMsg_VCU_TractionEMachine1_100ms_CHS2_t cap_canApiMsg_VCU_TractionEMachine1_100ms_CHS2;
+
+
+extern cap_canApiMsg_VCU_Status_CHS2_t cap_canApiMsg_VCU_Status_CHS2;
+
+
+extern cap_canApiMsg_VCU_HV_Status_CHS2_t cap_canApiMsg_VCU_HV_Status_CHS2;
+
+
+extern cap_canApiMsg_VCU_CombinedChargerUnit_CHS2_t cap_canApiMsg_VCU_CombinedChargerUnit_CHS2;
+
+
+extern cap_canApiMsg_ABS_ESC_01_CHS2_t cap_canApiMsg_ABS_ESC_01_CHS2;
+
+
+extern cap_canApiMsg_IEB_01_CHS2_t cap_canApiMsg_IEB_01_CHS2;
+
+
+extern cap_canApiMsg_EBCM_STATUS_CHS2_t cap_canApiMsg_EBCM_STATUS_CHS2;
+
+
+extern cap_canApiMsg_ST_STAB_DSC_2_CHS2_t cap_canApiMsg_ST_STAB_DSC_2_CHS2;
+
+
+extern cap_canApiMsg_ST_STAB_DSC_CHS2_t cap_canApiMsg_ST_STAB_DSC_CHS2;
+
+
+extern cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2_t cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_CHS2;
+
+
+extern cap_canApiMsg_AVL_RPM_WHL_CHS2_t cap_canApiMsg_AVL_RPM_WHL_CHS2;
+
+
+extern cap_canApiMsg_HighVoltageStorage200msNo1_CHS2_t cap_canApiMsg_HighVoltageStorage200msNo1_CHS2;
+
+
+extern cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_CHS2_t cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_CHS2;
+
+
+extern cap_canApiMsg_SFA_SteerWheel_Info_CHS2_t cap_canApiMsg_SFA_SteerWheel_Info_CHS2;
+
+
+extern cap_canApiMsg_VCU_HV_DrvSys_status_PT_t cap_canApiMsg_VCU_HV_DrvSys_status_PT;
+
+
+extern cap_canApiMsg_VCU_Thermal_Status_PT_t cap_canApiMsg_VCU_Thermal_Status_PT;
+
+
+extern cap_canApiMsg_OBC_01_100ms_PT_t cap_canApiMsg_OBC_01_100ms_PT;
+
+
+extern cap_canApiMsg_DCDC_01_100ms_PT_t cap_canApiMsg_DCDC_01_100ms_PT;
+
+
+extern cap_canApiMsg_BMS_CellTempMeas2_PT_t cap_canApiMsg_BMS_CellTempMeas2_PT;
+
+
+extern cap_canApiMsg_CLAMP_STAT_PT_t cap_canApiMsg_CLAMP_STAT_PT;
+
+
+extern cap_canApiMsg_CON_VEH_PT_t cap_canApiMsg_CON_VEH_PT;
+
+
+extern cap_canApiMsg_ST_CR_PT_t cap_canApiMsg_ST_CR_PT;
+
+
+extern cap_canApiMsg_AVL_RPM_WHL_PT_t cap_canApiMsg_AVL_RPM_WHL_PT;
+
+
+extern cap_canApiMsg_BMS_ChgParamReq_PT_t cap_canApiMsg_BMS_ChgParamReq_PT;
+
+
+extern cap_canApiMsg_BMS_CurMeas_PT_t cap_canApiMsg_BMS_CurMeas_PT;
+
+
+extern cap_canApiMsg_CombinedChargerUnit10msNo3_PT_t cap_canApiMsg_CombinedChargerUnit10msNo3_PT;
+
+
+extern cap_canApiMsg_CombinedChargerUnit10msNo1_PT_t cap_canApiMsg_CombinedChargerUnit10msNo1_PT;
+
+
+extern cap_canApiMsg_HighVoltageStorage10msNo2_PT_t cap_canApiMsg_HighVoltageStorage10msNo2_PT;
+
+
+extern cap_canApiMsg_TracEMacElectc1Time10msNo1_PT_t cap_canApiMsg_TracEMacElectc1Time10msNo1_PT;
+
+
+extern cap_canApiMsg_ERRM_BN_U_PT_t cap_canApiMsg_ERRM_BN_U_PT;
+
+
+extern cap_canApiMsg_BMS_Error_PT_t cap_canApiMsg_BMS_Error_PT;
+
+
+extern cap_canApiMsg_WMOM_DRV_9_PT_t cap_canApiMsg_WMOM_DRV_9_PT;
+
+
+extern cap_canApiMsg_BMS_HVMeas_PT_t cap_canApiMsg_BMS_HVMeas_PT;
+
+
+extern cap_canApiMsg_TracEMacElectc2Time10msNo1_PT_t cap_canApiMsg_TracEMacElectc2Time10msNo1_PT;
+
+
+extern cap_canApiMsg_BMS_PowerCont_PT_t cap_canApiMsg_BMS_PowerCont_PT;
+
+
+extern cap_canApiMsg_BMS_RelayStatus_PT_t cap_canApiMsg_BMS_RelayStatus_PT;
+
+
+extern cap_canApiMsg_BMS_Sts_PT_t cap_canApiMsg_BMS_Sts_PT;
+
+
+extern cap_canApiMsg_BMS_WarnMsg_PT_t cap_canApiMsg_BMS_WarnMsg_PT;
+
+
+extern cap_canApiMsg_ST_STAB_DSC_PT_t cap_canApiMsg_ST_STAB_DSC_PT;
+
+
+extern cap_canApiMsg_ST_STAB_DSC_2_PT_t cap_canApiMsg_ST_STAB_DSC_2_PT;
+
+
+extern cap_canApiMsg_WMOM_PT_AVL_PT_t cap_canApiMsg_WMOM_PT_AVL_PT;
+
+
+extern cap_canApiMsg_DCDC_VCU_Measure_Fbk_PT_t cap_canApiMsg_DCDC_VCU_Measure_Fbk_PT;
+
+
+extern cap_canApiMsg_DCDC_VCU_Req_Fbk_PT_t cap_canApiMsg_DCDC_VCU_Req_Fbk_PT;
+
+
+extern cap_canApiMsg_VCU_ChargingConnectionSts_PT_t cap_canApiMsg_VCU_ChargingConnectionSts_PT;
+
+
+extern cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_PT_t cap_canApiMsg_BundleEAFlexrayToCANFD20msNo1_PT;
+
+
+extern cap_canApiMsg_CombinedChargerUnit10msNo2_PT_t cap_canApiMsg_CombinedChargerUnit10msNo2_PT;
+
+
+extern cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT_t cap_canApiMsg_BundleEAFlexrayToAECANFD10msNo1_PT;
+
+
+extern cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_PT_t cap_canApiMsg_BundleEAFlexrayToAECANFD20msNo2_PT;
+
+
+extern cap_canApiMsg_TracEMacElectc1Time100msNo1_PT_t cap_canApiMsg_TracEMacElectc1Time100msNo1_PT;
+
+
+extern cap_canApiMsg_TracEMacElectc2Time100msNo1_PT_t cap_canApiMsg_TracEMacElectc2Time100msNo1_PT;
+
+
+extern cap_canApiMsg_VCU_BMS_ThermalStatus_PT_t cap_canApiMsg_VCU_BMS_ThermalStatus_PT;
+
+
+extern cap_canApiMsg_BMS_CellTemp_PT_t cap_canApiMsg_BMS_CellTemp_PT;
+
+
+extern cap_canApiMsg_BMS_CellTempMeas_PT_t cap_canApiMsg_BMS_CellTempMeas_PT;
+
+
+extern cap_canApiMsg_BMS_CellVolMeas1_PT_t cap_canApiMsg_BMS_CellVolMeas1_PT;
+
+
+extern cap_canApiMsg_BMS_CellVolMeas2_PT_t cap_canApiMsg_BMS_CellVolMeas2_PT;
+
+
+extern cap_canApiMsg_OBC_Status_PT_t cap_canApiMsg_OBC_Status_PT;
+
+
+extern cap_canApiMsg_BMS_CellVolMeas3_PT_t cap_canApiMsg_BMS_CellVolMeas3_PT;
+
+
+extern cap_canApiMsg_VCU_OBC_Req_PT_t cap_canApiMsg_VCU_OBC_Req_PT;
+
+
+extern cap_canApiMsg_BMS_CoolantInletOutletTmp_PT_t cap_canApiMsg_BMS_CoolantInletOutletTmp_PT;
+
+
+extern cap_canApiMsg_VCU_BMS_ChargingParams_PT_t cap_canApiMsg_VCU_BMS_ChargingParams_PT;
+
+
+extern cap_canApiMsg_BMS_Insulation_PT_t cap_canApiMsg_BMS_Insulation_PT;
+
+
+extern cap_canApiMsg_VCU_BMS_ChargingControl_PT_t cap_canApiMsg_VCU_BMS_ChargingControl_PT;
+
+
+extern cap_canApiMsg_BMS_VCU_THMReq_PT_t cap_canApiMsg_BMS_VCU_THMReq_PT;
+
+
+extern cap_canApiMsg_BMS_VolMeas_PT_t cap_canApiMsg_BMS_VolMeas_PT;
+
+
+extern cap_canApiMsg_VCU_BMS_HVCoordination_PT_t cap_canApiMsg_VCU_BMS_HVCoordination_PT;
+
+
+extern cap_canApiMsg_DCDC_VCU_Temperature_Fbk_PT_t cap_canApiMsg_DCDC_VCU_Temperature_Fbk_PT;
+
+
+extern cap_canApiMsg_Kilometerstand_2_PT_t cap_canApiMsg_Kilometerstand_2_PT;
+
+
+extern cap_canApiMsg_VCU_DCDC_Req_PT_t cap_canApiMsg_VCU_DCDC_Req_PT;
+
+
+extern cap_canApiMsg_BMS_HistData_PT_t cap_canApiMsg_BMS_HistData_PT;
+
+
+extern cap_canApiMsg_ParkByWire50msNo1_PT_t cap_canApiMsg_ParkByWire50msNo1_PT;
+
+
+extern cap_canApiMsg_FZZSTD_PT_t cap_canApiMsg_FZZSTD_PT;
+
+
+extern cap_canApiMsg_STAT_ANHAENGER_PT_t cap_canApiMsg_STAT_ANHAENGER_PT;
+
+
+extern cap_canApiMsg_OBC_Temperature_PT_t cap_canApiMsg_OBC_Temperature_PT;
+
+
+extern cap_canApiMsg_A_TEMP_PT_t cap_canApiMsg_A_TEMP_PT;
+
+
+extern cap_canApiMsg_DMEBK100_PT_t cap_canApiMsg_DMEBK100_PT;
+
+
+extern cap_canApiMsg_CombinedChargerUnit100msNo1_PT_t cap_canApiMsg_CombinedChargerUnit100msNo1_PT;
+
+
+extern cap_canApiMsg_FAHRGESTELLNUMMER_PT_t cap_canApiMsg_FAHRGESTELLNUMMER_PT;
+
+
+extern cap_canApiMsg_TLT_RW_PT_t cap_canApiMsg_TLT_RW_PT;
+
+
+extern cap_canApiMsg_KILOMETERSTAND_PT_t cap_canApiMsg_KILOMETERSTAND_PT;
+
+
+extern cap_canApiMsg_RELATIVZEIT_PT_t cap_canApiMsg_RELATIVZEIT_PT;
+
+
+extern cap_canApiMsg_HighVoltageStorage200msNo1_PT_t cap_canApiMsg_HighVoltageStorage200msNo1_PT;
+
+
+extern cap_canApiMsg_EnergyStorageMeasurementValues_PT_t cap_canApiMsg_EnergyStorageMeasurementValues_PT;
+
+
+extern cap_canApiMsg_StatusCrashIdentETractSys1_PT_t cap_canApiMsg_StatusCrashIdentETractSys1_PT;
+
+
+extern cap_canApiMsg_StatusCrashIdentETractSys2_PT_t cap_canApiMsg_StatusCrashIdentETractSys2_PT;
+
+
+extern cap_canApiMsg_CombinedChargerUnit1000msNo1_PT_t cap_canApiMsg_CombinedChargerUnit1000msNo1_PT;
+
+
+extern cap_canApiMsg_Networkmanagement3_PT_t cap_canApiMsg_Networkmanagement3_PT;
+
+
+extern const volatile float32 cap_VCU_StatusDCDC_DCDC_maxCurrentOut_BCAN_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_StatusDCDC_DCDC_maxCurrentOut_BCAN_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_VCU_StatusDCDC_DCDC_iOutput_BCAN_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_StatusDCDC_DCDC_iOutput_BCAN_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_VCU_StatusDCDC_DCDC_vDCInput_BCAN_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_StatusDCDC_DCDC_vDCInput_BCAN_Factor_C;/*DBC: 0.0625 */
+
+extern const volatile float32 cap_VCU_StatusDCDC_DCDC_vOutput_BCAN_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_StatusDCDC_DCDC_vOutput_BCAN_Factor_C;/*DBC: 0.0625 */
+
+extern const volatile float32 cap_VCU_MHU_info_VCU_RemainingRange_BCAN_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_MHU_info_VCU_RemainingRange_BCAN_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_VCU_MHU_info_VCU_BattSOC_BCAN_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_MHU_info_VCU_BattSOC_BCAN_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_VCU_HVsystem_status_VCU_RunningRange_charged_BCAN_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_HVsystem_status_VCU_RunningRange_charged_BCAN_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_VCU_HVsystem_status_VCU_HVbatSoc_charged_BCAN_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_HVsystem_status_VCU_HVbatSoc_charged_BCAN_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_VCU_HV_DrvSys_status_VCU_ACPD_Percent_BCAN_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_HV_DrvSys_status_VCU_ACPD_Percent_BCAN_Factor_C;/*DBC: 0.0625 */
+
+extern const volatile float32 cap_VCU_Batt_Info_BMS_PackCur_BCAN_Offset_C; /*DBC: -1500.0 */
+extern const volatile float32 cap_VCU_Batt_Info_BMS_PackCur_BCAN_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_VCU_Batt_Info_BMS_PackVoltage_BCAN_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_Batt_Info_BMS_PackVoltage_BCAN_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_VCU_Batt_Info_BMS_PackTemp_BCAN_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_VCU_Batt_Info_BMS_PackTemp_BCAN_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_VCU_Batt_Info_BMS_ChargingVoltage_BCAN_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_Batt_Info_BMS_ChargingVoltage_BCAN_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_VCU_Batt_Info_BMS_ChargingCurrent_BCAN_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_Batt_Info_BMS_ChargingCurrent_BCAN_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_HighVoltageStorage10msNo2_ActualValueVoltageLinkVerified_BCAN_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_HighVoltageStorage10msNo2_ActualValueVoltageLinkVerified_BCAN_Factor_C;/*DBC: 0.25 */
+
+extern const volatile float32 cap_CombinedChargerUnit10msNo2_PowerETractSys2LimMotMax_BCAN_Offset_C; /*DBC: -1638300.0 */
+extern const volatile float32 cap_CombinedChargerUnit10msNo2_PowerETractSys2LimMotMax_BCAN_Factor_C;/*DBC: 50.0 */
+
+extern const volatile float32 cap_CombinedChargerUnit10msNo2_PowerETractSys1LimGenMax_BCAN_Offset_C; /*DBC: -1638300.0 */
+extern const volatile float32 cap_CombinedChargerUnit10msNo2_PowerETractSys1LimGenMax_BCAN_Factor_C;/*DBC: 50.0 */
+
+extern const volatile float32 cap_CombinedChargerUnit10msNo2_PowerETractSys2LimGenMax_BCAN_Offset_C; /*DBC: -1638300.0 */
+extern const volatile float32 cap_CombinedChargerUnit10msNo2_PowerETractSys2LimGenMax_BCAN_Factor_C;/*DBC: 50.0 */
+
+extern const volatile float32 cap_CombinedChargerUnit10msNo2_PowerETractSys1LimMotMax_BCAN_Offset_C; /*DBC: -1638300.0 */
+extern const volatile float32 cap_CombinedChargerUnit10msNo2_PowerETractSys1LimMotMax_BCAN_Factor_C;/*DBC: 50.0 */
+
+extern const volatile float32 cap_A_TEMP_TEMP_EX_BCAN_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_A_TEMP_TEMP_EX_BCAN_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_Kilometerstand_2_MILE_KM_TOT_BCAN_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_Kilometerstand_2_MILE_KM_TOT_BCAN_Factor_C;/*DBC: 0.001 */
+
+extern const volatile float32 cap_VCU_TractionEMachine2_10ms_RpmEmETractSys2ActualValue_CHS1_Offset_C; /*DBC: -32768.0 */
+extern const volatile float32 cap_VCU_TractionEMachine2_10ms_RpmEmETractSys2ActualValue_CHS1_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2GeneratorDyn_CHS1_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2GeneratorDyn_CHS1_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2MotorDyn_CHS1_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2MotorDyn_CHS1_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2ActualValue_CHS1_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2ActualValue_CHS1_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_VCU_TractionEMachine1_10ms_RpmEmETractSys1ActualValue_CHS1_Offset_C; /*DBC: -32768.0 */
+extern const volatile float32 cap_VCU_TractionEMachine1_10ms_RpmEmETractSys1ActualValue_CHS1_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1GeneratorDyn_CHS1_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1GeneratorDyn_CHS1_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1MotorDyn_CHS1_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1MotorDyn_CHS1_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1ActualValue_CHS1_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1ActualValue_CHS1_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_VCU_TractionEMachine2_100ms_WheelRatioEAxlEtractSys2ActVal_CHS1_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_TractionEMachine2_100ms_WheelRatioEAxlEtractSys2ActVal_CHS1_Factor_C;/*DBC: 0.001 */
+
+extern const volatile float32 cap_VCU_TractionEMachine1_100ms_WheelRatioEAxlEtractSys1ActVal_CHS1_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_TractionEMachine1_100ms_WheelRatioEAxlEtractSys1ActVal_CHS1_Factor_C;/*DBC: 0.001 */
+
+extern const volatile float32 cap_VCU_Status_VCU_ACPD_Percent_CHS1_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_Status_VCU_ACPD_Percent_CHS1_Factor_C;/*DBC: 0.0625 */
+
+extern const volatile float32 cap_VCU_CombinedChargerUnit_TargetTorqueEmETractSys1_CHS1_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_VCU_CombinedChargerUnit_TargetTorqueEmETractSys1_CHS1_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_VCU_CombinedChargerUnit_TargetTorqueEmETractSys2_CHS1_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_VCU_CombinedChargerUnit_TargetTorqueEmETractSys2_CHS1_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_EBCM_ACC_LONG_LAT_YAW_VYAW_VEH_CHS1_Offset_C; /*DBC: -163.84 */
+extern const volatile float32 cap_EBCM_ACC_LONG_LAT_YAW_VYAW_VEH_CHS1_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_EBCM_STATUS_MCPressure_CHS1_Offset_C; /*DBC: -42.5 */
+extern const volatile float32 cap_EBCM_STATUS_MCPressure_CHS1_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_EBCM_STATUS_BreakPedalPercent_CHS1_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_EBCM_STATUS_BreakPedalPercent_CHS1_Factor_C;/*DBC: 0.0625 */
+
+extern const volatile float32 cap_TLT_RW_AVL_LOGR_RW_CHS1_Offset_C; /*DBC: -64.0 */
+extern const volatile float32 cap_TLT_RW_AVL_LOGR_RW_CHS1_Factor_C;/*DBC: 0.05 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD20msNo2_ACLNX_COG_CHS1_Offset_C; /*DBC: -65.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD20msNo2_ACLNX_COG_CHS1_Factor_C;/*DBC: 0.002 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD20msNo2_ACLNY_COG_CHS1_Offset_C; /*DBC: -65.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD20msNo2_ACLNY_COG_CHS1_Factor_C;/*DBC: 0.002 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_LH_EXT_CHS1_Offset_C; /*DBC: -32000.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_LH_EXT_CHS1_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_RH_EXT_CHS1_Offset_C; /*DBC: -32000.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_RH_EXT_CHS1_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_LH_EXT_CHS1_Offset_C; /*DBC: -32000.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_LH_EXT_CHS1_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_RH_EXT_CHS1_Offset_C; /*DBC: -32000.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_RH_EXT_CHS1_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_BAX_CHS1_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_BAX_CHS1_Factor_C;/*DBC: 0.01 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_BAX_CHS1_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_BAX_CHS1_Factor_C;/*DBC: 0.01 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_FTAX_CHS1_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_FTAX_CHS1_Factor_C;/*DBC: 0.01 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_FTAX_CHS1_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_FTAX_CHS1_Factor_C;/*DBC: 0.01 */
+
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_RLH_CHS1_Offset_C; /*DBC: -511.984375 */
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_RLH_CHS1_Factor_C;/*DBC: 0.015625 */
+
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_RRH_CHS1_Offset_C; /*DBC: -511.984375 */
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_RRH_CHS1_Factor_C;/*DBC: 0.015625 */
+
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_FLH_CHS1_Offset_C; /*DBC: -511.984375 */
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_FLH_CHS1_Factor_C;/*DBC: 0.015625 */
+
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_FRH_CHS1_Offset_C; /*DBC: -511.984375 */
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_FRH_CHS1_Factor_C;/*DBC: 0.015625 */
+
+extern const volatile float32 cap_BundleEAFlexrayToCANFD20msNo1_V_VEH_COG_CHS1_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BundleEAFlexrayToCANFD20msNo1_V_VEH_COG_CHS1_Factor_C;/*DBC: 0.015625 */
+
+extern const volatile float32 cap_SFA_SteerWheel_Info_SFA_SteerWheelTorque_CHS1_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_SFA_SteerWheel_Info_SFA_SteerWheelTorque_CHS1_Factor_C;/*DBC: 0.02 */
+
+extern const volatile float32 cap_SFA_SteerWheel_Info_SFA_SteerWheelAngleSpeed_CHS1_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_SFA_SteerWheel_Info_SFA_SteerWheelAngleSpeed_CHS1_Factor_C;/*DBC: 4.0 */
+
+extern const volatile float32 cap_SFA_SteerWheel_Info_SFA_SteerWheelAngle_CHS1_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_SFA_SteerWheel_Info_SFA_SteerWheelAngle_CHS1_Factor_C;/*DBC: 0.02 */
+
+extern const volatile float32 cap_VCU_TractionEMachine2_10ms_RpmEmETractSys2ActualValue_CHS2_Offset_C; /*DBC: -32768.0 */
+extern const volatile float32 cap_VCU_TractionEMachine2_10ms_RpmEmETractSys2ActualValue_CHS2_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2GeneratorDyn_CHS2_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2GeneratorDyn_CHS2_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2MotorDyn_CHS2_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2MotorDyn_CHS2_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2ActualValue_CHS2_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_VCU_TractionEMachine2_10ms_TorqueEmETractSys2ActualValue_CHS2_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_VCU_TractionEMachine1_10ms_RpmEmETractSys1ActualValue_CHS2_Offset_C; /*DBC: -32768.0 */
+extern const volatile float32 cap_VCU_TractionEMachine1_10ms_RpmEmETractSys1ActualValue_CHS2_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1GeneratorDyn_CHS2_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1GeneratorDyn_CHS2_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1MotorDyn_CHS2_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1MotorDyn_CHS2_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1ActualValue_CHS2_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_VCU_TractionEMachine1_10ms_TorqueEmETractSys1ActualValue_CHS2_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_VCU_TractionEMachine2_100ms_WheelRatioEAxlEtractSys2ActVal_CHS2_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_TractionEMachine2_100ms_WheelRatioEAxlEtractSys2ActVal_CHS2_Factor_C;/*DBC: 0.001 */
+
+extern const volatile float32 cap_VCU_TractionEMachine1_100ms_WheelRatioEAxlEtractSys1ActVal_CHS2_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_TractionEMachine1_100ms_WheelRatioEAxlEtractSys1ActVal_CHS2_Factor_C;/*DBC: 0.001 */
+
+extern const volatile float32 cap_VCU_Status_VCU_ACPD_Percent_CHS2_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_Status_VCU_ACPD_Percent_CHS2_Factor_C;/*DBC: 0.0625 */
+
+extern const volatile float32 cap_VCU_CombinedChargerUnit_TargetTorqueEmETractSys1_CHS2_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_VCU_CombinedChargerUnit_TargetTorqueEmETractSys1_CHS2_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_VCU_CombinedChargerUnit_TargetTorqueEmETractSys2_CHS2_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_VCU_CombinedChargerUnit_TargetTorqueEmETractSys2_CHS2_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_EBCM_STATUS_MCPressure_CHS2_Offset_C; /*DBC: -42.5 */
+extern const volatile float32 cap_EBCM_STATUS_MCPressure_CHS2_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_EBCM_STATUS_BreakPedalPercent_CHS2_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_EBCM_STATUS_BreakPedalPercent_CHS2_Factor_C;/*DBC: 0.0625 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_LH_EXT_CHS2_Offset_C; /*DBC: -32000.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_LH_EXT_CHS2_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_RH_EXT_CHS2_Offset_C; /*DBC: -32000.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_RH_EXT_CHS2_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_LH_EXT_CHS2_Offset_C; /*DBC: -32000.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_LH_EXT_CHS2_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_RH_EXT_CHS2_Offset_C; /*DBC: -32000.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_RH_EXT_CHS2_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_BAX_CHS2_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_BAX_CHS2_Factor_C;/*DBC: 0.01 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_BAX_CHS2_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_BAX_CHS2_Factor_C;/*DBC: 0.01 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_FTAX_CHS2_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_FTAX_CHS2_Factor_C;/*DBC: 0.01 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_FTAX_CHS2_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_FTAX_CHS2_Factor_C;/*DBC: 0.01 */
+
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_RLH_CHS2_Offset_C; /*DBC: -511.984375 */
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_RLH_CHS2_Factor_C;/*DBC: 0.015625 */
+
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_RRH_CHS2_Offset_C; /*DBC: -511.984375 */
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_RRH_CHS2_Factor_C;/*DBC: 0.015625 */
+
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_FLH_CHS2_Offset_C; /*DBC: -511.984375 */
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_FLH_CHS2_Factor_C;/*DBC: 0.015625 */
+
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_FRH_CHS2_Offset_C; /*DBC: -511.984375 */
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_FRH_CHS2_Factor_C;/*DBC: 0.015625 */
+
+extern const volatile float32 cap_BundleEAFlexrayToCANFD20msNo1_V_VEH_COG_CHS2_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BundleEAFlexrayToCANFD20msNo1_V_VEH_COG_CHS2_Factor_C;/*DBC: 0.015625 */
+
+extern const volatile float32 cap_SFA_SteerWheel_Info_SFA_SteerWheelTorque_CHS2_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_SFA_SteerWheel_Info_SFA_SteerWheelTorque_CHS2_Factor_C;/*DBC: 0.02 */
+
+extern const volatile float32 cap_SFA_SteerWheel_Info_SFA_SteerWheelAngleSpeed_CHS2_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_SFA_SteerWheel_Info_SFA_SteerWheelAngleSpeed_CHS2_Factor_C;/*DBC: 4.0 */
+
+extern const volatile float32 cap_SFA_SteerWheel_Info_SFA_SteerWheelAngle_CHS2_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_SFA_SteerWheel_Info_SFA_SteerWheelAngle_CHS2_Factor_C;/*DBC: 0.02 */
+
+extern const volatile float32 cap_VCU_Thermal_Status_VCU_LTROutLetTemp_PT_Offset_C; /*DBC: -50.0 */
+extern const volatile float32 cap_VCU_Thermal_Status_VCU_LTROutLetTemp_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_BMS_CellTempMeas2_BMS_CellTemp42_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas2_BMS_CellTemp42_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas2_BMS_CellTemp43_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas2_BMS_CellTemp43_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas2_BMS_CellTemp44_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas2_BMS_CellTemp44_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas2_BMS_CellTemp45_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas2_BMS_CellTemp45_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas2_BMS_CellTemp46_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas2_BMS_CellTemp46_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas2_BMS_CellTemp47_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas2_BMS_CellTemp47_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas2_BMS_CellTemp48_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas2_BMS_CellTemp48_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_RLH_PT_Offset_C; /*DBC: -511.984375 */
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_RLH_PT_Factor_C;/*DBC: 0.015625 */
+
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_RRH_PT_Offset_C; /*DBC: -511.984375 */
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_RRH_PT_Factor_C;/*DBC: 0.015625 */
+
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_FLH_PT_Offset_C; /*DBC: -511.984375 */
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_FLH_PT_Factor_C;/*DBC: 0.015625 */
+
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_FRH_PT_Offset_C; /*DBC: -511.984375 */
+extern const volatile float32 cap_AVL_RPM_WHL_AVL_RPM_WHL_FRH_PT_Factor_C;/*DBC: 0.015625 */
+
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_ChgVoltageReq_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_ChgVoltageReq_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_ChgCurrentReq_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_ChgCurrentReq_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_MaxChgCurrentLim_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_MaxChgCurrentLim_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_MaxChgCurrentLimPeak_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_MaxChgCurrentLimPeak_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_MaxChgCurrent2s_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_MaxChgCurrent2s_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_MaxChgCurrent10s_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_MaxChgCurrent10s_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_MaxChgCurrent30s_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_MaxChgCurrent30s_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_MaxChgPwrLim_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_MaxChgPwrLim_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_MaxChgPwrLimPeak_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_MaxChgPwrLimPeak_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_MaxChgPwr2s_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_MaxChgPwr2s_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_MaxChgPwr10s_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_MaxChgPwr10s_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_MaxChgPwr30s_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_ChgParamReq_BMS_MaxChgPwr30s_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CurMeas_BMS_PackCurMeas_PT_Offset_C; /*DBC: -1500.0 */
+extern const volatile float32 cap_BMS_CurMeas_BMS_PackCurMeas_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_CombinedChargerUnit10msNo1_TargetTorqueEmETractSys1_PT_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_CombinedChargerUnit10msNo1_TargetTorqueEmETractSys1_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_CombinedChargerUnit10msNo1_TargetTorqueEmETractSys2_PT_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_CombinedChargerUnit10msNo1_TargetTorqueEmETractSys2_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_CombinedChargerUnit10msNo1_TorqBoundaryETractSys1EmNCtrlMax_PT_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_CombinedChargerUnit10msNo1_TorqBoundaryETractSys1EmNCtrlMax_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_CombinedChargerUnit10msNo1_TorqBoundaryETractSys1EmNCtrlMin_PT_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_CombinedChargerUnit10msNo1_TorqBoundaryETractSys1EmNCtrlMin_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_CombinedChargerUnit10msNo1_TorqBoundaryETractSys2EmNCtrlMax_PT_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_CombinedChargerUnit10msNo1_TorqBoundaryETractSys2EmNCtrlMax_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_CombinedChargerUnit10msNo1_TorqBoundaryETractSys2EmNCtrlMin_PT_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_CombinedChargerUnit10msNo1_TorqBoundaryETractSys2EmNCtrlMin_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_CombinedChargerUnit10msNo1_TargetEMRpmETractSys1_PT_Offset_C; /*DBC: -32768.0 */
+extern const volatile float32 cap_CombinedChargerUnit10msNo1_TargetEMRpmETractSys1_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_CombinedChargerUnit10msNo1_TargetEMRpmETractSys2_PT_Offset_C; /*DBC: -32768.0 */
+extern const volatile float32 cap_CombinedChargerUnit10msNo1_TargetEMRpmETractSys2_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_HighVoltageStorage10msNo2_ActualValueVoltageLinkVerified_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_HighVoltageStorage10msNo2_ActualValueVoltageLinkVerified_PT_Factor_C;/*DBC: 0.25 */
+
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_CurrDrctCurrETractSys1ActVal_PT_Offset_C; /*DBC: -1400.0 */
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_CurrDrctCurrETractSys1ActVal_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_VolDrctCurrETractSys1ActVal_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_VolDrctCurrETractSys1ActVal_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_RpmEmETractSys1MaximumLimit_PT_Offset_C; /*DBC: -32768.0 */
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_RpmEmETractSys1MaximumLimit_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_RpmEmETractSys1MinimumLimit_PT_Offset_C; /*DBC: -32768.0 */
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_RpmEmETractSys1MinimumLimit_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_TqEmETractSys1VibrationDampSusp_PT_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_TqEmETractSys1VibrationDampSusp_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_RpmEmETractSys1ActualValue_PT_Offset_C; /*DBC: -32768.0 */
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_RpmEmETractSys1ActualValue_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_TqEmETractSys1GeneratorStatic_PT_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_TqEmETractSys1GeneratorStatic_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_TqEmETractSys1GeneratorDynamic_PT_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_TqEmETractSys1GeneratorDynamic_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_TorqueEmETractSys1MotorStatic_PT_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_TorqueEmETractSys1MotorStatic_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_TorqueEmETractSys1MotorDynamic_PT_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_TorqueEmETractSys1MotorDynamic_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_TorqueEmETractSys1ActualValue_PT_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_TorqueEmETractSys1ActualValue_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_TqEmETractSys1MotorSumLimTarget_PT_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_TqEmETractSys1MotorSumLimTarget_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_SumWhlTqIntvETractSys1_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_SumWhlTqIntvETractSys1_PT_Factor_C;/*DBC: 10.0 */
+
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_PowerETractSys1LossActualValue_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_PowerETractSys1LossActualValue_PT_Factor_C;/*DBC: 50.0 */
+
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_TarTqETractSys1NControlStatic_PT_Offset_C; /*DBC: -510.0 */
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_TarTqETractSys1NControlStatic_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_PwrLossPrednETractSys1Mot_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_PwrLossPrednETractSys1Mot_PT_Factor_C;/*DBC: 50.0 */
+
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_PwrLossPrednETractSys1Genr_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_TracEMacElectc1Time10msNo1_PwrLossPrednETractSys1Genr_PT_Factor_C;/*DBC: 50.0 */
+
+extern const volatile float32 cap_WMOM_DRV_9_TAR_WMOM_PT_SUM_COOTD_PT_Offset_C; /*DBC: -32000.0 */
+extern const volatile float32 cap_WMOM_DRV_9_TAR_WMOM_PT_SUM_COOTD_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_BMS_HVMeas_BMS_HVPackVol_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_HVMeas_BMS_HVPackVol_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_HVMeas_BMS_HVLinkVol_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_HVMeas_BMS_HVLinkVol_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_HVMeas_BMS_HVBusVol_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_HVMeas_BMS_HVBusVol_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_HVMeas_BMS_HVFuseVol_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_HVMeas_BMS_HVFuseVol_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_HVMeas_BMS_DCPlugVol_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_HVMeas_BMS_DCPlugVol_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_CurrDrctCurrETractSys2ActVal_PT_Offset_C; /*DBC: -1400.0 */
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_CurrDrctCurrETractSys2ActVal_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_VolDrctCurrETractSys2ActVal_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_VolDrctCurrETractSys2ActVal_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_RpmEmETractSys2MaximumLimit_PT_Offset_C; /*DBC: -32768.0 */
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_RpmEmETractSys2MaximumLimit_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_RpmEmETractSys2MinimumLimit_PT_Offset_C; /*DBC: -32768.0 */
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_RpmEmETractSys2MinimumLimit_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_TqEmETractSys2VibrationDampSusp_PT_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_TqEmETractSys2VibrationDampSusp_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_RpmEmETractSys2ActualValue_PT_Offset_C; /*DBC: -32768.0 */
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_RpmEmETractSys2ActualValue_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_TqEmETractSys2GeneratorStatic_PT_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_TqEmETractSys2GeneratorStatic_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_TqEmETractSys2GeneratorDynamic_PT_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_TqEmETractSys2GeneratorDynamic_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_TorqueEmETractSys2MotorStatic_PT_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_TorqueEmETractSys2MotorStatic_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_TorqueEmETractSys2MotorDynamic_PT_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_TorqueEmETractSys2MotorDynamic_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_TorqueEmETractSys2ActualValue_PT_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_TorqueEmETractSys2ActualValue_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_TqEmETractSys2MotorSumLimTarget_PT_Offset_C; /*DBC: -1023.0 */
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_TqEmETractSys2MotorSumLimTarget_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_SumWhlTqIntvETractSys2_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_SumWhlTqIntvETractSys2_PT_Factor_C;/*DBC: 10.0 */
+
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_PowerETractSys2LossActualValue_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_PowerETractSys2LossActualValue_PT_Factor_C;/*DBC: 50.0 */
+
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_TarTqETractSys2NControlStatic_PT_Offset_C; /*DBC: -510.0 */
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_TarTqETractSys2NControlStatic_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_PwrLossPrednETractSys2Mot_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_PwrLossPrednETractSys2Mot_PT_Factor_C;/*DBC: 50.0 */
+
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_PwrLossPrednETractSys2Genr_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_TracEMacElectc2Time10msNo1_PwrLossPrednETractSys2Genr_PT_Factor_C;/*DBC: 50.0 */
+
+extern const volatile float32 cap_BMS_PowerCont_BMS_MaxDischgCurrentLim_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_PowerCont_BMS_MaxDischgCurrentLim_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_PowerCont_BMS_MaxDischgCurrentLimPeak_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_PowerCont_BMS_MaxDischgCurrentLimPeak_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_PowerCont_BMS_MaxDischgCurrent2s_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_PowerCont_BMS_MaxDischgCurrent2s_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_PowerCont_BMS_MaxDischgCurrent10s_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_PowerCont_BMS_MaxDischgCurrent10s_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_PowerCont_BMS_MaxDischgCurrent30s_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_PowerCont_BMS_MaxDischgCurrent30s_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_PowerCont_BMS_MaxDischgPwrLim_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_PowerCont_BMS_MaxDischgPwrLim_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_PowerCont_BMS_MaxDischgPwrLimPeak_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_PowerCont_BMS_MaxDischgPwrLimPeak_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_PowerCont_BMS_MaxDischgPwr2s_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_PowerCont_BMS_MaxDischgPwr2s_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_PowerCont_BMS_MaxDischgPwr10s_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_PowerCont_BMS_MaxDischgPwr10s_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_PowerCont_BMS_MaxDischgPwr30s_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_PowerCont_BMS_MaxDischgPwr30s_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_Sts_BMS_SocActualEst_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_Sts_BMS_SocActualEst_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_Sts_BMS_SocRelativeEst_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_Sts_BMS_SocRelativeEst_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_Sts_BMS_SOH_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_Sts_BMS_SOH_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_BMS_Sts_BMS_SOE_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_Sts_BMS_SOE_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_WMOM_PT_AVL_AVL_WMOM_PT_SUM_PT_Offset_C; /*DBC: -32000.0 */
+extern const volatile float32 cap_WMOM_PT_AVL_AVL_WMOM_PT_SUM_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_DCDC_VCU_Measure_Fbk_DCDC_MeasVs_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_DCDC_VCU_Measure_Fbk_DCDC_MeasVs_PT_Factor_C;/*DBC: 0.0625 */
+
+extern const volatile float32 cap_DCDC_VCU_Measure_Fbk_DCDC_MeasOutCurr_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_DCDC_VCU_Measure_Fbk_DCDC_MeasOutCurr_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_DCDC_VCU_Measure_Fbk_DCDC_MeasInVltg_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_DCDC_VCU_Measure_Fbk_DCDC_MeasInVltg_PT_Factor_C;/*DBC: 0.0625 */
+
+extern const volatile float32 cap_DCDC_VCU_Measure_Fbk_DCDC_MeasInCurrent_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_DCDC_VCU_Measure_Fbk_DCDC_MeasInCurrent_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_DCDC_VCU_Req_Fbk_DCDC_OutVltgReqFbk_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_DCDC_VCU_Req_Fbk_DCDC_OutVltgReqFbk_PT_Factor_C;/*DBC: 0.0625 */
+
+extern const volatile float32 cap_DCDC_VCU_Req_Fbk_DCDC_OutCurrReqFbk_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_DCDC_VCU_Req_Fbk_DCDC_OutCurrReqFbk_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_DCDC_VCU_Req_Fbk_DCDC_MaxCurrentOut_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_DCDC_VCU_Req_Fbk_DCDC_MaxCurrentOut_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BundleEAFlexrayToCANFD20msNo1_V_VEH_COG_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BundleEAFlexrayToCANFD20msNo1_V_VEH_COG_PT_Factor_C;/*DBC: 0.015625 */
+
+extern const volatile float32 cap_CombinedChargerUnit10msNo2_PowerETractSys2LimGenMax_PT_Offset_C; /*DBC: -1638300.0 */
+extern const volatile float32 cap_CombinedChargerUnit10msNo2_PowerETractSys2LimGenMax_PT_Factor_C;/*DBC: 50.0 */
+
+extern const volatile float32 cap_CombinedChargerUnit10msNo2_PowerETractSys2LimMotMax_PT_Offset_C; /*DBC: -1638300.0 */
+extern const volatile float32 cap_CombinedChargerUnit10msNo2_PowerETractSys2LimMotMax_PT_Factor_C;/*DBC: 50.0 */
+
+extern const volatile float32 cap_CombinedChargerUnit10msNo2_PowerETractSys1LimGenMax_PT_Offset_C; /*DBC: -1638300.0 */
+extern const volatile float32 cap_CombinedChargerUnit10msNo2_PowerETractSys1LimGenMax_PT_Factor_C;/*DBC: 50.0 */
+
+extern const volatile float32 cap_CombinedChargerUnit10msNo2_PowerETractSys1LimMotMax_PT_Offset_C; /*DBC: -1638300.0 */
+extern const volatile float32 cap_CombinedChargerUnit10msNo2_PowerETractSys1LimMotMax_PT_Factor_C;/*DBC: 50.0 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_LH_EXT_PT_Offset_C; /*DBC: -32000.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_LH_EXT_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_RH_EXT_PT_Offset_C; /*DBC: -32000.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_RS_RH_EXT_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_LH_EXT_PT_Offset_C; /*DBC: -32000.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_LH_EXT_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_RH_EXT_PT_Offset_C; /*DBC: -32000.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_AVL_BRTORQ_WHL_FS_RH_EXT_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_BAX_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_BAX_PT_Factor_C;/*DBC: 0.01 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_BAX_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_BAX_PT_Factor_C;/*DBC: 0.01 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_FTAX_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MAX_FTAX_PT_Factor_C;/*DBC: 0.01 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_FTAX_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD10msNo1_TAR_RPM_MIN_FTAX_PT_Factor_C;/*DBC: 0.01 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD20msNo2_ACLNX_COG_PT_Offset_C; /*DBC: -65.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD20msNo2_ACLNX_COG_PT_Factor_C;/*DBC: 0.002 */
+
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD20msNo2_ACLNY_COG_PT_Offset_C; /*DBC: -65.0 */
+extern const volatile float32 cap_BundleEAFlexrayToAECANFD20msNo2_ACLNY_COG_PT_Factor_C;/*DBC: 0.002 */
+
+extern const volatile float32 cap_TracEMacElectc1Time100msNo1_TETractSys1CoolantWaterInpActVal_PT_Offset_C; /*DBC: -48.0 */
+extern const volatile float32 cap_TracEMacElectc1Time100msNo1_TETractSys1CoolantWaterInpActVal_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_TracEMacElectc1Time100msNo1_PowerETractSys1MaximumLossActive_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_TracEMacElectc1Time100msNo1_PowerETractSys1MaximumLossActive_PT_Factor_C;/*DBC: 50.0 */
+
+extern const volatile float32 cap_TracEMacElectc1Time100msNo1_WhlRatElAxlEtractSys1ActVal_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_TracEMacElectc1Time100msNo1_WhlRatElAxlEtractSys1ActVal_PT_Factor_C;/*DBC: 0.001 */
+
+extern const volatile float32 cap_TracEMacElectc1Time100msNo1_PercentUsedExtraBoostETractSys1_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_TracEMacElectc1Time100msNo1_PercentUsedExtraBoostETractSys1_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_TracEMacElectc1Time100msNo1_TETractSys1EmRotorActVal_PT_Offset_C; /*DBC: -48.0 */
+extern const volatile float32 cap_TracEMacElectc1Time100msNo1_TETractSys1EmRotorActVal_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_TracEMacElectc1Time100msNo1_ThermalStressLevelETractSys1_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_TracEMacElectc1Time100msNo1_ThermalStressLevelETractSys1_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_TracEMacElectc1Time100msNo1_TETractSys1EmStatorActVal_PT_Offset_C; /*DBC: -48.0 */
+extern const volatile float32 cap_TracEMacElectc1Time100msNo1_TETractSys1EmStatorActVal_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_TracEMacElectc1Time100msNo1_TETractSys1InverterActVal_PT_Offset_C; /*DBC: -48.0 */
+extern const volatile float32 cap_TracEMacElectc1Time100msNo1_TETractSys1InverterActVal_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_TracEMacElectc1Time100msNo1_TETractSys1GbxOilActVal_PT_Offset_C; /*DBC: -48.0 */
+extern const volatile float32 cap_TracEMacElectc1Time100msNo1_TETractSys1GbxOilActVal_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_TracEMacElectc2Time100msNo1_TETractSys2CoolantWaterInpActVal_PT_Offset_C; /*DBC: -48.0 */
+extern const volatile float32 cap_TracEMacElectc2Time100msNo1_TETractSys2CoolantWaterInpActVal_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_TracEMacElectc2Time100msNo1_PowerETractSys2MaximumLossActive_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_TracEMacElectc2Time100msNo1_PowerETractSys2MaximumLossActive_PT_Factor_C;/*DBC: 50.0 */
+
+extern const volatile float32 cap_TracEMacElectc2Time100msNo1_WhlRatElAxlEtractSys2ActVal_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_TracEMacElectc2Time100msNo1_WhlRatElAxlEtractSys2ActVal_PT_Factor_C;/*DBC: 0.001 */
+
+extern const volatile float32 cap_TracEMacElectc2Time100msNo1_PercentUsedExtraBoostETractSys2_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_TracEMacElectc2Time100msNo1_PercentUsedExtraBoostETractSys2_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_TracEMacElectc2Time100msNo1_TETractSys2EmRotorActVal_PT_Offset_C; /*DBC: -48.0 */
+extern const volatile float32 cap_TracEMacElectc2Time100msNo1_TETractSys2EmRotorActVal_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_TracEMacElectc2Time100msNo1_ThermalStressLevelETractSys2_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_TracEMacElectc2Time100msNo1_ThermalStressLevelETractSys2_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_TracEMacElectc2Time100msNo1_TETractSys2EmStatorActVal_PT_Offset_C; /*DBC: -48.0 */
+extern const volatile float32 cap_TracEMacElectc2Time100msNo1_TETractSys2EmStatorActVal_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_TracEMacElectc2Time100msNo1_TETractSys2InverterActVal_PT_Offset_C; /*DBC: -48.0 */
+extern const volatile float32 cap_TracEMacElectc2Time100msNo1_TETractSys2InverterActVal_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_TracEMacElectc2Time100msNo1_TETractSys2GbxOilActVal_PT_Offset_C; /*DBC: -48.0 */
+extern const volatile float32 cap_TracEMacElectc2Time100msNo1_TETractSys2GbxOilActVal_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_BMS_CellTemp_BMS_MinCellTemp_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTemp_BMS_MinCellTemp_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_BMS_CellTemp_BMS_PackTemp_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTemp_BMS_PackTemp_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_BMS_CellTemp_BMS_MaxCellTemp_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTemp_BMS_MaxCellTemp_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_BMS_CellTemp_BMS_MaxMinDiffCellTemp_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTemp_BMS_MaxMinDiffCellTemp_PT_Factor_C;/*DBC: 1.0 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp1_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp1_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp2_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp2_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp3_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp3_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp4_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp4_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp5_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp5_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp6_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp6_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp7_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp7_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp8_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp8_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp9_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp9_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp10_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp10_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp11_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp11_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp12_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp12_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp13_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp13_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp14_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp14_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp15_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp15_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp16_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp16_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp17_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp17_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp18_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp18_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp19_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp19_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp20_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp20_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp21_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp21_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp22_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp22_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp23_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp23_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp24_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp24_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp25_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp25_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp26_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp26_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp27_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp27_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp28_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp28_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp29_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp29_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp30_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp30_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp31_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp31_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp32_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp32_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp33_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp33_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp34_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp34_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp35_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp35_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp36_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp36_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp37_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp37_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp38_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp38_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp39_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp39_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp40_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp40_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp41_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CellTempMeas_BMS_CellTemp41_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol1_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol1_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol2_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol2_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol3_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol3_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol4_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol4_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol5_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol5_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol6_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol6_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol7_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol7_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol8_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol8_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol9_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol9_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol10_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol10_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol11_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol11_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol12_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol12_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol13_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol13_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol14_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol14_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol15_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol15_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol16_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol16_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol17_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol17_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol18_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol18_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol19_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol19_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol20_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol20_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol21_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol21_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol22_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol22_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol23_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol23_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol24_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol24_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol25_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol25_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol26_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol26_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol27_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol27_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol28_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol28_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol29_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol29_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol30_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas1_BMS_CellVol30_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol31_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol31_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol32_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol32_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol33_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol33_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol34_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol34_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol35_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol35_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol36_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol36_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol37_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol37_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol38_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol38_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol39_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol39_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol40_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol40_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol41_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol41_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol42_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol42_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol43_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol43_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol44_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol44_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol45_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol45_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol46_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol46_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol47_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol47_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol48_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol48_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol49_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol49_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol50_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol50_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol51_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol51_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol52_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol52_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol53_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol53_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol54_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol54_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol55_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol55_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol56_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol56_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol57_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol57_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol58_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol58_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol59_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol59_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol60_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol60_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol61_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol61_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol62_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas2_BMS_CellVol62_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_OBC_Status_OBC_Max_Current_Out_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_OBC_Status_OBC_Max_Current_Out_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_OBC_Status_OBC_VCU_iAC_L1_PT_Offset_C; /*DBC: -102.3 */
+extern const volatile float32 cap_OBC_Status_OBC_VCU_iAC_L1_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_OBC_Status_OBC_VCU_iAC_L2_PT_Offset_C; /*DBC: -102.3 */
+extern const volatile float32 cap_OBC_Status_OBC_VCU_iAC_L2_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_OBC_Status_OBC_VCU_iAC_L3_PT_Offset_C; /*DBC: -102.3 */
+extern const volatile float32 cap_OBC_Status_OBC_VCU_iAC_L3_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_OBC_Status_OBC_VCU_iDC_PT_Offset_C; /*DBC: -102.3 */
+extern const volatile float32 cap_OBC_Status_OBC_VCU_iDC_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol63_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol63_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol64_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol64_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol65_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol65_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol66_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol66_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol67_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol67_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol68_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol68_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol69_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol69_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol70_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol70_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol71_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol71_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol72_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol72_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol73_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol73_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol74_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol74_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol75_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol75_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol76_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol76_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol77_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol77_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol78_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol78_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol79_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol79_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol80_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol80_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol81_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol81_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol82_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol82_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol83_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol83_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol84_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol84_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol85_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol85_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol86_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol86_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol87_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol87_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol88_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol88_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol89_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol89_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol90_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol90_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol91_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol91_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol92_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol92_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol93_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol93_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol94_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol94_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol95_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol95_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol96_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol96_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol97_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol97_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol98_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol98_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol99_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol99_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol100_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol100_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol101_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol101_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol102_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol102_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol103_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol103_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol104_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol104_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol105_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol105_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol106_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol106_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol107_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol107_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol108_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_CellVolMeas3_BMS_CellVol108_PT_Factor_C;/*DBC: 0.005 */
+
+extern const volatile float32 cap_VCU_OBC_Req_VCU_OBC_iLineLimit_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_OBC_Req_VCU_OBC_iLineLimit_PT_Factor_C;/*DBC: 0.0625 */
+
+extern const volatile float32 cap_VCU_OBC_Req_VCU_OBC_vOBC_Request_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_OBC_Req_VCU_OBC_vOBC_Request_PT_Factor_C;/*DBC: 0.0625 */
+
+extern const volatile float32 cap_VCU_OBC_Req_VCU_OBC_iOBC_Request_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_OBC_Req_VCU_OBC_iOBC_Request_PT_Factor_C;/*DBC: 0.0625 */
+
+extern const volatile float32 cap_BMS_CoolantInletOutletTmp_BMS_CoolantInletTemp_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CoolantInletOutletTmp_BMS_CoolantInletTemp_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_CoolantInletOutletTmp_BMS_CoolantOutletTemp_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_BMS_CoolantInletOutletTmp_BMS_CoolantOutletTemp_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_VCU_BMS_ChargingParams_VCU_TargetASOC_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_BMS_ChargingParams_VCU_TargetASOC_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_VCU_THMReq_BMS_CoolPwrDemand_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_VCU_THMReq_BMS_CoolPwrDemand_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_VCU_THMReq_BMS_HeatPwrDemand_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_VCU_THMReq_BMS_HeatPwrDemand_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_BMS_VolMeas_BMS_MinCellVol_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_VolMeas_BMS_MinCellVol_PT_Factor_C;/*DBC: 0.001 */
+
+extern const volatile float32 cap_BMS_VolMeas_BMS_MaxCellVol_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_VolMeas_BMS_MaxCellVol_PT_Factor_C;/*DBC: 0.001 */
+
+extern const volatile float32 cap_BMS_VolMeas_BMS_MaxMinDiffCellVol_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_BMS_VolMeas_BMS_MaxMinDiffCellVol_PT_Factor_C;/*DBC: 0.001 */
+
+extern const volatile float32 cap_DCDC_VCU_Temperature_Fbk_DCDC_InternalTempA_PT_Offset_C; /*DBC: -100.0 */
+extern const volatile float32 cap_DCDC_VCU_Temperature_Fbk_DCDC_InternalTempA_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_DCDC_VCU_Temperature_Fbk_DCDC_InternalTempB_PT_Offset_C; /*DBC: -100.0 */
+extern const volatile float32 cap_DCDC_VCU_Temperature_Fbk_DCDC_InternalTempB_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_DCDC_VCU_Temperature_Fbk_DCDC_InternalTempC_PT_Offset_C; /*DBC: -100.0 */
+extern const volatile float32 cap_DCDC_VCU_Temperature_Fbk_DCDC_InternalTempC_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_DCDC_VCU_Temperature_Fbk_DCDC_CoolPwrDemand_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_DCDC_VCU_Temperature_Fbk_DCDC_CoolPwrDemand_PT_Factor_C;/*DBC: 0.01 */
+
+extern const volatile float32 cap_Kilometerstand_2_MILE_KM_TOT_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_Kilometerstand_2_MILE_KM_TOT_PT_Factor_C;/*DBC: 0.001 */
+
+extern const volatile float32 cap_VCU_DCDC_Req_VCU_OutVltgReq_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_DCDC_Req_VCU_OutVltgReq_PT_Factor_C;/*DBC: 0.0625 */
+
+extern const volatile float32 cap_VCU_DCDC_Req_VCU_OutCurReq_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_VCU_DCDC_Req_VCU_OutCurReq_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_OBC_Temperature_OBC_InternalTemp_PT_Offset_C; /*DBC: -50.0 */
+extern const volatile float32 cap_OBC_Temperature_OBC_InternalTemp_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_OBC_Temperature_OBC_CoolPwrDemand_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_OBC_Temperature_OBC_CoolPwrDemand_PT_Factor_C;/*DBC: 0.1 */
+
+extern const volatile float32 cap_A_TEMP_TEMP_EX_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_A_TEMP_TEMP_EX_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_DMEBK100_ActValVolFlowCoolantETractSys2_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_DMEBK100_ActValVolFlowCoolantETractSys2_PT_Factor_C;/*DBC: 20.0 */
+
+extern const volatile float32 cap_DMEBK100_ActValVolFlowCoolantETractSys1_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_DMEBK100_ActValVolFlowCoolantETractSys1_PT_Factor_C;/*DBC: 20.0 */
+
+extern const volatile float32 cap_CombinedChargerUnit100msNo1_RequestPowerETractSys1Loss_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_CombinedChargerUnit100msNo1_RequestPowerETractSys1Loss_PT_Factor_C;/*DBC: 50.0 */
+
+extern const volatile float32 cap_CombinedChargerUnit100msNo1_RequestPowerETractSys2Loss_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_CombinedChargerUnit100msNo1_RequestPowerETractSys2Loss_PT_Factor_C;/*DBC: 50.0 */
+
+extern const volatile float32 cap_TLT_RW_AVL_LOGR_RW_PT_Offset_C; /*DBC: -64.0 */
+extern const volatile float32 cap_TLT_RW_AVL_LOGR_RW_PT_Factor_C;/*DBC: 0.05 */
+
+extern const volatile float32 cap_EnergyStorageMeasurementValues_EnergyStorageClamp30VoltageValue_PT_Offset_C; /*DBC: 0.0 */
+extern const volatile float32 cap_EnergyStorageMeasurementValues_EnergyStorageClamp30VoltageValue_PT_Factor_C;/*DBC: 0.001 */
+
+extern const volatile float32 cap_StatusCrashIdentETractSys1_TempETractSys1DirectCurrentPlug_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_StatusCrashIdentETractSys1_TempETractSys1DirectCurrentPlug_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_StatusCrashIdentETractSys2_TempETractSys2DirectCurrentPlug_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_StatusCrashIdentETractSys2_TempETractSys2DirectCurrentPlug_PT_Factor_C;/*DBC: 0.5 */
+
+extern const volatile float32 cap_CombinedChargerUnit1000msNo1_TemperatureCoolantOutput_PT_Offset_C; /*DBC: -40.0 */
+extern const volatile float32 cap_CombinedChargerUnit1000msNo1_TemperatureCoolantOutput_PT_Factor_C;/*DBC: 0.1 */
+
+
+extern const volatile uint64 SecOcDataP2V_VEH_phy_C;
+
+void cap_canRx_1ms(void);
+void cap_canRx_5ms(void);
+void cap_canRx_10ms(void);
+void cap_canRx_20ms(void);
+void cap_canRx_100ms(void);
+
+void cap_canTx_1ms(void);
+void cap_canTx_5ms(void);
+void cap_canTx_10ms(void);
+void cap_canTx_20ms(void);
+void cap_canTx_100ms(void); 
+
+/*
+ * Function declarations
+ */
+
+#endif // !defined(CAP_CANAPI_PUB_DEFINED)

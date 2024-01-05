@@ -1,0 +1,95 @@
+//
+// symbols.stg
+// This is a template group file for StringTemplate V4, see www.stringtemplate.org.
+//
+// The names of the symbols in the C files are provided. They can be addressed by brief
+// but meaningful names from superordinated templates but will nonetheless have all
+// required disambiguation syllables in the C code, which are appropriate. This hiding of
+// details makes the superordinated templates much better readable and maintainable.
+//
+// Copyright (C) 2015-2017 Peter Vranken (mailto:Peter_Vranken@Yahoo.de)
+//
+// This program is free software: you can redistribute it and/or modify it
+// under the terms of the GNU Lesser General Public License as published by the
+// Free Software Foundation, either version 3 of the License, or any later
+// version.
+//
+// This program is distributed in the hope that it will be useful, but WITHOUT
+// ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+// FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License
+// for more details.
+//
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+delimiters "<", ">"
+
+
+// Repeatedly used file names are held in this map. All code generation templates will use
+// the map when referencing to files and fragments of their names (particularly the module
+// prefixes). Modifications of generated file names can be done easily and consistent.
+file ::= [ "baseTypes_h": "fev_can_types.h"
+         , "mnmApi": "cap"
+         , "canApi": {<file.mnmApi>_canApi}
+         , "canApi_h": {<file.canApi>.h}
+         , "canApi_c": {<file.canApi>.c}
+         , "canApiPreco_h": {<file.mnmApi>_precoCheck.h}
+         , default: "codeGenerationError_unknownFileName"
+         ]
+
+// The repeatedly used names of generated functions. The typical objects, which are
+// required for name disambiguation are addressed by scoping under the usual names.
+// The repeatedly used symbol names of different data objects used in the CAN API. The
+fct ::= [ default: "codeGenerationError_unknownFunction"
+        ]
+
+// The different kinds of signals can be mapped onto one and the same name scheme if a
+// helper template is used for all. The use of this template should be solely through
+// dictionary <symbols>.
+signalName(signal, isUpper) ::= <<
+<if(isUpper)><\\>
+<signal.name; format="upper"><if(signal.isMuxedSignal)>_M_<signal.muxValue><endif><\\>
+<else><\\>
+<signal.name><if(signal.isMuxedSignal)>_m<signal.muxValue><endif><\\>
+<endif>
+>>
+
+// The repeatedly used symbol names of different data objects used in the CAN API. The
+// typical objects, which are required for name disambiguation are addressed by scoping
+// under the usual names.
+symbol ::= [ "signal": {<if(signal.isReceived)>Sws_Com_Get_<else>Sws_Com_Set_<endif><signalName(signal,false)>}
+           , "signalQly": {<symbol.signal>_Qly}
+		   , "signalCodec": {cap_canCodecSig_<signalName(signal,false)>}
+		   , "messageOut": {<if(frame.isReceived)>Com_CbkRxOut_<else>Com_CbkTxOut_<endif><frame.name>}
+		   , "messageAck": {<if(frame.isReceived)>Com_CbkRxAck_<else>Com_CbkTxAck_<endif><frame.name>}
+		   , "messageCallBack": {ComCallBack_<frame.name>}
+           , "enumSendMode": {<file.mnmApi>_enumSendMode}
+           , "enumSendMode_t": {<symbol.enumSendMode>_t}
+           , "enumQlySignal_t": {<file.mnmApi>_enumQlySignal_t}
+           , "enumQlySignal_Ok": {<file.mnmApi>_qlySignalOk}
+           , "enumQlySignal_Invld": {<file.mnmApi>_qlySignalInvld}
+		   , "NameBus": {<frame.name>_<bus.name>}
+           , default: "codeGenerationError_unknownSymbol"
+           ]
+
+// The repeatedly used frame and signal related #define's are access through a map, which
+// improves maintainability and readability of the templates.
+define ::= [ "signalBinToDbl": {<file.mnmApi; format="upper">_<signalName(signal,true)>_BIN_TO_DBL}
+           , "signalDblToBin": {<file.mnmApi; format="upper">_<signalName(signal,true)>_DBL_TO_BIN}
+           , "signalFixToSign": {<file.mnmApi; format="upper">_<signalName(signal,true)>_BIN_TO_DBL}
+           , "signalDblSatToBin": {<file.mnmApi; format="upper">_<signalName(signal,true)>_DBL_SAT_TO_BIN}
+           , "signalFactor": {<file.mnmApi; format="upper">_<signalName(signal,true)>_FACTOR}
+           , "signalOffset": {<file.mnmApi; format="upper">_<signalName(signal,true)>_OFFSET}
+           , "signalMin": {<file.mnmApi; format="upper">_<signalName(signal,true)>_MIN}
+           , "signalMax": {<file.mnmApi; format="upper">_<signalName(signal,true)>_MAX}
+//           , "getSignal": {get_<bus>_<messageName>_<frame.id>_<signalName(signal,false)>}
+//           , "setSignal": {set_<bus>_<essageName>_<frame.id>_<signalName(signal,false)>}
+           , "getSignal": {get_<bus>_<frame.name>_<signalName(signal,false)>}
+           , "setSignal": {set_<bus>_<frame.name>_<signalName(signal,false)>}
+           , "getSignalQly": {get_<bus>_<frame.id>_<signalName(signal,false)>_qly}
+		   , "getMessageOut": {get_<bus>_<frame.id>_<frame.name>_Out}
+		   , "getMessageAck": {get_<bus>_<frame.id>_<frame.name>_Ack}
+           , "setSignalQly": {set_<bus>_<frame.id>_<signalName(signal,false)>_qly}
+           , default: "codeGenerationError_badDefine"
+           ]
+

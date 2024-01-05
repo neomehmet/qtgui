@@ -1,0 +1,116 @@
+//
+// ComInterface_cbk_NODE1_c.stg
+// This is a template group file for StringTemplate V4, see www.stringtemplate.org.
+//
+// The templates describe the generation of the C macros, which are used by the code, the
+// Embedded Coder generates for CAN related in- and outports. The macros expand to the
+// expressions, which are required to access the signals and their status information in
+// the global CAN API.
+//
+// See template moduleDescription for more details.
+//
+// Copyright (C) 2017 FEV Europe GmbH (mailto:Peter.Vranken@FEV.com)
+//
+
+delimiters "<", ">"
+
+// Override the dictionary of basic type names in the template library:
+//   First import is the type map without a relative path. This makes StringTemplate look
+// for the file in the directory of the importing group file -- prior to searching along
+// the Java CLASSPATH. We can be sure that our local version has priority over any other
+// one in a library.
+import "lib/typeMap.stg"
+
+import "lib/mod.stg"
+import "lib/codeGenC.stg"
+import "lib/iterations.stg"
+import "lib/symbols.stg"
+import "lib/copyright.stg"
+import "lib/dictionary.stg"
+import "lib/a2lbeginEnd.stg"
+
+// This is the root template; the complete C header file is rendered.
+canApi(cluster, info) ::= <<
+<! All code is shaped by overloading the regions of the template modC, see below !>
+<A2lBegins()>
+<iterateSignalsOfCluster(cluster,"normal", "both","DefineA2lFactorOffsetCals")><\n>
+<iterateSignalsOfCluster(cluster,"normal", "both","RxTxA2lsMes")><\n>
+<A2lEnds()>
+>>
+DefineA2lFactorOffsetCals(signal, kind) ::= <<
+<if(!ExcludedMsg.(frame.name) && (!((is1.(signal.factor))&&(is0.(signal.offset)))))>
+
+    /begin CHARACTERISTIC
+      cap_<frame.name>_<signal.name>_<(getBusEnum.(bus.name))>_Offset_C
+      "description"
+      VALUE
+      0x00
+      Scalar_FLOAT32_IEEE
+      0
+      cal_signal_objects_CM_single
+      0
+      4294967295
+      DISPLAY_IDENTIFIER cap_<frame.name>_<signal.name>_<(getBusEnum.(bus.name))>_Offset_C
+      SYMBOL_LINK "cap_<frame.name>_<signal.name>_<(getBusEnum.(bus.name))>_Offset_C" 0
+    /end CHARACTERISTIC
+	
+	    /begin CHARACTERISTIC
+      cap_<frame.name>_<signal.name>_<(getBusEnum.(bus.name))>_Factor_C
+      "description"
+      VALUE
+      0x00
+      Scalar_FLOAT32_IEEE
+      0
+      cal_signal_objects_CM_single
+      0
+      4294967295
+      DISPLAY_IDENTIFIER cap_<frame.name>_<signal.name>_<(getBusEnum.(bus.name))>_Factor_C
+      SYMBOL_LINK "cap_<frame.name>_<signal.name>_<(getBusEnum.(bus.name))>_Factor_C" 0
+    /end CHARACTERISTIC
+	 
+<endif>
+>>
+
+
+RxTxA2lsMes(signal,kind)::=<<
+<if(!ExcludedMsg.(frame.name) && (!((is1.(signal.factor))&&(is0.(signal.offset)))))>
+    /begin MEASUREMENT
+      cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.<signal.name>_phy
+      "description"
+      FLOAT32_IEEE
+      cal_signal_objects_CM_single
+      0
+      0
+      0
+      4294967295
+      ECU_ADDRESS 0x00
+      DISPLAY_IDENTIFIER <signal.name>_phy
+      SYMBOL_LINK "cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.<signal.name>_phy" 0
+    /end MEASUREMENT
+	
+	
+	/begin MEASUREMENT
+      cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.<signal.name>_raw
+      "description"
+      FLOAT32_IEEE
+      cal_signal_objects_CM_single
+      0
+      0
+      0
+      4294967295
+      ECU_ADDRESS 0x00
+      DISPLAY_IDENTIFIER <signal.name>_raw
+      SYMBOL_LINK "cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.<signal.name>_raw" 0
+    /end MEASUREMENT
+	
+	
+<endif>
+>>
+
+
+
+
+
+
+is1 ::=["1.0": true , default:false]
+is0 ::= ["0.0": true, default:false ]

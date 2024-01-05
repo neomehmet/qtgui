@@ -1,0 +1,20 @@
+//
+// copyright.stg
+// This is a template group file for StringTemplate V4, see www.stringtemplate.org.
+//
+// A copyright notice, which can be used for source file generated for FEV.
+//
+// Copyright (C) <info.year> FEV Europe GmbH (mailto:Peter.Vranken@FEV.com)
+//
+// All rights reserved. Reproduction in whole or in part is prohibited without the written
+// consent of the copyright owner.<\n>
+
+delimiters "<", ">"
+
+copyright() ::= <<
+ * Copyright (C) <info.year> FEV Europe GmbH (mailto:Peter.Vranken@FEV.com)
+ *
+ * All rights reserved. Reproduction in whole or in part is prohibited without the written
+ * consent of the copyright owner.<\n>
+>>
+

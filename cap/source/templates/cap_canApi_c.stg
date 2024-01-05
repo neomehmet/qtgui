@@ -1,0 +1,597 @@
+//
+// ComInterface_cbk_NODE1_c.stg
+// This is a template group file for StringTemplate V4, see www.stringtemplate.org.
+//
+// The templates describe the generation of the C macros, which are used by the code, the
+// Embedded Coder generates for CAN related in- and outports. The macros expand to the
+// expressions, which are required to access the signals and their status information in
+// the global CAN API.
+//
+// See template moduleDescription for more details.
+//
+// Copyright (C) 2017 FEV Europe GmbH (mailto:Peter.Vranken@FEV.com)
+//
+
+delimiters "<", ">"
+
+// Override the dictionary of basic type names in the template library:
+//   First import is the type map without a relative path. This makes StringTemplate look
+// for the file in the directory of the importing group file -- prior to searching along
+// the Java CLASSPATH. We can be sure that our local version has priority over any other
+// one in a library.
+import "lib/typeMap.stg"
+import "lib/exceptional.stg"
+import "lib/mod.stg"
+import "lib/codeGenC.stg"
+import "lib/iterations.stg"
+import "lib/symbols.stg"
+import "lib/copyright.stg"
+import "lib/dictionary.stg"
+import "lib/CANTypeDict.stg"
+
+moduleDescription() ::= <<
+ * Project: Tamkin (e-VCU)
+ * \file    cap_canApi.c
+ * \author  Sonuzun C. , Culhacioglu F.
+ * \brief   Module for CAN Api functions
+ * \details	This file defines a set of CAN Api functions.
+ *          
+ *
+ * \copyright Copyright (c) 2023 FEV GmbH, Germany.
+>>
+
+// This is the root template; the complete C header file is rendered.
+canApi(cluster, info) ::= <<
+<! All code is shaped by overloading the regions of the template modC, see below !>
+<modC(["\n", moduleDescription()])>
+>>
+@modC.copyright() ::= "<copyright()>"
+@modH.copyright() ::= "<copyright()>"
+
+// Configure the template mod.stg:modC, which shapes the list of included files.
+@modC.includes() ::= <<
+
+
+>>
+// Configure the template mod.stg:modC, which shapes the file frame contents: The local
+// defines.
+@modC.defines() ::= <<
+>>
+// Configure the template mod.stg:modC; all global data objects go here.
+@modC.data() ::= <<
+#define CPU1_START_SEC_CODE 
+#include "MemMap.h"
+
+
+
+void cap_canRx_1ms(){
+	<iterateFramesOfCluster(cluster,"received","cap_canRx_1ms")>
+}
+
+void cap_canRx_5ms(){
+	<iterateFramesOfCluster(cluster,"received","cap_canRx_5ms")>
+}
+
+void cap_canRx_10ms(){
+	static uint16 cycle = 0;
+	
+	<iterateFramesOfCluster(cluster,"received","cap_canRx_10ms")>
+	
+	if(cycle%30==0){
+		<iterateFramesOfCluster(cluster,"received","cap_canRx_30ms")>
+	}	
+	if(cycle%50==0){
+		<iterateFramesOfCluster(cluster,"received","cap_canRx_50ms")>
+	}
+	cycle=cycle+10;
+	
+	if(cycle>= 150){
+		cycle = 0;
+	}
+}
+
+void cap_canRx_20ms(){
+	<iterateFramesOfCluster(cluster,"received","cap_canRx_20ms")>
+}
+
+void cap_canRx_100ms(){
+
+	static uint16 cycle = 0;
+	
+	<iterateFramesOfCluster(cluster,"received","cap_canRx_100ms")>
+	
+	if(cycle%200==0){
+		<iterateFramesOfCluster(cluster,"received","cap_canRx_200ms")>
+	}	
+	if(cycle%300==0){
+		<iterateFramesOfCluster(cluster,"received","cap_canRx_300ms")>
+	}	
+	if(cycle%500==0){
+		<iterateFramesOfCluster(cluster,"received","cap_canRx_500ms")>
+	}
+	if(cycle%1000==0){
+		<iterateFramesOfCluster(cluster,"received","cap_canRx_1000ms")>
+	}
+	if(cycle%5000==0){
+		<iterateFramesOfCluster(cluster,"received","cap_canRx_5000ms")>
+	}
+	if(cycle%10000==0){
+		<iterateFramesOfCluster(cluster,"received","cap_canRx_10000ms")>
+	}
+	cycle=cycle+100;
+	
+	if(cycle>= 10000){
+		cycle = 0;
+	}
+}
+
+void cap_canTx_1ms(){
+	<iterateFramesOfCluster(cluster,"sent","cap_canTx_1ms")>
+}
+
+void cap_canTx_5ms(){
+	<iterateFramesOfCluster(cluster,"sent","cap_canTx_5ms")>
+	
+}
+
+void cap_canTx_10ms(){
+	static uint16 cycle = 0;
+	
+	<iterateFramesOfCluster(cluster,"sent","cap_canTx_10ms")>
+	
+	if(cycle%50==0){
+		<iterateFramesOfCluster(cluster,"sent","cap_canTx_50ms")>
+	}
+	if(cycle%150==0){
+		<iterateFramesOfCluster(cluster,"sent","cap_canTx_150ms")>
+	}
+
+	cycle=cycle+10;
+	
+	if(cycle>= 150){
+		cycle= 0;
+	}
+	
+}
+
+void cap_canTx_20ms(){
+
+	static uint16 cycle = 0;
+	
+	<iterateFramesOfCluster(cluster,"sent","cap_canTx_20ms")>
+	
+	if(cycle%40==0){
+		<iterateFramesOfCluster(cluster,"sent","cap_canTx_40ms")>
+	}
+	cycle=cycle+20;
+	if(cycle>= 40){
+		cycle= 0;
+	}
+}
+
+void cap_canTx_100ms(){
+
+	static uint16 cycle = 0;
+	<iterateFramesOfCluster(cluster,"sent","cap_canTx_100ms")>
+	<iterateFramesOfCluster(cluster,"sent","cap_canTx_0ms")>
+	
+	if(cycle%200==0){
+		<iterateFramesOfCluster(cluster,"sent","cap_canTx_200ms")>
+	}
+	if(cycle%300==0){
+		<iterateFramesOfCluster(cluster,"sent","cap_canTx_300ms")>
+	}
+	if(cycle%1000==0){
+		<iterateFramesOfCluster(cluster,"sent","cap_canTx_1000ms")>
+	}
+	if(cycle%5000==0){
+		<iterateFramesOfCluster(cluster,"sent","cap_canTx_5000ms")>
+	}	
+	if(cycle%10000==0){
+		<iterateFramesOfCluster(cluster,"sent","cap_canTx_10000ms")>
+	}
+	cycle=cycle+100;
+	
+	if(cycle>= 30000){
+		cycle= 0;
+	}
+}
+
+/**** Received Messages ****/
+<iterateFramesOfCluster(cluster,"received","DefineCanRxFunctions")>
+
+
+/***************************/
+
+/****   Sent Messages   ****/
+<iterateFramesOfCluster(cluster,"sent","DefineCanTxFunctions")>
+void cap_canApi_Init(){
+	(void)Rte_Switch_PPort_NetworkRequest_RequestMode(RTE_MODE_Com_Request_FULL_COM);
+<iterateFramesOfCluster(cluster,"both","DefineInitFunctions")>
+}
+
+
+/***************************/
+#define CPU1_STOP_SEC_CODE 
+#include "MemMap.h"
+
+
+>>
+
+// Configure the template mod.stg:modH, which shapes the list of included files.
+@modH.includes() ::= <<
+>>
+
+
+// Configure the template mod.stg:modH, which shapes the header file frame contents: S  ome
+// the compile configuration controlling defines plus many signal related defines.
+//   Here is a set of macros, which provide access to the global variables of the CAN API
+// to the EmbeddedCoder generated application software.
+@modH.defines() ::= <<
+>>
+
+
+
+// Configure the template mod.stg:modH; all global typedefs go here.
+@modH.typedefs() ::= <<
+>>
+
+
+// Configure the template mod.stg:modH; the declarations of all global data objects go here.
+@modH.data() ::= <<
+
+>>
+
+
+// Configure the template mod.stg:modH; the declarations of all global functions go here.
+@modH.prototypes() ::= <<
+>>
+DefineCanMessageStructs(frame) ::= <<
+cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>_t cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>;
+>>
+
+DefineCanRxFunctions(frame) ::= <<
+<if(!ExcludedMsg.(frame.name))>
+/*0X<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isReceived)>/*ReceivedMsg */<endif>
+void cap_getRxSignals_<frame.name>_<(getBusEnum.(bus.name))>(void){
+	<iterateSignalsOfFrame(frame,"all","received","defineLocalVariable")>
+	cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.msg_tout = FALSE;
+	<iterateSignalsOfFrame(frame,"all","received","TimeOutCalc")>
+
+	if(TRUE != cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.msg_tout){
+		<iterateSignalsOfFrame(frame,"all","received","GetRxSignalValues")>
+	}
+	else{
+		/*do nothing for now*/
+	}
+}
+<endif>
+>>
+GetRxSignalValues(signal,kind) ::=<<
+cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.<signal.name>_phy = tmp_<frame.name>_<(getBusEnum.(bus.name))>_<signal.name>_phy;<\n>
+>>
+
+defineLocalVariable(signal,kind) ::=<<
+<interfaceDataType.(getReceivedInterfaceName(signal,kind))> tmp_<frame.name>_<(getBusEnum.(bus.name))>_<signal.name>_phy = 0; /*f32 factor : <signal.factor> , offset : <signal.offset> , DBCtype: <bt(signal.type)>*/ 
+
+>>
+
+TimeOutCalc(signal,kind) ::=<<
+cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.msg_tout |= Rte_Read_RPort_<signal.name>_<frame.name>_<(getBusEnum.(bus.name))>_<signal.name>_<frame.name>_<(getBusEnum.(bus.name))>(&tmp_<frame.name>_<(getBusEnum.(bus.name))>_<signal.name>_phy);
+
+>>
+
+DefineCanTxFunctions(frame) ::= <<
+<if(!ExcludedMsg.(frame.name))>
+
+/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif>
+void cap_setTxSignals_<frame.name>_<(getBusEnum.(bus.name))>(void){
+	<iterateSignalsOfFrame(frame,"all","sent","GetTxSignalValues")>
+}
+<endif>
+>>
+DefineInitFunctions(frame)::=<<
+<if(!ExcludedMsg.(frame.name))>
+/*<frame.id>*/<if(frame.isReceived)>/*ReceivedMsg */<else>/*SentMsg*/<endif>
+<if(!frame.isSent)>
+cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.bRxDataRdyFlg = 0;
+cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.msg_tout = 0; 
+cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.Rxcounter_err = 0; 
+cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.Rxcrc_err = 0; 
+cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.RxNever_received = TRUE; 
+<else>
+cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.CanBUS_st = 0; 
+<endif>
+cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.raw_data[<frame.size>];
+<iterateSignalsOfFrame(frame,"all","both","typedefCanSignals")>
+<endif>
+
+>>
+typedefCanSignals(signal, kind) ::= <<
+<if((is1.(signal.factor))&&(is0.(signal.offset)))>
+cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.<signal.name>_phy = <InitVal.(signal.name)>;<else>
+cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.<signal.name>_phy = <InitVal.(signal.name)>; /*fact:<signal.factor>//offset:<signal.offset>*/<endif>
+>>
+
+
+
+calcRawData(signal,kind)::=<<
+<if(!((is1.(signal.factor))&&(is0.(signal.offset))))>
+cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.<signal.name>_raw = (<bt(signal.type)>) CAP_CALC_RAW(cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.<signal.name>_phy,<signal.factor>,<signal.offset>);
+<else><//>
+cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.<signal.name>_raw = cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.<signal.name>_phy;
+<endif>
+>>
+GetTxSignalValues(signal,kind) ::= <<
+cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.CanBUS_st |= Rte_Write_PPort_<signal.name>_<frame.name>_<(getBusEnum.(bus.name))>_<signal.name>_<frame.name>_<if(isPt.(bus.name))>PT<elseif(isBcan.(bus.name))>BCAN<else><(getBusEnum.(bus.name))><endif>(cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.<signal.name>_phy);
+
+>>
+
+cap_canRx_1ms(frame)::=<<
+<if(is1ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_getRxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canRx_5ms(frame)::=<<
+<if(is5ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_getRxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canRx_10ms(frame)::=<<
+<if(is10ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_getRxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canRx_20ms(frame)::=<<
+<if(is20ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_getRxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canRx_30ms(frame)::=<<
+<if(is30ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_getRxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canRx_50ms(frame)::=<<
+<if(is50ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_getRxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canRx_100ms(frame)::=<<
+<if(is100ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_getRxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canRx_200ms(frame)::=<<
+<if(is200ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_getRxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canRx_300ms(frame)::=<<
+<if(is300ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_getRxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canRx_500ms(frame)::=<<
+<if(is500ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_getRxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canRx_1000ms(frame)::=<<
+<if(is1000ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_getRxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canRx_5000ms(frame)::=<<
+<if(is5000ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_getRxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canRx_10000ms(frame)::=<<
+<if(is10000ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_getRxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canTx_0ms(frame)::=<<
+<if(is0ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_setTxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canTx_1ms(frame)::=<<
+<if(is1ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_setTxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canTx_5ms(frame)::=<<
+<if(is5ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_setTxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canTx_10ms(frame)::=<<
+<if(is10ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_setTxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canTx_20ms(frame)::=<<
+<if(is20ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_setTxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canTx_40ms(frame)::=<<
+<if(is40ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_setTxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canTx_50ms(frame)::=<<
+<if(is50ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_setTxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canTx_100ms(frame)::=<<
+<if(is100ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_setTxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canTx_150ms(frame)::=<<
+<if(is150ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_setTxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canTx_200ms(frame)::=<<
+<if(is200ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_setTxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canTx_300ms(frame)::=<<
+<if(is300ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_setTxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canTx_1000ms(frame)::=<<
+<if(is1000ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_setTxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canTx_5000ms(frame)::=<<
+<if(is5000ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_setTxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+cap_canTx_10000ms(frame)::=<<
+<if(is10000ms.(frame.attribMap.GenMsgCycleTime))>
+<if(!ExcludedMsg.(frame.name))>
+cap_setTxSignals_<frame.name>_<(getBusEnum.(bus.name))>();/*<frame.id>*/ /*size:<frame.size>*/ /*<frame.attribMap.GenMsgCycleTime>ms*/ /*<frame.attribMap.GenMsgSendType>*/ /*<(getBusEnum.(bus.name))>*/ <if(frame.isSent)>/*SentMsg */<endif><\n>
+<endif>
+<endif>
+>>
+
+gatewayElements()::=<<
+
+	<!cap_canApiMsg_HighVoltageStorage10msNo2_BCAN.ActualValueVoltageLinkVerified_phy = cap_canApiMsg_HighVoltageStorage10msNo2_PT.ActualValueVoltageLinkVerified_phy;
+    cap_canApiMsg_HighVoltageStorage200msNo1_BCAN.StatusServiceDisconnectionPlug_phy = cap_canApiMsg_HighVoltageStorage200msNo1_PT.StatusServiceDisconnectionPlug_phy;
+    cap_canApiMsg_HighVoltageStorage200msNo1_BCAN.StsDisconnectingSwtHighVoltStorg_phy = cap_canApiMsg_HighVoltageStorage200msNo1_PT.StsDisconnectingSwtHighVoltStorg_phy;!>
+	
+	<! cap_canApiMsg_ST_STAB_DSC_PT.QU_FN_FDR_phy = cap_canApiMsg_ST_STAB_DSC_CHS1.QU_FN_FDR_phy;
+	cap_canApiMsg_ST_STAB_DSC_PT.QU_FN_ABS_phy = cap_canApiMsg_ST_STAB_DSC_CHS1.QU_FN_ABS_phy;
+	cap_canApiMsg_ST_STAB_DSC_PT.QU_FN_ASC_phy = cap_canApiMsg_ST_STAB_DSC_CHS1.QU_FN_ASC_phy; !>
+>>
+
+getReceivedInterfaceName(signal,kind)::=<<
+Rte_Read_RPort_<signal.name>_<frame.name>_<(getBusEnum.(bus.name))>_<signal.name>_<frame.name>_<(getBusEnum.(bus.name))>
+>> 
+
+getSentInterfaceName(signal,kind)::=<<
+Rte_Write_PPort_<signal.name>_<frame.name>_<(getBusEnum.(bus.name))>_<signal.name>_<frame.name>_<(getBusEnum.(bus.name))>
+>>
+is0ms ::= ["0": true, default:false ]
+is1ms ::= ["1": true, default:false ]
+is5ms ::= ["5": true, default:false ]
+is10ms ::= ["10": true, default:false ]
+is20ms ::= ["20": true, default:false ]
+is30ms ::= ["30": true, default:false ]
+is40ms ::= ["40": true, default:false ]
+is50ms ::= ["50": true, default:false ]
+is100ms ::= ["100": true, default:false ]
+is150ms ::= ["150": true, default:false ]
+is200ms ::= ["200": true, default:false ]
+is300ms ::= ["300": true, default:false ]
+is500ms ::= ["500": true, default:false ]
+is1000ms ::= ["1000": true, default:false ]
+is5000ms ::= ["5000": true, default:false ]
+is10000ms ::= ["10000": true, default:false ]
+isPt::=["PT_CAN_FD":true, default:false]
+isBcan::=["Body_CAN_FD":true , default:false]
+is1 ::=["1.0": true , default:false]
+is0 ::= ["0.0": true, default:false ]
+is10 ::= ["10": true, default:false ]
+is20 ::= ["20": true, default:false ]
+is40 ::= ["40": true, default:false ]
+is50 ::= ["50": true, default:false ]
+is100 ::= ["100": true, default:false ]
+is200 ::= ["200": true, default:false ]
+is250 ::= ["250": true, default:false ]
+is500 ::= ["500": true, default:false ]
+is5000 ::= ["5000": true, default:false ]
+is1000 ::= ["1000": true, default:false ]
+isUndefinedCycleTime ::= ["0":false, "10":false, "20":false, "50":false, "100":false, "200":false, "250":false, "500":false, "1000":false, default:true]
+strcmpCyclic ::= ["Cycle": true,"Cyclic": true, default: false]
+typff::=["typff":"<interfaceDataType.(getReceivedInterfaceName(signal,kind))>",
+			default:"not_found"]

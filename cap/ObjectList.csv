@@ -1,0 +1,216 @@
+Name;Length [Bit];Byte Order;Value Type;Initial Value;Factor;Offset;Minimum;Maximum;Unit;Value Table;Comment;Message(s);SigFixedValue;InvalidValue;GenSigTimeoutTime;GenSigStartValue;GenSigInactiveValue;GenSigSendType
+ABS_ACTIVE;2;Intel;Unsigned;3;1;0;0;3;;VtSig_ABS_ACTIVE;ABS activation indication;ABS_ESC_01;NoFixedValue;3;0;3;0;Cyclic
+ActualValueVoltageLinkVerified;12;Intel;Unsigned;1023.75;0.25;0;0;1023.75;V;VtSig_ActualValueVoltageLinkVerified;The signal sends the link voltage as currently measured by the SME....;HighVoltageStorage10msNo2;NoFixedValue;1023.75;0;4095;0;Cyclic
+AD3_PrsrVal_Fl;8;Intel;Unsigned;0;1;0;0;254;bar;VtSig_AD3_PrsrVal_Fl;Wheel brake press FL/Hydraulic Brake Pressure ;ESC_A;NoFixedValue;255;0;0;0;Cyclic
+AD3_PrsrVal_Fr;8;Intel;Unsigned;0;1;0;0;254;bar;VtSig_AD3_PrsrVal_Fr;Wheel brake press Fr/Hydraulic Brake Pressure /Braking Pressure to wheel caliper;ESC_A;NoFixedValue;255;0;0;0;Cyclic
+AD3_PrsrVal_Rl;8;Intel;Unsigned;0;1;0;0;254;bar;VtSig_AD3_PrsrVal_Rl;Wheel brake press Rl/Hydraulic Brake Pressure ;ESC_A;NoFixedValue;255;0;0;0;Cyclic
+AD3_PrsrVal_Rr;8;Intel;Unsigned;0;1;0;0;254;bar;VtSig_AD3_PrsrVal_Rr;Wheel brake press Rr/Hydraulic Brake Pressure ;ESC_A;NoFixedValue;255;0;0;0;Cyclic
+ALIV_AVL_RPM_WHL;4;Intel;Unsigned;0;1;0;0;14;;<none>;Alive counter;AVL_RPM_WHL;NoFixedValue;15;0;0;0;Cyclic
+ALIV_CLAMP_STAT;4;Intel;Unsigned;0;1;0;0;14;;<none>;Alive counter;CLAMP_STAT;NoFixedValue;255;0;0;0;Cyclic
+ALIV_CON_VEH;4;Intel;Unsigned;0;1;0;0;14;;<none>;Standard alive counter validation as per definition in the requirements specification;CON_VEH;NoFixedValue;15;0;0;0;Cyclic
+ALIV_DT_DISP_GRDT;4;Intel;Unsigned;0;1;0;0;14;14;<none>;Standard alive counter validation as per definition in the requirements specification;DT_DISP_GRDT;NoFixedValue;15;0;0;0;Cyclic
+ALIV_EBCM_STATUS;4;Intel;Unsigned;0;1;0;0;14;;<none>;Alive counter;EBCM_STATUS;NoFixedValue;15;0;0;0;Cyclic
+ALIV_EXTS_ARB_INTF;4;Intel;Unsigned;0;1;0;0;14;;<none>;Standard alive counter validation as per definition in the requirements specification Allgemeine Bordnetzkommunikation.;BundleEAFlexrayToAECANFD10msNo1;NoFixedValue;15;50;0;0;Cyclic
+ALIV_HighVoltageStorage10msNo2;8;Intel;Unsigned;0;1;0;0;254;;<none>;Standard alive counter validation as per definition in the requirements specification;HighVoltageStorage10msNo2;NoFixedValue;15;0;0;0;Cyclic
+ALIV_RQ_RPM_BAX;4;Intel;Unsigned;0;1;0;0;14;;<none>;Standard alive counter validation as per definition in the requirements specification Allgemeine Bordnetzkommunikation;BundleEAFlexrayToAECANFD10msNo1;NoFixedValue;15;50;0;0;Cyclic
+ALIV_RQ_RPM_FTAX;4;Intel;Unsigned;0;1;0;0;14;;<none>;Standard alive counter validation as per definition in the requirements specification Allgemeine Bordnetzkommunikation.;BundleEAFlexrayToAECANFD10msNo1;NoFixedValue;15;50;0;0;Cyclic
+ALIV_SFA_SteerWheel_Info;4;Intel;Unsigned;0;1;0;0;14;;<none>;Alive Counter;SFA_SteerWheel_Info;NoFixedValue;15;0;0;0;Cyclic
+ALIV_ST_GWS;4;Intel;Unsigned;0;1;0;0;14;;<none>;Standard alive counter validation as per definition in the requirements specification;ST_GWS;NoFixedValue;14;0;0;0;Cyclic
+ALIV_ST_STAB_DSC;4;Intel;Unsigned;0;1;0;0;14;;<none>;Standard alive counter validation as per definition in the requirements specification Allgemeine Bordnetzkommunikation.;ST_STAB_DSC;NoFixedValue;15;0;0;0;Cyclic
+ALIV_StatusSlipThresholds;4;Intel;Unsigned;0;1;0;0;14;;<none>;Standard protection alive counter as defined in the on-board data communication requirements specification.;BundleEAFlexrayToAECANFD10msNo1;NoFixedValue;15;50;0;0;Cyclic
+ALIV_V_VEH;4;Intel;Unsigned;0;1;0;0;14;;<none>;Transp.MOST-GW-Migration, 01.09.2006: Fusion of parameter AliveSpeed [1] with signal Alive_Geschwindigkeit_Fahrzeug [1].;BundleEAFlexrayToCANFD20msNo1;NoFixedValue;15;100;0;0;Cyclic
+ALIV_VCU_HVsystem_status;4;Intel;Unsigned;0;1;0;0;14;;<none>;Alive counter;VCU_HVsystem_status;NoFixedValue;15;0;0;0;Cyclic
+ALV_VCU_Batt_Info;4;Intel;Unsigned;0;1;0;0;14;;<none>;Alive counter;VCU_Batt_Info;NoFixedValue;15;0;0;0;Cyclic
+ALV_VCU_Batt_WarnMsg;4;Intel;Unsigned;0;1;0;0;14;;<none>;Alive Counter;VCU_Batt_WarnMsg;NoFixedValue;15;0;0;0;Cyclic
+ALV_VCU_ChargingConnection;4;Intel;Unsigned;0;1;0;0;14;;<none>;Alive Counter;VCU_ChargingConnection;NoFixedValue;15;0;0;0;Cyclic
+ALV_VCU_HV_DrvSys_bstatus;4;Intel;Unsigned;0;1;0;0;14;;<none>;Alive counter;VCU_HV_DrvSys_status;NoFixedValue;15;0;0;0;Cyclic
+ALV_VCU_MHU_info;4;Intel;Unsigned;0;1;0;0;14;;<none>;Alive counter;VCU_MHU_info;NoFixedValue;15;0;0;0;Cyclic
+ALV_VCU_StatusDCDC;4;Intel;Unsigned;0;1;0;0;14;;<none>;Alive counter;VCU_StatusDCDC;NoFixedValue;15;0;0;0;Cyclic
+ALV_VCU_WarnMsg;4;Intel;Unsigned;0;1;0;0;14;;<none>;Alive Counter;VCU_WarnMsg;NoFixedValue;15;0;0;0;Cyclic
+AVL_BRTORQ_WHL_FS_LH_EXT;16;Intel;Unsigned;33535;1;-32000;-32000;33535;Nm;VtSig_AVL_BRTORQ_WHL_FS_LH_EXT;Current wheel-related friction braking torque of the DSC control unit. ...;BundleEAFlexrayToAECANFD10msNo1;0;33535;50;65535;0;Cyclic
+AVL_BRTORQ_WHL_FS_RH_EXT;16;Intel;Unsigned;33535;1;-32000;-32000;33535;Nm;VtSig_AVL_BRTORQ_WHL_FS_RH_EXT;Current wheel-related friction braking torque of the DSC control unit. ...;BundleEAFlexrayToAECANFD10msNo1;0;33535;50;65535;0;Cyclic
+AVL_BRTORQ_WHL_RS_LH_EXT;16;Intel;Unsigned;33535;1;-32000;-32000;33535;Nm;VtSig_AVL_BRTORQ_WHL_RS_LH_EXT;Current wheel-related friction braking torque of the DSC control unit. ...;BundleEAFlexrayToAECANFD10msNo1;0;33535;50;65535;0;Cyclic
+AVL_BRTORQ_WHL_RS_RH_EXT;16;Intel;Unsigned;33535;1;-32000;-32000;33535;Nm;VtSig_AVL_BRTORQ_WHL_RS_RH_EXT;Current wheel-related friction braking torque of the DSC control unit. ...;BundleEAFlexrayToAECANFD10msNo1;0;33535;50;65535;0;Cyclic
+AVL_RPM_WHL_FLH;16;Intel;Unsigned;512;0.015625;-511.984375;-400;512;rad/s;<none>;Measured speed of the left front wheel.;AVL_RPM_WHL;NoFixedValue;65535;0;65535;0;Cyclic
+AVL_RPM_WHL_FRH;16;Intel;Unsigned;512;0.015625;-511.984375;-400;512;rad/s;<none>;Measured speed of the right front wheel.;AVL_RPM_WHL;NoFixedValue;65535;0;65535;0;Cyclic
+AVL_RPM_WHL_RLH;16;Intel;Unsigned;512;0.015625;-511.984375;-400;512;rad/s;<none>;Measured speed of the left rear wheel.;AVL_RPM_WHL;NoFixedValue;65535;0;65535;0;Cyclic
+AVL_RPM_WHL_RRH;16;Intel;Unsigned;512;0.015625;-511.984375;-400;512;rad/s;<none>;Measured speed of the right rear wheel.;AVL_RPM_WHL;NoFixedValue;65535;0;65535;0;Cyclic
+BMS_CellTempErr;2;Intel;Unsigned;0;1;0;0;3;;VtSig_BMS_CellTempErr;Cell temperature warning;VCU_Batt_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+BMS_CellVoltErr;2;Intel;Unsigned;0;1;0;0;3;;VtSig_BMS_CellVoltErr;Cell Voltage warning;VCU_Batt_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+BMS_ChargingCurrent;16;Intel;Unsigned;0;0.1;0;0;1500;A;<none>;BMS charging current;VCU_Batt_Info;NoFixedValue;65535;0;0;0;Cyclic
+BMS_ChargingVoltage;16;Intel;Unsigned;0;0.1;0;0;600;V;<none>;BMS charging voltage;VCU_Batt_Info;NoFixedValue;65535;0;0;0;Cyclic
+BMS_FuseStatusErr;1;Intel;Unsigned;0;1;0;0;1;;VtSig_BMS_FuseStatusErr;;VCU_Batt_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+BMS_HVILErr;1;Intel;Unsigned;0;1;0;0;1;;VtSig_BMS_HVILErr;High Voltage Interlock loop circuit error;VCU_Batt_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+BMS_LowBattery;2;Intel;Unsigned;0;1;0;0;2;;VtSig_BMS_LowBattery;Low Battery Warning;VCU_Batt_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+BMS_MalfunctionSts;1;Intel;Unsigned;0;1;0;0;1;;VtSig_BMS_MalfunctionSts;Malfunction status of battery for MHU display;VCU_Batt_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+BMS_PackCur;16;Intel;Unsigned;0;0.1;-1500;-1500;1500;A;<none>;Battery Pack Total Current;VCU_Batt_Info;NoFixedValue;65535;0;15000;0;Cyclic
+BMS_PackInsuErr;1;Intel;Unsigned;0;1;0;0;1;;VtSig_BMS_PackInsuErr;Insulation check lines have problems, short to ground or short to bat;VCU_Batt_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+BMS_PackOverCurrErr;1;Intel;Unsigned;0;1;0;0;1;;VtSig_BMS_PackOverCurrErr;When The Over Current Ýs Detected During Charging And Discharging For The Given Period Of Time, Then The Bms_Packovercurr_Err Will Set ;VCU_Batt_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+BMS_PackTemp;8;Intel;Unsigned;0;1;-40;-40;215;°C;<none>;Pack Temperature ;VCU_Batt_Info;NoFixedValue;255;0;40;0;Cyclic
+BMS_PackTempSts;2;Intel;Unsigned;0;1;0;0;2;;VtSig_BMS_PackTempSts;Pack temperature warning;VCU_Batt_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+BMS_PackVolErr;2;Intel;Unsigned;0;1;0;0;2;;VtSig_BMS_PackVolErr;Pack Voltage warning;VCU_Batt_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+BMS_PackVoltage;16;Intel;Unsigned;345;0.1;0;0;600;V;<none>;Pack Voltage;VCU_Batt_Info;NoFixedValue;65535;0;3450;0;Cyclic
+BMS_RemainChargeTime;12;Intel;Unsigned;0;1;0;0;1500;min;<none>;BMS Remain Charging Time;VCU_Batt_Info;NoFixedValue;4095;0;0;0;Cyclic
+BMS_Reserved_signal1;3;Intel;Unsigned;0;1;0;0;7;;<none>;Warning Message Flag, Component owner, Supplier align and define for this signal;VCU_Batt_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+BMS_Reserved_signal2;8;Intel;Unsigned;0;1;0;0;255;;<none>;Warning Message Flag, Component owner, Supplier align and define for this signal;VCU_Batt_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+BMS_Reserved_signal3;8;Intel;Unsigned;0;1;0;0;255;;<none>;Warning Message Flag, Component owner, Supplier align and define for this signal;VCU_Batt_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+BMS_Reserved_signal4;8;Intel;Unsigned;0;1;0;0;255;;<none>;Warning Message Flag, Component owner, Supplier align and define for this signal;VCU_Batt_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+BMS_Reserved_signal5;8;Intel;Unsigned;0;1;0;0;255;;<none>;;VCU_Batt_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+BMS_ThermalRunaway;1;Intel;Unsigned;0;1;0;0;1;;VtSig_BMS_ThermalRunaway;Thermal runaway warning;VCU_Batt_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+BreakPedalPercent;12;Intel;Unsigned;0;0.0625;0;0;100;%;VtSig_BreakPedalPercent;Break pedal percent;EBCM_STATUS;NoFixedValue;15;0;0;0;Cyclic
+BreakPedalPercentValid;1;Intel;Unsigned;0;1;0;0;1;;VtSig_BreakPedalPercentValid;Break pedal percent valid;EBCM_STATUS;NoFixedValue;;0;0;0;Cyclic
+CHL_EXTS_ARB_INTF;4;Intel;Unsigned;15;1;0;0;15;;<none>;This signal explicitly contains the value of the extension ID = 4 (dec) = 4 (hex) for the extended CRC validation according to Autosar_SWS_E2ELibrary profile 1C....;BundleEAFlexrayToAECANFD10msNo1;4;15;50;15;0;Cyclic
+CHL_RQ_RPM_BAX;4;Intel;Unsigned;15;1;0;0;15;;<none>;This signal explicitly contains the value of the extension ID = 6 (dec) = 6 (hex) for the extended CRC validation according to Autosar_SWS_E2ELibrary profile 1C....;BundleEAFlexrayToAECANFD10msNo1;6;15;50;15;0;Cyclic
+CHL_RQ_RPM_FTAX;4;Intel;Unsigned;15;1;0;0;15;;<none>;This signal explicitly contains the value of the extension ID = 7 (dec) = 7 (hex) for the extended CRC validation according to Autosar_SWS_E2ELibrary profile 1C....;BundleEAFlexrayToAECANFD10msNo1;7;15;50;15;0;Cyclic
+CHL_StatusSlipThresholds;4;Intel;Unsigned;15;1;0;0;15;;<none>;This signal explicitly contains the value of the extension ID = 3 (dez) = 3 (hex)  for the extended CRC validation according to Autosar_SWS_E2ELibrary profile 1C....;BundleEAFlexrayToAECANFD10msNo1;3;15;50;15;0;Cyclic
+CHSKM_VCU_Batt_WarnMsg;8;Intel;Unsigned;255;1;0;0;255;;<none>;Checksum;VCU_Batt_WarnMsg;NoFixedValue;;0;255;0;Cyclic
+CRC_AVL_RPM_WHL;8;Intel;Unsigned;255;1;0;0;255;;<none>;This signal uses the application CRC ID = 17 (dec);AVL_RPM_WHL;NoFixedValue;255;0;255;0;Cyclic
+CRC_CLAMP_STAT;8;Intel;Unsigned;255;1;0;0;255;;<none>;;CLAMP_STAT;NoFixedValue;255;0;255;0;Cyclic
+CRC_CON_VEH;8;Intel;Unsigned;255;1;0;0;255;;<none>;Standard application CRC validation ...;CON_VEH;NoFixedValue;255;0;255;0;Cyclic
+CRC_DT_DISP_GRDT;8;Intel;Unsigned;255;1;0;0;255;;<none>;Standard application CRC validation ...;DT_DISP_GRDT;NoFixedValue;255;0;255;0;Cyclic
+CRC_EBCM_STATUS;8;Intel;Unsigned;255;1;0;0;255;;<none>;Checksum;EBCM_STATUS;NoFixedValue;;0;255;0;Cyclic
+CRC_EXTS_ARB_INTF;8;Intel;Unsigned;255;1;0;0;255;;<none>;This signal contains the CRC checksum for the extended standard application CRC validation according to application profile 1C E2E Protection;BundleEAFlexrayToAECANFD10msNo1;NoFixedValue;255;50;255;0;Cyclic
+CRC_HighVoltageStorage10msNo2;16;Intel;Unsigned;65535;1;0;0;65535;;<none>;This signal contains the CRC checksum for the standard validation with application.Data ID (16 bits) 115 (dec) = 0073 (hex).;HighVoltageStorage10msNo2;NoFixedValue;65535;0;65535;0;Cyclic
+CRC_RQ_RPM_BAX;8;Intel;Unsigned;255;1;0;0;255;;<none>;This signal contains the CRC checksum for the extended standard application CRC validation according to application profile 1C E2E Protection (Autosar SWS 428). ;BundleEAFlexrayToAECANFD10msNo1;NoFixedValue;255;50;255;0;Cyclic
+CRC_RQ_RPM_FTAX;8;Intel;Unsigned;255;1;0;0;255;;<none>;This signal contains the CRC checksum for the extended standard application CRC validation according to application profile 1C E2E Protection (Autosar SWS 428).;BundleEAFlexrayToAECANFD10msNo1;NoFixedValue;255;50;255;0;Cyclic
+CRC_SFA_SteerWheel_Info;8;Intel;Unsigned;255;1;0;0;255;;<none>;Standard application CRC validation;SFA_SteerWheel_Info;NoFixedValue;255;0;255;0;Cyclic
+CRC_ST_GWS;8;Intel;Unsigned;255;1;0;0;255;;<none>;Standard application CRC validation ...;ST_GWS;NoFixedValue;255;0;255;0;Cyclic
+CRC_ST_STAB_DSC;8;Intel;Unsigned;255;1;0;0;255;;<none>;Standard application CRC validation ...;ST_STAB_DSC;NoFixedValue;255;0;255;0;Cyclic
+CRC_StatusSlipThresholds;8;Intel;Unsigned;255;1;0;0;255;;<none>;This signal contains the CRC checksum for the extended standard application CRC validation according to application profile 1C E2E Protection (Autosar SWS 428).;BundleEAFlexrayToAECANFD10msNo1;NoFixedValue;255;50;255;0;Cyclic
+CRC_V_VEH;8;Intel;Unsigned;255;1;0;0;255;;<none>;Standard application CRC validation This signal uses application CRC ID = 12 (dec)  The checksum does not have an invalidity identifier! ;BundleEAFlexrayToCANFD20msNo1;NoFixedValue;255;100;255;0;Cyclic
+CRC_VCU_Batt_Info;8;Intel;Unsigned;255;1;0;0;255;;<none>;Checksum;VCU_Batt_Info;NoFixedValue;;0;255;0;Cyclic
+CRC_VCU_ChargingConnection;8;Intel;Unsigned;255;1;0;0;255;;<none>;Checksum;VCU_ChargingConnection;NoFixedValue;;0;255;0;Cyclic
+CRC_VCU_HV_DrvSys_status;8;Intel;Unsigned;255;1;0;0;255;;<none>;Checksum;VCU_HV_DrvSys_status;NoFixedValue;;0;255;0;Cyclic
+CRC_VCU_HVsystem_status;8;Intel;Unsigned;255;1;0;0;255;;<none>;Checksum;VCU_HVsystem_status;NoFixedValue;0;0;255;0;Cyclic
+CRC_VCU_MHU_info;8;Intel;Unsigned;255;1;0;0;255;;<none>;Checksum;VCU_MHU_info;NoFixedValue;;0;255;0;Cyclic
+CRC_VCU_StatusDCDC;8;Intel;Unsigned;255;1;0;0;255;;<none>;Check sum;VCU_StatusDCDC;NoFixedValue;;0;255;0;Cyclic
+CRC_VCU_WarnMsg;8;Intel;Unsigned;255;1;0;0;255;;<none>;Checksum;VCU_WarnMsg;NoFixedValue;;0;255;0;Cyclic
+CTR_BS_PRTNT;4;Intel;Unsigned;15;1;0;0;15;;VtSig_CTR_BS_PRTNT;This signal is used to communicate whether communication is required in the currently active vehicle state.Duplicate from ST_CON_VEH;CON_VEH;2;15;0;15;0;Cyclic
+CTR_ERRM_BN_U;6;Intel;Unsigned;63;1;0;0;63;;VtSig_CTR_ERRM_BN_U;The signal Steuerung_Fehlerspeicher_Bordnetz_Spannung provides voltage thresholds for handling the error memory. fixed=0;ERRM_BN_U;0;255;0;63;0;Cyclic
+CTR_FKTN_PRTNT;32;Intel;Unsigned;4294967295;1;0;0;4294967295;;VtSig_CTR_FKTN_PRTNT;...;CON_VEH;102912;4294967295;0;-2147483648;0;Cyclic
+DCDC_iOutput;16;Intel;Unsigned;0;0.1;0;0;350;A;<none>;DCDC reported 12V current;VCU_StatusDCDC;NoFixedValue;65535;0;0;0;Cyclic
+DCDC_maxCurrentOut;16;Intel;Unsigned;0;0.1;0;0;6553.5;A;<none>;Max LV current DCDC able to output;VCU_StatusDCDC;NoFixedValue;65535;0;0;0;Cyclic
+DCDC_status;3;Intel;Unsigned;0;1;0;0;7;;VtSig_DCDC_status;DCDC status;VCU_StatusDCDC;NoFixedValue;7;0;0;0;Cyclic
+DCDC_vDCInput;16;Intel;Unsigned;0;0.0625;0;0;4095;V;<none>;DCDC input voltage;VCU_StatusDCDC;NoFixedValue;65535;0;0;0;Cyclic
+DCDC_vOutput;16;Intel;Unsigned;0;0.0625;0;0;4095;V;<none>;DCDC reported 12V voltage;VCU_StatusDCDC;NoFixedValue;65535;0;0;0;Cyclic
+DISP_PO_GRB;3;Intel;Unsigned;7;1;0;0;7;;VtSig_DISP_PO_GRB;This signal is used to activate the transmission position display.;DT_DISP_GRDT;NoFixedValue;7;0;7;0;Cyclic
+DISP_PO_IDC_GRB;2;Intel;Unsigned;3;1;0;0;3;;VtSig_DISP_PO_IDC_GRB;The signal defines the transmission position display type. fixed=0;DT_DISP_GRDT;0;;0;3;0;Cyclic
+DISP_PRG_GRB;3;Intel;Unsigned;7;1;0;0;7;;VtSig_DISP_PRG_GRB;The signal is used to activate the program information display in the instrument cluster.fixed=0;DT_DISP_GRDT;0;7;0;7;0;Cyclic
+EBCM_BrkPedlSts;2;Intel;Unsigned;0;1;0;0;3;;VtSig_EBCM_BrkPedlSts;Brake pedal status signal Pressed/Not Pressed;EBCM_STATUS;NoFixedValue;;0;0;0;Cyclic
+EPBFault;1;Intel;Unsigned;0;1;0;0;1;;VtSig_EPBFault;EPB fault status;EBCM_STATUS;NoFixedValue;;0;0;0;Cyclic
+EPBStatus;4;Intel;Unsigned;15;1;0;0;15;;VtSig_EPBStatus;Lamp & display message/Lamp & display MSG Automatic;EBCM_STATUS;NoFixedValue;15;0;15;0;Cyclic
+FZU_ChargingStopReq;2;Intel;Unsigned;0;1;0;0;3;;VtSig_FZU_ChargingStopReq;Charging shall be stopped or resumed when requested from FZU;FZU_ChargingControl;NoFixedValue;3;0;0;0;Cyclic
+HillholderFault;1;Intel;Unsigned;0;1;0;0;1;;VtSig_HillholderFault;Hillholder fault status;EBCM_STATUS;NoFixedValue;;0;0;0;Cyclic
+HillholderStatus;4;Intel;Unsigned;15;1;0;0;15;;<none>;Hillholder status;EBCM_STATUS;NoFixedValue;;0;15;0;Cyclic
+MCPressure;12;Intel;Unsigned;0.5;1;-42.5;0;465;bar;<none>;MC Pressure;EBCM_STATUS;NoFixedValue;65535;0;43;0;Cyclic
+MCPressureSts;1;Intel;Unsigned;0;1;0;0;1;;VtSig_MCPressureSts;MC Pressure Status;EBCM_STATUS;NoFixedValue;65535;0;0;0;Cyclic
+MILE_KM;24;Intel;Unsigned;16777215;1;0;0;16777215;KM;<none>;The indicated value of the odometer is made available to other nodes....;KILOMETERSTAND;0;16777215;0;16777215;0;Cyclic
+MILE_KM_TOT;32;Intel;Unsigned;4294967.295;0.001;0;0;4294967.295;km;VtSig_MILE_KM_TOT;Using this signal, the odometer is sent. The value corresponds to the value displayed in the instrument cluster. However, the distribution is always made in the unit [km], irrespective of the unit preference....;Kilometerstand_2;0;4294967.295;0;-2147483648;0;Cyclic
+NM3BasePartialNetworks;16;Intel;Unsigned;65535;1;0;0;65535;;VtSig_NM3BasePartialNetworks;This signal is used to communicate whether communication is required in the currently active vehicle state....;Networkmanagement3_Status;0;65535;0;65535;0;Cyclic
+NM3ControlBitVector;8;Intel;Unsigned;255;1;0;64;255;;VtSig_NM3ControlBitVector;Using this signal, the control bit vector specified in AUTOSAR NM is transmitted. For BMW, only bit 6 (Partial Network Information Bit) is relevant; all other bits shall be set to 0...;Networkmanagement3_Status;64;255;0;255;0;Cyclic
+NM3FunctionalPartialNetworks;32;Intel;Unsigned;4294967295;1;0;0;4294967295;;VtSig_NM3FunctionalPartialNetworks;This signal is used to communicate which functional subnets.fixed=98304;Networkmanagement3_Status;98304;4294967295;0;-2147483648;0;Cyclic
+NM3SenderECUId;8;Intel;Unsigned;255;1;0;0;255;;VtSig_NM3SenderECUId;This signal contains the diagnostic address of the sending electronic control unit (Source Node Identifier)....;Networkmanagement3_Status;16;255;0;255;0;Cyclic
+NO_VECH_1;8;Intel;Unsigned;255;1;0;0;255;;<none>;This signal contains the seventh to last digit of the vehicle identification number. (The individual digits are coded in ASCII characters.)...;FAHRGESTELLNUMMER;48;255;0;255;0;Cyclic
+NO_VECH_2;8;Intel;Unsigned;255;1;0;0;255;;<none>;This signal contains the seventh to last digit of the vehicle identification number. (The individual digits are coded in ASCII characters.)...;FAHRGESTELLNUMMER;48;255;0;255;0;Cyclic
+NO_VECH_3;8;Intel;Unsigned;255;1;0;0;255;;<none>;This signal contains the seventh to last digit of the vehicle identification number. (The individual digits are coded in ASCII characters.)...;FAHRGESTELLNUMMER;48;255;0;255;0;Cyclic
+NO_VECH_4;8;Intel;Unsigned;255;1;0;0;255;;<none>;This signal contains the seventh to last digit of the vehicle identification number. (The individual digits are coded in ASCII characters.)...;FAHRGESTELLNUMMER;48;255;0;255;0;Cyclic
+NO_VECH_5;8;Intel;Unsigned;255;1;0;0;255;;<none>;This signal contains the seventh to last digit of the vehicle identification number. (The individual digits are coded in ASCII characters.)...;FAHRGESTELLNUMMER;48;255;0;255;0;Cyclic
+NO_VECH_6;8;Intel;Unsigned;255;1;0;0;255;;<none>;This signal contains the seventh to last digit of the vehicle identification number. (The individual digits are coded in ASCII characters.)...;FAHRGESTELLNUMMER;48;255;0;255;0;Cyclic
+NO_VECH_7;8;Intel;Unsigned;255;1;0;0;255;;<none>;This signal contains the seventh to last digit of the vehicle identification number. (The individual digits are coded in ASCII characters.)...;FAHRGESTELLNUMMER;48;255;0;255;0;Cyclic
+OP_GWS;4;Intel;Unsigned;15;1;0;1;15;;VtSig_OP_GWS;The signal indicates the current status of the gear selector switch for controlling the electrical transmission....;ST_GWS;NoFixedValue;15;0;15;0;Cyclic
+OP_GWS_PUBU_PKG;2;Intel;Unsigned;3;1;0;0;3;;VtSig_OP_GWS_PUBU_PKG;The signal indicates the driver request Park for controlling the electrical transmission.;ST_GWS;NoFixedValue;3;0;3;0;Cyclic
+OperatingModeEANActualValue;8;Intel;Unsigned;0;1;0;0;255;;VtSig_OperatingModeEANActualValue;Actual operating mode of complete electric drive system. This signal is used for the drive network. For control units that are not from the drive network, the signal ST_MOT_DRV is provided.;CombinedChargerUnit10msNo2;NoFixedValue;255;0;0;0;Cyclic
+OpModETractSys1ActVal;8;Intel;Unsigned;255;1;0;0;255;;VtSig_OpModETractSys1ActVal;;TracEMacElectc1Time100msNo1;NoFixedValue;255;0;255;0;Cyclic
+OpModETractSys2ActVal;8;Intel;Unsigned;255;1;0;0;255;;VtSig_OpModETractSys2ActVal;;TracEMacElectc2Time100msNo1;NoFixedValue;255;0;255;0;Cyclic
+PowerETractSys1LimGenMax;16;Intel;Unsigned;1638450;50;-1638300;-1638300;1638450;W;VtSig_PowerETractSys1LimGenMax;Maximum approved regenerative electric power of electric machine system 1.;CombinedChargerUnit10msNo2;-1638300;65535;0;65535;0;Cyclic
+PowerETractSys1LimMotMax;16;Intel;Unsigned;1638450;50;-1638300;-1638300;1638450;W;VtSig_PowerETractSys1LimMotMax;Maximum approved motorized electric power of electric machine system 1.;CombinedChargerUnit10msNo2;1638300;65535;0;65535;0;Cyclic
+PowerETractSys2LimGenMax;16;Intel;Unsigned;1638450;50;-1638300;-1638300;1638450;W;VtSig_PowerETractSys2LimGenMax;Maximum approved regenerative electric power of electric machine system 2.;CombinedChargerUnit10msNo2;-1638300;65535;0;65535;0;Cyclic
+PowerETractSys2LimMotMax;16;Intel;Unsigned;1638450;50;-1638300;-1638300;1638450;W;VtSig_PowerETractSys2LimMotMax;Maximum approved motorized electric power of electric machine system 2.;CombinedChargerUnit10msNo2;1638300;65535;0;65535;0;Cyclic
+QU_AVL_RPM_WHL_FLH;4;Intel;Unsigned;8;1;0;1;15;;VtSig_QU_AVL_RPM_WHL_FLH;Status qualifier for signal Ist_Drehzahl_Rad_VL....;AVL_RPM_WHL;1;15;0;8;0;Cyclic
+QU_AVL_RPM_WHL_FRH;4;Intel;Unsigned;8;1;0;1;15;;VtSig_QU_AVL_RPM_WHL_FRH;Status qualifier for signal Ist_Drehzahl_Rad_VR....;AVL_RPM_WHL;1;15;0;8;0;Cyclic
+QU_AVL_RPM_WHL_RLH;4;Intel;Unsigned;8;1;0;1;15;;VtSig_QU_AVL_RPM_WHL_RLH;Status qualifier for signal Ist_Drehzahl_Rad_HL....;AVL_RPM_WHL;1;15;0;8;0;Cyclic
+QU_AVL_RPM_WHL_RRH;4;Intel;Unsigned;8;1;0;1;15;;VtSig_QU_AVL_RPM_WHL_RRH;Status qualifier for signal Ist_Drehzahl_Rad_HR....;AVL_RPM_WHL;1;15;0;8;0;Cyclic
+QU_FN_ABS;12;Intel;Unsigned;4095;1;0;512;4095;;VtSig_QU_FN_ABS;ABS function qualifier....;ST_STAB_DSC;NoFixedValue;4095;0;4095;0;Cyclic
+QU_FN_ASC;12;Intel;Unsigned;4095;1;0;512;4095;;VtSig_QU_FN_ASC;ASC TCS function qualifier. ...;ST_STAB_DSC;NoFixedValue;4095;0;4095;0;Cyclic
+QU_FN_FDR;12;Intel;Unsigned;4095;1;0;0;4095;;VtSig_QU_FN_FDR;FDR ESC function qualifier....;ST_STAB_DSC;NoFixedValue;4095;0;4095;0;Cyclic
+QU_ST_CON_VEH;4;Intel;Unsigned;15;1;0;2;15;;VtSig_QU_ST_CON_VEH;The signal indicates whether the calculated value of Status_Zustand_Fahrzeug.fixed=2;CON_VEH;2;15;0;15;0;Cyclic
+QU_V_VEH_COG;4;Intel;Unsigned;15;1;0;1;15;;VtSig_QU_V_VEH_COG;Status qualifier for the signal Geschwindigkeit_Fahrzeug_Schwerpunkt.  Minimum requirements for sending a valid signal value (starting from 2008-06-10, the following applies for L6/L7/F25)...;BundleEAFlexrayToCANFD20msNo1;1;15;100;15;0;Cyclic
+RequestExtraBoostETractSys1;2;Intel;Unsigned;3;1;0;0;3;;VtSig_RequestExtraBoostETractSys1;Additional torque as torque boost, requested for electric machine system 1 (ExtraBoost in PowerMode)....;CombinedChargerUnit10msNo2;0;3;0;3;0;Cyclic
+RequestExtraBoostETractSys2;2;Intel;Unsigned;3;1;0;0;3;;VtSig_RequestExtraBoostETractSys2;Additional torque as torque boost, requested for electric machine system 2 (ExtraBoost in PowerMode)....;CombinedChargerUnit10msNo2;0;3;0;3;0;Cyclic
+SecOcDataP2V_VEH;64;Intel;Unsigned;1.84467e+19;1;0;0;1.84467e+19;;<none>;SecOcDataP2V_VEH...;BundleEAFlexrayToCANFD20msNo1;255;FFFFFFFFFFFFFFFF;100;-2147483648;0;Cyclic
+SFA_CenteringStatus;3;Intel;Unsigned;0;1;0;0;7;;VtSig_SFA_CenteringStatus;;SFA_SteerWheel_Info;NoFixedValue;7;0;0;0;Cyclic
+SFA_EmergencyRequest;2;Intel;Unsigned;0;1;0;0;3;;VtSig_SFA_EmergencyRequest;;SFA_SteerWheel_Info;NoFixedValue;3;0;0;0;Cyclic
+SFA_SteerWheelAngle;16;Intel;Unsigned;0;0.02;0;0;1310.7;deg;VtSig_SFA_SteerWheelAngle;SFA Calculated Steering Angle;SFA_SteerWheel_Info;NoFixedValue;255;0;0;0;Cyclic
+SFA_SteerWheelAngleSpeed;8;Intel;Unsigned;0;4;0;0;1020;deg/s;VtSig_SFA_SteerWheelAngleSpeed;SFA_SteerWheelAngleSpeed;SFA_SteerWheel_Info;NoFixedValue;255;0;0;0;Cyclic
+SFA_SteerWheelTorque;12;Intel;Unsigned;0;0.02;0;0;81.9;Nm;VtSig_SFA_SteerWheelTorque;Torque applied to the steering wheel;SFA_SteerWheel_Info;NoFixedValue;255;0;0;0;Cyclic
+SFA_WarningLamp;3;Intel;Unsigned;0;1;0;0;7;;VtSig_SFA_WarningLamp;SFAM Warning Lamp;SFA_SteerWheel_Info;NoFixedValue;7;0;0;0;Cyclic
+ST_BRG_DV;6;Intel;Unsigned;63;1;0;0;63;;VtSig_ST_BRG_DV;Status information regarding deceleration by the driver or by driver assistance systems or by a deceleration due to recuperation.;ST_STAB_DSC;NoFixedValue;63;0;63;0;Cyclic
+ST_CON_VEH;4;Intel;Unsigned;15;1;0;0;15;;VtSig_ST_CON_VEH;The signal Status_Zustand_Fahrzeug describes the vehicle state;CON_VEH;NoFixedValue;15;0;15;0;Cyclic
+ST_ENERG_FZM;4;Intel;Unsigned;15;1;0;0;15;;VtSig_ST_ENERG_FZM;This signal has an equivalent on the SF-CAN.fixed=1;FZZSTD;1;15;0;15;0;Cyclic
+ST_ILK_ERRM_FZM;2;Intel;Unsigned;3;1;0;0;3;;VtSig_ST_ILK_ERRM_FZM;Defined by means of DMA_PA_4975 of the central error memory / diagnostic master 10000504-000-14 requirements specification. Mapping the Ethernet StatusEnergy service interface to legacy buses....;FZZSTD;0;3;0;3;0;Cyclic
+ST_SLIP_THO;4;Intel;Unsigned;15;1;0;0;15;;VtSig_ST_SLIP_THO;Signal includes axle-specific information indicating whether a slip threshold is exceeded on at least one wheel of the specified axle. ...;ST_STAB_DSC_2;15;15;0;15;0;Cyclic
+ST_TAR_RPM_BAX;4;Intel;Unsigned;15;1;0;0;15;;VtSig_ST_TAR_RPM_BAX;With this status, the limits to the minimum and maximum wheel speed limit for the rear axle can be activated or deactivated....;BundleEAFlexrayToAECANFD10msNo1;0;15;50;15;0;Cyclic
+ST_TAR_RPM_FTAX;4;Intel;Unsigned;15;1;0;0;15;;VtSig_ST_TAR_RPM_FTAX;With this status, the limits to the minimum and maximum wheel speed limit for the front axle can be activated or deactivated....;BundleEAFlexrayToAECANFD10msNo1;0;15;50;15;0;Cyclic
+ST_TRAI;2;Intel;Unsigned;3;1;0;0;3;;VtSig_ST_TRAI;This parameter / signal indicates if a trailer is really connected or not. fixed=0;STAT_ANHAENGER;NoFixedValue;3;0;3;0;Cyclic
+STAT_CL15_L;2;Intel;Unsigned;0;1;0;0;3;;VtSig_STAT_CL15_L;;CLAMP_STAT;NoFixedValue;255;0;0;0;Cyclic
+STAT_CL15_WUPL;2;Intel;Unsigned;0;1;0;0;3;;VtSig_STAT_CL15_WUPL;fixed=0;CLAMP_STAT;0;255;0;0;0;Cyclic
+STAT_CL30S_L;2;Intel;Unsigned;0;1;0;0;3;;VtSig_STAT_CL30S_L;fixed=0;CLAMP_STAT;0;255;0;0;0;Cyclic
+STAT_CL30S_Light;2;Intel;Unsigned;0;1;0;0;3;;VtSig_STAT_CL30S_Light;fixed=0;CLAMP_STAT;0;255;0;0;0;Cyclic
+StatusServiceDisconnectionPlug;2;Intel;Unsigned;3;1;0;1;3;;VtSig_StatusServiceDisconnectionPlug;Status of the service disconnector: plugged in or not plugged in...;HighVoltageStorage200msNo1;NoFixedValue;3;0;3;0;Cyclic
+StatusSlipThresholdsFrontAxle;4;Intel;Unsigned;15;1;0;0;15;;VtSig_StatusSlipThresholdsFrontAxle;Communication of slip status for front and rear axle. This information is relevant for deactivation of comfort functions (i. e. ASD) and for functional safety...;BundleEAFlexrayToAECANFD10msNo1;0;15;50;15;0;Cyclic
+StatusSlipThresholdsRearAxle;4;Intel;Unsigned;15;1;0;0;15;;VtSig_StatusSlipThresholdsRearAxle;Communication of slip status for front and rear axle. This information is relevant for deactivation of comfort functions (i. e. ASD) and for functional safety...;BundleEAFlexrayToAECANFD10msNo1;0;15;50;15;0;Cyclic
+StsDisconnectingSwtHighVoltStorg;6;Intel;Unsigned;63;1;0;0;63;;VtSig_StsDisconnectingSwtHighVoltStorg;Status of the disconnecting elements in the high voltage battery incl. status for the stuck welded contactor.;HighVoltageStorage200msNo1;NoFixedValue;63;0;63;0;Cyclic
+T_SEC_COU_REL;32;Intel;Unsigned;4294967295;1;0;0;4294967295;s;<none>;...;RELATIVZEIT;NoFixedValue;4294967295;0;-2147483648;0;Cyclic
+TAR_RPM_MAX_BAX;16;Intel;Unsigned;655.35;0.01;0;0;655.35;rad/s;VtSig_TAR_RPM_MAX_BAX;Maximum wheel speed at the rear axle....;BundleEAFlexrayToAECANFD10msNo1;400;65535;50;65535;0;Cyclic
+TAR_RPM_MAX_FTAX;16;Intel;Unsigned;655.35;0.01;0;0;655.35;rad/s;VtSig_TAR_RPM_MAX_FTAX;Maximum wheel speed at the front axle....;BundleEAFlexrayToAECANFD10msNo1;400;65535;50;65535;0;Cyclic
+TAR_RPM_MIN_BAX;16;Intel;Unsigned;655.35;0.01;0;0;655.35;rad/s;VtSig_TAR_RPM_MIN_BAX;Minimum wheel speed at the rear axle....;BundleEAFlexrayToAECANFD10msNo1;0;65535;50;65535;0;Cyclic
+TAR_RPM_MIN_FTAX;16;Intel;Unsigned;655.35;0.01;0;0;655.35;rad/s;VtSig_TAR_RPM_MIN_FTAX;Minimum wheel speed at the front axle....;BundleEAFlexrayToAECANFD10msNo1;0;65535;50;65535;0;Cyclic
+TAR_STIF_SPCO;4;Intel;Unsigned;15;1;0;0;15;;VtSig_TAR_STIF_SPCO;Standardized value for the regulator stiffness. Valid for all speed regulators on the EA side....;BundleEAFlexrayToAECANFD10msNo1;5;12;50;15;0;Cyclic
+TCSActive;1;Intel;Unsigned;0;1;0;0;1;;VtSig_TCSActive;Traction control system activation;EBCM_STATUS;NoFixedValue;;0;0;0;Cyclic
+TCSAvailable;1;Intel;Unsigned;0;1;0;0;1;;VtSig_TCSAvailable;Traction control system available;EBCM_STATUS;NoFixedValue;;0;0;0;Cyclic
+TEMP_EX;8;Intel;Unsigned;87.5;0.5;-40;-40;87.5;°C;<none>;Here the processed (= filtered) ambient temperature is made available to all other bus subscribers.;A_TEMP;NoFixedValue;FF;0;255;0;Cyclic
+V_VEH_COG;16;Intel;Unsigned;0;0.015625;0;0;350;km/h;<none>;Absolute speed of the vehicle's center of gravity; contains the ratios from vehicle longitudinal and lateral speed.  This signal is mainly based on the four wheel speeds. ;BundleEAFlexrayToCANFD20msNo1;NoFixedValue;65535;100;0;0;Cyclic
+VCU_ACChargingVoltage;8;Intel;Unsigned;0;1;0;0;255;V;<none>;AC charging voltage;VCU_ChargingConnection;NoFixedValue;255;0;0;0;Cyclic
+VCU_AcChgGunIn;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_AcChgGunIn;Slow Charge Gun Insert Status ;VCU_ChargingConnection;NoFixedValue;;0;0;0;Cyclic
+VCU_ACPD_Percent;12;Intel;Unsigned;0;0.0625;0;0;100;%;<none>;The signal contains the actual angle of the acceleration pedal100% acceleration pedal position shall only provided in case of kick down.Without kickdown the maximum value shall be 99.;VCU_HV_DrvSys_status;NoFixedValue;4095;0;0;0;Cyclic
+VCU_ACPD_Percent_Valid;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_ACPD_Percent_Valid;Qualifier for corresponding signal.  In value table not defined values are reserved;VCU_HV_DrvSys_status;NoFixedValue;1;0;0;0;Cyclic
+VCU_ACT_DriveMode;3;Intel;Unsigned;0;1;0;0;7;;VtSig_VCU_ACT_DriveMode;Vehicle drive mode;VCU_HV_DrvSys_status;NoFixedValue;7;0;0;0;Cyclic
+VCU_ACT_DriveModeValid;1;Intel;Unsigned;1;1;0;0;1;;<none>;Vehicle drive mode status;VCU_HV_DrvSys_status;NoFixedValue;1;0;1;0;Cyclic
+VCU_ACT_Gear;3;Intel;Unsigned;0;1;0;0;7;;VtSig_VCU_ACT_Gear;actual gear,Provide gear shift signal;VCU_HV_DrvSys_status;NoFixedValue;7;0;0;0;Cyclic
+VCU_ACT_GearValid;1;Intel;Unsigned;1;1;0;0;1;;VtSig_VCU_ACT_GearValid;Indicate the current gear position...;VCU_HV_DrvSys_status;NoFixedValue;1;0;1;0;Cyclic
+VCU_BattChargingStatus;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_BattChargingStatus;HV battery charging - not charging status,for displaying only ( for both regen  charging );VCU_MHU_info;NoFixedValue;;0;0;0;Cyclic
+VCU_BattSOC;10;Intel;Unsigned;0;0.1;0;0;100;%;<none>;HV battery SOC for displaying only;VCU_MHU_info;NoFixedValue;;0;0;0;Cyclic
+VCU_CantChangeGear;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_CantChangeGear;Unable to change gear position;VCU_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+VCU_ChargingInletTempHigh;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_ChargingInletTempHigh;Warning is given by VCU when the temperature of Charging Inlet higher than the limitation;VCU_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+VCU_CheckDriveTrain;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_CheckDriveTrain;Warning given by VCU when E-Motor send warning signals;VCU_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+VCU_ChgGun_Status;3;Intel;Unsigned;7;1;0;0;7;;VtSig_VCU_ChgGun_Status;Charging gun status;VCU_MHU_info;NoFixedValue;7;0;7;0;Cyclic
+VCU_ChgGunConnStatus;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_ChgGunConnStatus;Charging gun connection status;VCU_MHU_info;NoFixedValue;;0;0;0;Cyclic
+VCU_CoolantTempHigh;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_CoolantTempHigh;Warning given by VCU when radiator inlet and/or outlet temperature exceed temperature high warning threshold (yellow);VCU_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+VCU_CoolingTempExceedLimit;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_CoolingTempExceedLimit;Warning when radiator inlet and/or outlet temperature exceed temperature high warning threshold (red);VCU_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+VCU_CPValue;7;Intel;Unsigned;0;1;0;0;100;%;<none>;Charging port duty Cycle value (PWM);VCU_ChargingConnection;NoFixedValue;127;0;0;0;Cyclic
+VCU_CurPwrConsum;4;Intel;Unsigned;0;1;0;0;15;km/kWh;<none>;Instant Power consumption;VCU_MHU_info;NoFixedValue;;0;0;0;Cyclic
+VCU_DCChgGunIn;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_DCChgGunIn;Connection status of DC Fast charging Gun;VCU_ChargingConnection;NoFixedValue;;0;0;0;Cyclic
+VCU_DCDC_TempHigh;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_DCDC_TempHigh;Waring is given by VCU when the temperature of DCDC higher than the limitation;VCU_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+VCU_EmergencyShutdown;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_EmergencyShutdown;Emergency Shutdown: Immediately open the HV contactors;VCU_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+VCU_GearMalfunc;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_GearMalfunc;Gear change might be not possible;VCU_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+VCU_GearPAtStationaryOnly;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_GearPAtStationaryOnly;Gear position P only when stationary;VCU_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+VCU_GearPNotPossible;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_GearPNotPossible;Gear P not possible: Due to EPP lock is not possible, gear position P may not be possible.;VCU_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+VCU_HeatLoopTempSensorErr;3;Intel;Unsigned;0;1;0;0;4;;VtSig_VCU_HeatLoopTempSensorErr;- Heating Loop Temp Sensor  A  Errors: General Electric Failure, Circuit Short To Ground, Circuit Short To Battery, Circuit Intermittent;VCU_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+VCU_HV_DrvSystemStatus;3;Intel;Unsigned;0;1;0;0;7;;VtSig_VCU_HV_DrvSystemStatus;Status of driving system ( Highvoltage );VCU_HV_DrvSys_status;NoFixedValue;7;0;0;0;Cyclic
+VCU_HV_SystemStatus;3;Intel;Unsigned;0;1;0;0;7;;VtSig_VCU_HV_SystemStatus;High Voltage system status;VCU_HV_DrvSys_status;NoFixedValue;7;0;0;0;Cyclic
+VCU_HVbatSoc_charged;10;Intel;Unsigned;0;0.1;0;0;100;%;<none>;Estimated HVBattery SOC by current charging condition ( max chg.current, chg.time, …);VCU_HVsystem_status;NoFixedValue;1023;0;0;0;Cyclic
+VCU_HVbatSoc_charged_estStatus;2;Intel;Unsigned;0;1;0;0;3;;VtSig_VCU_HVbatSoc_charged_estStatus;VCU_HVbatSoc_charged_estStatus;VCU_HVsystem_status;NoFixedValue;3;0;0;0;Cyclic
+VCU_HVILErr;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_HVILErr;High Voltage Interlock loop circuit error;VCU_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+VCU_HVSystemReduced;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_HVSystemReduced;Reduced HV System Power;VCU_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+VCU_Limphome;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_Limphome;Speed regulation apply to e-drive system;VCU_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+VCU_MaxCurrentOfACCharging;6;Intel;Unsigned;0;1;0;0;63;A;<none>;Maximum Charging current of AC Charging;VCU_ChargingConnection;NoFixedValue;63;0;0;0;Cyclic
+VCU_MotorCoolantPumpErr;3;Intel;Unsigned;0;1;0;0;3;;VtSig_VCU_MotorCoolantPumpErr;- Drive Motor Coolant Pump A Errors: Circuit Open, Circuit Short To Ground, Circuit Short To Battery.;VCU_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+VCU_OBCTempHigh;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_OBCTempHigh;Warning is given by VCU when the temperature of OBC higher than the limitation;VCU_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+VCU_ParkLockNotEngaged;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_ParkLockNotEngaged;Warning given by VCU when park lock request is sent to E-Motor but actual park lock status from E-Motor is not engaged;VCU_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+VCU_PressBreakToEngageGear;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_PressBreakToEngageGear;Press Brake to engage gear hint;VCU_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+VCU_RemainingRange;12;Intel;Unsigned;0;0.5;0;0;2047.5;km;<none>;Km: Coverable distance with present energy in vehicle.;VCU_MHU_info;NoFixedValue;;0;0;0;Cyclic
+VCU_RunningRange_charged;12;Intel;Unsigned;0;0.5;0;0;2047.5;km;<none>;Estimated running range after charged by current charging condition ( max chg.current, chg.time, …);VCU_HVsystem_status;NoFixedValue;4095;0;0;0;Cyclic
+VCU_RunningRange_chrg_estSts;2;Intel;Unsigned;0;1;0;0;3;;VtSig_VCU_RunningRange_chrg_estSts;Status of estimation running range after charged by current charging condition ( max chg.current, chg.time, …);VCU_HVsystem_status;NoFixedValue;3;0;0;0;Cyclic
+VCU_TransmissionMalfunction;1;Intel;Unsigned;0;1;0;0;1;;VtSig_VCU_TransmissionMalfunction;Warning given by VCU when E-Motor send warning signals;VCU_WarnMsg;NoFixedValue;;0;0;0;Cyclic
+VCU_VehChg_STS;3;Intel;Unsigned;0;1;0;0;7;;VtSig_VCU_VehChg_STS;Vehicle Charging Status;VCU_MHU_info;NoFixedValue;7;0;0;0;Cyclic
+WEstTot_Nm;16;Intel;Unsigned;0;1;0;0;65535;Nm;<none>;Estimated Total Brake Torque of Wheels;IEB_01;NoFixedValue;65535;0;0;0;Cyclic

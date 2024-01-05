@@ -1,0 +1,103 @@
+
+// This is a template group file for StringTemplate V4, see www.stringtemplate.org.
+//
+// The templates describe the generation of the C macros, which are used by the code, the
+// Embedded Coder generates for CAN related in- and outports. The macros expand to the
+// expressions, which are required to access the signals and their status information in
+// the global CAN API.
+//
+// See template moduleDescription for more details.
+//
+// Copyright (C) 2017 FEV Europe GmbH (mailto:Peter.Vranken@FEV.com)
+//
+
+delimiters "<", ">"
+
+// Override the dictionary of basic type names in the template library:
+//   First import is the type map without a relative path. This makes StringTemplate look
+// for the file in the directory of the importing group file -- prior to searching along
+// the Java CLASSPATH. We can be sure that our local version has priority over any other
+// one in a library.
+import "lib/typeMap.stg"
+
+import "../../source/templates/lib/mod.stg" 
+import "../../source/templates/lib/codeGenC.stg"
+import "../../source/templates/lib/iterations.stg"
+import "../../source/templates/lib/symbols.stg"
+import "../../source/templates/lib/copyright.stg"
+import "../../source/templates/lib/dictionary.stg"
+
+moduleDescription() ::= <<
+ * Project: Tamkin (e-VCU)
+ * \file    cap_canApi.h
+ * \author  Sonuzun C., Culhacioglu F.
+ * \brief   Module for CAN Api functions
+ * \details	This file declares a set of CAN Api functions.
+ *          
+ *
+ * \copyright Copyright (c) 2023 FEV GmbH, Turkiye.
+>>
+
+// This is the root template; the complete C header file is rendered.
+canApi(cluster, info) ::= <<
+<! All code is shaped by overloading the regions of the template modC, see below !>
+<modH(["\n", moduleDescription()])>
+>>
+@modH.copyright() ::= "<copyright()>"
+
+// Configure the template mod.stg:modH, which shapes the list of included files.
+@modH.includes() ::= <<
+#include "Rte_ASW_SWC.h"
+#include "ASW_CAN_SWC.h"
+>>
+
+// Configure the template mod.stg:modH, which shapes the header file frame contents: Some
+// the compile configuration controlling defines plus many signal related defines.
+//   Here is a set of macros, which provide access to the global variables of the CAN API
+// to the EmbeddedCoder generated application software.
+@modH.defines() ::= <<
+#define CAP_MIN_MAX_SATURATION(phy,min,max)  (phy>max ? phy = max : (phy \< min? min:phy))
+#define CAP_CALC_PHY(raw,factor,offset) (float32)((float32)raw*factor + offset)
+#define CAP_CALC_RAW(phy,factor,offset) ((phy-(float32)offset)/(float32)factor) 
+>>
+
+// Configure the template mod.stg:modH; all global typedefs go here.
+@modH.typedefs() ::= <<
+>>
+
+
+// Configure the template mod.stg:modH; the declarations of all global data objects go here.
+@modH.data() ::= <<
+<iterateFramesOfCluster(cluster,"received","functionDeclarationRx")>
+<iterateFramesOfCluster(cluster,"sent","functionDeclarationTx")>
+>>
+
+
+// Configure the template mod.stg:modH; the declarations of all global functions go here.
+@modH.prototypes() ::= <<
+
+>>
+
+
+typedefCanMessageStruct(frame) ::= <<
+
+>>
+
+ExternDeclarations(frame) ::= <<
+
+>>
+functionDeclarationRx(frame)::=<<
+<if(!ExcludedMsg.(frame.name))>
+void cap_getRxSignals_<frame.name>_<(getBusEnum.(bus.name))>(void);<\n>
+<endif>
+>>
+
+functionDeclarationTx(frame)::=<<
+<if(!ExcludedMsg.(frame.name))>
+void cap_setTxSignals_<frame.name>_<(getBusEnum.(bus.name))>(void);<\n>
+<endif>
+>>
+
+
+is0 ::= ["0": true, default:false ]
+						

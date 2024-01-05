@@ -1,0 +1,43 @@
+
+
+delimiters "<", ">"
+
+
+isPTCAN ::= ["PT":true, default:false]
+isChaCAN ::= ["Chassis":true, default:false]
+isBA ::= ["BA":true, default:false]
+				
+					
+isL2TXFrameBA::=[	"VCU_ChargingConnection":true,
+					"VCU_Sts1":true,
+					
+					default:false]
+
+getBusEnum::=[
+				"PT_CAN_FD":"PT",
+				"Body_CAN_FD":"BCAN",
+				"CHS1":"CHS1",
+				"CHS2":"CHS2"
+]
+getType::=[
+		"uint8":"sint16",
+		"uint16":"sint32"
+		]
+getFloatVal::=[
+"4.294967295E9":true,
+default: false
+]
+
+		
+						
+						
+ExcludedMsg ::= [		
+						"Networkmanagement3_Status": true,
+						"VCU_XCP_Request": true,
+						"VCU_DiagResp": true,
+						"VCU_DiagReq": true,
+						"VCU_XCP_Response": true,
+						default: false]
+						
+						
+InitVal ::= [default : "0x00"]

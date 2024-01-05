@@ -1,0 +1,147 @@
+//
+// ComInterface_cbk_NODE1_c.stg
+// This is a template group file for StringTemplate V4, see www.stringtemplate.org.
+//
+// The templates describe the generation of the C macros, which are used by the code, the
+// Embedded Coder generates for CAN related in- and outports. The macros expand to the
+// expressions, which are required to access the signals and their status information in
+// the global CAN API.
+//
+// See template moduleDescription for more details.
+//
+// Copyright (C) 2017 FEV Europe GmbH (mailto:Peter.Vranken@FEV.com)
+//
+
+delimiters "<", ">"
+
+// Override the dictionary of basic type names in the template library:
+//   First import is the type map without a relative path. This makes StringTemplate look
+// for the file in the directory of the importing group file -- prior to searching along
+// the Java CLASSPATH. We can be sure that our local version has priority over any other
+// one in a library.
+import "lib/typeMap.stg"
+import "lib/exceptional.stg"
+import "lib/mod.stg"
+import "lib/codeGenC.stg"
+import "lib/iterations.stg"
+import "lib/symbols.stg"
+import "lib/copyright.stg"
+import "lib/dictionary.stg"
+import "lib/CANTypeDict.stg"
+
+moduleDescription() ::= <<
+ * Project: Tamkin (e-VCU)
+ * \file    cap_canApi.c
+ * \author  Sonuzun C. , Culhacioglu F.
+ * \brief   Module for CAN Api functions
+ * \details	This file defines a set of CAN Api functions.
+ *          
+ *
+ * \copyright Copyright (c) 2023 FEV GmbH, Germany.
+>>
+
+// This is the root template; the complete C header file is rendered.
+canApi(cluster, info) ::= <<
+<! All code is shaped by overloading the regions of the template modC, see below !>
+<modC(["\n", moduleDescription()])>
+>>
+@modC.copyright() ::= "<copyright()>"
+@modH.copyright() ::= "<copyright()>"
+
+// Configure the template mod.stg:modC, which shapes the list of included files.
+@modC.includes() ::= <<
+
+
+>>
+// Configure the template mod.stg:modC, which shapes the file frame contents: The local
+// defines.
+@modC.defines() ::= <<
+>>
+// Configure the template mod.stg:modC; all global data objects go here.
+@modC.data() ::= <<
+#define CPU1_START_SEC_VAR_CLEARED_UNSPECIFIED
+#include "MemMap.h"
+	uint32 tempAswIn_SecOcDataP2V_VEH1;
+	uint32 tempAswIn_SecOcDataP2V_VEH2;
+	uint32 tempAswOut_SecOcDataP2V_VEH1;
+	uint32 tempAswOut_SecOcDataP2V_VEH2;
+	uint64 Ret_SecOcDataP2V_VEH_phy_C;
+	const volatile uint64 SecOcDataP2V_VEH_phy_C = 18446744073709551615;
+<iterateFramesOfCluster(cluster,"both","DefineCanMessageStructs")><\n>
+#define CPU1_STOP_SEC_VAR_CLEARED_UNSPECIFIED
+#include "MemMap.h"
+
+#define CPU1_START_SEC_CONST_32
+#include "MemMap.h"
+<iterateSignalsOfCluster(cluster,"normal", "both","DefineFactorOffsetCals")><\n>
+#define CPU1_STOP_SEC_CONST_32
+#include "MemMap.h"
+>>
+
+// Configure the template mod.stg:modH, which shapes the list of included files.
+@modH.includes() ::= <<
+>>
+
+
+// Configure the template mod.stg:modH, which shapes the header file frame contents: S  ome
+// the compile configuration controlling defines plus many signal related defines.
+//   Here is a set of macros, which provide access to the global variables of the CAN API
+// to the EmbeddedCoder generated application software.
+@modH.defines() ::= <<
+
+>>
+
+
+
+// Configure the template mod.stg:modH; all global typedefs go here.
+@modH.typedefs() ::= <<
+>>
+
+
+// Configure the template mod.stg:modH; the declarations of all global data objects go here.
+@modH.data() ::= <<
+
+>>
+
+
+// Configure the template mod.stg:modH; the declarations of all global functions go here.
+@modH.prototypes() ::= <<
+>>
+DefineCanMessageStructs(frame) ::= <<
+<if(!ExcludedMsg.(frame.name))>
+cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>_t cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>; <\n><\n>
+<endif>
+>>
+
+DefineFactorOffsetCals(signal, kind) ::= <<
+<if(!ExcludedMsg.(frame.name) && (!((is1.(signal.factor))&&(is0.(signal.offset)))))>
+const volatile float32 cap_<frame.name>_<signal.name>_<(getBusEnum.(bus.name))>_Offset_C = 0.0f; /*DBC: <signal.offset> */
+const volatile float32 cap_<frame.name>_<signal.name>_<(getBusEnum.(bus.name))>_Factor_C = 1.0f;/*DBC: <signal.factor> */
+<endif>
+>>
+
+
+getReceivedInterfaceName(signal,kind)::=<<
+Rte_Read_RPort_<signal.name>_<frame.name>_<(getBusEnum.(bus.name))>_<signal.name>_<frame.name>_<(getBusEnum.(bus.name))>
+>> 
+
+getSentInterfaceName(signal,kind)::=<<
+Rte_Write_PPort_<signal.name>_<frame.name>_<(getBusEnum.(bus.name))>_<signal.name>_<frame.name>_<(getBusEnum.(bus.name))>
+>>
+
+
+
+is1 ::=["1.0": true , default:false]
+is0 ::= ["0.0": true, default:false ]
+is10 ::= ["10": true, default:false ]
+is20 ::= ["20": true, default:false ]
+is40 ::= ["40": true, default:false ]
+is50 ::= ["50": true, default:false ]
+is100 ::= ["100": true, default:false ]
+is200 ::= ["200": true, default:false ]
+is250 ::= ["250": true, default:false ]
+is500 ::= ["500": true, default:false ]
+is5000 ::= ["5000": true, default:false ]
+is1000 ::= ["1000": true, default:false ]
+isUndefinedCycleTime ::= ["0":false, "10":false, "20":false, "50":false, "100":false, "200":false, "250":false, "500":false, "1000":false, default:true]
+strcmpCyclic ::= ["Cycle": true,"Cyclic": true, default: false]

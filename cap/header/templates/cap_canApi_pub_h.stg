@@ -1,0 +1,227 @@
+
+// This is a template group file for StringTemplate V4, see www.stringtemplate.org.
+//
+// The templates describe the generation of the C macros, which are used by the code, the
+// Embedded Coder generates for CAN related in- and outports. The macros expand to the
+// expressions, which are required to access the signals and their status information in
+// the global CAN API.
+//
+// See template moduleDescription for more details.
+//
+// Copyright (C) 2017 FEV Europe GmbH (mailto:Peter.Vranken@FEV.com)
+//
+
+delimiters "<", ">"
+
+// Override the dictionary of basic type names in the template library:
+//   First import is the type map without a relative path. This makes StringTemplate look
+// for the file in the directory of the importing group file -- prior to searching along
+// the Java CLASSPATH. We can be sure that our local version has priority over any other
+// one in a library.
+import "../../source/templates/lib/typeMap.stg"
+import "../../source/templates/lib/exceptional.stg"
+import "../../source/templates/lib/mod.stg"
+import "../../source/templates/lib/codeGenC.stg"
+import "../../source/templates/lib/iterations.stg"
+import "../../source/templates/lib/symbols.stg"
+import "../../source/templates/lib/copyright.stg"
+import "../../source/templates/lib/dictionary.stg"
+import "../../source/templates/lib/CANTypeDict.stg"
+
+moduleDescription() ::= <<
+ * Project: Tamkin (e-VCU)
+ * \file    cap_canApi.h
+ * \author  Sonuzun C., Culhacioglu F.
+ * \brief   Module for CAN Api functions
+ * \details	This file declares a set of CAN Api functions.
+ *          
+ *
+ * \copyright Copyright (c) 2023 FEV GmbH, Türkiye.
+>>
+
+// This is the root template; the complete C header file is rendered.
+canApi(cluster, info) ::= <<
+<! All code is shaped by overloading the regions of the template modC, see below !>
+<modH(["\n", moduleDescription()])>
+>>
+
+@modC.copyright() ::= "<copyright()>"
+@modH.copyright() ::= "<copyright()>"
+
+// Configure the template mod.stg:modC, which shapes the list of included files.
+@modC.includes() ::= <<
+
+
+>>
+
+
+// Configure the template mod.stg:modC, which shapes the file frame contents: The local
+// defines.
+@modC.defines() ::= <<
+>>
+
+
+// Configure the template mod.stg:modC; all global data objects go here.
+@modC.data() ::= <<
+
+/*Function Definitions*/
+
+>>
+
+// Configure the template mod.stg:modH, which shapes the list of included files.
+@modH.includes() ::= <<
+#include "Platform_Types.h"
+>>
+
+
+// Configure the template mod.stg:modH, which shapes the header file frame contents: Some
+// the compile configuration controlling defines plus many signal related defines.
+//   Here is a set of macros, which provide access to the global variables of the CAN API
+// to the EmbeddedCoder generated application software.
+@modH.defines() ::= <<
+
+/*Get macros*/
+<iterateFramesOfCluster(cluster,"received","getMacrosDefinition")>
+/*Set Macros*/
+<iterateFramesOfCluster(cluster,"sent","setMacrosDefinition")>
+
+>>
+
+
+
+// Configure the template mod.stg:modH; all global typedefs go here.
+@modH.typedefs() ::= <<
+<iterateFramesOfCluster(cluster,"both","typedefCanMessageStruct")><\n>
+>>
+
+
+// Configure the template mod.stg:modH; the declarations of all global data objects go here.
+@modH.data() ::= <<
+extern	uint32 tempAswIn_SecOcDataP2V_VEH1;
+extern	uint32 tempAswIn_SecOcDataP2V_VEH2;
+extern	uint32 tempAswOut_SecOcDataP2V_VEH1;
+extern	uint32 tempAswOut_SecOcDataP2V_VEH2;
+extern	uint64 Ret_SecOcDataP2V_VEH_phy_C;
+<iterateFramesOfCluster(cluster,"both","ExternDeclarations")>
+<iterateSignalsOfCluster(cluster,"normal", "both","ExternCALDeclarations")><\n>
+extern const volatile uint64 SecOcDataP2V_VEH_phy_C;
+
+void cap_canRx_1ms(void);
+void cap_canRx_5ms(void);
+void cap_canRx_10ms(void);
+void cap_canRx_20ms(void);
+void cap_canRx_100ms(void);
+
+void cap_canTx_1ms(void);
+void cap_canTx_5ms(void);
+void cap_canTx_10ms(void);
+void cap_canTx_20ms(void);
+void cap_canTx_100ms(void);
+>>
+
+
+// Configure the template mod.stg:modH; the declarations of all global functions go here.
+@modH.prototypes() ::= <<
+
+
+>>
+typedefCanMessageStruct(frame) ::= <<
+<if(!ExcludedMsg.(frame.name))>
+/*<frame.id>*/<if(frame.isReceived)>/*ReceivedMsg */<else>/*SentMsg*/<endif>
+typedef struct cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>_tag {
+<if(!frame.isSent)>
+boolean bRxDataRdyFlg;
+boolean msg_tout; 
+boolean Rxcounter_err; 
+boolean Rxcrc_err; 
+boolean RxNever_received : TRUE;
+<iterateSignalsOfFrame(frame,"all","received","RxtypedefCanSignals")> <else>
+boolean CanBUS_st; 
+<iterateSignalsOfFrame(frame,"all","sent","TxtypedefCanSignals")><endif>
+uint8 raw_data[<frame.size>];
+}cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>_t;
+<\n>
+<endif>
+>>
+RxtypedefCanSignals(signal, kind) ::= <<
+<interfaceDataType.(getReceivedInterfaceName(signal,kind))> <signal.name>_phy; /*fact:<signal.factor>//offset:<signal.offset>  DBCType:<bt(signal.type)>*/
+<! <bt(signal.type)> <signal.name>_raw; !>
+>>
+
+TxtypedefCanSignals(signal, kind) ::= <<
+<interfaceDataType.(getSentInterfaceName(signal,kind))> <signal.name>_phy; /*fact:<signal.factor>//offset:<signal.offset>  DBCType:<bt(signal.type)>*/
+<! <bt(signal.type)> <signal.name>_raw; !>
+>>
+
+ExternDeclarations(frame) ::= <<
+<if(!ExcludedMsg.(frame.name))>
+extern cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>_t cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>;<\n>
+<endif>
+>>
+
+ExternCALDeclarations(signal, kind) ::= <<
+<if(!ExcludedMsg.(frame.name) && !((is1.(signal.factor))&&(is0.(signal.offset))))>
+extern const volatile float32 cap_<frame.name>_<signal.name>_<(getBusEnum.(bus.name))>_Offset_C; /*DBC: <signal.offset> */
+extern const volatile float32 cap_<frame.name>_<signal.name>_<(getBusEnum.(bus.name))>_Factor_C;/*DBC: <signal.factor> */
+<endif>
+>>
+
+getMacrosDefinition(frame)::=<<
+<if(!ExcludedMsg.(frame.name))>
+<iterateSignalsOfFrame(frame,"all","both","getVal")>
+<endif>
+>>
+setMacrosDefinition(frame)::=<<
+<if(!ExcludedMsg.(frame.name))>
+<iterateSignalsOfFrame(frame,"all","both","setVal")>
+<endif>
+>>
+getVal(signal,kind) ::=<<
+<if(!ExcludedMsg.(frame.name) && !((is1.(signal.factor))&&(is0.(signal.offset))))>
+#define get_<(getBusEnum.(bus.name))>_<frame.name>_<signal.name>() ((float32)cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.<signal.name>_phy <if(!((is1.(signal.factor))&&(is0.(signal.offset))))>* cap_<frame.name>_<signal.name>_<(getBusEnum.(bus.name))>_Factor_C + cap_<frame.name>_<signal.name>_<(getBusEnum.(bus.name))>_Offset_C<endif>)
+<else>
+#define get_<(getBusEnum.(bus.name))>_<frame.name>_<signal.name>() (cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.<signal.name>_phy <if(!((is1.(signal.factor))&&(is0.(signal.offset))))>* cap_<frame.name>_<signal.name>_<(getBusEnum.(bus.name))>_Factor_C + cap_<frame.name>_<signal.name>_<(getBusEnum.(bus.name))>_Offset_C<endif>)
+<endif>
+>>
+setVal(signal,kind)::=<<
+<if(!ExcludedMsg.(frame.name) && !((is1.(signal.factor))&&(is0.(signal.offset))))>
+#define set_<(getBusEnum.(bus.name))>_<frame.name>_<signal.name>(val) ((<interfaceDataType.(getSentInterfaceName(signal,kind))>)cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.<signal.name>_phy = ((val <if(!((is1.(signal.factor))&&(is0.(signal.offset))))>- cap_<frame.name>_<signal.name>_<(getBusEnum.(bus.name))>_Offset_C)/cap_<frame.name>_<signal.name>_<(getBusEnum.(bus.name))>_Factor_C<else>)<endif>))
+<else>
+#define set_<(getBusEnum.(bus.name))>_<frame.name>_<signal.name>(val) (cap_canApiMsg_<frame.name>_<(getBusEnum.(bus.name))>.<signal.name>_phy = ((val <if(!((is1.(signal.factor))&&(is0.(signal.offset))))>- cap_<frame.name>_<signal.name>_<(getBusEnum.(bus.name))>_Offset_C)/cap_<frame.name>_<signal.name>_<(getBusEnum.(bus.name))>_Factor_C<else>)<endif>))
+<endif>
+>>
+
+functionDeclarationRx(frame)::=<<
+<if(!ExcludedMsg.(frame.name))>
+void cap_getRxSignals_<frame.name>_<(getBusEnum.(bus.name))>(void);<\n>
+<endif>
+>>
+
+functionDeclarationTx(frame)::=<<
+<if(!ExcludedMsg.(frame.name))>
+void cap_setTxSignals_<frame.name>_<(getBusEnum.(bus.name))>(void);<\n>
+<endif>
+>>
+getReceivedInterfaceName(signal,kind)::=<<
+Rte_Read_RPort_<signal.name>_<frame.name>_<(getBusEnum.(bus.name))>_<signal.name>_<frame.name>_<(getBusEnum.(bus.name))>
+>> 
+
+getSentInterfaceName(signal,kind)::=<<
+Rte_Write_PPort_<signal.name>_<frame.name>_<(getBusEnum.(bus.name))>_<signal.name>_<frame.name>_<(getBusEnum.(bus.name))>
+>>
+
+		isPt::=["PT_CAN_FD":true, default:false]
+isBcan::=["Body_CAN_FD":true , default:false]
+is1 ::=["1.0": true , default:false]
+is0 ::= ["0.0": true, default:false ]
+is10 ::= ["10": true, default:false ]
+is20 ::= ["20": true, default:false ]
+is40 ::= ["40": true, default:false ]
+is50 ::= ["50": true, default:false ]
+is100 ::= ["100": true, default:false ]
+is200 ::= ["200": true, default:false ]
+is250 ::= ["250": true, default:false ]
+is500 ::= ["500": true, default:false ]
+is5000 ::= ["5000": true, default:false ]
+is1000 ::= ["1000": true, default:false ]
+isUndefinedCycleTime ::= ["0":false, "10":false, "20":false, "50":false, "100":false, "200":false, "250":false, "500":false, "1000":false, default:true]				

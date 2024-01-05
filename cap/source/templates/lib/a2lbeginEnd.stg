@@ -1,0 +1,74 @@
+///
+// @file typeMap.stg
+// A translation table that supports environment dependent names of the
+// basic C types. Any type reference in the application templates should be writen like
+// {@code <bt("uint8")>}, where the argument of template bt can either be a string or a
+// type designation from the rendered data model.
+//
+// Copyright (C) 2015 Peter Vranken (mailto:Peter_Vranken@Yahoo.de)
+//
+// This program is free software: you can redistribute it and/or modify it
+// under the terms of the GNU Lesser General Public License as published by the
+// Free Software Foundation, either version 3 of the License, or any later
+// version.
+//
+// This program is distributed in the hope that it will be useful, but WITHOUT
+// ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+// FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License
+// for more details.
+//
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+delimiters "<", ">"
+
+// Most embedded environments have their own naming of the basic types; the standard C
+// names are barely used. This is supported by a simple translation table.
+A2lBegins()::=<<
+/* a2ltool 1.4.3 */
+ASAP2_VERSION 1 60
+/begin PROJECT Tamkin "XCP on CAN"
+
+  /begin HEADER ""
+    VERSION "1.0.0.0"
+    PROJECT_NO Tamkin
+  /end HEADER
+
+	/begin MODULE Tamkin ""
+
+    
+
+
+>>
+
+
+A2lEnds()::=<<
+	/end MODULE
+
+
+/end PROJECT
+>>
+
+sigTypemax ::= [			"uint8": "255",
+							"uint16":"65535",
+							"uint32":"4294967295",
+							"boolean":"1",
+							"sint8":"127",
+							"sint16":"32767",
+							"sint32":"2147483647",
+							"sint64":"9223372036854775807"
+							
+						]
+						
+sigTypemin ::= [			"uint8": "0",
+							"uint16":"0",
+							"uint32":"0",
+							"boolean":"0",
+							"sint8":"-128",
+							"sint16":"-32768",
+							"sint32":"-2147483648",
+							"sint32":"-9223372036854775808"
+						]
+// To shorten the call of the translation table into C types we provide a convenience
+// template. Use expressions like <bt("uint16_t")> anywhere in your templates, where you refer
+// to base types.

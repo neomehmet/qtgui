@@ -1,0 +1,50 @@
+// This is a template group file for StringTemplate V4, see www.stringtemplate.org.
+// TODO Document what this template file is intended for
+// Copyright (C) 2017 Peter Vranken (mailto:Peter_Vranken@Yahoo.de)
+// This program is free software: you can redistribute it and/or modify it
+// under the terms of the GNU Lesser General Public License as published by the
+// Free Software Foundation, either version 3 of the License, or any later
+// version.
+// This program is distributed in the hope that it will be useful, but WITHOUT
+// ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+// FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License
+// for more details.
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program. If not, see 
+// This template selects the only worksheet in the workbook for rendering. As long as this
+// suffices the template can be used without change. You would need to change this template
+// otherwise; you could e.g. address to particular worksheets by name. See documentation of
+// class cluster in the data model describing Javadoc.<http://www.gnu.org/licenses/>.
+
+
+delimiters "<",">"
+
+renderTable(cluster,info) ::= <<
+<renderSheet(cluster.CILUserManualv07COMInterface.BCAN, cluster.CILUserManualv07COMInterface.PCAN, cluster.CILUserManualv07COMInterface.CHS1, cluster.CILUserManualv07COMInterface.CHS2)>
+>>
+
+renderSheet(BCAN, PCAN, CHS1, CHS2) ::= <<
+
+delimiters "<", ">"
+
+interfaceDataType ::= [
+<BCAN.rowAry:dataTypeDictionary()> <\\>
+<PCAN.rowAry:dataTypeDictionary()> <\\>
+<CHS1.rowAry:dataTypeDictionary()> <\\>
+<CHS2.rowAry:dataTypeDictionary()> <\\>
+default   : "Invalid Interface"
+]
+
+
+/*
+* [EOF]
+*/
+>>
+
+
+
+
+dataTypeDictionary(row) ::= <<
+"<row.RTEAPI>" : "<row.DataType>",
+
+>>
