@@ -240,7 +240,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             path = dialog.getOpenFileName(None, "FD Open File", "", "(*.xlsx)")
             path = self.get_file_name_and_path_as_str(path)
             df = self.fd_open_excel_as_pandas_frame(path)
-            self.add_row_to_tree_wigdet_fd_signals(df)
+            self.add_row_to_tree_wigdet_dbc_signals(
+                self.treeWidget_fd_signals,
+                "fd",
+                df,
+                self.get_column_name_to_import_widget(df),
+                "SafCIH_",
+            )
             self.statusBar().setStyleSheet("background-color : lightgreen")
             self.statusBar().showMessage(" Info : File Exprolere is Opened.")
             return
@@ -337,9 +343,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             path = dialog.getOpenFileName(None, "Open File", "", "(*.xlsx)")
             path = self.get_file_name_and_path_as_str(path)
             df = self.open_excel_dbc_as_pandas_frame(path)
-            column_name = self.get_column_name_to_import(df)
+            column_name = self.get_column_name_to_import_widget(df)
             self.add_row_to_tree_wigdet_dbc_signals(
-                self.treeWidget_dbc_signals, df, column_name
+                self.treeWidget_dbc_signals, "dbc", df, column_name, None
             )
             self.statusBar().setStyleSheet("background-color : lightgreen")
             self.statusBar().showMessage(" Info : File Exprolere is Opened.")
@@ -381,18 +387,35 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             return selected_column
         return None
 
-    def add_row_to_tree_wigdet_dbc_signals(self, treeWidget, df, column_name):
-        data_dbc = df.to_dict(orient="records")
+    def add_row_to_tree_wigdet_dbc_signals(
+        self, treeWidget, store_name, df, column_name, prefix
+    ):
+        if store_name.lower() == "dbc" :
+            self.dbc = df.to_dict(orient="records")
+        else :
+            self.fd = df.to_dict(orient="records")
         order = 0
-        self.dbc = df.to_dict(orient="records")
+        data_store = df.to_dict(orient="records")
         treeWidget.clear()
-        for row in data_dbc:
-            item_0 = QtWidgets.QTreeWidgetItem(treeWidget)
-            item_0.setText(order, row[column_name])
-            treeWidget.topLevelItem(order).setText(0, row[column_name])
-            order += 1
-        treeWidget.setSortingEnabled(True)
-        return
+        if prefix != None:
+            for row in data_store:
+                if prefix in row[column_name]:
+                    item_0 = QtWidgets.QTreeWidgetItem(self.treeWidget_fd_signals)
+                    item_0.setText(order, row[column_name])
+                    self.treeWidget_fd_signals.topLevelItem(order).setText(
+                        0, row[column_name]
+                    )
+                    order += 1
+            self.treeWidget_fd_signals.setSortingEnabled(True)
+            return
+        else:
+            for row in data_store:
+                item_0 = QtWidgets.QTreeWidgetItem(treeWidget)
+                item_0.setText(order, row[column_name])
+                treeWidget.topLevelItem(order).setText(0, row[column_name])
+                order += 1
+            treeWidget.setSortingEnabled(True)
+            return
 
     def close_tab(self, index):
         tabs = self.tabWidget

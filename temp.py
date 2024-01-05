@@ -4,21 +4,27 @@ from PyQt5.QtWidgets import QFileDialog, QHeaderView, QInputDialog
 import pandas as pd
 
 
+class DataStore:
+    def __init__(self):
+        column_name = str()
+        store = {}
+        sheet_name = str()
+
+
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.setupUi(self)
         tabs = self.tabWidget
-        self.fd = {}
-        self.dbc = {}
-        self.sheet_name = None
+        self.fd = DataStore()
+        self.dbc = DataStore()
         self.confirmed_signals = list()
 
         tabs.tabCloseRequested.connect(self.close_tab)
         self.treeWidget_dbc_signals.itemDoubleClicked.connect(
             self.tree_item_double_clicked_add_signal
         )
-        self.treeWidget_dbc_signals.itemClicked.connect(self.dbc_item_describes)
+        self.treeWidget_dbc_signals.itemClicked.connect(self.signal_describes)
         self.listWidget_selected_signals.itemDoubleClicked.connect(
             self.list_item_double_clicked
         )
@@ -26,13 +32,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.treeWidget_fd_signals.itemDoubleClicked.connect(
             self.tree_item_double_clicked_add_signal
         )
-        self.treeWidget_fd_signals.itemClicked.connect(self.fd_item_describes)
-        self.listWidget_selected_signals.itemClicked.connect(self.signal_describes)
+        self.treeWidget_fd_signals.itemClicked.connect(self.signal_describes)
+        # self.listWidget_selected_signals.itemClicked.connect(self.signal_describes)
         self.listWidget_confirmed_signals.itemDoubleClicked.connect(
             self.confirmed_signal_remove
         )
-        self.pushButton_1_select_dbc.clicked.connect(self.dbc_open_explorer)
-        self.pushButton_2_select_fd.clicked.connect(self.fd_open_explorer)
+        self.pushButton_1_select_dbc.clicked.connect(self.open_explorer_dbc)
+        self.pushButton_2_select_fd.clicked.connect(self.open_explorer_fd)
         self.pushButton_3_confirm_specs.clicked.connect(self.confirm_specs)
         self.pushButton_4_generate.clicked.connect(self.generate_code)
 
@@ -40,9 +46,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         item = self.listWidget_confirmed_signals.takeItem(
             self.listWidget_confirmed_signals.currentRow()
         )
-        for i in range(len(self.confirmed_signals[:])):
+        for i in range(len(self.confirmed_signals)):
             try:
-                if self.confirmed_signals[i]["Name"] in item.text():
+                if self.confirmed_signals[i]["Name frame"] in item.text():
                     self.confirmed_signals.pop(i)
                     self.statusBar().setStyleSheet("background-color : lightgreen ")
                     self.statusBar().showMessage("info : Signal removed")
@@ -50,15 +56,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             except Exception as err:
                 self.statusBar().setStyleSheet("background-color : crimson ")
                 self.statusBar().showMessage("exception occured : signal may not in fd")
-            try:
-                if self.confirmed_signals[i]["Signal Name"] in item.text():
-                    self.confirmed_signals.pop(i)
-                    self.statusBar().setStyleSheet("background-color : lightgreen ")
-                    self.statusBar().showMessage("info : Signal removed")
-                    return
-            except Exception as err:
-                self.statusBar().setStyleSheet("background-color : crimson ")
-                self.statusBar().showMessage("exception occured :" + str(err))
 
     def generate_code(self):
         pass
@@ -86,7 +83,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     signal["factor frame"] = self.lineEdit_4_factor.text()
 
                     self.confirmed_signals.append(signal)
-                    self.add_item_to_confirmed_signals_widget(item)
+                    self.add_item_to_confirmed_signals_widget(item,signal["Name frame"])
 
             self.listWidget_selected_signals.clear()
             # frame ve sinyaller generate halini alıp selected widgetindan silindi
@@ -95,7 +92,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.statusBar().setStyleSheet("background-color : purple")
             self.statusBar().showMessage(str(e))
 
-    def add_item_to_confirmed_signals_widget(self, item):
+    def add_item_to_confirmed_signals_widget(self, item, signal_name):
         """Adding a new signal to the list widget"""
         signal_selected_or_not = True
         # did the signal selected before it controls below
@@ -103,10 +100,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             selected_signal = self.listWidget_confirmed_signals.item(i)
             if selected_signal.text() == item.text():
                 signal_selected_or_not = (
-                    False  # when signal selected expression equals fals
+                    False  # when signal selected expression equals FALSE
                 )
-        if signal_selected_or_not:  # if sigal doesnt selected
-            self.listWidget_confirmed_signals.addItem(item.text())
+        if (
+            signal_selected_or_not
+        ):  # if sigal doesnt selected. no signal in the listwidget_selected
+            self.listWidget_confirmed_signals.addItem(signal_name )
             self.statusBar().setStyleSheet("background-color : lightgreen")
             self.statusBar().showMessage("info : Signal have been selected succesfully")
             return
@@ -116,12 +115,18 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             return
 
     def get_signal_from_dictionaries(self, signal_name):
-        for signal in self.fd:
-            if signal["Name"] == signal_name:
-                return signal
-        for signal in self.dbc:
-            if signal["Signal Name"] == signal_name:
-                return signal
+        try:
+            for signal in self.fd.store:
+                if signal[self.fd.column_name] == signal_name:
+                    return signal
+        except:
+            pass  # no signal in fd.store
+        try:
+            for signal in self.dbc.store:
+                if signal[self.dbc.column_name] == signal_name:
+                    return signal
+        except:
+            pass  # no signal in dbc.store
         return None
 
     def signal_describes(self, item):
@@ -130,38 +135,43 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         header.setSectionResizeMode(1, QHeaderView.ResizeToContents)
         header.setSectionResizeMode(2, QHeaderView.ResizeToContents)
         header.setMinimumSectionSize(20)
+        self.describe_signal_in_treewidget(item)
+        # self.describe_list(item)
+        return
+
+    def describe_signal_in_treewidget(self, item):
         try:
-            for row in self.dbc:
-                if "Signal Name" in row:
-                    if row["Signal Name"] == item.text():
-                        item = self.tableWidget_display_signals.item(1, 0)
-                        item.setText(str(row["Signal Name"]))
-                        item = self.tableWidget_display_signals.item(1, 1)
-                        item.setText(str(row["Description"]))
-                        item = self.tableWidget_display_signals.item(1, 2)
-                        item.setText(str(row["Min"]))
-                        item = self.tableWidget_display_signals.item(1, 3)
-                        item.setText(str(row["Max"]))
-                        item = self.tableWidget_display_signals.item(1, 4)
-                        if "Offset" in row:
-                            item.setText(str(row["Offset"]))
-                            item = self.tableWidget_display_signals.item(0, 5)
-                        else:
-                            item.setText("None")
-                            item = self.tableWidget_display_signals.item(0, 5)
-                        return
-                else:
-                    break
-            for row in self.fd:
-                if row["Name"] == (item.text()):
-                    item = self.tableWidget_display_signals.item(0, 0)
-                    item.setText(str(row["Name"]))
-                    item = self.tableWidget_display_signals.item(0, 1)
-                    item.setText(str(row["Description"]))
-                    item = self.tableWidget_display_signals.item(0, 2)
-                    item.setText(str(row["Min"]))
-                    item = self.tableWidget_display_signals.item(0, 3)
-                    item.setText(str(row["Max"]))
+            for row in self.dbc.store:
+                if row[self.dbc.column_name] == (item.text(0)):
+                    self.tableWidget_display_signals.item(1, 0).setText(
+                        str(row[self.dbc.column_name])
+                    )
+                    self.tableWidget_display_signals.item(1, 1).setText(
+                        str(row["Description"])
+                    )
+                    self.tableWidget_display_signals.item(1, 2).setText(str(row["Min"]))
+                    self.tableWidget_display_signals.item(1, 3).setText(str(row["Max"]))
+                    item = self.tableWidget_display_signals.item(1, 4)
+                    if "Offset" in row:
+                        item.setText(str(row["Offset"]))
+                        item = self.tableWidget_display_signals.item(0, 5)
+                    else:
+                        item.setText("None")
+                        item = self.tableWidget_display_signals.item(0, 5)
+                    return
+        except Exception as e:
+            pass  # if signal other is in other excell
+        try:
+            for row in self.fd.store:
+                if row[self.fd.column_name] == (item.text(0)):
+                    self.tableWidget_display_signals.item(0, 0).setText(
+                        str(row[self.fd.column_name])
+                    )
+                    self.tableWidget_display_signals.item(0, 1).setText(
+                        str(row["Description"])
+                    )
+                    self.tableWidget_display_signals.item(0, 2).setText(str(row["Min"]))
+                    self.tableWidget_display_signals.item(0, 3).setText(str(row["Max"]))
                     item = self.tableWidget_display_signals.item(0, 4)
                     if "Offset" in row:
                         item.setText(str(row["Offset"]))
@@ -172,79 +182,20 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                         item = self.tableWidget_display_signals.item(0, 5)
                     return
         except Exception as e:
-            pass
-        return
+            pass  # print("if signal does not exist")
 
-    def fd_item_describes(self, item):
-        header = self.tableWidget_display_signals.horizontalHeader()
-        header.setSectionResizeMode(0, QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(1, QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(2, QHeaderView.ResizeToContents)
-        header.setMinimumSectionSize(20)
-
-        signal_name = item.text(0)
-        try:
-            for row in self.fd:
-                if row["Name"] == signal_name:
-                    item = self.tableWidget_display_signals.item(0, 0)
-                    item.setText(str(signal_name))
-                    item = self.tableWidget_display_signals.item(0, 1)
-                    item.setText(str(row["Description"]))
-                    item = self.tableWidget_display_signals.item(0, 2)
-                    item.setText(str(row["Min"]))
-                    item = self.tableWidget_display_signals.item(0, 3)
-                    item.setText(str(row["Max"]))
-                    item = self.tableWidget_display_signals.item(0, 5)
-                    item.setText(str(row["InitValue"]))
-                    return
-            return
-        except Exception as e:
-            print(e)
-
-    def dbc_item_describes(self, item):
-        header = self.tableWidget_display_signals.horizontalHeader()
-        header.setSectionResizeMode(0, QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(1, QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(2, QHeaderView.ResizeToContents)
-        header.setMinimumSectionSize(20)
-        try:
-            for row in self.dbc:
-                if "Signal Name" in row:
-                    if row["Signal Name"] == item.text(0):
-                        item = self.tableWidget_display_signals.item(1, 0)
-                        item.setText(str(row["Signal Name"]))
-                        item = self.tableWidget_display_signals.item(1, 1)
-                        item.setText(str(row["Description"]))
-                        item = self.tableWidget_display_signals.item(1, 2)
-                        item.setText(str(row["Min"]))
-                        item = self.tableWidget_display_signals.item(1, 3)
-                        item.setText(str(row["Max"]))
-                        item = self.tableWidget_display_signals.item(1, 4)
-                        if "Offset" in row:
-                            item.setText(str(row["Offset"]))
-                            item = self.tableWidget_display_signals.item(1, 5)
-                        else:
-                            item.setText("None")
-                            item = self.tableWidget_display_signals.item(1, 5)
-                        return
-                else:
-                    break
-        except Exception as e:
-            print(e)
-
-    def fd_open_explorer(self):
+    def open_explorer_fd(self):
         try:
             dialog = QFileDialog()
             dialog.setViewMode(QFileDialog.Detail)  # Set view mode to Detail
             dialog.setNameFilter(("FD excell (*.xlxs)"))
             path = dialog.getOpenFileName(None, "FD Open File", "", "(*.xlsx)")
-            path = self.get_file_name_and_path_as_str(path)
-            df = self.fd_open_excel_as_pandas_frame(path)
-            self.add_row_to_tree_wigdet_dbc_signals(
+            df = self.open_excel_as_pandas_frame(path)
+            self.add_row_to_tree_wigdet_signals(
                 self.treeWidget_fd_signals,
                 "fd",
                 df,
-                self.get_column_name_to_import(df),
+                self.get_column_name_to_import_widget(df, self.fd),
                 "SafCIH_",
             )
             self.statusBar().setStyleSheet("background-color : lightgreen")
@@ -256,30 +207,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 "Error : An error occurred when the file was openning"
             )
             print(e)
-
-    def fd_open_excel_as_pandas_frame(self, file_path):
-        try:
-            temp = pd.ExcelFile(file_path)
-            self.sheet_name = self.get_sheet_name(temp.sheet_names)
-            df = pd.read_excel(file_path, self.sheet_name)
-            return df
-        except Exception as e:
-            print("hata :", e)
-            return
-
-    def add_row_to_tree_wigdet_fd_signals(self, df):
-        data_fd = df.to_dict(orient="records")
-        order = 0
-        self.fd = data_fd
-        self.treeWidget_fd_signals.clear()
-        for row in data_fd:
-            if "SafCIH" in row["Name"]:
-                item_0 = QtWidgets.QTreeWidgetItem(self.treeWidget_fd_signals)
-                item_0.setText(order, row["Name"])
-                self.treeWidget_fd_signals.topLevelItem(order).setText(0, row["Name"])
-                order += 1
-        self.treeWidget_fd_signals.setSortingEnabled(True)
-        return
 
     def list_item_double_clicked(self, item):
         event = QtWidgets.QApplication.mouseButtons()
@@ -326,26 +253,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.statusBar().setStyleSheet("background-color : coral")
                 return
 
-    def get_file_name_and_path_as_str(self, path):
-        path = "".join(path)
-        file_name = path.split("/")[-1]
-        file_name = file_name.replace("(*.xlsx)", "")
-        # print("\n iste file -->", file_name, "<--", file_name)
-        path = path.replace("(*.xlsx)", "")
-        # print("\n iste path -->", path, "<--")
-        return path
-
-    def dbc_open_explorer(self):
+    def open_explorer_dbc(self):
         try:
             dialog = QFileDialog()
             dialog.setViewMode(QFileDialog.Detail)  # Set view mode to Detail
             dialog.setNameFilter(("dbc excell (*.xlxs)"))
             path = dialog.getOpenFileName(None, "Open File", "", "(*.xlsx)")
-            path = self.get_file_name_and_path_as_str(path)
-            df = self.open_excel_dbc_as_pandas_frame(path)
-            column_name = self.get_column_name_to_import(df)
-            self.add_row_to_tree_wigdet_dbc_signals(
-                self.treeWidget_dbc_signals, "dbc", df, column_name, None
+            df = self.open_excel_as_pandas_frame(path)
+            self.add_row_to_tree_wigdet_signals(
+                self.treeWidget_dbc_signals,
+                "dbc",
+                df,
+                self.get_column_name_to_import_widget(df, self.dbc),
+                None,
             )
             self.statusBar().setStyleSheet("background-color : lightgreen")
             self.statusBar().showMessage(" Info : File Exprolere is Opened.")
@@ -357,11 +277,14 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             )
             return
 
-    def open_excel_dbc_as_pandas_frame(self, file_path):
+    def open_excel_as_pandas_frame(self, path):
         try:
-            # self.sheet_name = self.get_sheet_name(pd.ExcelFile(file_path).sheet_names)
+            path = "".join(path)
+            file_name = path.split("/")[-1]
+            file_name = file_name.replace("(*.xlsx)", "")
+            path = path.replace("(*.xlsx)", "")
             df = pd.read_excel(
-                file_path, self.get_sheet_name(pd.ExcelFile(file_path).sheet_names)
+                path, self.get_sheet_name_widget(pd.ExcelFile(path).sheet_names)
             )
             return df
         except Exception as e:
@@ -371,7 +294,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             )
             return
 
-    def get_sheet_name(self, sheet_names):
+    def get_sheet_name_widget(self, sheet_names):
         selected_sheet, ok = QInputDialog.getItem(
             None, "Select sheet", "sheet Names", sheet_names, 0, False
         )
@@ -379,21 +302,22 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             return selected_sheet
         return None
 
-    def get_column_name_to_import(self, df):
+    def get_column_name_to_import_widget(self, df, store_obj):
         selected_column, ok = QInputDialog.getItem(
             None, "Select Column", "columns", df.columns, 0, False
         )
         if ok:
+            store_obj.column_name = selected_column
             return selected_column
         return None
 
-    def add_row_to_tree_wigdet_dbc_signals(
+    def add_row_to_tree_wigdet_signals(
         self, treeWidget, store_name, df, column_name, prefix
     ):
-        if store_name.lower() == "dbc" :
-            self.dbc = df.to_dict(orient="records")
-        else :
-            self.fd = df.to_dict(orient="records")
+        if store_name.lower() == "dbc":
+            self.dbc.store = df.to_dict(orient="records")
+        else:
+            self.fd.store = df.to_dict(orient="records")
         order = 0
         data_store = df.to_dict(orient="records")
         treeWidget.clear()
