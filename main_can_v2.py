@@ -62,7 +62,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def confirm_specs(self):
         # selected signals get and find from dbc and fd dictionaries
-        # then customize specs adding then they put confirmed_signals list in
+        # then customize specs adding
+        # then they put confirmed_signals list in
         # then selected widget items remove
         # then customized signals add confirmed_signal widget
         try:
@@ -82,9 +83,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     signal["factor frame"] = self.lineEdit_4_factor.text()
 
                     self.confirmed_signals.append(signal)
-                    self.add_item_to_confirmed_signals_widget(
-                        item, signal["Name frame"]
-                    )
+                    self.add_item_to_confirmed_signals_widget(item,signal["Name frame"])
 
             self.listWidget_selected_signals.clear()
             # frame ve sinyaller generate halini alıp selected widgetindan silindi
@@ -106,7 +105,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         if (
             signal_selected_or_not
         ):  # if sigal doesnt selected. no signal in the listwidget_selected
-            self.listWidget_confirmed_signals.addItem(signal_name)
+            self.listWidget_confirmed_signals.addItem(signal_name )
             self.statusBar().setStyleSheet("background-color : lightgreen")
             self.statusBar().showMessage("info : Signal have been selected succesfully")
             return
@@ -271,7 +270,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.statusBar().setStyleSheet("background-color : lightgreen")
             self.statusBar().showMessage(" Info : File Exprolere is Opened.")
             return
-        except Exception as e:
+        except :
             self.statusBar().setStyleSheet("background-color : crimson")
             self.statusBar().showMessage(
                 "Error : An error occurred when the file was openning"
