@@ -2,6 +2,7 @@ from PyQt5 import QtWidgets, QtCore
 from can2 import Ui_MainWindow
 from PyQt5.QtWidgets import QFileDialog, QHeaderView, QInputDialog
 import ParseDbc
+#### bitslerde hata var mı bi bak
 
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -36,9 +37,21 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             item = self.treeWidget_dbc_signals.topLevelItem(row_number)
             self.listWidget_confirmed_signals.addItem(item.text(0))
         return
-
+    def write_file(self, header_file, signal_name, start_bit, stop_bit, length):
+            header_file.write(
+                "\n\t"
+                + "UINT32 "
+                + str(signal_name)
+                + "_"
+                + str(start_bit)  # Convert to string
+                + "_"
+                + str(stop_bit)  # Convert to string
+                + " : "
+                + str(length)
+                + " ;"
+            )
+            return
     def generate(self):
-        # file name fln alacağım
         header_name, ok = QInputDialog.getText(
             self, "Input Dialog", "Enter header file name:"
         )
@@ -72,52 +85,29 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                             if (prev_start_bit + prev_length) != int(
                                 signal["signal_start"]
                             ):
-                                reserved_bits = int(signal["signal_start"]) - prev_stop_bit
-                                f.write(
-                                    "\n\t"
-                                    + "UINT32 NoUsedBits"
-                                    + "_"
-                                    + str(prev_stop_bit+1)  # Convert to string
-                                    + "_"
-                                    + str(prev_stop_bit+reserved_bits-1)  # Convert to string
-                                    + " : "
-                                    + str(reserved_bits)
-                                    + " ;"
+                                reserved_bits = (
+                                    int(signal["signal_start"]) - prev_stop_bit - 1
                                 )
-                                print("\n\n signal name : " + signal["signal_name"])
-                                print(
-                                    " signal start: "
-                                    + signal["signal_start"]
-                                    + " signal stop: "
-                                    + str(stop_bit)
-                                    + " signal length: "
-                                    + signal["signal_length"]
+                                self.write_file(
+                                    f,
+                                    "NoUsedBits",
+                                    prev_stop_bit,
+                                    prev_stop_bit + reserved_bits,
+                                    reserved_bits,
                                 )
-                                print(
-                                    "prev start: "
-                                    + str(prev_start_bit)
-                                    + " prev stop: "
-                                    + str(prev_stop_bit)
-                                    + " prev length: "
-                                    + str(prev_length)
-                                )
-                                print("reserved bits : " + str(reserved_bits))
-                        f.write(
-                            "\n\t"
-                            + "UINT32 "
-                            + signal["signal_name"]
-                            + "_"
-                            + signal["signal_start"]  # Convert to string
-                            + "_"
-                            + str(stop_bit)  # Convert to string
-                            + " : "
-                            + signal["signal_length"]
-                            + " ;"
+                        self.write_file(
+                            f,
+                            signal["signal_name"],
+                            signal["signal_start"],
+                            stop_bit,
+                            signal["signal_length"],
                         )
-                        prev_stop_bit = int(stop_bit)
-                        prev_start_bit = int(signal["signal_start"])
-                        prev_length = int(signal["signal_length"])
-                        first_signal = False
+                        prev_stop_bit, prev_start_bit, prev_length, first_signal = (
+                            int(stop_bit),
+                            int(signal["signal_start"]),
+                            int(signal["signal_length"]),
+                            False,
+                        )
                     f.write("\n} " + class_name + " ;\n")
                 f.write("\n\n#endif  // FEV_VCU_DATA_H")
             self.statusBar().setStyleSheet("background-color : lightgreen")
@@ -125,10 +115,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.listWidget_confirmed_signals.clear()
             return
 
+    
+
     def confirmed_signal_remove(self):
         self.listWidget_confirmed_signals.takeItem(
             self.listWidget_confirmed_signals.currentRow()
         )
+        return
 
     def describes_signal(self):
         header = self.tableWidget_display_signals.horizontalHeader()

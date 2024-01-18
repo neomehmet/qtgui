@@ -1,0 +1,2411 @@
+{
+    "VCU_WarnMsg": {
+        "message_id": "881",
+        "message_name": "VCU_WarnMsg",
+        "signal_num": 21,
+        "signals": [
+            {
+                "signal_name": "CRC_VCU_WarnMsg",
+                "signal_start": "0",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALV_VCU_WarnMsg",
+                "signal_start": "8",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "VCU_GearPAtStationaryOnly",
+                "signal_start": "12",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_GearPNotPossible",
+                "signal_start": "13",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_PressBreakToEngageGear",
+                "signal_start": "14",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_CantChangeGear",
+                "signal_start": "15",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_MotorCoolantPumpErr",
+                "signal_start": "16",
+                "signal_length": "3",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "3"
+            },
+            {
+                "signal_name": "VCU_EmergencyShutdown",
+                "signal_start": "19",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_HeatLoopTempSensorErr",
+                "signal_start": "20",
+                "signal_length": "3",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "4"
+            },
+            {
+                "signal_name": "VCU_GearMalfunc",
+                "signal_start": "23",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_CoolingTempExceedLimit",
+                "signal_start": "24",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_TransmissionMalfunction",
+                "signal_start": "25",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_ParkLockNotEngaged",
+                "signal_start": "26",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_CoolantTempHigh",
+                "signal_start": "27",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_CheckDriveTrain",
+                "signal_start": "28",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_OBCTempHigh",
+                "signal_start": "29",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_DCDC_TempHigh",
+                "signal_start": "30",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_ChargingInletTempHigh",
+                "signal_start": "31",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_HVILErr",
+                "signal_start": "32",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_Limphome",
+                "signal_start": "33",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_HVSystemReduced",
+                "signal_start": "34",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            }
+        ]
+    },
+    "VCU_StatusDCDC": {
+        "message_id": "433",
+        "message_name": "VCU_StatusDCDC",
+        "signal_num": 7,
+        "signals": [
+            {
+                "signal_name": "CRC_VCU_StatusDCDC",
+                "signal_start": "0",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALV_VCU_StatusDCDC",
+                "signal_start": "8",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "DCDC_status",
+                "signal_start": "12",
+                "signal_length": "3",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "7"
+            },
+            {
+                "signal_name": "DCDC_maxCurrentOut",
+                "signal_start": "16",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "1",
+                "signal_min": "0",
+                "signal_max": "0"
+            },
+            {
+                "signal_name": "DCDC_iOutput",
+                "signal_start": "32",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "1",
+                "signal_min": "0",
+                "signal_max": "0"
+            },
+            {
+                "signal_name": "DCDC_vDCInput",
+                "signal_start": "48",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "0625",
+                "signal_min": "0",
+                "signal_max": "0"
+            },
+            {
+                "signal_name": "DCDC_vOutput",
+                "signal_start": "64",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "0625",
+                "signal_min": "0",
+                "signal_max": "0"
+            }
+        ]
+    },
+    "VCU_MHU_info": {
+        "message_id": "498",
+        "message_name": "VCU_MHU_info",
+        "signal_num": 9,
+        "signals": [
+            {
+                "signal_name": "CRC_VCU_MHU_info",
+                "signal_start": "0",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALV_VCU_MHU_info",
+                "signal_start": "8",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "VCU_CurPwrConsum",
+                "signal_start": "12",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "15"
+            },
+            {
+                "signal_name": "VCU_RemainingRange",
+                "signal_start": "16",
+                "signal_length": "12",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "5",
+                "signal_min": "0",
+                "signal_max": "0"
+            },
+            {
+                "signal_name": "VCU_ChgGun_Status",
+                "signal_start": "28",
+                "signal_length": "3",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "7"
+            },
+            {
+                "signal_name": "VCU_BattChargingStatus",
+                "signal_start": "31",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_VehChg_STS",
+                "signal_start": "32",
+                "signal_length": "3",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "7"
+            },
+            {
+                "signal_name": "VCU_ChgGunConnStatus",
+                "signal_start": "35",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_BattSOC",
+                "signal_start": "40",
+                "signal_length": "10",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "1",
+                "signal_min": "0",
+                "signal_max": "0"
+            }
+        ]
+    },
+    "VCU_HVsystem_status": {
+        "message_id": "151",
+        "message_name": "VCU_HVsystem_status",
+        "signal_num": 6,
+        "signals": [
+            {
+                "signal_name": "CRC_VCU_HVsystem_status",
+                "signal_start": "0",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALIV_VCU_HVsystem_status",
+                "signal_start": "8",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "VCU_RunningRange_chrg_estSts",
+                "signal_start": "12",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "3"
+            },
+            {
+                "signal_name": "VCU_HVbatSoc_charged_estStatus",
+                "signal_start": "14",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "3"
+            },
+            {
+                "signal_name": "VCU_RunningRange_charged",
+                "signal_start": "16",
+                "signal_length": "12",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "5",
+                "signal_min": "0",
+                "signal_max": "0"
+            },
+            {
+                "signal_name": "VCU_HVbatSoc_charged",
+                "signal_start": "32",
+                "signal_length": "10",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "1",
+                "signal_min": "0",
+                "signal_max": "0"
+            }
+        ]
+    },
+    "VCU_HV_DrvSys_status": {
+        "message_id": "273",
+        "message_name": "VCU_HV_DrvSys_status",
+        "signal_num": 10,
+        "signals": [
+            {
+                "signal_name": "CRC_VCU_HV_DrvSys_status",
+                "signal_start": "0",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALV_VCU_HV_DrvSys_bstatus",
+                "signal_start": "8",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "VCU_HV_SystemStatus",
+                "signal_start": "12",
+                "signal_length": "3",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "7"
+            },
+            {
+                "signal_name": "VCU_HV_DrvSystemStatus",
+                "signal_start": "16",
+                "signal_length": "3",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "7"
+            },
+            {
+                "signal_name": "VCU_ACT_Gear",
+                "signal_start": "20",
+                "signal_length": "3",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "7"
+            },
+            {
+                "signal_name": "VCU_ACT_GearValid",
+                "signal_start": "23",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_ACPD_Percent",
+                "signal_start": "24",
+                "signal_length": "12",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "0625",
+                "signal_min": "0",
+                "signal_max": "0"
+            },
+            {
+                "signal_name": "VCU_ACPD_Percent_Valid",
+                "signal_start": "36",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_ACT_DriveMode",
+                "signal_start": "40",
+                "signal_length": "3",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "7"
+            },
+            {
+                "signal_name": "VCU_ACT_DriveModeValid",
+                "signal_start": "43",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            }
+        ]
+    },
+    "VCU_ChargingConnection": {
+        "message_id": "277",
+        "message_name": "VCU_ChargingConnection",
+        "signal_num": 7,
+        "signals": [
+            {
+                "signal_name": "CRC_VCU_ChargingConnection",
+                "signal_start": "0",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALV_VCU_ChargingConnection",
+                "signal_start": "8",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "VCU_DCChgGunIn",
+                "signal_start": "12",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_AcChgGunIn",
+                "signal_start": "13",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "VCU_CPValue",
+                "signal_start": "16",
+                "signal_length": "7",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "100"
+            },
+            {
+                "signal_name": "VCU_ACChargingVoltage",
+                "signal_start": "24",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "VCU_MaxCurrentOfACCharging",
+                "signal_start": "32",
+                "signal_length": "6",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "63"
+            }
+        ]
+    },
+    "VCU_Batt_WarnMsg": {
+        "message_id": "882",
+        "message_name": "VCU_Batt_WarnMsg",
+        "signal_num": 18,
+        "signals": [
+            {
+                "signal_name": "CHSKM_VCU_Batt_WarnMsg",
+                "signal_start": "0",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALV_VCU_Batt_WarnMsg",
+                "signal_start": "8",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "BMS_PackTempSts",
+                "signal_start": "12",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "2"
+            },
+            {
+                "signal_name": "BMS_ThermalRunaway",
+                "signal_start": "14",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "BMS_CellTempErr",
+                "signal_start": "16",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "3"
+            },
+            {
+                "signal_name": "BMS_HVILErr",
+                "signal_start": "18",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "BMS_PackInsuErr",
+                "signal_start": "19",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "BMS_MalfunctionSts",
+                "signal_start": "20",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "BMS_LowBattery",
+                "signal_start": "21",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "2"
+            },
+            {
+                "signal_name": "BMS_FuseStatusErr",
+                "signal_start": "23",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "BMS_CellVoltErr",
+                "signal_start": "24",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "3"
+            },
+            {
+                "signal_name": "BMS_PackVolErr",
+                "signal_start": "26",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "2"
+            },
+            {
+                "signal_name": "BMS_PackOverCurrErr",
+                "signal_start": "28",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "BMS_Reserved_signal1",
+                "signal_start": "29",
+                "signal_length": "3",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "7"
+            },
+            {
+                "signal_name": "BMS_Reserved_signal2",
+                "signal_start": "32",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "BMS_Reserved_signal3",
+                "signal_start": "40",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "BMS_Reserved_signal4",
+                "signal_start": "48",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "BMS_Reserved_signal5",
+                "signal_start": "56",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            }
+        ]
+    },
+    "VCU_Batt_Info": {
+        "message_id": "514",
+        "message_name": "VCU_Batt_Info",
+        "signal_num": 8,
+        "signals": [
+            {
+                "signal_name": "CRC_VCU_Batt_Info",
+                "signal_start": "0",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALV_VCU_Batt_Info",
+                "signal_start": "8",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "BMS_PackCur",
+                "signal_start": "16",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "1",
+                "signal_min": "1500",
+                "signal_max": "1500"
+            },
+            {
+                "signal_name": "BMS_PackVoltage",
+                "signal_start": "32",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "1",
+                "signal_min": "0",
+                "signal_max": "0"
+            },
+            {
+                "signal_name": "BMS_PackTemp",
+                "signal_start": "48",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "40",
+                "signal_min": "40",
+                "signal_max": "215"
+            },
+            {
+                "signal_name": "BMS_RemainChargeTime",
+                "signal_start": "56",
+                "signal_length": "12",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1500"
+            },
+            {
+                "signal_name": "BMS_ChargingVoltage",
+                "signal_start": "72",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "1",
+                "signal_min": "0",
+                "signal_max": "0"
+            },
+            {
+                "signal_name": "BMS_ChargingCurrent",
+                "signal_start": "88",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "1",
+                "signal_min": "0",
+                "signal_max": "0"
+            }
+        ]
+    },
+    "STAT_ANHAENGER": {
+        "message_id": "632",
+        "message_name": "STAT_ANHAENGER",
+        "signal_num": 1,
+        "signals": [
+            {
+                "signal_name": "ST_TRAI",
+                "signal_start": "0",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "3"
+            }
+        ]
+    },
+    "ST_GWS": {
+        "message_id": "407",
+        "message_name": "ST_GWS",
+        "signal_num": 4,
+        "signals": [
+            {
+                "signal_name": "CRC_ST_GWS",
+                "signal_start": "0",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALIV_ST_GWS",
+                "signal_start": "8",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "OP_GWS",
+                "signal_start": "12",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "1",
+                "signal_max": "15"
+            },
+            {
+                "signal_name": "OP_GWS_PUBU_PKG",
+                "signal_start": "24",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "3"
+            }
+        ]
+    },
+    "SFA_SteerWheel_Info": {
+        "message_id": "88",
+        "message_name": "SFA_SteerWheel_Info",
+        "signal_num": 8,
+        "signals": [
+            {
+                "signal_name": "CRC_SFA_SteerWheel_Info",
+                "signal_start": "0",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALIV_SFA_SteerWheel_Info",
+                "signal_start": "8",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "SFA_SteerWheelTorque",
+                "signal_start": "16",
+                "signal_length": "12",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "02",
+                "signal_min": "0",
+                "signal_max": "0"
+            },
+            {
+                "signal_name": "SFA_SteerWheelAngleSpeed",
+                "signal_start": "32",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "4",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1020"
+            },
+            {
+                "signal_name": "SFA_SteerWheelAngle",
+                "signal_start": "40",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "02",
+                "signal_min": "0",
+                "signal_max": "0"
+            },
+            {
+                "signal_name": "SFA_WarningLamp",
+                "signal_start": "56",
+                "signal_length": "3",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "7"
+            },
+            {
+                "signal_name": "SFA_EmergencyRequest",
+                "signal_start": "59",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "3"
+            },
+            {
+                "signal_name": "SFA_CenteringStatus",
+                "signal_start": "61",
+                "signal_length": "3",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "7"
+            }
+        ]
+    },
+    "RELATIVZEIT": {
+        "message_id": "1090",
+        "message_name": "RELATIVZEIT",
+        "signal_num": 1,
+        "signals": [
+            {
+                "signal_name": "T_SEC_COU_REL",
+                "signal_start": "0",
+                "signal_length": "32",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "4294967295"
+            }
+        ]
+    },
+    "Networkmanagement3_Status": {
+        "message_id": "1296",
+        "message_name": "Networkmanagement3_Status",
+        "signal_num": 4,
+        "signals": [
+            {
+                "signal_name": "NM3ControlBitVector",
+                "signal_start": "0",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "64",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "NM3SenderECUId",
+                "signal_start": "8",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "NM3BasePartialNetworks",
+                "signal_start": "16",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "65535"
+            },
+            {
+                "signal_name": "NM3FunctionalPartialNetworks",
+                "signal_start": "32",
+                "signal_length": "32",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "4294967295"
+            }
+        ]
+    },
+    "KILOMETERSTAND": {
+        "message_id": "816",
+        "message_name": "KILOMETERSTAND",
+        "signal_num": 1,
+        "signals": [
+            {
+                "signal_name": "MILE_KM",
+                "signal_start": "0",
+                "signal_length": "24",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "16777215"
+            }
+        ]
+    },
+    "HighVoltageStorage200msNo1": {
+        "message_id": "1107",
+        "message_name": "HighVoltageStorage200msNo1",
+        "signal_num": 2,
+        "signals": [
+            {
+                "signal_name": "StatusServiceDisconnectionPlug",
+                "signal_start": "24",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "1",
+                "signal_max": "3"
+            },
+            {
+                "signal_name": "StsDisconnectingSwtHighVoltStorg",
+                "signal_start": "26",
+                "signal_length": "6",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "63"
+            }
+        ]
+    },
+    "HighVoltageStorage10msNo2": {
+        "message_id": "143",
+        "message_name": "HighVoltageStorage10msNo2",
+        "signal_num": 3,
+        "signals": [
+            {
+                "signal_name": "CRC_HighVoltageStorage10msNo2",
+                "signal_start": "256",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "65535"
+            },
+            {
+                "signal_name": "ALIV_HighVoltageStorage10msNo2",
+                "signal_start": "272",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "254"
+            },
+            {
+                "signal_name": "ActualValueVoltageLinkVerified",
+                "signal_start": "296",
+                "signal_length": "12",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "25",
+                "signal_min": "0",
+                "signal_max": "0"
+            }
+        ]
+    },
+    "FZZSTD": {
+        "message_id": "630",
+        "message_name": "FZZSTD",
+        "signal_num": 2,
+        "signals": [
+            {
+                "signal_name": "ST_ENERG_FZM",
+                "signal_start": "16",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "15"
+            },
+            {
+                "signal_name": "ST_ILK_ERRM_FZM",
+                "signal_start": "56",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "3"
+            }
+        ]
+    },
+    "FZU_ChargingControl": {
+        "message_id": "451",
+        "message_name": "FZU_ChargingControl",
+        "signal_num": 1,
+        "signals": [
+            {
+                "signal_name": "FZU_ChargingStopReq",
+                "signal_start": "0",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "3"
+            }
+        ]
+    },
+    "FAHRGESTELLNUMMER": {
+        "message_id": "896",
+        "message_name": "FAHRGESTELLNUMMER",
+        "signal_num": 7,
+        "signals": [
+            {
+                "signal_name": "NO_VECH_1",
+                "signal_start": "0",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "NO_VECH_2",
+                "signal_start": "8",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "NO_VECH_3",
+                "signal_start": "16",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "NO_VECH_4",
+                "signal_start": "24",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "NO_VECH_5",
+                "signal_start": "32",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "NO_VECH_6",
+                "signal_start": "40",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "NO_VECH_7",
+                "signal_start": "48",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            }
+        ]
+    },
+    "ERRM_BN_U": {
+        "message_id": "146",
+        "message_name": "ERRM_BN_U",
+        "signal_num": 1,
+        "signals": [
+            {
+                "signal_name": "CTR_ERRM_BN_U",
+                "signal_start": "0",
+                "signal_length": "6",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "63"
+            }
+        ]
+    },
+    "DT_DISP_GRDT": {
+        "message_id": "1021",
+        "message_name": "DT_DISP_GRDT",
+        "signal_num": 5,
+        "signals": [
+            {
+                "signal_name": "CRC_DT_DISP_GRDT",
+                "signal_start": "0",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALIV_DT_DISP_GRDT",
+                "signal_start": "8",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "DISP_PRG_GRB",
+                "signal_start": "16",
+                "signal_length": "3",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "7"
+            },
+            {
+                "signal_name": "DISP_PO_IDC_GRB",
+                "signal_start": "19",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "3"
+            },
+            {
+                "signal_name": "DISP_PO_GRB",
+                "signal_start": "21",
+                "signal_length": "3",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "7"
+            }
+        ]
+    },
+    "CON_VEH": {
+        "message_id": "60",
+        "message_name": "CON_VEH",
+        "signal_num": 6,
+        "signals": [
+            {
+                "signal_name": "CRC_CON_VEH",
+                "signal_start": "0",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALIV_CON_VEH",
+                "signal_start": "8",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "CTR_BS_PRTNT",
+                "signal_start": "12",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "15"
+            },
+            {
+                "signal_name": "CTR_FKTN_PRTNT",
+                "signal_start": "16",
+                "signal_length": "32",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "4294967295"
+            },
+            {
+                "signal_name": "ST_CON_VEH",
+                "signal_start": "48",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "15"
+            },
+            {
+                "signal_name": "QU_ST_CON_VEH",
+                "signal_start": "52",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "2",
+                "signal_max": "15"
+            }
+        ]
+    },
+    "CombinedChargerUnit10msNo2": {
+        "message_id": "293",
+        "message_name": "CombinedChargerUnit10msNo2",
+        "signal_num": 7,
+        "signals": [
+            {
+                "signal_name": "PowerETractSys2LimMotMax",
+                "signal_start": "0",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "50",
+                "signal_offset": "1638300",
+                "signal_min": "1638300",
+                "signal_max": "1638450"
+            },
+            {
+                "signal_name": "PowerETractSys1LimGenMax",
+                "signal_start": "16",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "50",
+                "signal_offset": "1638300",
+                "signal_min": "1638300",
+                "signal_max": "1638450"
+            },
+            {
+                "signal_name": "PowerETractSys2LimGenMax",
+                "signal_start": "32",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "50",
+                "signal_offset": "1638300",
+                "signal_min": "1638300",
+                "signal_max": "1638450"
+            },
+            {
+                "signal_name": "PowerETractSys1LimMotMax",
+                "signal_start": "48",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "50",
+                "signal_offset": "1638300",
+                "signal_min": "1638300",
+                "signal_max": "1638450"
+            },
+            {
+                "signal_name": "OperatingModeEANActualValue",
+                "signal_start": "64",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "RequestExtraBoostETractSys1",
+                "signal_start": "72",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "3"
+            },
+            {
+                "signal_name": "RequestExtraBoostETractSys2",
+                "signal_start": "80",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "3"
+            }
+        ]
+    },
+    "A_TEMP": {
+        "message_id": "749",
+        "message_name": "A_TEMP",
+        "signal_num": 1,
+        "signals": [
+            {
+                "signal_name": "TEMP_EX",
+                "signal_start": "0",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "5",
+                "signal_min": "40",
+                "signal_max": "40"
+            }
+        ]
+    },
+    "ABS_ESC_01": {
+        "message_id": "180",
+        "message_name": "ABS_ESC_01",
+        "signal_num": 1,
+        "signals": [
+            {
+                "signal_name": "ABS_ACTIVE",
+                "signal_start": "0",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "3"
+            }
+        ]
+    },
+    "IEB_01": {
+        "message_id": "210",
+        "message_name": "IEB_01",
+        "signal_num": 1,
+        "signals": [
+            {
+                "signal_name": "WEstTot_Nm",
+                "signal_start": "0",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "65535"
+            }
+        ]
+    },
+    "ESC_A": {
+        "message_id": "200",
+        "message_name": "ESC_A",
+        "signal_num": 4,
+        "signals": [
+            {
+                "signal_name": "AD3_PrsrVal_Fl",
+                "signal_start": "0",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "254"
+            },
+            {
+                "signal_name": "AD3_PrsrVal_Fr",
+                "signal_start": "8",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "254"
+            },
+            {
+                "signal_name": "AD3_PrsrVal_Rl",
+                "signal_start": "16",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "254"
+            },
+            {
+                "signal_name": "AD3_PrsrVal_Rr",
+                "signal_start": "24",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "254"
+            }
+        ]
+    },
+    "Kilometerstand_2": {
+        "message_id": "490",
+        "message_name": "Kilometerstand_2",
+        "signal_num": 1,
+        "signals": [
+            {
+                "signal_name": "MILE_KM_TOT",
+                "signal_start": "0",
+                "signal_length": "32",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "001",
+                "signal_min": "0",
+                "signal_max": "0"
+            }
+        ]
+    },
+    "EBCM_STATUS": {
+        "message_id": "150",
+        "message_name": "EBCM_STATUS",
+        "signal_num": 13,
+        "signals": [
+            {
+                "signal_name": "CRC_EBCM_STATUS",
+                "signal_start": "0",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALIV_EBCM_STATUS",
+                "signal_start": "8",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "MCPressure",
+                "signal_start": "12",
+                "signal_length": "12",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "42",
+                "signal_min": "5",
+                "signal_max": "0"
+            },
+            {
+                "signal_name": "BreakPedalPercent",
+                "signal_start": "24",
+                "signal_length": "12",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "0625",
+                "signal_min": "0",
+                "signal_max": "0"
+            },
+            {
+                "signal_name": "EPBStatus",
+                "signal_start": "36",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "15"
+            },
+            {
+                "signal_name": "HillholderStatus",
+                "signal_start": "40",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "15"
+            },
+            {
+                "signal_name": "TCSAvailable",
+                "signal_start": "44",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "TCSActive",
+                "signal_start": "45",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "BreakPedalPercentValid",
+                "signal_start": "46",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "MCPressureSts",
+                "signal_start": "47",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "HillholderFault",
+                "signal_start": "48",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "EPBFault",
+                "signal_start": "49",
+                "signal_length": "1",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            },
+            {
+                "signal_name": "EBCM_BrkPedlSts",
+                "signal_start": "50",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "3"
+            }
+        ]
+    },
+    "ST_STAB_DSC_2": {
+        "message_id": "214",
+        "message_name": "ST_STAB_DSC_2",
+        "signal_num": 1,
+        "signals": [
+            {
+                "signal_name": "ST_SLIP_THO",
+                "signal_start": "44",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "15"
+            }
+        ]
+    },
+    "ST_STAB_DSC": {
+        "message_id": "213",
+        "message_name": "ST_STAB_DSC",
+        "signal_num": 6,
+        "signals": [
+            {
+                "signal_name": "CRC_ST_STAB_DSC",
+                "signal_start": "0",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALIV_ST_STAB_DSC",
+                "signal_start": "8",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "QU_FN_FDR",
+                "signal_start": "16",
+                "signal_length": "12",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "4095"
+            },
+            {
+                "signal_name": "QU_FN_ABS",
+                "signal_start": "28",
+                "signal_length": "12",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "512",
+                "signal_max": "4095"
+            },
+            {
+                "signal_name": "QU_FN_ASC",
+                "signal_start": "40",
+                "signal_length": "12",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "512",
+                "signal_max": "4095"
+            },
+            {
+                "signal_name": "ST_BRG_DV",
+                "signal_start": "56",
+                "signal_length": "6",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "63"
+            }
+        ]
+    },
+    "TracEMacElectc1Time100msNo1": {
+        "message_id": "314",
+        "message_name": "TracEMacElectc1Time100msNo1",
+        "signal_num": 1,
+        "signals": [
+            {
+                "signal_name": "OpModETractSys1ActVal",
+                "signal_start": "116",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            }
+        ]
+    },
+    "TracEMacElectc2Time100msNo1": {
+        "message_id": "326",
+        "message_name": "TracEMacElectc2Time100msNo1",
+        "signal_num": 1,
+        "signals": [
+            {
+                "signal_name": "OpModETractSys2ActVal",
+                "signal_start": "116",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            }
+        ]
+    },
+    "BundleEAFlexrayToAECANFD10msNo1": {
+        "message_id": "296",
+        "message_name": "BundleEAFlexrayToAECANFD10msNo1",
+        "signal_num": 25,
+        "signals": [
+            {
+                "signal_name": "CRC_EXTS_ARB_INTF",
+                "signal_start": "128",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALIV_EXTS_ARB_INTF",
+                "signal_start": "136",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "CHL_EXTS_ARB_INTF",
+                "signal_start": "140",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "15"
+            },
+            {
+                "signal_name": "AVL_BRTORQ_WHL_RS_LH_EXT",
+                "signal_start": "144",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "32000",
+                "signal_min": "32000",
+                "signal_max": "33535"
+            },
+            {
+                "signal_name": "AVL_BRTORQ_WHL_RS_RH_EXT",
+                "signal_start": "160",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "32000",
+                "signal_min": "32000",
+                "signal_max": "33535"
+            },
+            {
+                "signal_name": "AVL_BRTORQ_WHL_FS_LH_EXT",
+                "signal_start": "176",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "32000",
+                "signal_min": "32000",
+                "signal_max": "33535"
+            },
+            {
+                "signal_name": "AVL_BRTORQ_WHL_FS_RH_EXT",
+                "signal_start": "192",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "32000",
+                "signal_min": "32000",
+                "signal_max": "33535"
+            },
+            {
+                "signal_name": "CRC_RQ_RPM_BAX",
+                "signal_start": "256",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALIV_RQ_RPM_BAX",
+                "signal_start": "264",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "CHL_RQ_RPM_BAX",
+                "signal_start": "268",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "15"
+            },
+            {
+                "signal_name": "TAR_RPM_MAX_BAX",
+                "signal_start": "272",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "01",
+                "signal_min": "0",
+                "signal_max": "0"
+            },
+            {
+                "signal_name": "TAR_RPM_MIN_BAX",
+                "signal_start": "288",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "01",
+                "signal_min": "0",
+                "signal_max": "0"
+            },
+            {
+                "signal_name": "ST_TAR_RPM_BAX",
+                "signal_start": "304",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "15"
+            },
+            {
+                "signal_name": "TAR_STIF_SPCO",
+                "signal_start": "308",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "15"
+            },
+            {
+                "signal_name": "CRC_RQ_RPM_FTAX",
+                "signal_start": "320",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALIV_RQ_RPM_FTAX",
+                "signal_start": "328",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "CHL_RQ_RPM_FTAX",
+                "signal_start": "332",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "15"
+            },
+            {
+                "signal_name": "TAR_RPM_MAX_FTAX",
+                "signal_start": "336",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "01",
+                "signal_min": "0",
+                "signal_max": "0"
+            },
+            {
+                "signal_name": "TAR_RPM_MIN_FTAX",
+                "signal_start": "352",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "01",
+                "signal_min": "0",
+                "signal_max": "0"
+            },
+            {
+                "signal_name": "ST_TAR_RPM_FTAX",
+                "signal_start": "368",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "15"
+            },
+            {
+                "signal_name": "StatusSlipThresholdsRearAxle",
+                "signal_start": "372",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "15"
+            },
+            {
+                "signal_name": "CRC_StatusSlipThresholds",
+                "signal_start": "456",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALIV_StatusSlipThresholds",
+                "signal_start": "464",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "CHL_StatusSlipThresholds",
+                "signal_start": "468",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "15"
+            },
+            {
+                "signal_name": "StatusSlipThresholdsFrontAxle",
+                "signal_start": "472",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "15"
+            }
+        ]
+    },
+    "AVL_RPM_WHL": {
+        "message_id": "131",
+        "message_name": "AVL_RPM_WHL",
+        "signal_num": 10,
+        "signals": [
+            {
+                "signal_name": "CRC_AVL_RPM_WHL",
+                "signal_start": "0",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALIV_AVL_RPM_WHL",
+                "signal_start": "8",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "AVL_RPM_WHL_RLH",
+                "signal_start": "16",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "015625",
+                "signal_min": "511",
+                "signal_max": "984375"
+            },
+            {
+                "signal_name": "AVL_RPM_WHL_RRH",
+                "signal_start": "32",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "015625",
+                "signal_min": "511",
+                "signal_max": "984375"
+            },
+            {
+                "signal_name": "AVL_RPM_WHL_FLH",
+                "signal_start": "48",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "015625",
+                "signal_min": "511",
+                "signal_max": "984375"
+            },
+            {
+                "signal_name": "AVL_RPM_WHL_FRH",
+                "signal_start": "64",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "015625",
+                "signal_min": "511",
+                "signal_max": "984375"
+            },
+            {
+                "signal_name": "QU_AVL_RPM_WHL_RLH",
+                "signal_start": "80",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "1",
+                "signal_max": "15"
+            },
+            {
+                "signal_name": "QU_AVL_RPM_WHL_RRH",
+                "signal_start": "84",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "1",
+                "signal_max": "15"
+            },
+            {
+                "signal_name": "QU_AVL_RPM_WHL_FLH",
+                "signal_start": "88",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "1",
+                "signal_max": "15"
+            },
+            {
+                "signal_name": "QU_AVL_RPM_WHL_FRH",
+                "signal_start": "92",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "1",
+                "signal_max": "15"
+            }
+        ]
+    },
+    "BundleEAFlexrayToCANFD20msNo1": {
+        "message_id": "289",
+        "message_name": "BundleEAFlexrayToCANFD20msNo1",
+        "signal_num": 5,
+        "signals": [
+            {
+                "signal_name": "CRC_V_VEH",
+                "signal_start": "128",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALIV_V_VEH",
+                "signal_start": "136",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "V_VEH_COG",
+                "signal_start": "143",
+                "signal_length": "16",
+                "signal_typeDef": "1",
+                "signal_factor": "0",
+                "signal_offset": "015625",
+                "signal_min": "0",
+                "signal_max": "0"
+            },
+            {
+                "signal_name": "QU_V_VEH_COG",
+                "signal_start": "160",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "1",
+                "signal_max": "15"
+            },
+            {
+                "signal_name": "SecOcDataP2V_VEH",
+                "signal_start": "168",
+                "signal_length": "64",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "1"
+            }
+        ]
+    },
+    "CLAMP_STAT": {
+        "message_id": "497",
+        "message_name": "CLAMP_STAT",
+        "signal_num": 6,
+        "signals": [
+            {
+                "signal_name": "CRC_CLAMP_STAT",
+                "signal_start": "0",
+                "signal_length": "8",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "255"
+            },
+            {
+                "signal_name": "ALIV_CLAMP_STAT",
+                "signal_start": "8",
+                "signal_length": "4",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "14"
+            },
+            {
+                "signal_name": "STAT_CL15_L",
+                "signal_start": "12",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "3"
+            },
+            {
+                "signal_name": "STAT_CL30S_L",
+                "signal_start": "14",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "3"
+            },
+            {
+                "signal_name": "STAT_CL30S_Light",
+                "signal_start": "16",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "3"
+            },
+            {
+                "signal_name": "STAT_CL15_WUPL",
+                "signal_start": "18",
+                "signal_length": "2",
+                "signal_typeDef": "1",
+                "signal_factor": "1",
+                "signal_offset": "0",
+                "signal_min": "0",
+                "signal_max": "3"
+            }
+        ]
+    }
+}

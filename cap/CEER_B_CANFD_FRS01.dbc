@@ -1,0 +1,1325 @@
+VERSION "1.4"
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: ZCU_R VCU ZCU_F VZCU_F
+VAL_TABLE_ TorqueEmETractSys2MotorDyn 4095 "Signal_unfilled" 4094 "Function_reports_error" 4093 "Func_interface_not_available" ;
+VAL_TABLE_ TorqueEmETractSys2GeneratorDyn 4095 "Signal_unfilled" 4094 "Function_reports_error" 4093 "Func_interface_not_available" ;
+VAL_TABLE_ TorqueEmETractSys2ActualValue 4095 "Signal_unfilled" 4094 "Function_reports_error" 4093 "Func_interface_not_available" ;
+VAL_TABLE_ RpmEmETractSys2ActualValue 65535 "signal_unfilled" 65534 "Function_reports_error" 65533 "Func_interface_not_available" ;
+VAL_TABLE_ QualifierRpmEmETractSys2ActVal 15 "signal_unfilled" 14 "value_not_available" 9 "value_valid_medium_quality" 6 "value_not_available_error" 4 "Value_valid_substitute value" 3 "Value_valid_restricted" 2 "value_valid_simple_quality" 1 "value_valid_highest_quality" ;
+VAL_TABLE_ QualifierRpmEmETractSys1ActVal 15 "signal_unfilled" 14 "value_not_available" 9 "value_valid_medium_quality" 6 "value_not_available_error" 4 "Value_valid_substitute value" 3 "Value_valid_restricted" 2 "value_valid_simple_quality" 1 "value_valid_highest_quality" ;
+VAL_TABLE_ TorqueEmETractSys1ActualValue 4095 "Signal_unfilled" 4094 "Function_reports_error" 4093 "Func_interface_not_available" ;
+VAL_TABLE_ TorqueEmETractSys1MotorDyn 4095 "Signal_unfilled" 4094 "Function_reports_error" 4093 "Func_interface_not_available" ;
+VAL_TABLE_ TorqueEmETractSys1GeneratorDyn 4095 "Signal_unfilled" 4094 "Function_reports_error" 4093 "Func_interface_not_available" ;
+VAL_TABLE_ RpmEmETractSys1ActualValue 65535 "signal_unfilled" 65534 "Function_reports_error" 65533 "Func_interface_not_available" ;
+VAL_TABLE_ WheelRatioEAxlEtractSys2ActVal 65535 "signal_unfilled" 65534 "Function_reports_error" 65533 "Func_interface_not_available" ;
+VAL_TABLE_ WheelRatioEAxlEtractSys1ActVal 65535 "signal_unfilled" 65534 "Function_reports_error" 65533 "Func_interface_not_available" ;
+VAL_TABLE_ VCU_ACT_DriveMode 7 "Invalid" 6 "Reserved" 5 "Reserved" 4 "Reserved" 3 "Reserved" 2 "Sport mode" 1 "ECO mode" 0 "Normal mode" ;
+VAL_TABLE_ VCU_ACT_Gear 7 "Fault" 6 "Reserved" 5 "Reserved" 4 "Reserved" 3 "D" 2 "N" 1 "R" 0 "P" ;
+VAL_TABLE_ VCU_ACT_DriveModeValid 1 "Invalid" 0 "Valid" ;
+VAL_TABLE_ VCU_ACT_GearValid 1 "Invalid" 0 "Valid" ;
+VAL_TABLE_ VCU_ACPD_Percent_Valid 1 "Invalid" 0 "Valid" ;
+VAL_TABLE_ VCU_VehicleHVStatus 3 "Reserved" 2 "ReadyToDrive" 1 "HV On" 0 "Not ready" ;
+VAL_TABLE_ TargetTorqueEmETractSys2 4095 "Signal_unfilled" 4094 "Function_reports_error" 4093 "Function_interface_not_available" ;
+VAL_TABLE_ TargetTorqueEmETractSys1 4095 "Signal_unfilled" 4094 "Function_reports_error" 4093 "Function_interface_not_available" ;
+VAL_TABLE_ ESC_TorqueReduce_Active_RR 1 "Active" 0 "Not Active" ;
+VAL_TABLE_ ESC_TorqueReduce_Active_FR 1 "Active" 0 "Not Active" ;
+VAL_TABLE_ ESC_TorqueIncrease_Active_RR 1 "Active" 0 "Not Active" ;
+VAL_TABLE_ ESC_TorqueIncrease_Active_FR 1 "Active" 0 "Not Active" ;
+VAL_TABLE_ StatusSlipThresholdsRearAxle 15 "signal_unfilled" 14 "Function_reports_error" 13 "Func_interface_not_available" 7 "Upper_slip_limit_exceed_critical" 6 "Upper_slip_limit_exceed_warning" 5 "Upper_slip_limit_exceed_comfort" 3 "Lower_slip_limit_exceed_critical" 2 "Lower_slip_limit_exceed_warning" 1 "lower_slip_limit_exceed_comfort" 0 "slip_limit_not_exceeded" ;
+VAL_TABLE_ StatusSlipThresholdsFrontAxle 15 "signal_unfilled" 14 "Function_reports_error" 13 "Func_interface_not_available" 7 "Upper_slip_limit_exceed_critical" 6 "Upper_slip_limit_exceed_warning" 5 "Upper_slip_limit_exceed_comfort" 3 "Lower_slip_limit_exceed_critical" 2 "Lower_slip_limit_exceed_warning" 1 "lower_slip_limit_exceed_comfort" 0 "slip_limit_not_exceeded" ;
+
+
+BO_ 881 VCU_WarnMsg: 5 VCU
+ SG_ VCU_HVSystemReduced : 34|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_Limphome : 33|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_HVILErr : 32|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_ChargingInletTempHigh : 31|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_DCDC_TempHigh : 30|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_OBCTempHigh : 29|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_CheckDriveTrain : 28|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_CoolantTempHigh : 27|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_ParkLockNotEngaged : 26|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_TransmissionMalfunction : 25|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_CoolingTempExceedLimit : 24|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_HeatLoopTempSensorErr : 20|3@1+ (1,0) [0|4] ""  ZCU_F
+ SG_ VCU_MotorCoolantPumpErr : 16|3@1+ (1,0) [0|3] ""  ZCU_F
+ SG_ VCU_EmergencyShutdown : 19|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_GearMalfunc : 23|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_CantChangeGear : 15|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_PressBreakToEngageGear : 14|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_GearPNotPossible : 13|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_GearPAtStationaryOnly : 12|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ ALV_VCU_WarnMsg : 8|4@1+ (1,0) [0|14] ""  ZCU_F
+ SG_ CRC_VCU_WarnMsg : 0|8@1+ (1,0) [0|255] ""  ZCU_F
+
+BO_ 433 VCU_StatusDCDC: 12 VCU
+ SG_ DCDC_vOutput : 64|16@1+ (0.0625,0) [0|4095] "V"  ZCU_F
+ SG_ DCDC_iOutput : 32|16@1+ (0.1,0) [0|350] "A"  ZCU_F
+ SG_ DCDC_vDCInput : 48|16@1+ (0.0625,0) [0|4095] "V"  ZCU_F
+ SG_ DCDC_maxCurrentOut : 16|16@1+ (0.1,0) [0|6553.5] "A"  ZCU_F
+ SG_ DCDC_status : 12|3@1+ (1,0) [0|7] ""  ZCU_F
+ SG_ ALV_VCU_StatusDCDC : 8|4@1+ (1,0) [0|14] ""  ZCU_F
+ SG_ CRC_VCU_StatusDCDC : 0|8@1+ (1,0) [0|255] ""  ZCU_F
+
+BO_ 498 VCU_MHU_info: 7 VCU
+ SG_ VCU_ChgGun_Status : 28|3@1+ (1,0) [0|7] ""  ZCU_F
+ SG_ VCU_VehChg_STS : 32|3@1+ (1,0) [0|7] ""  ZCU_F
+ SG_ VCU_ChgGunConnStatus : 35|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_BattSOC : 40|10@1+ (0.1,0) [0|100] "%"  ZCU_F
+ SG_ VCU_BattChargingStatus : 31|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_CurPwrConsum : 12|4@1+ (1,0) [0|15] "km/kWh"  ZCU_F
+ SG_ VCU_RemainingRange : 16|12@1+ (0.5,0) [0|2047.5] "km"  ZCU_F
+ SG_ ALV_VCU_MHU_info : 8|4@1+ (1,0) [0|14] ""  ZCU_F
+ SG_ CRC_VCU_MHU_info : 0|8@1+ (1,0) [0|255] ""  ZCU_F
+
+BO_ 151 VCU_HVsystem_status: 6 VCU
+ SG_ VCU_HVbatSoc_charged_estStatus : 14|2@1+ (1,0) [0|3] ""  ZCU_F
+ SG_ VCU_HVbatSoc_charged : 32|10@1+ (0.1,0) [0|100] "%"  ZCU_F
+ SG_ VCU_RunningRange_charged : 16|12@1+ (0.5,0) [0|2047.5] "km"  ZCU_F
+ SG_ VCU_RunningRange_chrg_estSts : 12|2@1+ (1,0) [0|3] ""  ZCU_F
+ SG_ ALIV_VCU_HVsystem_status : 8|4@1+ (1,0) [0|14] ""  ZCU_F
+ SG_ CRC_VCU_HVsystem_status : 0|8@1+ (1,0) [0|255] ""  ZCU_F
+
+BO_ 273 VCU_HV_DrvSys_status: 6 VCU
+ SG_ VCU_ACPD_Percent_Valid : 36|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_ACPD_Percent : 24|12@1+ (0.0625,0) [0|100] "%"  ZCU_F
+ SG_ VCU_ACT_DriveModeValid : 43|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_ACT_DriveMode : 40|3@1+ (1,0) [0|7] ""  ZCU_F
+ SG_ VCU_ACT_GearValid : 23|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_ACT_Gear : 20|3@1+ (1,0) [0|7] ""  ZCU_F
+ SG_ VCU_HV_DrvSystemStatus : 16|3@1+ (1,0) [0|7] ""  ZCU_F
+ SG_ VCU_HV_SystemStatus : 12|3@1+ (1,0) [0|7] ""  ZCU_F
+ SG_ ALV_VCU_HV_DrvSys_bstatus : 8|4@1+ (1,0) [0|14] ""  ZCU_F
+ SG_ CRC_VCU_HV_DrvSys_status : 0|8@1+ (1,0) [0|255] ""  ZCU_F
+
+BO_ 277 VCU_ChargingConnection: 5 VCU
+ SG_ VCU_MaxCurrentOfACCharging : 32|6@1+ (1,0) [0|63] "A"  ZCU_F
+ SG_ VCU_ACChargingVoltage : 24|8@1+ (1,0) [0|255] "V"  ZCU_F
+ SG_ VCU_CPValue : 16|7@1+ (1,0) [0|100] "%"  ZCU_F
+ SG_ VCU_AcChgGunIn : 13|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ VCU_DCChgGunIn : 12|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ ALV_VCU_ChargingConnection : 8|4@1+ (1,0) [0|14] ""  ZCU_F
+ SG_ CRC_VCU_ChargingConnection : 0|8@1+ (1,0) [0|255] ""  ZCU_F
+
+BO_ 882 VCU_Batt_WarnMsg: 8 VCU
+ SG_ BMS_FuseStatusErr : 23|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ BMS_Reserved_signal4 : 48|8@1+ (1,0) [0|255] ""  ZCU_F
+ SG_ BMS_Reserved_signal3 : 40|8@1+ (1,0) [0|255] ""  ZCU_F
+ SG_ BMS_Reserved_signal2 : 32|8@1+ (1,0) [0|255] ""  ZCU_F
+ SG_ BMS_Reserved_signal1 : 29|3@1+ (1,0) [0|7] ""  ZCU_F
+ SG_ BMS_PackVolErr : 26|2@1+ (1,0) [0|2] ""  ZCU_F
+ SG_ BMS_CellVoltErr : 24|2@1+ (1,0) [0|3] ""  ZCU_F
+ SG_ BMS_PackOverCurrErr : 28|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ BMS_Reserved_signal5 : 56|8@1+ (1,0) [0|255] ""  ZCU_F
+ SG_ BMS_LowBattery : 21|2@1+ (1,0) [0|2] ""  ZCU_F
+ SG_ BMS_MalfunctionSts : 20|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ BMS_PackInsuErr : 19|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ BMS_HVILErr : 18|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ BMS_CellTempErr : 16|2@1+ (1,0) [0|3] ""  ZCU_F
+ SG_ BMS_ThermalRunaway : 14|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ BMS_PackTempSts : 12|2@1+ (1,0) [0|2] ""  ZCU_F
+ SG_ ALV_VCU_Batt_WarnMsg : 8|4@1+ (1,0) [0|14] ""  ZCU_F
+ SG_ CHSKM_VCU_Batt_WarnMsg : 0|8@1+ (1,0) [0|255] ""  ZCU_F
+
+BO_ 514 VCU_Batt_Info: 16 VCU
+ SG_ BMS_ChargingCurrent : 88|16@1+ (0.1,0) [0|1500] "A"  ZCU_F
+ SG_ BMS_ChargingVoltage : 72|16@1+ (0.1,0) [0|600] "V"  ZCU_F
+ SG_ BMS_RemainChargeTime : 56|12@1+ (1,0) [0|1500] "min"  ZCU_F
+ SG_ BMS_PackTemp : 48|8@1+ (1,-40) [-40|215] "°C"  ZCU_F
+ SG_ BMS_PackVoltage : 32|16@1+ (0.1,0) [0|600] "V"  ZCU_F
+ SG_ BMS_PackCur : 16|16@1+ (0.1,-1500) [-1500|1500] "A"  ZCU_F
+ SG_ ALV_VCU_Batt_Info : 8|4@1+ (1,0) [0|14] ""  ZCU_F
+ SG_ CRC_VCU_Batt_Info : 0|8@1+ (1,0) [0|255] ""  ZCU_F
+
+BO_ 632 STAT_ANHAENGER: 8 ZCU_F
+ SG_ ST_TRAI : 0|2@1+ (1,0) [0|3] ""  VCU
+
+BO_ 407 ST_GWS: 4 ZCU_F
+ SG_ OP_GWS_PUBU_PKG : 24|2@1+ (1,0) [0|3] ""  VCU
+ SG_ OP_GWS : 12|4@1+ (1,0) [1|15] ""  VCU
+ SG_ ALIV_ST_GWS : 8|4@1+ (1,0) [0|14] ""  VCU
+ SG_ CRC_ST_GWS : 0|8@1+ (1,0) [0|255] ""  VCU
+
+BO_ 88 SFA_SteerWheel_Info: 8 ZCU_R
+ SG_ SFA_WarningLamp : 56|3@1+ (1,0) [0|7] ""  ZCU_F
+ SG_ SFA_SteerWheelTorque : 16|12@1+ (0.02,0) [0|81.9] "Nm"  ZCU_F
+ SG_ SFA_SteerWheelAngleSpeed : 32|8@1+ (4,0) [0|1020] "deg/s"  ZCU_F
+ SG_ SFA_SteerWheelAngle : 40|16@1+ (0.02,0) [0|1310.7] "deg"  ZCU_F
+ SG_ SFA_EmergencyRequest : 59|2@1+ (1,0) [0|3] ""  ZCU_F
+ SG_ SFA_CenteringStatus : 61|3@1+ (1,0) [0|7] ""  ZCU_F
+ SG_ ALIV_SFA_SteerWheel_Info : 8|4@1+ (1,0) [0|14] ""  ZCU_F
+ SG_ CRC_SFA_SteerWheel_Info : 0|8@1+ (1,0) [0|255] ""  ZCU_F
+
+BO_ 1090 RELATIVZEIT: 4 ZCU_F
+ SG_ T_SEC_COU_REL : 0|32@1+ (1,0) [0|4294967295] "s"  VCU
+
+BO_ 1296 Networkmanagement3_Status: 8 ZCU_F
+ SG_ NM3FunctionalPartialNetworks : 32|32@1+ (1,0) [0|4294967295] ""  VCU
+ SG_ NM3BasePartialNetworks : 16|16@1+ (1,0) [0|65535] ""  VCU
+ SG_ NM3SenderECUId : 8|8@1+ (1,0) [0|255] ""  VCU
+ SG_ NM3ControlBitVector : 0|8@1+ (1,0) [64|255] ""  VCU
+
+BO_ 816 KILOMETERSTAND: 8 ZCU_F
+ SG_ MILE_KM : 0|24@1+ (1,0) [0|16777215] "KM"  VCU
+
+BO_ 1107 HighVoltageStorage200msNo1: 8 VCU
+ SG_ StsDisconnectingSwtHighVoltStorg : 26|6@1+ (1,0) [0|63] ""  ZCU_F
+ SG_ StatusServiceDisconnectionPlug : 24|2@1+ (1,0) [1|3] ""  ZCU_F
+
+BO_ 143 HighVoltageStorage10msNo2: 48 VCU
+ SG_ ActualValueVoltageLinkVerified : 296|12@1+ (0.25,0) [0|1023.75] "V"  ZCU_F
+ SG_ ALIV_HighVoltageStorage10msNo2 : 272|8@1+ (1,0) [0|254] ""  ZCU_F
+ SG_ CRC_HighVoltageStorage10msNo2 : 256|16@1+ (1,0) [0|65535] ""  ZCU_F
+
+BO_ 630 FZZSTD: 8 ZCU_F
+ SG_ ST_ILK_ERRM_FZM : 56|2@1+ (1,0) [0|3] ""  VCU
+ SG_ ST_ENERG_FZM : 16|4@1+ (1,0) [0|15] ""  VCU
+
+BO_ 451 FZU_ChargingControl: 1 ZCU_F
+ SG_ FZU_ChargingStopReq : 0|2@1+ (1,0) [0|3] ""  VCU
+
+BO_ 896 FAHRGESTELLNUMMER: 7 ZCU_F
+ SG_ NO_VECH_7 : 48|8@1+ (1,0) [0|255] ""  VCU
+ SG_ NO_VECH_6 : 40|8@1+ (1,0) [0|255] ""  VCU
+ SG_ NO_VECH_5 : 32|8@1+ (1,0) [0|255] ""  VCU
+ SG_ NO_VECH_4 : 24|8@1+ (1,0) [0|255] ""  VCU
+ SG_ NO_VECH_3 : 16|8@1+ (1,0) [0|255] ""  VCU
+ SG_ NO_VECH_2 : 8|8@1+ (1,0) [0|255] ""  VCU
+ SG_ NO_VECH_1 : 0|8@1+ (1,0) [0|255] ""  VCU
+
+BO_ 146 ERRM_BN_U: 2 ZCU_F
+ SG_ CTR_ERRM_BN_U : 0|6@1+ (1,0) [0|63] ""  VCU
+
+BO_ 1021 DT_DISP_GRDT: 5 VCU
+ SG_ DISP_PO_GRB : 21|3@1+ (1,0) [0|7] ""  ZCU_F
+ SG_ DISP_PO_IDC_GRB : 19|2@1+ (1,0) [0|3] ""  ZCU_F
+ SG_ DISP_PRG_GRB : 16|3@1+ (1,0) [0|7] ""  ZCU_F
+ SG_ ALIV_DT_DISP_GRDT : 8|4@1+ (1,0) [0|14] "14"  ZCU_F
+ SG_ CRC_DT_DISP_GRDT : 0|8@1+ (1,0) [0|255] ""  ZCU_F
+
+BO_ 60 CON_VEH: 8 ZCU_F
+ SG_ QU_ST_CON_VEH : 52|4@1+ (1,0) [2|15] ""  VCU
+ SG_ ST_CON_VEH : 48|4@1+ (1,0) [0|15] ""  VCU
+ SG_ CTR_FKTN_PRTNT : 16|32@1+ (1,0) [0|4294967295] ""  VCU
+ SG_ CTR_BS_PRTNT : 12|4@1+ (1,0) [0|15] ""  VCU
+ SG_ ALIV_CON_VEH : 8|4@1+ (1,0) [0|14] ""  VCU
+ SG_ CRC_CON_VEH : 0|8@1+ (1,0) [0|255] ""  VCU
+
+BO_ 293 CombinedChargerUnit10msNo2: 20 VCU
+ SG_ RequestExtraBoostETractSys2 : 80|2@1+ (1,0) [0|3] ""  ZCU_F
+ SG_ RequestExtraBoostETractSys1 : 72|2@1+ (1,0) [0|3] ""  ZCU_F
+ SG_ OperatingModeEANActualValue : 64|8@1+ (1,0) [0|255] ""  ZCU_F
+ SG_ PowerETractSys1LimMotMax : 48|16@1+ (50,-1638300) [-1638300|1638450] "W"  ZCU_F
+ SG_ PowerETractSys1LimGenMax : 16|16@1+ (50,-1638300) [-1638300|1638450] "W"  ZCU_F
+ SG_ PowerETractSys2LimMotMax : 0|16@1+ (50,-1638300) [-1638300|1638450] "W"  ZCU_F
+ SG_ PowerETractSys2LimGenMax : 32|16@1+ (50,-1638300) [-1638300|1638450] "W"  ZCU_F
+
+BO_ 749 A_TEMP: 2 ZCU_F
+ SG_ TEMP_EX : 0|8@1+ (0.5,-40) [-40|87.5] "°C"  VCU
+
+BO_ 180 ABS_ESC_01: 1 ZCU_R
+ SG_ ABS_ACTIVE : 0|2@1+ (1,0) [0|3] ""  ZCU_F
+
+BO_ 210 IEB_01: 2 ZCU_R
+ SG_ WEstTot_Nm : 0|16@1+ (1,0) [0|65535] "Nm"  ZCU_F
+
+BO_ 200 ESC_A: 4 ZCU_R
+ SG_ AD3_PrsrVal_Rr : 24|8@1+ (1,0) [0|254] "bar"  ZCU_F
+ SG_ AD3_PrsrVal_Rl : 16|8@1+ (1,0) [0|254] "bar"  ZCU_F
+ SG_ AD3_PrsrVal_Fr : 8|8@1+ (1,0) [0|254] "bar"  ZCU_F
+ SG_ AD3_PrsrVal_Fl : 0|8@1+ (1,0) [0|254] "bar"  ZCU_F
+
+BO_ 490 Kilometerstand_2: 8 ZCU_F
+ SG_ MILE_KM_TOT : 0|32@1+ (0.001,0) [0|4294967.295] "km"  VCU
+
+BO_ 150 EBCM_STATUS: 7 ZCU_R
+ SG_ EBCM_BrkPedlSts : 50|2@1+ (1,0) [0|3] ""  ZCU_F
+ SG_ HillholderFault : 48|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ HillholderStatus : 40|4@1+ (1,0) [0|15] ""  ZCU_F
+ SG_ TCSActive : 45|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ TCSAvailable : 44|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ EPBFault : 49|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ EPBStatus : 36|4@1+ (1,0) [0|15] ""  ZCU_F
+ SG_ BreakPedalPercentValid : 46|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ BreakPedalPercent : 24|12@1+ (0.0625,0) [0|100] "%"  ZCU_F
+ SG_ MCPressure : 12|12@1+ (1,-42.5) [0|465] "bar"  ZCU_F
+ SG_ MCPressureSts : 47|1@1+ (1,0) [0|1] ""  ZCU_F
+ SG_ ALIV_EBCM_STATUS : 8|4@1+ (1,0) [0|14] ""  ZCU_F
+ SG_ CRC_EBCM_STATUS : 0|8@1+ (1,0) [0|255] ""  ZCU_F
+
+BO_ 214 ST_STAB_DSC_2: 8 ZCU_R
+ SG_ ST_SLIP_THO : 44|4@1+ (1,0) [0|15] ""  ZCU_F
+
+BO_ 213 ST_STAB_DSC: 8 ZCU_R
+ SG_ ST_BRG_DV : 56|6@1+ (1,0) [0|63] ""  ZCU_F
+ SG_ QU_FN_ASC : 40|12@1+ (1,0) [512|4095] ""  ZCU_F
+ SG_ QU_FN_ABS : 28|12@1+ (1,0) [512|4095] ""  ZCU_F
+ SG_ QU_FN_FDR : 16|12@1+ (1,0) [0|4095] ""  ZCU_F
+ SG_ ALIV_ST_STAB_DSC : 8|4@1+ (1,0) [0|14] ""  ZCU_F
+ SG_ CRC_ST_STAB_DSC : 0|8@1+ (1,0) [0|255] ""  ZCU_F
+
+BO_ 314 TracEMacElectc1Time100msNo1: 32 VCU
+ SG_ OpModETractSys1ActVal : 116|8@1+ (1,0) [0|255] ""  ZCU_F
+
+BO_ 326 TracEMacElectc2Time100msNo1: 32 VCU
+ SG_ OpModETractSys2ActVal : 116|8@1+ (1,0) [0|255] ""  ZCU_F
+
+BO_ 296 BundleEAFlexrayToAECANFD10msNo1: 64 ZCU_R
+ SG_ CHL_StatusSlipThresholds : 468|4@1+ (1,0) [0|15] ""  ZCU_F
+ SG_ ALIV_StatusSlipThresholds : 464|4@1+ (1,0) [0|14] ""  ZCU_F
+ SG_ CRC_StatusSlipThresholds : 456|8@1+ (1,0) [0|255] ""  ZCU_F
+ SG_ StatusSlipThresholdsRearAxle : 372|4@1+ (1,0) [0|15] ""  ZCU_F
+ SG_ StatusSlipThresholdsFrontAxle : 472|4@1+ (1,0) [0|15] ""  ZCU_F
+ SG_ ST_TAR_RPM_FTAX : 368|4@1+ (1,0) [0|15] ""  ZCU_F
+ SG_ TAR_RPM_MIN_FTAX : 352|16@1+ (0.01,0) [0|655.35] "rad/s"  ZCU_F
+ SG_ TAR_RPM_MAX_FTAX : 336|16@1+ (0.01,0) [0|655.35] "rad/s"  ZCU_F
+ SG_ CRC_RQ_RPM_FTAX : 320|8@1+ (1,0) [0|255] ""  ZCU_F
+ SG_ CHL_RQ_RPM_FTAX : 332|4@1+ (1,0) [0|15] ""  ZCU_F
+ SG_ ALIV_RQ_RPM_FTAX : 328|4@1+ (1,0) [0|14] ""  ZCU_F
+ SG_ TAR_STIF_SPCO : 308|4@1+ (1,0) [0|15] ""  ZCU_F
+ SG_ ST_TAR_RPM_BAX : 304|4@1+ (1,0) [0|15] ""  ZCU_F
+ SG_ TAR_RPM_MIN_BAX : 288|16@1+ (0.01,0) [0|655.35] "rad/s"  ZCU_F
+ SG_ TAR_RPM_MAX_BAX : 272|16@1+ (0.01,0) [0|655.35] "rad/s"  ZCU_F
+ SG_ CRC_RQ_RPM_BAX : 256|8@1+ (1,0) [0|255] ""  ZCU_F
+ SG_ ALIV_RQ_RPM_BAX : 264|4@1+ (1,0) [0|14] ""  ZCU_F
+ SG_ CHL_RQ_RPM_BAX : 268|4@1+ (1,0) [0|15] ""  ZCU_F
+ SG_ AVL_BRTORQ_WHL_FS_RH_EXT : 192|16@1+ (1,-32000) [-32000|33535] "Nm"  ZCU_F
+ SG_ AVL_BRTORQ_WHL_FS_LH_EXT : 176|16@1+ (1,-32000) [-32000|33535] "Nm"  ZCU_F
+ SG_ AVL_BRTORQ_WHL_RS_RH_EXT : 160|16@1+ (1,-32000) [-32000|33535] "Nm"  ZCU_F
+ SG_ AVL_BRTORQ_WHL_RS_LH_EXT : 144|16@1+ (1,-32000) [-32000|33535] "Nm"  ZCU_F
+ SG_ CHL_EXTS_ARB_INTF : 140|4@1+ (1,0) [0|15] ""  ZCU_F
+ SG_ ALIV_EXTS_ARB_INTF : 136|4@1+ (1,0) [0|14] ""  ZCU_F
+ SG_ CRC_EXTS_ARB_INTF : 128|8@1+ (1,0) [0|255] ""  ZCU_F
+
+BO_ 131 AVL_RPM_WHL: 12 ZCU_R
+ SG_ QU_AVL_RPM_WHL_FRH : 92|4@1+ (1,0) [1|15] ""  ZCU_F
+ SG_ QU_AVL_RPM_WHL_FLH : 88|4@1+ (1,0) [1|15] ""  ZCU_F
+ SG_ QU_AVL_RPM_WHL_RRH : 84|4@1+ (1,0) [1|15] ""  ZCU_F
+ SG_ QU_AVL_RPM_WHL_RLH : 80|4@1+ (1,0) [1|15] ""  ZCU_F
+ SG_ AVL_RPM_WHL_FRH : 64|16@1+ (0.015625,-511.984375) [-400|512] "rad/s"  ZCU_F
+ SG_ AVL_RPM_WHL_FLH : 48|16@1+ (0.015625,-511.984375) [-400|512] "rad/s"  ZCU_F
+ SG_ AVL_RPM_WHL_RRH : 32|16@1+ (0.015625,-511.984375) [-400|512] "rad/s"  ZCU_F
+ SG_ AVL_RPM_WHL_RLH : 16|16@1+ (0.015625,-511.984375) [-400|512] "rad/s"  ZCU_F
+ SG_ ALIV_AVL_RPM_WHL : 8|4@1+ (1,0) [0|14] ""  ZCU_F
+ SG_ CRC_AVL_RPM_WHL : 0|8@1+ (1,0) [0|255] ""  ZCU_F
+
+BO_ 289 BundleEAFlexrayToCANFD20msNo1: 32 ZCU_R
+ SG_ SecOcDataP2V_VEH : 168|64@1+ (1,0) [0|1.84467E+019] ""  ZCU_F
+ SG_ QU_V_VEH_COG : 160|4@1+ (1,0) [1|15] ""  ZCU_F
+ SG_ V_VEH_COG : 143|16@1+ (0.015625,0) [0|350] "km/h"  ZCU_F
+ SG_ ALIV_V_VEH : 136|4@1+ (1,0) [0|14] ""  ZCU_F
+ SG_ CRC_V_VEH : 128|8@1+ (1,0) [0|255] ""  ZCU_F
+
+BO_ 497 CLAMP_STAT: 3 ZCU_F
+ SG_ STAT_CL15_WUPL : 18|2@1+ (1,0) [0|3] ""  VCU,ZCU_R
+ SG_ ALIV_CLAMP_STAT : 8|4@1+ (1,0) [0|14] ""  VCU,ZCU_R
+ SG_ STAT_CL15_L : 12|2@1+ (1,0) [0|3] ""  VCU,ZCU_R
+ SG_ STAT_CL30S_L : 14|2@1+ (1,0) [0|3] ""  VCU,ZCU_R
+ SG_ STAT_CL30S_Light : 16|2@1+ (1,0) [0|3] ""  VCU,ZCU_R
+ SG_ CRC_CLAMP_STAT : 0|8@1+ (1,0) [0|255] ""  VCU,ZCU_R
+
+
+
+CM_ BU_ ZCU_R "Front Zone ECU";
+CM_ BU_ VCU "Vehicle Interface Control Module";
+CM_ BU_ ZCU_F "Front Zone Control Unit";
+CM_ SG_ 881 VCU_HVSystemReduced "Reduced HV System Power";
+CM_ SG_ 881 VCU_Limphome "Speed regulation apply to e-drive system";
+CM_ SG_ 881 VCU_HVILErr "High Voltage Interlock loop circuit error";
+CM_ SG_ 881 VCU_ChargingInletTempHigh "Warning is given by VCU when the temperature of Charging Inlet higher than the limitation";
+CM_ SG_ 881 VCU_DCDC_TempHigh "Waring is given by VCU when the temperature of DCDC higher than the limitation";
+CM_ SG_ 881 VCU_OBCTempHigh "Warning is given by VCU when the temperature of OBC higher than the limitation";
+CM_ SG_ 881 VCU_CheckDriveTrain "Warning given by VCU when E-Motor send warning signals";
+CM_ SG_ 881 VCU_CoolantTempHigh "Warning given by VCU when radiator inlet and/or outlet temperature exceed temperature high warning threshold (yellow)";
+CM_ SG_ 881 VCU_ParkLockNotEngaged "Warning given by VCU when park lock request is sent to E-Motor but actual park lock status from E-Motor is not engaged";
+CM_ SG_ 881 VCU_TransmissionMalfunction "Warning given by VCU when E-Motor send warning signals";
+CM_ SG_ 881 VCU_CoolingTempExceedLimit "Warning when radiator inlet and/or outlet temperature exceed temperature high warning threshold (red)";
+CM_ SG_ 881 VCU_HeatLoopTempSensorErr "- Heating Loop Temp Sensor  A  Errors: General Electric Failure, Circuit Short To Ground, Circuit Short To Battery, Circuit Intermittent";
+CM_ SG_ 881 VCU_MotorCoolantPumpErr "- Drive Motor Coolant Pump A Errors: Circuit Open, Circuit Short To Ground, Circuit Short To Battery.";
+CM_ SG_ 881 VCU_EmergencyShutdown "Emergency Shutdown: Immediately open the HV contactors";
+CM_ SG_ 881 VCU_GearMalfunc "Gear change might be not possible";
+CM_ SG_ 881 VCU_CantChangeGear "Unable to change gear position";
+CM_ SG_ 881 VCU_PressBreakToEngageGear "Press Brake to engage gear hint";
+CM_ SG_ 881 VCU_GearPNotPossible "Gear P not possible: Due to EPP lock is not possible, gear position P may not be possible.";
+CM_ SG_ 881 VCU_GearPAtStationaryOnly "Gear position P only when stationary";
+CM_ SG_ 881 ALV_VCU_WarnMsg "Alive Counter";
+CM_ SG_ 881 CRC_VCU_WarnMsg "Checksum";
+CM_ SG_ 433 DCDC_vOutput "DCDC reported 12V voltage";
+CM_ SG_ 433 DCDC_iOutput "DCDC reported 12V current";
+CM_ SG_ 433 DCDC_vDCInput "DCDC input voltage";
+CM_ SG_ 433 DCDC_maxCurrentOut "Max LV current DCDC able to output";
+CM_ SG_ 433 DCDC_status "DCDC status";
+CM_ SG_ 433 ALV_VCU_StatusDCDC "Alive counter";
+CM_ SG_ 433 CRC_VCU_StatusDCDC "Check sum";
+CM_ SG_ 498 VCU_ChgGun_Status "Charging gun status";
+CM_ SG_ 498 VCU_VehChg_STS "Vehicle Charging Status";
+CM_ SG_ 498 VCU_ChgGunConnStatus "Charging gun connection status";
+CM_ SG_ 498 VCU_BattSOC "HV battery SOC for displaying only";
+CM_ SG_ 498 VCU_BattChargingStatus "HV battery charging - not charging status,for displaying only ( for both regen  charging )";
+CM_ SG_ 498 VCU_CurPwrConsum "Instant Power consumption";
+CM_ SG_ 498 VCU_RemainingRange "Km: Coverable distance with present energy in vehicle.";
+CM_ SG_ 498 ALV_VCU_MHU_info "Alive counter";
+CM_ SG_ 498 CRC_VCU_MHU_info "Checksum";
+CM_ SG_ 151 VCU_HVbatSoc_charged_estStatus "VCU_HVbatSoc_charged_estStatus";
+CM_ SG_ 151 VCU_HVbatSoc_charged "Estimated HVBattery SOC by current charging condition ( max chg.current, chg.time, …)";
+CM_ SG_ 151 VCU_RunningRange_charged "Estimated running range after charged by current charging condition ( max chg.current, chg.time, …)";
+CM_ SG_ 151 VCU_RunningRange_chrg_estSts "Status of estimation running range after charged by current charging condition ( max chg.current, chg.time, …)";
+CM_ SG_ 151 ALIV_VCU_HVsystem_status "Alive counter";
+CM_ SG_ 151 CRC_VCU_HVsystem_status "Checksum";
+CM_ SG_ 273 VCU_ACPD_Percent_Valid "Qualifier for corresponding signal.  In value table not defined values are reserved";
+CM_ SG_ 273 VCU_ACPD_Percent "The signal contains the actual angle of the acceleration pedal100% acceleration pedal position shall only provided in case of kick down.Without kickdown the maximum value shall be 99.";
+CM_ SG_ 273 VCU_ACT_DriveModeValid "Vehicle drive mode status";
+CM_ SG_ 273 VCU_ACT_DriveMode "Vehicle drive mode";
+CM_ SG_ 273 VCU_ACT_GearValid "Indicate the current gear position
+";
+CM_ SG_ 273 VCU_ACT_Gear "actual gear,Provide gear shift signal";
+CM_ SG_ 273 VCU_HV_DrvSystemStatus "Status of driving system ( Highvoltage )";
+CM_ SG_ 273 VCU_HV_SystemStatus "High Voltage system status";
+CM_ SG_ 273 ALV_VCU_HV_DrvSys_bstatus "Alive counter";
+CM_ SG_ 273 CRC_VCU_HV_DrvSys_status "Checksum";
+CM_ SG_ 277 VCU_MaxCurrentOfACCharging "Maximum Charging current of AC Charging";
+CM_ SG_ 277 VCU_ACChargingVoltage "AC charging voltage";
+CM_ SG_ 277 VCU_CPValue "Charging port duty Cycle value (PWM)";
+CM_ SG_ 277 VCU_AcChgGunIn "Slow Charge Gun Insert Status ";
+CM_ SG_ 277 VCU_DCChgGunIn "Connection status of DC Fast charging Gun";
+CM_ SG_ 277 ALV_VCU_ChargingConnection "Alive Counter";
+CM_ SG_ 277 CRC_VCU_ChargingConnection "Checksum";
+CM_ SG_ 882 BMS_Reserved_signal4 "Warning Message Flag, Component owner, Supplier align and define for this signal";
+CM_ SG_ 882 BMS_Reserved_signal3 "Warning Message Flag, Component owner, Supplier align and define for this signal";
+CM_ SG_ 882 BMS_Reserved_signal2 "Warning Message Flag, Component owner, Supplier align and define for this signal";
+CM_ SG_ 882 BMS_Reserved_signal1 "Warning Message Flag, Component owner, Supplier align and define for this signal";
+CM_ SG_ 882 BMS_PackVolErr "Pack Voltage warning";
+CM_ SG_ 882 BMS_CellVoltErr "Cell Voltage warning";
+CM_ SG_ 882 BMS_PackOverCurrErr "When The Over Current Ýs Detected During Charging And Discharging For The Given Period Of Time, Then The Bms_Packovercurr_Err Will Set ";
+CM_ SG_ 882 BMS_LowBattery "Low Battery Warning";
+CM_ SG_ 882 BMS_MalfunctionSts "Malfunction status of battery for MHU display";
+CM_ SG_ 882 BMS_PackInsuErr "Insulation check lines have problems, short to ground or short to bat";
+CM_ SG_ 882 BMS_HVILErr "High Voltage Interlock loop circuit error";
+CM_ SG_ 882 BMS_CellTempErr "Cell temperature warning";
+CM_ SG_ 882 BMS_ThermalRunaway "Thermal runaway warning";
+CM_ SG_ 882 BMS_PackTempSts "Pack temperature warning";
+CM_ SG_ 882 ALV_VCU_Batt_WarnMsg "Alive Counter";
+CM_ SG_ 882 CHSKM_VCU_Batt_WarnMsg "Checksum";
+CM_ SG_ 514 BMS_ChargingCurrent "BMS charging current";
+CM_ SG_ 514 BMS_ChargingVoltage "BMS charging voltage";
+CM_ SG_ 514 BMS_RemainChargeTime "BMS Remain Charging Time";
+CM_ SG_ 514 BMS_PackTemp "Pack Temperature ";
+CM_ SG_ 514 BMS_PackVoltage "Pack Voltage";
+CM_ SG_ 514 BMS_PackCur "Battery Pack Total Current";
+CM_ SG_ 514 ALV_VCU_Batt_Info "Alive counter";
+CM_ SG_ 514 CRC_VCU_Batt_Info "Checksum";
+CM_ SG_ 632 ST_TRAI "This parameter / signal indicates if a trailer is really connected or not. fixed=0";
+CM_ SG_ 407 OP_GWS_PUBU_PKG "The signal indicates the driver request Park for controlling the electrical transmission.";
+CM_ SG_ 407 OP_GWS "The signal indicates the current status of the gear selector switch for controlling the electrical transmission.
+The content of this signal indicates the direct driver's request.";
+CM_ SG_ 407 ALIV_ST_GWS "Standard alive counter validation as per definition in the requirements specification";
+CM_ SG_ 407 CRC_ST_GWS "Standard application CRC validation 
+This signal uses the application CRC ID = 63 (dec)";
+CM_ SG_ 88 SFA_WarningLamp "SFAM Warning Lamp";
+CM_ SG_ 88 SFA_SteerWheelTorque "Torque applied to the steering wheel";
+CM_ SG_ 88 SFA_SteerWheelAngleSpeed "SFA_SteerWheelAngleSpeed";
+CM_ SG_ 88 SFA_SteerWheelAngle "SFA Calculated Steering Angle";
+CM_ SG_ 88 ALIV_SFA_SteerWheel_Info "Alive Counter";
+CM_ SG_ 88 CRC_SFA_SteerWheel_Info "Standard application CRC validation";
+CM_ SG_ 1090 T_SEC_COU_REL "
+This counter counts the seconds synchronously with the system / vehicle clock.
+";
+CM_ SG_ 1296 NM3FunctionalPartialNetworks "This signal is used to communicate which functional subnets.fixed=98304";
+CM_ SG_ 1296 NM3BasePartialNetworks "This signal is used to communicate whether communication is required in the currently active vehicle state.
+fixed=0";
+CM_ SG_ 1296 NM3SenderECUId "This signal contains the diagnostic address of the sending electronic control unit (Source Node Identifier).
+fixed=16";
+CM_ SG_ 1296 NM3ControlBitVector "Using this signal, the control bit vector specified in AUTOSAR NM is transmitted. For BMW, only bit 6 (Partial Network Information Bit) is relevant; all other bits shall be set to 0
+fixed=64";
+CM_ SG_ 816 MILE_KM "The indicated value of the odometer is made available to other nodes.
+fixed=0
+";
+CM_ SG_ 1107 StsDisconnectingSwtHighVoltStorg "Status of the disconnecting elements in the high voltage battery incl. status for the stuck welded contactor.";
+CM_ SG_ 1107 StatusServiceDisconnectionPlug "Status of the service disconnector: plugged in or not plugged in
+Fixed Value = 2";
+CM_ SG_ 143 ActualValueVoltageLinkVerified "The signal sends the link voltage as currently measured by the SME.
+The signal is required for display of the absence of voltage.";
+CM_ SG_ 143 ALIV_HighVoltageStorage10msNo2 "Standard alive counter validation as per definition in the requirements specification";
+CM_ SG_ 143 CRC_HighVoltageStorage10msNo2 "This signal contains the CRC checksum for the standard validation with application.Data ID (16 bits) 115 (dec) = 0073 (hex).";
+CM_ SG_ 630 ST_ILK_ERRM_FZM "Defined by means of DMA_PA_4975 of the central error memory / diagnostic master 10000504-000-14 requirements specification. Mapping the Ethernet StatusEnergy service interface to legacy buses.
+fixed=0";
+CM_ SG_ 630 ST_ENERG_FZM "This signal has an equivalent on the SF-CAN.fixed=1";
+CM_ SG_ 451 FZU_ChargingStopReq "Charging shall be stopped or resumed when requested from FZU";
+CM_ SG_ 896 NO_VECH_7 "This signal contains the seventh to last digit of the vehicle identification number. (The individual digits are coded in ASCII characters.)
+Bit 0: LSB, Bit 7: MSB.  fixed=48";
+CM_ SG_ 896 NO_VECH_6 "This signal contains the seventh to last digit of the vehicle identification number. (The individual digits are coded in ASCII characters.)
+Bit 0: LSB, Bit 7: MSB.  fixed=48";
+CM_ SG_ 896 NO_VECH_5 "This signal contains the seventh to last digit of the vehicle identification number. (The individual digits are coded in ASCII characters.)
+Bit 0: LSB, Bit 7: MSB.  fixed=48";
+CM_ SG_ 896 NO_VECH_4 "This signal contains the seventh to last digit of the vehicle identification number. (The individual digits are coded in ASCII characters.)
+Bit 0: LSB, Bit 7: MSB.  fixed=48";
+CM_ SG_ 896 NO_VECH_3 "This signal contains the seventh to last digit of the vehicle identification number. (The individual digits are coded in ASCII characters.)
+Bit 0: LSB, Bit 7: MSB
+ fixed=48";
+CM_ SG_ 896 NO_VECH_2 "This signal contains the seventh to last digit of the vehicle identification number. (The individual digits are coded in ASCII characters.)
+Bit 0: LSB, Bit 7: MSB.  fixed=48";
+CM_ SG_ 896 NO_VECH_1 "This signal contains the seventh to last digit of the vehicle identification number. (The individual digits are coded in ASCII characters.)
+Bit 0: LSB, Bit 7: MSB. fixed=48";
+CM_ SG_ 146 CTR_ERRM_BN_U "The signal Steuerung_Fehlerspeicher_Bordnetz_Spannung provides voltage thresholds for handling the error memory. fixed=0";
+CM_ SG_ 1021 DISP_PO_GRB "This signal is used to activate the transmission position display.";
+CM_ SG_ 1021 DISP_PO_IDC_GRB "The signal defines the transmission position display type. fixed=0";
+CM_ SG_ 1021 DISP_PRG_GRB "The signal is used to activate the program information display in the instrument cluster.fixed=0";
+CM_ SG_ 1021 ALIV_DT_DISP_GRDT "Standard alive counter validation as per definition in the requirements specification";
+CM_ SG_ 1021 CRC_DT_DISP_GRDT "Standard application CRC validation 
+This signal uses the application CRC ID = 57 (dec)";
+CM_ SG_ 60 QU_ST_CON_VEH "The signal indicates whether the calculated value of Status_Zustand_Fahrzeug.fixed=2";
+CM_ SG_ 60 ST_CON_VEH "The signal Status_Zustand_Fahrzeug describes the vehicle state";
+CM_ SG_ 60 CTR_FKTN_PRTNT "
+This signal indicates which functional subnets are active.fixed=102912";
+CM_ SG_ 60 CTR_BS_PRTNT "This signal is used to communicate whether communication is required in the currently active vehicle state.Duplicate from ST_CON_VEH";
+CM_ SG_ 60 ALIV_CON_VEH "Standard alive counter validation as per definition in the requirements specification";
+CM_ SG_ 60 CRC_CON_VEH "Standard application CRC validation 
+This signal uses the application CRC ID = 197 (dec).";
+CM_ SG_ 293 RequestExtraBoostETractSys2 "Additional torque as torque boost, requested for electric machine system 2 (ExtraBoost in PowerMode).
+Fixed Value = 0";
+CM_ SG_ 293 RequestExtraBoostETractSys1 "Additional torque as torque boost, requested for electric machine system 1 (ExtraBoost in PowerMode).
+Fixed Value = 0";
+CM_ SG_ 293 OperatingModeEANActualValue "Actual operating mode of complete electric drive system. This signal is used for the drive network. For control units that are not from the drive network, the signal ST_MOT_DRV is provided.";
+CM_ SG_ 293 PowerETractSys1LimMotMax "Maximum approved motorized electric power of electric machine system 1.";
+CM_ SG_ 293 PowerETractSys1LimGenMax "Maximum approved regenerative electric power of electric machine system 1.";
+CM_ SG_ 293 PowerETractSys2LimMotMax "Maximum approved motorized electric power of electric machine system 2.";
+CM_ SG_ 293 PowerETractSys2LimGenMax "Maximum approved regenerative electric power of electric machine system 2.";
+CM_ BO_ 749 "ambient temperature message";
+CM_ SG_ 749 TEMP_EX "Here the processed (= filtered) ambient temperature is made available to all other bus subscribers.";
+CM_ SG_ 180 ABS_ACTIVE "ABS activation indication";
+CM_ SG_ 210 WEstTot_Nm "Estimated Total Brake Torque of Wheels";
+CM_ SG_ 200 AD3_PrsrVal_Rr "Wheel brake press Rr/Hydraulic Brake Pressure ";
+CM_ SG_ 200 AD3_PrsrVal_Rl "Wheel brake press Rl/Hydraulic Brake Pressure ";
+CM_ SG_ 200 AD3_PrsrVal_Fr "Wheel brake press Fr/Hydraulic Brake Pressure /Braking Pressure to wheel caliper";
+CM_ SG_ 200 AD3_PrsrVal_Fl "Wheel brake press FL/Hydraulic Brake Pressure ";
+CM_ SG_ 490 MILE_KM_TOT "Using this signal, the odometer is sent. The value corresponds to the value displayed in the instrument cluster. However, the distribution is always made in the unit [km], irrespective of the unit preference.
+fixed=0";
+CM_ SG_ 150 EBCM_BrkPedlSts "Brake pedal status signal Pressed/Not Pressed";
+CM_ SG_ 150 HillholderFault "Hillholder fault status";
+CM_ SG_ 150 HillholderStatus "Hillholder status";
+CM_ SG_ 150 TCSActive "Traction control system activation";
+CM_ SG_ 150 TCSAvailable "Traction control system available";
+CM_ SG_ 150 EPBFault "EPB fault status";
+CM_ SG_ 150 EPBStatus "Lamp & display message/Lamp & display MSG Automatic";
+CM_ SG_ 150 BreakPedalPercentValid "Break pedal percent valid";
+CM_ SG_ 150 BreakPedalPercent "Break pedal percent";
+CM_ SG_ 150 MCPressure "MC Pressure";
+CM_ SG_ 150 MCPressureSts "MC Pressure Status";
+CM_ SG_ 150 ALIV_EBCM_STATUS "Alive counter";
+CM_ SG_ 150 CRC_EBCM_STATUS "Checksum";
+CM_ SG_ 214 ST_SLIP_THO "Signal includes axle-specific information indicating whether a slip threshold is exceeded on at least one wheel of the specified axle. 
+Signal replaces coding of bit 1 in signal Qualifier_Funktion_ASC starting.
+Fixed value is 15 for mule vehicle.";
+CM_ SG_ 213 ST_BRG_DV "Status information regarding deceleration by the driver or by driver assistance systems or by a deceleration due to recuperation.";
+CM_ SG_ 213 QU_FN_ASC "ASC TCS function qualifier. 
+The lowermost bit of this signal can be assigned by the DSC for development purposes, but shall not be evaluated.
+REMARK: Coding of Bit 1 in this signal is replaced by the new signal Status_Schlupf_Schwelle.";
+CM_ SG_ 213 QU_FN_ABS "ABS function qualifier.
+The lowermost 4 bits of this signal can be assigned by the DSC for development purposes, but shall not be evaluated. Further details can be found in the components requirements specification DSC.";
+CM_ SG_ 213 QU_FN_FDR "FDR ESC function qualifier.
+The lowermost 3 bits of this signal can be assigned by the DSC for development purposes, but shall not be evaluated. Further details can be found in the components requirements specification DSC.";
+CM_ SG_ 213 ALIV_ST_STAB_DSC "Standard alive counter validation as per definition in the requirements specification Allgemeine Bordnetzkommunikation.";
+CM_ SG_ 213 CRC_ST_STAB_DSC "Standard application CRC validation 
+This signal uses the application CRC ID = 71 (dec)";
+CM_ SG_ 296 CHL_StatusSlipThresholds "This signal explicitly contains the value of the extension ID = 3 (dez) = 3 (hex)  for the extended CRC validation according to Autosar_SWS_E2ELibrary profile 1C.
+Fixed value is 3 for mule vehicle.";
+CM_ SG_ 296 ALIV_StatusSlipThresholds "Standard protection alive counter as defined in the on-board data communication requirements specification.";
+CM_ SG_ 296 CRC_StatusSlipThresholds "This signal contains the CRC checksum for the extended standard application CRC validation according to application profile 1C E2E Protection (Autosar SWS 428).";
+CM_ SG_ 296 StatusSlipThresholdsRearAxle "Communication of slip status for front and rear axle. This information is relevant for deactivation of comfort functions (i. e. ASD) and for functional safety
+Fixed value is 0 for mule vehicle.";
+CM_ SG_ 296 StatusSlipThresholdsFrontAxle "Communication of slip status for front and rear axle. This information is relevant for deactivation of comfort functions (i. e. ASD) and for functional safety
+Fixed value is 0 for mule vehicle.";
+CM_ SG_ 296 ST_TAR_RPM_FTAX "With this status, the limits to the minimum and maximum wheel speed limit for the front axle can be activated or deactivated.
+Fixed value is 0 for mule vehicle.";
+CM_ SG_ 296 TAR_RPM_MIN_FTAX "Minimum wheel speed at the front axle.
+The wheel speed of the front axle is the mean value of the wheel speed front left and the wheel speed front right.
+Fixed value is 0 for mule vehicle.";
+CM_ SG_ 296 TAR_RPM_MAX_FTAX "Maximum wheel speed at the front axle.
+The wheel speed of the front axle is the mean value of the wheel speed front left and the wheel speed front right.
+Fixed value is 40000 for mule vehicle.";
+CM_ SG_ 296 CRC_RQ_RPM_FTAX "This signal contains the CRC checksum for the extended standard application CRC validation according to application profile 1C E2E Protection (Autosar SWS 428).";
+CM_ SG_ 296 CHL_RQ_RPM_FTAX "This signal explicitly contains the value of the extension ID = 7 (dec) = 7 (hex) for the extended CRC validation according to Autosar_SWS_E2ELibrary profile 1C.
+Fixed value is 7 for mule vehicle.";
+CM_ SG_ 296 ALIV_RQ_RPM_FTAX "Standard alive counter validation as per definition in the requirements specification Allgemeine Bordnetzkommunikation.";
+CM_ SG_ 296 TAR_STIF_SPCO "Standardized value for the regulator stiffness. Valid for all speed regulators on the EA side.
+Value depends on driving situation:If the vehicle stability is in danger, the regulator shall be rigid, otherwise relaxed.
+Fixed value is 5 for mule vehicle.";
+CM_ SG_ 296 ST_TAR_RPM_BAX "With this status, the limits to the minimum and maximum wheel speed limit for the rear axle can be activated or deactivated.
+Fixed value is 0 for mule vehicle.";
+CM_ SG_ 296 TAR_RPM_MIN_BAX "Minimum wheel speed at the rear axle.
+The wheel speed of the rear axle is the mean value of the wheel speed rear left and the wheel speed rear right.
+Fixed value is 0 for mule vehicle.";
+CM_ SG_ 296 TAR_RPM_MAX_BAX "Maximum wheel speed at the rear axle.
+The wheel speed of the rear axle is the mean value of the wheel speed rear left and the wheel speed rear right.
+Fixed value is 40000 for mule vehicle.";
+CM_ SG_ 296 CRC_RQ_RPM_BAX "This signal contains the CRC checksum for the extended standard application CRC validation according to application profile 1C E2E Protection (Autosar SWS 428). ";
+CM_ SG_ 296 ALIV_RQ_RPM_BAX "Standard alive counter validation as per definition in the requirements specification Allgemeine Bordnetzkommunikation";
+CM_ SG_ 296 CHL_RQ_RPM_BAX "This signal explicitly contains the value of the extension ID = 6 (dec) = 6 (hex) for the extended CRC validation according to Autosar_SWS_E2ELibrary profile 1C.
+Fixed value is 6 for mule vehicle.";
+CM_ SG_ 296 AVL_BRTORQ_WHL_FS_RH_EXT "Current wheel-related friction braking torque of the DSC control unit. 
+A negative braking torque corresponds to friction force against the vehicle movement.
+Fixed value is 0 for mule vehicle.";
+CM_ SG_ 296 AVL_BRTORQ_WHL_FS_LH_EXT "Current wheel-related friction braking torque of the DSC control unit. 
+A negative braking torque corresponds to friction force against the vehicle movement.
+Fixed value is 0 for mule vehicle.";
+CM_ SG_ 296 AVL_BRTORQ_WHL_RS_RH_EXT "Current wheel-related friction braking torque of the DSC control unit. 
+A negative braking torque corresponds to friction force against the vehicle movement.
+Fixed value is 0 for mule vehicle.";
+CM_ SG_ 296 AVL_BRTORQ_WHL_RS_LH_EXT "Current wheel-related friction braking torque of the DSC control unit. 
+A negative braking torque corresponds to friction force against the vehicle movement.
+Fixed value is 0 for mule vehicle.";
+CM_ SG_ 296 CHL_EXTS_ARB_INTF "This signal explicitly contains the value of the extension ID = 4 (dec) = 4 (hex) for the extended CRC validation according to Autosar_SWS_E2ELibrary profile 1C.
+fixed=4";
+CM_ SG_ 296 ALIV_EXTS_ARB_INTF "Standard alive counter validation as per definition in the requirements specification Allgemeine Bordnetzkommunikation.";
+CM_ SG_ 296 CRC_EXTS_ARB_INTF "This signal contains the CRC checksum for the extended standard application CRC validation according to application profile 1C E2E Protection";
+CM_ SG_ 131 QU_AVL_RPM_WHL_FRH "Status qualifier for signal Ist_Drehzahl_Rad_VR.
+Fixed value is 1 for mule vehicle.";
+CM_ SG_ 131 QU_AVL_RPM_WHL_FLH "Status qualifier for signal Ist_Drehzahl_Rad_VL.
+Fixed value is 1 for mule vehicle.";
+CM_ SG_ 131 QU_AVL_RPM_WHL_RRH "Status qualifier for signal Ist_Drehzahl_Rad_HR.
+Fixed value is 1 for mule vehicle.";
+CM_ SG_ 131 QU_AVL_RPM_WHL_RLH "Status qualifier for signal Ist_Drehzahl_Rad_HL.
+Fixed value is 1 for mule vehicle.";
+CM_ SG_ 131 AVL_RPM_WHL_FRH "Measured speed of the right front wheel.";
+CM_ SG_ 131 AVL_RPM_WHL_FLH "Measured speed of the left front wheel.";
+CM_ SG_ 131 AVL_RPM_WHL_RRH "Measured speed of the right rear wheel.";
+CM_ SG_ 131 AVL_RPM_WHL_RLH "Measured speed of the left rear wheel.";
+CM_ SG_ 131 ALIV_AVL_RPM_WHL "Alive counter";
+CM_ SG_ 131 CRC_AVL_RPM_WHL "This signal uses the application CRC ID = 17 (dec)";
+CM_ BO_ 289 "This message contains the speed of the vehicle's center of gravity and the driving state of the vehicle.has context menu";
+CM_ SG_ 289 SecOcDataP2V_VEH "SecOcDataP2V_VEH
+fixed=255
+Invalid value=1.84467e+19";
+CM_ SG_ 289 QU_V_VEH_COG "Status qualifier for the signal Geschwindigkeit_Fahrzeug_Schwerpunkt.  Minimum requirements for sending a valid signal value (starting from 2008-06-10, the following applies for L6/L7/F25)
+Fixed value is 1 for mule vehicle.";
+CM_ SG_ 289 V_VEH_COG "Absolute speed of the vehicle's center of gravity; contains the ratios from vehicle longitudinal and lateral speed.  This signal is mainly based on the four wheel speeds. ";
+CM_ SG_ 289 ALIV_V_VEH "Transp.MOST-GW-Migration, 01.09.2006: Fusion of parameter AliveSpeed [1] with signal Alive_Geschwindigkeit_Fahrzeug [1].";
+CM_ SG_ 289 CRC_V_VEH "Standard application CRC validation This signal uses application CRC ID = 12 (dec)  The checksum does not have an invalidity identifier! ";
+CM_ SG_ 497 STAT_CL15_WUPL "fixed=0";
+CM_ SG_ 497 ALIV_CLAMP_STAT "Alive counter";
+CM_ SG_ 497 STAT_CL30S_L "fixed=0";
+CM_ SG_ 497 STAT_CL30S_Light "fixed=0";
+BA_DEF_ SG_  "SigFixedValue" STRING ;
+BA_DEF_ BU_  "TpSTMin" INT 0 255;
+BA_DEF_  "NmType" STRING ;
+BA_DEF_  "NmAsrWaitBusSleepTime" INT 0 65535;
+BA_DEF_  "NmAsrTimeoutTime" INT 0 65535;
+BA_DEF_  "NmAsrRepeatMessageTime" INT 0 65535;
+BA_DEF_ BU_  "NmAsrNodeIdentifier" HEX 0 255;
+BA_DEF_ BU_  "NmAsrNode" ENUM  "No","Yes";
+BA_DEF_  "NmAsrMessageCount" INT 1 256;
+BA_DEF_ BO_  "NmAsrMessage" ENUM  "No","Yes";
+BA_DEF_ BU_  "NmAsrCanMsgReducedTime" INT 320 640;
+BA_DEF_  "NmAsrCanMsgCycleTime" INT 0 65535;
+BA_DEF_ BU_  "NmAsrCanMsgCycleOffset" INT 0 65535;
+BA_DEF_  "NmAsrBaseAddress" HEX 0 2047;
+BA_DEF_ SG_  "InvalidValue" STRING ;
+BA_DEF_ BU_  "ILUsed" ENUM  "No","Yes";
+BA_DEF_ SG_  "GenSigTimeoutTime" INT 0 65535;
+BA_DEF_ SG_  "GenSigStartValue" INT 0 0;
+BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 65535;
+BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 0;
+BA_DEF_ BO_  "GenMsgILSupport" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagUudtResponse" ENUM  "False","True";
+BA_DEF_ BO_  "DiagState" ENUM  "No","Yes";
+BA_DEF_ BU_  "Address" HEX 0 255;
+BA_DEF_ BO_  "VFrameFormat" ENUM  "StandardCAN","ExtendedCAN","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","StandardCAN_FD","ExtendedCAN_FD";
+BA_DEF_ BU_  "ECU" STRING ;
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
+BA_DEF_ BU_  "NmStationAddress" HEX 0 0;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_  "DBName" STRING ;
+BA_DEF_  "Manufacturer" ENUM  "CEER";
+BA_DEF_ BU_  "Version" STRING ;
+BA_DEF_  "Baudrate" INT 0 2000000;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","IfActive","NoMsgSendType","NotUsed";
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithCyclic","OnChange","OnChangeWithCyclic","IfActive","IfActiveWithCyclic","NoSigSendType";
+BA_DEF_ BO_  "GenMsgDelayTime" INT 0 100000;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 100000;
+BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 100000;
+BA_DEF_ BO_  "DiagResponse" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagRequest" ENUM  "No","Yes";
+BA_DEF_DEF_  "SigFixedValue" "NoFixedValue";
+BA_DEF_DEF_  "TpSTMin" 20;
+BA_DEF_DEF_  "NmType" "NmAsr";
+BA_DEF_DEF_  "NmAsrWaitBusSleepTime" 1500;
+BA_DEF_DEF_  "NmAsrTimeoutTime" 2000;
+BA_DEF_DEF_  "NmAsrRepeatMessageTime" 3200;
+BA_DEF_DEF_  "NmAsrNodeIdentifier" 0;
+BA_DEF_DEF_  "NmAsrNode" "Yes";
+BA_DEF_DEF_  "NmAsrMessageCount" 128;
+BA_DEF_DEF_  "NmAsrMessage" "No";
+BA_DEF_DEF_  "NmAsrCanMsgReducedTime" 320;
+BA_DEF_DEF_  "NmAsrCanMsgCycleTime" 640;
+BA_DEF_DEF_  "NmAsrCanMsgCycleOffset" 0;
+BA_DEF_DEF_  "NmAsrBaseAddress" 1280;
+BA_DEF_DEF_  "InvalidValue" "";
+BA_DEF_DEF_  "ILUsed" "Yes";
+BA_DEF_DEF_  "GenSigTimeoutTime" 0;
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_  "GenMsgNrOfRepetition" 0;
+BA_DEF_DEF_  "GenMsgILSupport" "Yes";
+BA_DEF_DEF_  "DiagUudtResponse" "False";
+BA_DEF_DEF_  "DiagState" "No";
+BA_DEF_DEF_  "Address" 0;
+BA_DEF_DEF_  "VFrameFormat" "StandardCAN";
+BA_DEF_DEF_  "ECU" "";
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "NmStationAddress" 0;
+BA_DEF_DEF_  "BusType" "";
+BA_DEF_DEF_  "DBName" "";
+BA_DEF_DEF_  "Manufacturer" "CEER";
+BA_DEF_DEF_  "Version" "";
+BA_DEF_DEF_  "Baudrate" 500000;
+BA_DEF_DEF_  "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_  "GenSigSendType" "Cyclic";
+BA_DEF_DEF_  "GenMsgDelayTime" 0;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenMsgCycleTimeFast" 0;
+BA_DEF_DEF_  "DiagResponse" "No";
+BA_DEF_DEF_  "DiagRequest" "No";
+BA_ "BusType" "CAN FD";
+BA_ "Baudrate" 2000000;
+BA_ "DBName" "Body_CAN_FD";
+BA_ "ECU" BU_ ZCU_R "ZCU_F";
+BA_ "NmAsrCanMsgCycleOffset" BU_ ZCU_R 205;
+BA_ "Address" BU_ ZCU_R 5;
+BA_ "NmStationAddress" BU_ ZCU_R 6;
+BA_ "NmAsrNodeIdentifier" BU_ ZCU_R 5;
+BA_ "NmStationAddress" BU_ VCU 4;
+BA_ "NmAsrCanMsgCycleOffset" BU_ VCU 205;
+BA_ "NmAsrNodeIdentifier" BU_ VCU 4;
+BA_ "Address" BU_ VCU 4;
+BA_ "ECU" BU_ VCU "VCU";
+BA_ "ECU" BU_ ZCU_F "EBCM";
+BA_ "Address" BU_ ZCU_F 24;
+BA_ "NmAsrCanMsgCycleOffset" BU_ ZCU_F 205;
+BA_ "NmAsrNodeIdentifier" BU_ ZCU_F 24;
+BA_ "NmStationAddress" BU_ ZCU_F 5;
+BA_ "GenMsgSendType" BO_ 881 0;
+BA_ "GenMsgCycleTime" BO_ 881 1000;
+BA_ "VFrameFormat" BO_ 881 14;
+BA_ "GenMsgSendType" BO_ 433 0;
+BA_ "GenMsgCycleTime" BO_ 433 100;
+BA_ "VFrameFormat" BO_ 433 14;
+BA_ "GenMsgCycleTime" BO_ 498 100;
+BA_ "GenMsgSendType" BO_ 498 0;
+BA_ "VFrameFormat" BO_ 498 14;
+BA_ "GenMsgCycleTime" BO_ 151 20;
+BA_ "GenMsgSendType" BO_ 151 0;
+BA_ "VFrameFormat" BO_ 151 14;
+BA_ "GenMsgSendType" BO_ 273 0;
+BA_ "GenMsgCycleTime" BO_ 273 40;
+BA_ "VFrameFormat" BO_ 273 14;
+BA_ "GenMsgSendType" BO_ 277 0;
+BA_ "GenMsgCycleTime" BO_ 277 50;
+BA_ "VFrameFormat" BO_ 277 14;
+BA_ "GenMsgSendType" BO_ 882 0;
+BA_ "GenMsgCycleTime" BO_ 882 1000;
+BA_ "VFrameFormat" BO_ 882 14;
+BA_ "GenMsgCycleTime" BO_ 514 150;
+BA_ "GenMsgSendType" BO_ 514 0;
+BA_ "VFrameFormat" BO_ 514 14;
+BA_ "GenMsgSendType" BO_ 632 0;
+BA_ "GenMsgCycleTime" BO_ 632 5000;
+BA_ "VFrameFormat" BO_ 632 14;
+BA_ "GenMsgSendType" BO_ 407 0;
+BA_ "GenMsgCycleTime" BO_ 407 30;
+BA_ "VFrameFormat" BO_ 407 14;
+BA_ "GenMsgCycleTime" BO_ 88 10;
+BA_ "GenMsgSendType" BO_ 88 0;
+BA_ "VFrameFormat" BO_ 88 14;
+BA_ "GenMsgCycleTime" BO_ 1090 1000;
+BA_ "GenMsgSendType" BO_ 1090 0;
+BA_ "VFrameFormat" BO_ 1090 14;
+BA_ "GenMsgCycleTime" BO_ 1296 100;
+BA_ "GenMsgSendType" BO_ 1296 0;
+BA_ "VFrameFormat" BO_ 1296 14;
+BA_ "GenMsgCycleTime" BO_ 816 10000;
+BA_ "GenMsgSendType" BO_ 816 0;
+BA_ "VFrameFormat" BO_ 816 14;
+BA_ "GenMsgCycleTime" BO_ 1107 200;
+BA_ "GenMsgSendType" BO_ 1107 0;
+BA_ "VFrameFormat" BO_ 1107 14;
+BA_ "GenMsgCycleTime" BO_ 143 10;
+BA_ "GenMsgSendType" BO_ 143 0;
+BA_ "VFrameFormat" BO_ 143 14;
+BA_ "GenMsgCycleTime" BO_ 630 5000;
+BA_ "GenMsgSendType" BO_ 630 0;
+BA_ "VFrameFormat" BO_ 630 14;
+BA_ "GenMsgCycleTime" BO_ 451 100;
+BA_ "GenMsgSendType" BO_ 451 0;
+BA_ "VFrameFormat" BO_ 451 14;
+BA_ "GenMsgCycleTime" BO_ 896 100;
+BA_ "VFrameFormat" BO_ 896 14;
+BA_ "GenMsgCycleTime" BO_ 146 5000;
+BA_ "GenMsgSendType" BO_ 146 0;
+BA_ "VFrameFormat" BO_ 146 14;
+BA_ "GenMsgCycleTime" BO_ 1021 100;
+BA_ "GenMsgSendType" BO_ 1021 0;
+BA_ "VFrameFormat" BO_ 1021 14;
+BA_ "GenMsgCycleTime" BO_ 60 100;
+BA_ "GenMsgSendType" BO_ 60 0;
+BA_ "VFrameFormat" BO_ 60 14;
+BA_ "GenMsgSendType" BO_ 293 0;
+BA_ "GenMsgCycleTime" BO_ 293 10;
+BA_ "VFrameFormat" BO_ 293 14;
+BA_ "GenMsgCycleTime" BO_ 749 1000;
+BA_ "GenMsgSendType" BO_ 749 0;
+BA_ "VFrameFormat" BO_ 749 14;
+BA_ "GenMsgCycleTime" BO_ 180 10;
+BA_ "GenMsgSendType" BO_ 180 0;
+BA_ "VFrameFormat" BO_ 180 14;
+BA_ "GenMsgCycleTime" BO_ 210 10;
+BA_ "GenMsgSendType" BO_ 210 0;
+BA_ "VFrameFormat" BO_ 210 14;
+BA_ "GenMsgCycleTime" BO_ 200 10;
+BA_ "GenMsgSendType" BO_ 200 0;
+BA_ "VFrameFormat" BO_ 200 14;
+BA_ "GenMsgCycleTime" BO_ 490 300;
+BA_ "GenMsgSendType" BO_ 490 0;
+BA_ "VFrameFormat" BO_ 490 14;
+BA_ "GenMsgSendType" BO_ 150 0;
+BA_ "GenMsgCycleTime" BO_ 150 20;
+BA_ "VFrameFormat" BO_ 150 14;
+BA_ "GenMsgSendType" BO_ 214 0;
+BA_ "GenMsgCycleTime" BO_ 214 100;
+BA_ "VFrameFormat" BO_ 214 14;
+BA_ "GenMsgSendType" BO_ 213 0;
+BA_ "GenMsgCycleTime" BO_ 213 50;
+BA_ "VFrameFormat" BO_ 213 14;
+BA_ "GenMsgCycleTime" BO_ 314 100;
+BA_ "GenMsgSendType" BO_ 314 0;
+BA_ "VFrameFormat" BO_ 314 14;
+BA_ "GenMsgCycleTime" BO_ 326 100;
+BA_ "GenMsgSendType" BO_ 326 0;
+BA_ "VFrameFormat" BO_ 326 14;
+BA_ "GenMsgSendType" BO_ 296 0;
+BA_ "GenMsgCycleTime" BO_ 296 10;
+BA_ "VFrameFormat" BO_ 296 14;
+BA_ "GenMsgCycleTime" BO_ 131 5;
+BA_ "GenMsgSendType" BO_ 131 0;
+BA_ "VFrameFormat" BO_ 131 14;
+BA_ "GenMsgCycleTime" BO_ 289 20;
+BA_ "GenMsgSendType" BO_ 289 0;
+BA_ "VFrameFormat" BO_ 289 14;
+BA_ "GenMsgCycleTime" BO_ 497 100;
+BA_ "GenMsgSendType" BO_ 497 0;
+BA_ "VFrameFormat" BO_ 497 14;
+BA_ "InvalidValue" SG_ 881 ALV_VCU_WarnMsg "15";
+BA_ "GenSigStartValue" SG_ 881 CRC_VCU_WarnMsg 255;
+BA_ "InvalidValue" SG_ 433 DCDC_vOutput "65535";
+BA_ "InvalidValue" SG_ 433 DCDC_iOutput "65535";
+BA_ "InvalidValue" SG_ 433 DCDC_vDCInput "65535";
+BA_ "InvalidValue" SG_ 433 DCDC_maxCurrentOut "65535";
+BA_ "InvalidValue" SG_ 433 DCDC_status "7";
+BA_ "InvalidValue" SG_ 433 ALV_VCU_StatusDCDC "15";
+BA_ "GenSigStartValue" SG_ 433 CRC_VCU_StatusDCDC 255;
+BA_ "GenSigStartValue" SG_ 498 VCU_ChgGun_Status 7;
+BA_ "InvalidValue" SG_ 498 VCU_ChgGun_Status "7";
+BA_ "InvalidValue" SG_ 498 VCU_VehChg_STS "7";
+BA_ "InvalidValue" SG_ 498 ALV_VCU_MHU_info "15";
+BA_ "GenSigStartValue" SG_ 498 CRC_VCU_MHU_info 255;
+BA_ "InvalidValue" SG_ 151 VCU_HVbatSoc_charged_estStatus "3";
+BA_ "InvalidValue" SG_ 151 VCU_HVbatSoc_charged "1023";
+BA_ "InvalidValue" SG_ 151 VCU_RunningRange_charged "4095";
+BA_ "InvalidValue" SG_ 151 VCU_RunningRange_chrg_estSts "3";
+BA_ "InvalidValue" SG_ 151 ALIV_VCU_HVsystem_status "15";
+BA_ "GenSigStartValue" SG_ 151 CRC_VCU_HVsystem_status 255;
+BA_ "InvalidValue" SG_ 151 CRC_VCU_HVsystem_status "0";
+BA_ "InvalidValue" SG_ 273 VCU_ACPD_Percent_Valid "1";
+BA_ "InvalidValue" SG_ 273 VCU_ACPD_Percent "4095";
+BA_ "GenSigStartValue" SG_ 273 VCU_ACT_DriveModeValid 1;
+BA_ "InvalidValue" SG_ 273 VCU_ACT_DriveModeValid "1";
+BA_ "InvalidValue" SG_ 273 VCU_ACT_DriveMode "7";
+BA_ "GenSigStartValue" SG_ 273 VCU_ACT_GearValid 1;
+BA_ "InvalidValue" SG_ 273 VCU_ACT_GearValid "1";
+BA_ "InvalidValue" SG_ 273 VCU_ACT_Gear "7";
+BA_ "InvalidValue" SG_ 273 VCU_HV_DrvSystemStatus "7";
+BA_ "InvalidValue" SG_ 273 VCU_HV_SystemStatus "7";
+BA_ "InvalidValue" SG_ 273 ALV_VCU_HV_DrvSys_bstatus "15";
+BA_ "GenSigStartValue" SG_ 273 CRC_VCU_HV_DrvSys_status 255;
+BA_ "InvalidValue" SG_ 277 VCU_MaxCurrentOfACCharging "63";
+BA_ "GenSigStartValue" SG_ 277 VCU_ACChargingVoltage 0;
+BA_ "InvalidValue" SG_ 277 VCU_ACChargingVoltage "255";
+BA_ "InvalidValue" SG_ 277 VCU_CPValue "127";
+BA_ "InvalidValue" SG_ 277 ALV_VCU_ChargingConnection "15";
+BA_ "GenSigStartValue" SG_ 277 CRC_VCU_ChargingConnection 255;
+BA_ "InvalidValue" SG_ 882 ALV_VCU_Batt_WarnMsg "15";
+BA_ "GenSigStartValue" SG_ 882 CHSKM_VCU_Batt_WarnMsg 255;
+BA_ "InvalidValue" SG_ 514 BMS_ChargingCurrent "65535";
+BA_ "InvalidValue" SG_ 514 BMS_ChargingVoltage "65535";
+BA_ "InvalidValue" SG_ 514 BMS_RemainChargeTime "4095";
+BA_ "GenSigStartValue" SG_ 514 BMS_PackTemp 40;
+BA_ "InvalidValue" SG_ 514 BMS_PackTemp "255";
+BA_ "GenSigStartValue" SG_ 514 BMS_PackVoltage 3450;
+BA_ "InvalidValue" SG_ 514 BMS_PackVoltage "65535";
+BA_ "GenSigStartValue" SG_ 514 BMS_PackCur 15000;
+BA_ "InvalidValue" SG_ 514 BMS_PackCur "65535";
+BA_ "InvalidValue" SG_ 514 ALV_VCU_Batt_Info "15";
+BA_ "GenSigStartValue" SG_ 514 CRC_VCU_Batt_Info 255;
+BA_ "GenSigStartValue" SG_ 632 ST_TRAI 3;
+BA_ "InvalidValue" SG_ 632 ST_TRAI "3";
+BA_ "GenSigStartValue" SG_ 407 OP_GWS_PUBU_PKG 3;
+BA_ "InvalidValue" SG_ 407 OP_GWS_PUBU_PKG "3";
+BA_ "GenSigStartValue" SG_ 407 OP_GWS 15;
+BA_ "InvalidValue" SG_ 407 OP_GWS "15";
+BA_ "GenSigStartValue" SG_ 407 ALIV_ST_GWS 0;
+BA_ "InvalidValue" SG_ 407 ALIV_ST_GWS "14";
+BA_ "GenSigStartValue" SG_ 407 CRC_ST_GWS 255;
+BA_ "InvalidValue" SG_ 407 CRC_ST_GWS "255";
+BA_ "InvalidValue" SG_ 88 SFA_WarningLamp "7";
+BA_ "InvalidValue" SG_ 88 SFA_SteerWheelTorque "255";
+BA_ "InvalidValue" SG_ 88 SFA_SteerWheelAngleSpeed "255";
+BA_ "InvalidValue" SG_ 88 SFA_SteerWheelAngle "255";
+BA_ "InvalidValue" SG_ 88 SFA_EmergencyRequest "3";
+BA_ "InvalidValue" SG_ 88 SFA_CenteringStatus "7";
+BA_ "GenSigStartValue" SG_ 88 ALIV_SFA_SteerWheel_Info 0;
+BA_ "InvalidValue" SG_ 88 ALIV_SFA_SteerWheel_Info "15";
+BA_ "GenSigStartValue" SG_ 88 CRC_SFA_SteerWheel_Info 255;
+BA_ "InvalidValue" SG_ 88 CRC_SFA_SteerWheel_Info "255";
+BA_ "InvalidValue" SG_ 1090 T_SEC_COU_REL "4294967295";
+BA_ "GenSigStartValue" SG_ 1090 T_SEC_COU_REL 4294967295;
+BA_ "SigFixedValue" SG_ 1296 NM3FunctionalPartialNetworks "98304";
+BA_ "GenSigStartValue" SG_ 1296 NM3FunctionalPartialNetworks 4294967295;
+BA_ "InvalidValue" SG_ 1296 NM3FunctionalPartialNetworks "4294967295";
+BA_ "SigFixedValue" SG_ 1296 NM3BasePartialNetworks "0";
+BA_ "GenSigStartValue" SG_ 1296 NM3BasePartialNetworks 65535;
+BA_ "InvalidValue" SG_ 1296 NM3BasePartialNetworks "65535";
+BA_ "SigFixedValue" SG_ 1296 NM3SenderECUId "16";
+BA_ "GenSigStartValue" SG_ 1296 NM3SenderECUId 255;
+BA_ "InvalidValue" SG_ 1296 NM3SenderECUId "255";
+BA_ "SigFixedValue" SG_ 1296 NM3ControlBitVector "64";
+BA_ "GenSigStartValue" SG_ 1296 NM3ControlBitVector 255;
+BA_ "InvalidValue" SG_ 1296 NM3ControlBitVector "255";
+BA_ "SigFixedValue" SG_ 816 MILE_KM "0";
+BA_ "GenSigStartValue" SG_ 816 MILE_KM 16777215;
+BA_ "InvalidValue" SG_ 816 MILE_KM "16777215";
+BA_ "GenSigStartValue" SG_ 1107 StsDisconnectingSwtHighVoltStorg 63;
+BA_ "InvalidValue" SG_ 1107 StsDisconnectingSwtHighVoltStorg "63";
+BA_ "GenSigStartValue" SG_ 1107 StatusServiceDisconnectionPlug 3;
+BA_ "InvalidValue" SG_ 1107 StatusServiceDisconnectionPlug "3";
+BA_ "InvalidValue" SG_ 143 ActualValueVoltageLinkVerified "1023.75";
+BA_ "GenSigStartValue" SG_ 143 ActualValueVoltageLinkVerified 4095;
+BA_ "InvalidValue" SG_ 143 ALIV_HighVoltageStorage10msNo2 "15";
+BA_ "GenSigStartValue" SG_ 143 ALIV_HighVoltageStorage10msNo2 0;
+BA_ "InvalidValue" SG_ 143 CRC_HighVoltageStorage10msNo2 "65535";
+BA_ "GenSigStartValue" SG_ 143 CRC_HighVoltageStorage10msNo2 65535;
+BA_ "SigFixedValue" SG_ 630 ST_ILK_ERRM_FZM "0";
+BA_ "InvalidValue" SG_ 630 ST_ILK_ERRM_FZM "3";
+BA_ "GenSigStartValue" SG_ 630 ST_ILK_ERRM_FZM 3;
+BA_ "SigFixedValue" SG_ 630 ST_ENERG_FZM "1";
+BA_ "InvalidValue" SG_ 630 ST_ENERG_FZM "15";
+BA_ "GenSigStartValue" SG_ 630 ST_ENERG_FZM 15;
+BA_ "InvalidValue" SG_ 451 FZU_ChargingStopReq "3";
+BA_ "GenSigStartValue" SG_ 896 NO_VECH_7 255;
+BA_ "SigFixedValue" SG_ 896 NO_VECH_7 "48";
+BA_ "InvalidValue" SG_ 896 NO_VECH_7 "255";
+BA_ "GenSigStartValue" SG_ 896 NO_VECH_6 255;
+BA_ "SigFixedValue" SG_ 896 NO_VECH_6 "48";
+BA_ "InvalidValue" SG_ 896 NO_VECH_6 "255";
+BA_ "GenSigStartValue" SG_ 896 NO_VECH_5 255;
+BA_ "SigFixedValue" SG_ 896 NO_VECH_5 "48";
+BA_ "InvalidValue" SG_ 896 NO_VECH_5 "255";
+BA_ "GenSigStartValue" SG_ 896 NO_VECH_4 255;
+BA_ "SigFixedValue" SG_ 896 NO_VECH_4 "48";
+BA_ "InvalidValue" SG_ 896 NO_VECH_4 "255";
+BA_ "GenSigStartValue" SG_ 896 NO_VECH_3 255;
+BA_ "SigFixedValue" SG_ 896 NO_VECH_3 "48";
+BA_ "InvalidValue" SG_ 896 NO_VECH_3 "255";
+BA_ "GenSigStartValue" SG_ 896 NO_VECH_2 255;
+BA_ "SigFixedValue" SG_ 896 NO_VECH_2 "48";
+BA_ "InvalidValue" SG_ 896 NO_VECH_2 "255";
+BA_ "GenSigStartValue" SG_ 896 NO_VECH_1 255;
+BA_ "SigFixedValue" SG_ 896 NO_VECH_1 "48";
+BA_ "InvalidValue" SG_ 896 NO_VECH_1 "255";
+BA_ "GenSigStartValue" SG_ 146 CTR_ERRM_BN_U 63;
+BA_ "SigFixedValue" SG_ 146 CTR_ERRM_BN_U "0";
+BA_ "InvalidValue" SG_ 146 CTR_ERRM_BN_U "255";
+BA_ "GenSigStartValue" SG_ 1021 DISP_PO_GRB 7;
+BA_ "InvalidValue" SG_ 1021 DISP_PO_GRB "7";
+BA_ "GenSigStartValue" SG_ 1021 DISP_PO_IDC_GRB 3;
+BA_ "SigFixedValue" SG_ 1021 DISP_PO_IDC_GRB "0";
+BA_ "SigFixedValue" SG_ 1021 DISP_PRG_GRB "0";
+BA_ "GenSigStartValue" SG_ 1021 DISP_PRG_GRB 7;
+BA_ "InvalidValue" SG_ 1021 DISP_PRG_GRB "7";
+BA_ "InvalidValue" SG_ 1021 ALIV_DT_DISP_GRDT "15";
+BA_ "GenSigStartValue" SG_ 1021 CRC_DT_DISP_GRDT 255;
+BA_ "InvalidValue" SG_ 1021 CRC_DT_DISP_GRDT "255";
+BA_ "SigFixedValue" SG_ 60 QU_ST_CON_VEH "2";
+BA_ "GenSigStartValue" SG_ 60 QU_ST_CON_VEH 15;
+BA_ "InvalidValue" SG_ 60 QU_ST_CON_VEH "15";
+BA_ "GenSigStartValue" SG_ 60 ST_CON_VEH 15;
+BA_ "InvalidValue" SG_ 60 ST_CON_VEH "15";
+BA_ "SigFixedValue" SG_ 60 CTR_FKTN_PRTNT "102912";
+BA_ "GenSigStartValue" SG_ 60 CTR_FKTN_PRTNT 4294967295;
+BA_ "InvalidValue" SG_ 60 CTR_FKTN_PRTNT "4294967295";
+BA_ "GenSigStartValue" SG_ 60 CTR_BS_PRTNT 15;
+BA_ "SigFixedValue" SG_ 60 CTR_BS_PRTNT "2";
+BA_ "InvalidValue" SG_ 60 CTR_BS_PRTNT "15";
+BA_ "GenSigStartValue" SG_ 60 ALIV_CON_VEH 0;
+BA_ "InvalidValue" SG_ 60 ALIV_CON_VEH "15";
+BA_ "GenSigStartValue" SG_ 60 CRC_CON_VEH 255;
+BA_ "InvalidValue" SG_ 60 CRC_CON_VEH "255";
+BA_ "GenSigStartValue" SG_ 293 RequestExtraBoostETractSys2 3;
+BA_ "SigFixedValue" SG_ 293 RequestExtraBoostETractSys2 "0";
+BA_ "InvalidValue" SG_ 293 RequestExtraBoostETractSys2 "3";
+BA_ "GenSigStartValue" SG_ 293 RequestExtraBoostETractSys1 3;
+BA_ "SigFixedValue" SG_ 293 RequestExtraBoostETractSys1 "0";
+BA_ "InvalidValue" SG_ 293 RequestExtraBoostETractSys1 "3";
+BA_ "InvalidValue" SG_ 293 OperatingModeEANActualValue "255";
+BA_ "GenSigStartValue" SG_ 293 PowerETractSys1LimMotMax 65535;
+BA_ "SigFixedValue" SG_ 293 PowerETractSys1LimMotMax "1638300";
+BA_ "InvalidValue" SG_ 293 PowerETractSys1LimMotMax "65535";
+BA_ "GenSigStartValue" SG_ 293 PowerETractSys1LimGenMax 65535;
+BA_ "SigFixedValue" SG_ 293 PowerETractSys1LimGenMax "-1638300";
+BA_ "InvalidValue" SG_ 293 PowerETractSys1LimGenMax "65535";
+BA_ "GenSigStartValue" SG_ 293 PowerETractSys2LimMotMax 65535;
+BA_ "SigFixedValue" SG_ 293 PowerETractSys2LimMotMax "1638300";
+BA_ "InvalidValue" SG_ 293 PowerETractSys2LimMotMax "65535";
+BA_ "GenSigStartValue" SG_ 293 PowerETractSys2LimGenMax 65535;
+BA_ "SigFixedValue" SG_ 293 PowerETractSys2LimGenMax "-1638300";
+BA_ "InvalidValue" SG_ 293 PowerETractSys2LimGenMax "65535";
+BA_ "GenSigStartValue" SG_ 749 TEMP_EX 255;
+BA_ "InvalidValue" SG_ 749 TEMP_EX "FF";
+BA_ "GenSigStartValue" SG_ 180 ABS_ACTIVE 3;
+BA_ "InvalidValue" SG_ 180 ABS_ACTIVE "3";
+BA_ "InvalidValue" SG_ 210 WEstTot_Nm "65535";
+BA_ "InvalidValue" SG_ 200 AD3_PrsrVal_Rr "255";
+BA_ "InvalidValue" SG_ 200 AD3_PrsrVal_Rl "255";
+BA_ "InvalidValue" SG_ 200 AD3_PrsrVal_Fr "255";
+BA_ "InvalidValue" SG_ 200 AD3_PrsrVal_Fl "255";
+BA_ "SigFixedValue" SG_ 490 MILE_KM_TOT "0";
+BA_ "GenSigStartValue" SG_ 490 MILE_KM_TOT 4294967295;
+BA_ "InvalidValue" SG_ 490 MILE_KM_TOT "4294967.295";
+BA_ "GenSigStartValue" SG_ 150 HillholderStatus 15;
+BA_ "GenSigStartValue" SG_ 150 EPBStatus 15;
+BA_ "InvalidValue" SG_ 150 EPBStatus "15";
+BA_ "InvalidValue" SG_ 150 BreakPedalPercent "15";
+BA_ "GenSigStartValue" SG_ 150 MCPressure 43;
+BA_ "InvalidValue" SG_ 150 MCPressure "65535";
+BA_ "InvalidValue" SG_ 150 MCPressureSts "65535";
+BA_ "GenSigStartValue" SG_ 150 ALIV_EBCM_STATUS 0;
+BA_ "InvalidValue" SG_ 150 ALIV_EBCM_STATUS "15";
+BA_ "GenSigStartValue" SG_ 150 CRC_EBCM_STATUS 255;
+BA_ "SigFixedValue" SG_ 214 ST_SLIP_THO "15";
+BA_ "InvalidValue" SG_ 214 ST_SLIP_THO "15";
+BA_ "GenSigStartValue" SG_ 214 ST_SLIP_THO 15;
+BA_ "GenSigStartValue" SG_ 213 ST_BRG_DV 63;
+BA_ "InvalidValue" SG_ 213 ST_BRG_DV "63";
+BA_ "GenSigStartValue" SG_ 213 QU_FN_ASC 4095;
+BA_ "InvalidValue" SG_ 213 QU_FN_ASC "4095";
+BA_ "GenSigStartValue" SG_ 213 QU_FN_ABS 4095;
+BA_ "InvalidValue" SG_ 213 QU_FN_ABS "4095";
+BA_ "GenSigStartValue" SG_ 213 QU_FN_FDR 4095;
+BA_ "InvalidValue" SG_ 213 QU_FN_FDR "4095";
+BA_ "GenSigStartValue" SG_ 213 ALIV_ST_STAB_DSC 0;
+BA_ "InvalidValue" SG_ 213 ALIV_ST_STAB_DSC "15";
+BA_ "GenSigStartValue" SG_ 213 CRC_ST_STAB_DSC 255;
+BA_ "InvalidValue" SG_ 213 CRC_ST_STAB_DSC "255";
+BA_ "GenSigStartValue" SG_ 314 OpModETractSys1ActVal 255;
+BA_ "InvalidValue" SG_ 314 OpModETractSys1ActVal "255";
+BA_ "GenSigStartValue" SG_ 326 OpModETractSys2ActVal 255;
+BA_ "InvalidValue" SG_ 326 OpModETractSys2ActVal "255";
+BA_ "InvalidValue" SG_ 296 CHL_StatusSlipThresholds "15";
+BA_ "GenSigTimeoutTime" SG_ 296 CHL_StatusSlipThresholds 50;
+BA_ "SigFixedValue" SG_ 296 CHL_StatusSlipThresholds "3";
+BA_ "GenSigStartValue" SG_ 296 CHL_StatusSlipThresholds 15;
+BA_ "InvalidValue" SG_ 296 ALIV_StatusSlipThresholds "15";
+BA_ "GenSigTimeoutTime" SG_ 296 ALIV_StatusSlipThresholds 50;
+BA_ "GenSigStartValue" SG_ 296 ALIV_StatusSlipThresholds 0;
+BA_ "InvalidValue" SG_ 296 CRC_StatusSlipThresholds "255";
+BA_ "GenSigTimeoutTime" SG_ 296 CRC_StatusSlipThresholds 50;
+BA_ "GenSigStartValue" SG_ 296 CRC_StatusSlipThresholds 255;
+BA_ "InvalidValue" SG_ 296 StatusSlipThresholdsRearAxle "15";
+BA_ "GenSigTimeoutTime" SG_ 296 StatusSlipThresholdsRearAxle 50;
+BA_ "SigFixedValue" SG_ 296 StatusSlipThresholdsRearAxle "0";
+BA_ "GenSigStartValue" SG_ 296 StatusSlipThresholdsRearAxle 15;
+BA_ "InvalidValue" SG_ 296 StatusSlipThresholdsFrontAxle "15";
+BA_ "GenSigTimeoutTime" SG_ 296 StatusSlipThresholdsFrontAxle 50;
+BA_ "SigFixedValue" SG_ 296 StatusSlipThresholdsFrontAxle "0";
+BA_ "GenSigStartValue" SG_ 296 StatusSlipThresholdsFrontAxle 15;
+BA_ "InvalidValue" SG_ 296 ST_TAR_RPM_FTAX "15";
+BA_ "GenSigTimeoutTime" SG_ 296 ST_TAR_RPM_FTAX 50;
+BA_ "SigFixedValue" SG_ 296 ST_TAR_RPM_FTAX "0";
+BA_ "GenSigStartValue" SG_ 296 ST_TAR_RPM_FTAX 15;
+BA_ "InvalidValue" SG_ 296 TAR_RPM_MIN_FTAX "65535";
+BA_ "GenSigTimeoutTime" SG_ 296 TAR_RPM_MIN_FTAX 50;
+BA_ "SigFixedValue" SG_ 296 TAR_RPM_MIN_FTAX "0";
+BA_ "GenSigStartValue" SG_ 296 TAR_RPM_MIN_FTAX 65535;
+BA_ "InvalidValue" SG_ 296 TAR_RPM_MAX_FTAX "65535";
+BA_ "GenSigTimeoutTime" SG_ 296 TAR_RPM_MAX_FTAX 50;
+BA_ "SigFixedValue" SG_ 296 TAR_RPM_MAX_FTAX "400";
+BA_ "GenSigStartValue" SG_ 296 TAR_RPM_MAX_FTAX 65535;
+BA_ "InvalidValue" SG_ 296 CRC_RQ_RPM_FTAX "255";
+BA_ "GenSigTimeoutTime" SG_ 296 CRC_RQ_RPM_FTAX 50;
+BA_ "GenSigStartValue" SG_ 296 CRC_RQ_RPM_FTAX 255;
+BA_ "InvalidValue" SG_ 296 CHL_RQ_RPM_FTAX "15";
+BA_ "GenSigTimeoutTime" SG_ 296 CHL_RQ_RPM_FTAX 50;
+BA_ "SigFixedValue" SG_ 296 CHL_RQ_RPM_FTAX "7";
+BA_ "GenSigStartValue" SG_ 296 CHL_RQ_RPM_FTAX 15;
+BA_ "InvalidValue" SG_ 296 ALIV_RQ_RPM_FTAX "15";
+BA_ "GenSigTimeoutTime" SG_ 296 ALIV_RQ_RPM_FTAX 50;
+BA_ "GenSigStartValue" SG_ 296 ALIV_RQ_RPM_FTAX 0;
+BA_ "InvalidValue" SG_ 296 TAR_STIF_SPCO "12";
+BA_ "GenSigTimeoutTime" SG_ 296 TAR_STIF_SPCO 50;
+BA_ "SigFixedValue" SG_ 296 TAR_STIF_SPCO "5";
+BA_ "GenSigStartValue" SG_ 296 TAR_STIF_SPCO 15;
+BA_ "InvalidValue" SG_ 296 ST_TAR_RPM_BAX "15";
+BA_ "GenSigTimeoutTime" SG_ 296 ST_TAR_RPM_BAX 50;
+BA_ "SigFixedValue" SG_ 296 ST_TAR_RPM_BAX "0";
+BA_ "GenSigStartValue" SG_ 296 ST_TAR_RPM_BAX 15;
+BA_ "InvalidValue" SG_ 296 TAR_RPM_MIN_BAX "65535";
+BA_ "GenSigTimeoutTime" SG_ 296 TAR_RPM_MIN_BAX 50;
+BA_ "SigFixedValue" SG_ 296 TAR_RPM_MIN_BAX "0";
+BA_ "GenSigStartValue" SG_ 296 TAR_RPM_MIN_BAX 65535;
+BA_ "InvalidValue" SG_ 296 TAR_RPM_MAX_BAX "65535";
+BA_ "GenSigTimeoutTime" SG_ 296 TAR_RPM_MAX_BAX 50;
+BA_ "SigFixedValue" SG_ 296 TAR_RPM_MAX_BAX "400";
+BA_ "GenSigStartValue" SG_ 296 TAR_RPM_MAX_BAX 65535;
+BA_ "InvalidValue" SG_ 296 CRC_RQ_RPM_BAX "255";
+BA_ "GenSigTimeoutTime" SG_ 296 CRC_RQ_RPM_BAX 50;
+BA_ "GenSigStartValue" SG_ 296 CRC_RQ_RPM_BAX 255;
+BA_ "InvalidValue" SG_ 296 ALIV_RQ_RPM_BAX "15";
+BA_ "GenSigTimeoutTime" SG_ 296 ALIV_RQ_RPM_BAX 50;
+BA_ "GenSigStartValue" SG_ 296 ALIV_RQ_RPM_BAX 0;
+BA_ "InvalidValue" SG_ 296 CHL_RQ_RPM_BAX "15";
+BA_ "GenSigTimeoutTime" SG_ 296 CHL_RQ_RPM_BAX 50;
+BA_ "SigFixedValue" SG_ 296 CHL_RQ_RPM_BAX "6";
+BA_ "GenSigStartValue" SG_ 296 CHL_RQ_RPM_BAX 15;
+BA_ "InvalidValue" SG_ 296 AVL_BRTORQ_WHL_FS_RH_EXT "33535";
+BA_ "GenSigTimeoutTime" SG_ 296 AVL_BRTORQ_WHL_FS_RH_EXT 50;
+BA_ "SigFixedValue" SG_ 296 AVL_BRTORQ_WHL_FS_RH_EXT "0";
+BA_ "GenSigStartValue" SG_ 296 AVL_BRTORQ_WHL_FS_RH_EXT 65535;
+BA_ "InvalidValue" SG_ 296 AVL_BRTORQ_WHL_FS_LH_EXT "33535";
+BA_ "GenSigTimeoutTime" SG_ 296 AVL_BRTORQ_WHL_FS_LH_EXT 50;
+BA_ "SigFixedValue" SG_ 296 AVL_BRTORQ_WHL_FS_LH_EXT "0";
+BA_ "GenSigStartValue" SG_ 296 AVL_BRTORQ_WHL_FS_LH_EXT 65535;
+BA_ "InvalidValue" SG_ 296 AVL_BRTORQ_WHL_RS_RH_EXT "33535";
+BA_ "GenSigTimeoutTime" SG_ 296 AVL_BRTORQ_WHL_RS_RH_EXT 50;
+BA_ "SigFixedValue" SG_ 296 AVL_BRTORQ_WHL_RS_RH_EXT "0";
+BA_ "GenSigStartValue" SG_ 296 AVL_BRTORQ_WHL_RS_RH_EXT 65535;
+BA_ "InvalidValue" SG_ 296 AVL_BRTORQ_WHL_RS_LH_EXT "33535";
+BA_ "GenSigTimeoutTime" SG_ 296 AVL_BRTORQ_WHL_RS_LH_EXT 50;
+BA_ "SigFixedValue" SG_ 296 AVL_BRTORQ_WHL_RS_LH_EXT "0";
+BA_ "GenSigStartValue" SG_ 296 AVL_BRTORQ_WHL_RS_LH_EXT 65535;
+BA_ "InvalidValue" SG_ 296 CHL_EXTS_ARB_INTF "15";
+BA_ "GenSigTimeoutTime" SG_ 296 CHL_EXTS_ARB_INTF 50;
+BA_ "SigFixedValue" SG_ 296 CHL_EXTS_ARB_INTF "4";
+BA_ "GenSigStartValue" SG_ 296 CHL_EXTS_ARB_INTF 15;
+BA_ "InvalidValue" SG_ 296 ALIV_EXTS_ARB_INTF "15";
+BA_ "GenSigTimeoutTime" SG_ 296 ALIV_EXTS_ARB_INTF 50;
+BA_ "GenSigStartValue" SG_ 296 ALIV_EXTS_ARB_INTF 0;
+BA_ "InvalidValue" SG_ 296 CRC_EXTS_ARB_INTF "255";
+BA_ "GenSigTimeoutTime" SG_ 296 CRC_EXTS_ARB_INTF 50;
+BA_ "GenSigStartValue" SG_ 296 CRC_EXTS_ARB_INTF 255;
+BA_ "SigFixedValue" SG_ 131 QU_AVL_RPM_WHL_FRH "1";
+BA_ "GenSigStartValue" SG_ 131 QU_AVL_RPM_WHL_FRH 8;
+BA_ "InvalidValue" SG_ 131 QU_AVL_RPM_WHL_FRH "15";
+BA_ "SigFixedValue" SG_ 131 QU_AVL_RPM_WHL_FLH "1";
+BA_ "GenSigStartValue" SG_ 131 QU_AVL_RPM_WHL_FLH 8;
+BA_ "InvalidValue" SG_ 131 QU_AVL_RPM_WHL_FLH "15";
+BA_ "SigFixedValue" SG_ 131 QU_AVL_RPM_WHL_RRH "1";
+BA_ "GenSigStartValue" SG_ 131 QU_AVL_RPM_WHL_RRH 8;
+BA_ "InvalidValue" SG_ 131 QU_AVL_RPM_WHL_RRH "15";
+BA_ "SigFixedValue" SG_ 131 QU_AVL_RPM_WHL_RLH "1";
+BA_ "GenSigStartValue" SG_ 131 QU_AVL_RPM_WHL_RLH 8;
+BA_ "InvalidValue" SG_ 131 QU_AVL_RPM_WHL_RLH "15";
+BA_ "GenSigStartValue" SG_ 131 AVL_RPM_WHL_FRH 65535;
+BA_ "InvalidValue" SG_ 131 AVL_RPM_WHL_FRH "65535";
+BA_ "GenSigStartValue" SG_ 131 AVL_RPM_WHL_FLH 65535;
+BA_ "InvalidValue" SG_ 131 AVL_RPM_WHL_FLH "65535";
+BA_ "GenSigStartValue" SG_ 131 AVL_RPM_WHL_RRH 65535;
+BA_ "InvalidValue" SG_ 131 AVL_RPM_WHL_RRH "65535";
+BA_ "GenSigStartValue" SG_ 131 AVL_RPM_WHL_RLH 65535;
+BA_ "InvalidValue" SG_ 131 AVL_RPM_WHL_RLH "65535";
+BA_ "GenSigStartValue" SG_ 131 ALIV_AVL_RPM_WHL 0;
+BA_ "InvalidValue" SG_ 131 ALIV_AVL_RPM_WHL "15";
+BA_ "GenSigStartValue" SG_ 131 CRC_AVL_RPM_WHL 255;
+BA_ "InvalidValue" SG_ 131 CRC_AVL_RPM_WHL "255";
+BA_ "SigFixedValue" SG_ 289 SecOcDataP2V_VEH "255";
+BA_ "GenSigTimeoutTime" SG_ 289 SecOcDataP2V_VEH 100;
+BA_ "GenSigStartValue" SG_ 289 SecOcDataP2V_VEH 1.84467E+019;
+BA_ "InvalidValue" SG_ 289 SecOcDataP2V_VEH "FFFFFFFFFFFFFFFF";
+BA_ "SigFixedValue" SG_ 289 QU_V_VEH_COG "1";
+BA_ "GenSigStartValue" SG_ 289 QU_V_VEH_COG 15;
+BA_ "GenSigTimeoutTime" SG_ 289 QU_V_VEH_COG 100;
+BA_ "InvalidValue" SG_ 289 QU_V_VEH_COG "15";
+BA_ "GenSigStartValue" SG_ 289 V_VEH_COG 0;
+BA_ "GenSigTimeoutTime" SG_ 289 V_VEH_COG 100;
+BA_ "InvalidValue" SG_ 289 V_VEH_COG "65535";
+BA_ "GenSigStartValue" SG_ 289 ALIV_V_VEH 0;
+BA_ "GenSigTimeoutTime" SG_ 289 ALIV_V_VEH 100;
+BA_ "InvalidValue" SG_ 289 ALIV_V_VEH "15";
+BA_ "GenSigStartValue" SG_ 289 CRC_V_VEH 255;
+BA_ "GenSigTimeoutTime" SG_ 289 CRC_V_VEH 100;
+BA_ "InvalidValue" SG_ 289 CRC_V_VEH "255";
+BA_ "SigFixedValue" SG_ 497 STAT_CL15_WUPL "0";
+BA_ "InvalidValue" SG_ 497 STAT_CL15_WUPL "255";
+BA_ "GenSigStartValue" SG_ 497 ALIV_CLAMP_STAT 0;
+BA_ "InvalidValue" SG_ 497 ALIV_CLAMP_STAT "255";
+BA_ "InvalidValue" SG_ 497 STAT_CL15_L "255";
+BA_ "SigFixedValue" SG_ 497 STAT_CL30S_L "0";
+BA_ "InvalidValue" SG_ 497 STAT_CL30S_L "255";
+BA_ "SigFixedValue" SG_ 497 STAT_CL30S_Light "0";
+BA_ "InvalidValue" SG_ 497 STAT_CL30S_Light "255";
+BA_ "GenSigStartValue" SG_ 497 CRC_CLAMP_STAT 255;
+BA_ "InvalidValue" SG_ 497 CRC_CLAMP_STAT "255";
+VAL_ 881 VCU_HVSystemReduced 0 "None" 1 "Alert" ;
+VAL_ 881 VCU_Limphome 0 "No warning" 1 "Limphome" ;
+VAL_ 881 VCU_HVILErr 0 "No Error" 1 "Error" ;
+VAL_ 881 VCU_ChargingInletTempHigh 0 "No warning" 1 "warning" ;
+VAL_ 881 VCU_DCDC_TempHigh 0 "No warning" 1 "warning" ;
+VAL_ 881 VCU_OBCTempHigh 0 "No warning" 1 "warning" ;
+VAL_ 881 VCU_CheckDriveTrain 0 "No warning" 1 "warning" ;
+VAL_ 881 VCU_CoolantTempHigh 0 "No warning" 1 "warning" ;
+VAL_ 881 VCU_ParkLockNotEngaged 0 "No warning" 1 "warning" ;
+VAL_ 881 VCU_TransmissionMalfunction 1 "Warning" 0 "No Warning" ;
+VAL_ 881 VCU_CoolingTempExceedLimit 0 "No warning" 1 "warning" ;
+VAL_ 881 VCU_HeatLoopTempSensorErr 0 "No warning" 1 "General electric failure" 2 "Circuit short to ground" 3 "Circuit short to battery" 4 "Circuit intermittent" ;
+VAL_ 881 VCU_MotorCoolantPumpErr 0 "No warning" 1 "Circuit open" 2 "Circuit short to ground" 3 "Circuit short to battery" ;
+VAL_ 881 VCU_EmergencyShutdown 0 "No warning" 1 "warning" ;
+VAL_ 881 VCU_GearMalfunc 0 "No warning" 1 "warning" ;
+VAL_ 881 VCU_CantChangeGear 0 "No warning" 1 "warning" ;
+VAL_ 881 VCU_PressBreakToEngageGear 0 "No warning" 1 "warning" ;
+VAL_ 881 VCU_GearPNotPossible 0 "No warning" 1 "warning" ;
+VAL_ 881 VCU_GearPAtStationaryOnly 0 "No warning" 1 "warning" ;
+VAL_ 433 DCDC_status 0 "DCDC_OFF" 1 "DCDC_ON" 2 "DCDC_DEGRADED" 3 "DCDC_FAULT" 4 "Reserved" 5 "Reserved" 6 "Reserved" 7 "Signal Invalid" ;
+VAL_ 498 VCU_ChgGun_Status 0 "Charging gun not plugged" 1 "Locked" 2 "Released" 3 "Error_plug volt_higher_60V." 4 "Err_elec.fail _lock mtr drv pins" 5 "Err_elec.failure of lock fb pins" 6 "Error plug lock fb is from BSW" 7 "Invalid" ;
+VAL_ 498 VCU_VehChg_STS 7 "Signal Invalid" 6 "Reserved" 5 "Gun plugged-in, Waiting" 0 "not charging and gun not plug-in" 1 "Charging in progress" 2 "Charging complete" 3 "Charge fault" 4 "Gun plugged-in, Standby" ;
+VAL_ 498 VCU_ChgGunConnStatus 0 "No error" 1 "Bad connection" ;
+VAL_ 498 VCU_BattChargingStatus 0 "Not charging" 1 "Charging" ;
+VAL_ 151 VCU_HVbatSoc_charged_estStatus 0 "Not ready" 1 "Processing" 2 "Estimated" 3 "Failed" ;
+VAL_ 151 VCU_RunningRange_chrg_estSts 0 "Not ready" 1 "Processing" 2 "Estimated" 3 "Failed" ;
+VAL_ 273 VCU_ACPD_Percent_Valid 0 "Valid" 1 "Invalid" ;
+VAL_ 273 VCU_ACT_DriveMode 7 "Invalid" 6 "Reserved" 5 "Reserved" 4 "Reserved" 3 "Reserved" 2 "Sport mode" 1 "ECO mode" 0 "Normal mode" ;
+VAL_ 273 VCU_ACT_GearValid 0 "Valid" 1 "Invalid" ;
+VAL_ 273 VCU_ACT_Gear 7 "Signal invalid" 6 "Fault" 5 "Reserved" 4 "Reserved" 3 "D" 2 "N" 1 "R" 0 "P" ;
+VAL_ 273 VCU_HV_DrvSystemStatus 0 "Not available" 1 "Normal" 2 "Degration" 3 "Limphome" 4 "Error" 5 "Reserved" 6 "Reserved" 7 "Signal invalid" ;
+VAL_ 273 VCU_HV_SystemStatus 0 "Not ready" 1 "HV On" 2 "ReadyToDrive" 3 "Charging" 4 "Error" 5 "Reserved" 6 "Reserved" 7 "Signal_invalid" ;
+VAL_ 277 VCU_AcChgGunIn 1 "connect" 0 "disconnect" ;
+VAL_ 277 VCU_DCChgGunIn 1 "connect" 0 "disconnect" ;
+VAL_ 882 BMS_FuseStatusErr 0 "No Error" 1 "Error" ;
+VAL_ 882 BMS_PackVolErr 2 "Under Voltage Warning" 1 "Over Voltage Warning" 0 "No warning" ;
+VAL_ 882 BMS_CellVoltErr 3 "Max &Min Volt Difference Warning" 2 "Under Voltage Warning" 1 "Over Voltage Warning" 0 "No warning" ;
+VAL_ 882 BMS_PackOverCurrErr 0 "No Error" 1 "Error" ;
+VAL_ 882 BMS_LowBattery 2 "Extremely low level" 1 "Low level" 0 "No warning" ;
+VAL_ 882 BMS_MalfunctionSts 0 "No Warning" 1 "Warning" ;
+VAL_ 882 BMS_PackInsuErr 0 "No Error" 1 "Error" ;
+VAL_ 882 BMS_HVILErr 0 "No Error" 1 "Error" ;
+VAL_ 882 BMS_CellTempErr 3 "Max &Min Temp Difference Warning" 2 "Under Temperature Warning" 1 "Over Temperature Warning" 0 "No warning" ;
+VAL_ 882 BMS_ThermalRunaway 0 "No Warning" 1 "Warning" ;
+VAL_ 882 BMS_PackTempSts 2 "Under Temperature Warning" 1 "Over Temperature Warning" 0 "No warning" ;
+VAL_ 632 ST_TRAI 0 "No trailer present" 1 "Trailer present" 3 "signal invalid" ;
+VAL_ 407 OP_GWS_PUBU_PKG 0 "P-button not pushed" 1 "P-button pushed" 2 "single error" 3 "Signal invalid" ;
+VAL_ 407 OP_GWS 1 "R" 2 "N" 3 "D" 8 "L-->B(Regen until standstill)" 14 "INIT" 15 "Signal invalid" ;
+VAL_ 88 SFA_WarningLamp 7 "SNA" 6 "Reserved" 5 "Red_YellowFlashing" 4 "Red_Yellow" 3 "Red" 2 "YellowFlashing" 1 "Yellow" 0 "Off" ;
+VAL_ 88 SFA_SteerWheelTorque 4095 "SNA" 4094 "OutSpec" ;
+VAL_ 88 SFA_SteerWheelAngleSpeed 1048575 "SNA" 1048574 "OutSpec" ;
+VAL_ 88 SFA_SteerWheelAngle 65535 "SNA" 65534 "OutSpec" 32750 "ZeroAngle" ;
+VAL_ 88 SFA_EmergencyRequest 3 "Error Indicator" 2 "Not Used" 1 "Active" 0 "Inactive" ;
+VAL_ 88 SFA_CenteringStatus 7 "SNA" 6 "Reserved" 5 "Reserved" 4 "Reserved" 3 "Centring Needed" 2 "Alignmet Needed" 1 "Reserved" 0 "Steering Alligned" ;
+VAL_ 1296 NM3FunctionalPartialNetworks 0 "Configuration off" 1 "Configuration on" 2 "Ethernet infrastructure on" 4 "data_comm_on" 8 "remote maintenance_on" 16 "Climate_Base_on" 32 "Safe_Exit_on" 64 "RSU_high-voltage support_on" 128 "Autonomous_Driving_Ready_on" 256 "Air conditioning mode on" 512 "Entertainment mode on" 1024 "External_communication on" 2048 "Entertainmentbetrieb_Fond_ein" 4096 "Assistance_Parking_high on" 8192 "Autonomous_Drv_Sec_Pwr_Supply_on" 16384 "High-volt batt_air condition_on" 32768 "Loading" 65536 "Vehicle infrastructure on" 131072 "light_on" 262144 "TN_48V_on" -2147483648 "Signal_unfilled" ;
+VAL_ 1296 NM3BasePartialNetworks 0 "no_communication" 1 "Com parking BN not ok" 2 "Com parking BN OK" 4 "Comstand func cstmr not in FZG" 8 "No_communication" 16 "Com_Living" 32 "No_communication" 64 "Com_Check_Analysis_Diagnose" 128 "Make_ready_to_drive_comm" 256 "No_communication" 512 "Com_Drive" 1024 "No_communication" 2048 "Com_Ready_to_End" 4096 "No_communication" 8192 "No_communication" 65535 "signal_unfilled" ;
+VAL_ 1296 NM3SenderECUId 255 "signal_unfilled" ;
+VAL_ 1296 NM3ControlBitVector 64 "NM message_contains_subnet_info" 255 "signal_unfilled" ;
+VAL_ 1107 StsDisconnectingSwtHighVoltStorg 0 "HV_OFF" 1 "HV_Precharge" 2 "HV_ON" 4 "positive_path_stick_closed" 8 "negative_path_stick_closed" 16 "Lastopen contactor_without_diag" 61 "Fn_interface_is_not_available" 62 "Function_reports_error" 63 "signal_unfilled" ;
+VAL_ 1107 StatusServiceDisconnectionPlug 1 "Service_Disconnector_open" 2 "Service_Disconnector_closed" 3 "signal_unfilled" ;
+VAL_ 143 ActualValueVoltageLinkVerified 4093 "Fn_interface_is_not_available" 4094 "Function_reports_error" 4095 "Signal_unfilled" ;
+VAL_ 630 ST_ILK_ERRM_FZM 0 "Fault memory release" ;
+VAL_ 630 ST_ENERG_FZM 1 "ENSTATE_OK" ;
+VAL_ 451 FZU_ChargingStopReq 0 "No request" 1 "Charing stops" 2 "Reserved" 3 "Signal_invalid" ;
+VAL_ 146 CTR_ERRM_BN_U 0 "No overvoltage" 1 "undervoltage normal operation" 2 "Undervoltage MSA start" 4 "overvoltage" 61 "Fn_interface_is_not_available" 62 "Function_reports_error" 63 "signal_unfilled" ;
+VAL_ 1021 DISP_PO_GRB 7 "Invalid Signal" 4 "D" 3 "N" 2 "R" 1 "P" 0 "off" ;
+VAL_ 1021 DISP_PO_IDC_GRB 0 "no flashing" ;
+VAL_ 1021 DISP_PRG_GRB 7 "Invalid Signal " 5 "B_Mode (Regen until Standstil)" 0 "Dark switch" ;
+VAL_ 60 QU_ST_CON_VEH 15 "signal empty" 14 "value_not_available" 6 "Reserved_unconverted_ID_error" 3 "Sign val valid with restrictions" 2 "Signal value valid" ;
+VAL_ 60 ST_CON_VEH 15 "Signal_Invalid" 14 "Reserved" 13 "Reserved" 12 "Reserved (End of readiness Drv)" 10 "Driving" 9 "Reserved" 8 "Reserved (Prepare_readiness Drv)" 7 "Ignition On" 6 "Reserved" 5 "Reserved (housing)" 4 "Reserved" 3 "Reserved (Status_Functions)" 2 "IGN OFF (Parking_BN_iO)" 1 "Reserved (Parking_BN_niO)" 0 "Reserved" ;
+VAL_ 60 CTR_FKTN_PRTNT 262144 "TN_48V_on" 131072 "light_on" 65536 "Vehicle infrastructure on" 32768 "Loading" 16384 "High_volt_batt_air_condition_on" 8192 "Autonomous_Drv_Sec_Pwr_Supply_on" 4096 "Assistance_Parking_high on" 2048 "Entertainmentbetrieb_Fond_ein" 1024 "External_communication on" 512 "Entertainment mode on" 256 "Air Conditioning mode on" 128 "Autonomous_Driving_Ready_on" 64 "RSU_high-voltage support_on" 32 "Safe_Exit_on" 16 "Climate_Base_on" 8 "remote maintenance_on" 4 "data_comm_on" 2 "Ethernet infrastructure on" 1 "Configuration on" 0 "Configuration off" -2147483648 "Signal_unfilled" ;
+VAL_ 60 CTR_BS_PRTNT 15 "Signal_Invalid" 14 "Reserved" 13 "Reserved" 12 "Reserved (End of readiness Drv)" 10 "Driving" 9 "Reserved" 8 "Reserved (Prepare_readiness Drv)" 7 "Ignition On" 6 "Reserved" 5 "Reserved (housing)" 4 "Reserved" 3 "Reserved (Status_Functions)" 2 "IGN OFF (Parking_BN_iO)" 1 "Reserved (Parking_BN_niO)" 0 "Reserved" ;
+VAL_ 293 RequestExtraBoostETractSys2 0 "No_boost_requested" 1 "Boost_requested" 3 "signal_unfilled" ;
+VAL_ 293 RequestExtraBoostETractSys1 0 "No_boost_requested" 1 "Boost_requested" 3 "signal_unfilled" ;
+VAL_ 293 OperatingModeEANActualValue 0 "initialization" 1 "E_motor_off" 2 "E_motor_standby" 3 "E_motor_ready to drive" 4 "loading" 5 "E_Drive_Shut_Off_Path_Test" 6 "E_drive_shutdown_ISO_meas" 7 "Edrive_shutdown_zero_electricity" 8 "No_release_eDrive_due_EWS_lock" 9 "Critical_tailgate_open" 15 "E_drive_error" 253 "Fn_interface_is_not_available" 254 "Function_reports_error" 255 "signal_unfilled" ;
+VAL_ 293 PowerETractSys1LimMotMax 65533 "Fn_interface_is_not_available" 65534 "Function_reports_error" 65535 "Signal_unfilled" ;
+VAL_ 293 PowerETractSys1LimGenMax 65533 "Fn_interface_is_not_available" 65534 "Function_reports_error" 65535 "Signal_unfilled" ;
+VAL_ 293 PowerETractSys2LimMotMax 65533 "Fn_interface_is_not_available" 65534 "Function_reports_error" 65535 "Signal_unfilled" ;
+VAL_ 293 PowerETractSys2LimGenMax 65533 "Fn_interface_is_not_available" 65534 "Function_reports_error" 65535 "Signal_unfilled" ;
+VAL_ 180 ABS_ACTIVE 3 "Error Indicator" 2 "Not used" 1 "ABS control active" 0 "ABS control inactive" ;
+VAL_ 200 AD3_PrsrVal_Rr 255 "Error Indicator" ;
+VAL_ 200 AD3_PrsrVal_Rl 255 "Error Indicator" ;
+VAL_ 200 AD3_PrsrVal_Fr 255 "Error Indicator" ;
+VAL_ 200 AD3_PrsrVal_Fl 255 "Error Indicator" ;
+VAL_ 490 MILE_KM_TOT -1 "Signal_unfilled" -2 "Function_reports_error" -3 "Value_not_available" ;
+VAL_ 150 EBCM_BrkPedlSts 3 "Signal Invalid" 2 "Error" 1 "Pressed" 0 "Not pressed" ;
+VAL_ 150 HillholderFault 1 "Fault" 0 "No Fault" ;
+VAL_ 150 TCSActive 1 "Active" 0 "Inactive" ;
+VAL_ 150 TCSAvailable 1 "Unavailable" 0 "Available" ;
+VAL_ 150 EPBFault 1 "Fault" 0 "No fault" ;
+VAL_ 150 EPBStatus 2 "Dynamic Braking (EPB)" 1 "Apply State (EPB)" 0 "Release State (EPB AVH)" ;
+VAL_ 150 BreakPedalPercentValid 1 "Invalid" 0 "Valid" ;
+VAL_ 150 BreakPedalPercent 1 "Invalid" 0 "Valid" ;
+VAL_ 150 MCPressureSts 1 "Invalid" 0 "Valid" ;
+VAL_ 214 ST_SLIP_THO 0 "slip_th_no_wheel_axles_exceed" 1 "Slip_th_exceed_least_one_rear " 2 "Slip_th_exceed_least_one_front" 13 "Fn_interface_is_not_available" 14 "Function_reports_error" 15 "Signal_unfilled" ;
+VAL_ 213 ST_BRG_DV 63 "Invalid signal" 32 "initialization" 16 "Vehicle secured by braking" 8 "Brake system activation by IDB" 4 "Driver braking system actuation" 2 "brake pedal actuation path2" 1 "brake pedal actuation path1" 0 "Vehicle not secure by braking" ;
+VAL_ 213 QU_FN_ASC 4095 "Signal_unfilled" 3586 "Fn_not_avail_swch_off_PrASC_act" 3584 "Fn_inter_not_avail_switch_off" 2944 "ASC_temp_flbk_LvL_ASC_ctr_HR" 2880 "ASC_temp_flbk_LvL_ASC_ctr_HL" 2848 "ASC_temp_flbk_LvL_ASC_ctr_VR" 2832 "ASC_temp_flbk_LvL_ASC_ctr_VL" 2824 "ASC_temp_flbk_slip_expanded" 2820 "ASC_temp_flbk_negative_slip" 2818 "ASC_temp_flbk_LvL_PreASC_actv" 2816 "ASC_temp_flbk_LvL_PreASC_not_act" 2688 "ASC_func_actv_ASC_ctr_interve_RR" 2624 "ASC_func_actv_ASC_ctr_interve_RL" 2592 "ASC_func_actv_ASC_ctr_interve_FR" 2576 "ASC_func_actv_ASC_ctr_interve_FL" 2568 "ASC_func_actv_slip_expanded" 2564 "ASC_func_actv_negative_slip" 2562 "ASC_func_actv_PreASC_actv" 2560 "ASC_func_actv_PreASC_not_actv" 1536 "Func_reports_error" 776 "Fn_flbck_LvL_Rdy_slip_extended" 770 "Fn_flbck_LvL_Rdy_PreASC_actv" 768 "Fn_flbck_LvL_Rdy_PreASC_not_actv" 520 "Func_avail_ready_not_actv_expand" 514 "Func_avail_ready_not_actv_PreASC" 512 "Func_avail_ready_not_actv_normal" ;
+VAL_ 213 QU_FN_ABS 4095 "Invalid signal" 3584 "ABS func not avail standby" 2944 "ABS fallbck LvL ctrl interven HR" 2880 "ABS fallbck LvL ctrl interven HL" 2848 "ABS fallbck LvL ctrl interven VR" 2832 "ABS fallbck LvL ctrl interven VL" 2688 "ABS func active ctrl interven RR" 2624 "ABS func active ctrl interven RL" 2592 "ABS func active ctrl interven FR" 2576 "ABS func active ctrl interven FL" 2048 "reserved" 1536 "ABS func not avail error" 768 "ABS fallback LvL no ctrl interv" 512 "ABS func avail no ctrl interven" ;
+VAL_ 213 QU_FN_FDR 4095 "Invalid signal" 3584 "Fn not avail switched off" 2688 "Fn avail active FDR control RR" 2624 "Fn avail active FDR control RL" 2592 "Fn avail active FDR control FR" 2576 "Fn avail active FDR control FL" 2568 "Fn avail ready active widen" 2560 "Fn avail ready active normal" 2048 "reserved" 1536 "Func not avail error" 776 "reserved" 768 "Reserved" 516 "Fn avail ready not active widen" 512 "Fn avail ready not active normal" 0 "Internal_Information" ;
+VAL_ 314 OpModETractSys1ActVal 0 "standby" 1 "Torque control" 2 "zero torque control" 3 "DC_Voltage Control" 5 "Speed Ctrl_with_torque prectrl" 6 "IHVBCTL_with_torque pre-control" 7 "VoKo_trimming" 8 "Insulation test" 10 "Freewheel" 11 "HEAT_is_initialized" 12 "Failed_safestate" 13 "Initialization" 14 "DC link pre-charge" 15 "Intermediate circuit discharge" 16 "Crash_KL30C_Shutdown" 20 "Learning_active" 21 "Locked_Standby" 22 "Works job_controlled" 30 "Shut_off_path_test_running" 31 "Shut_off_path_test_completed" 32 "Shut_off_path_test_aborted" 33 "Spt_laeuft_HV_Zuschalt_freifrei" 40 "Factory mode_active" 186 "speed control" 253 "func. interface is not available" 254 "Function_reports_error" 255 "signal_unfilled" ;
+VAL_ 326 OpModETractSys2ActVal 0 "standby" 1 "Torque control" 2 "zero torque control" 3 "DC_Voltage Control" 5 "Speed Ctrl_with_torque prectrl" 6 "IHVBCTL_with_torque pre-control" 7 "VoKo_trimming" 8 "Insulation test" 10 "Freewheel" 11 "HEAT_is_initialized" 12 "Failed_safe_state" 13 "Initialization" 14 "DC link pre-charge" 15 "Intermediate circuit discharge" 16 "Crash_KL30C_Shutdown" 20 "Learning_active" 21 "Locked_Standby" 22 "Works job_controlled" 30 "Shut_off_path_test_running" 31 "Shut_off_path_test_completed" 32 "Shut_off_path_test_aborted" 33 "Spt_laeuft_HV_Zuschalt_freifrei" 40 "Factory mode_active" 186 "speed control" 253 "func. interface is not available" 254 "Function_reports_error" 255 "signal_unfilled" ;
+VAL_ 296 StatusSlipThresholdsRearAxle 15 "signal_unfilled" 14 "Function_reports_error" 13 "Func_interface_not_available" 7 "Upper_slip_limit_exceed_critical" 6 "Upper_slip_limit_exceed_warning" 5 "Upper_slip_limit_exceed_comfort" 3 "Lower_slip_limit_exceed_critical" 2 "Lower_slip_limit_exceed_warning" 1 "lower_slip_limit_exceed_comfort" 0 "slip_limit_not_exceeded" ;
+VAL_ 296 StatusSlipThresholdsFrontAxle 15 "signal_unfilled" 14 "Function_reports_error" 13 "Func_interface_not_available" 7 "Upper_slip_limit_exceed_critical" 6 "Upper_slip_limit_exceed_warning" 5 "Upper_slip_limit_exceed_comfort" 3 "Lower_slip_limit_exceed_critical" 2 "Lower_slip_limit_exceed_warning" 1 "lower_slip_limit_exceed_comfort" 0 "slip_limit_not_exceeded" ;
+VAL_ 296 ST_TAR_RPM_FTAX 21 "Signal_unfilled" 20 "Function_reports_error" 19 "Func_interface_is_not_available" 4 "fallback level" 3 "Speed_limit_upper_thresh_active" 2 "speed_limit_upper_thresh_passive" 1 "speed_limit_lwr_thresh_active" 0 "speed_limit_lwr_thresh_passive" ;
+VAL_ 296 TAR_RPM_MIN_FTAX 65535 "signal_unfilled" 65534 "Function_reports_error" 65533 "Func_interface_is_not_available" ;
+VAL_ 296 TAR_RPM_MAX_FTAX 65535 "signal_unfilled" 65534 "Function_reports_error" 65533 "Func_interface_is_not_available" ;
+VAL_ 296 TAR_STIF_SPCO 15 "signal_unfilled" 14 "Reserved error" 13 "Reserved Not Available" ;
+VAL_ 296 ST_TAR_RPM_BAX 21 "Signal_unfilled" 20 "Function_reports_error" 19 "Func_interface_is_not_available" 4 "fallback level" 3 "Speed_limit_upper_thresh_active" 2 "speed_limit_upr_thresh_notactive" 1 "speed_limit_lwr_thresh_active" 0 "speed_limit_lwr_thresh_notactive" ;
+VAL_ 296 TAR_RPM_MIN_BAX 65535 "signal_unfilled" 65534 "Function_reports_error" 65533 "Func_interface_is_not_available" ;
+VAL_ 296 TAR_RPM_MAX_BAX 65535 "signal_unfilled" 65534 "Function_reports_error" 65533 "Func_interface_is_not_available" ;
+VAL_ 296 AVL_BRTORQ_WHL_FS_RH_EXT 65535 "signal_unfilled" 65534 "Function_reports_error" 65533 " Func_interface_not_available" ;
+VAL_ 296 AVL_BRTORQ_WHL_FS_LH_EXT 65535 "signal_unfilled" 65534 "Function_reports_error" 65533 "Func_interface_not_available" ;
+VAL_ 296 AVL_BRTORQ_WHL_RS_RH_EXT 65535 "signal_unfilled" 65534 "Function_reports_error" 65533 "Func_interface_not_available" ;
+VAL_ 296 AVL_BRTORQ_WHL_RS_LH_EXT 65535 "signal_unfilled" 65534 "Function_reports_error" 65533 "Func_interface_not_available" ;
+VAL_ 131 QU_AVL_RPM_WHL_FRH 15 "Signal invalid" 14 "Val_not_avail_plausibility error" 12 "Sub value signal Stat Temp" 11 "Sig quality monitor restricted" 10 "Reserved" 9 "Reserved" 8 "Initialization" 7 "Reserved" 6 "value_not_available_fault_elec" 4 "Sub value set in useful signal" 3 "Reserved" 2 "Reserved" 1 "Signal valid secured plausible" ;
+VAL_ 131 QU_AVL_RPM_WHL_FLH 15 "Signal invalid" 14 "Val_not_avail_plausibility error" 12 "Sub value signal Stat Temp" 11 "Sig quality monitor restricted" 10 "Reserved" 9 "Reserved" 8 "Initialization" 7 "Reserved" 6 "value_not_available_fault_elec" 4 "Sub value set in useful signal" 3 "Reserved" 2 "Reserved" 1 "Signal valid secured plausible" ;
+VAL_ 131 QU_AVL_RPM_WHL_RRH 15 "Signal invalid" 14 "Val_not_avail_plausibility error" 12 "Sub value signal Stat Temp" 11 "Sig quality monitor restricted" 10 "Reserved" 9 "Reserved" 8 "Initialization" 7 "Reserved" 6 "value_not_available_fault_elec" 4 "Sub value set in useful signal" 3 "Reserved" 2 "Reserved" 1 "Signal valid secured plausible" ;
+VAL_ 131 QU_AVL_RPM_WHL_RLH 15 "Signal invalid" 14 "Val_not_avail_plausibility error" 12 "Sub value signal Stat Temp" 11 "Sig quality monitor restricted" 10 "Reserved" 9 "Reserved" 8 "Initialization" 7 "Reserved" 6 "value_not_available_fault_elec" 4 "Sub value set in useful signal" 3 "Reserved" 2 "Reserved" 1 "Signal valid secured plausible" ;
+VAL_ 289 QU_V_VEH_COG 15 "Signal invalid" 14 "Signal value invalid stat temp" 12 "Reserved" 11 "Signal quality restrict, temp" 10 "signal val valid, cond stat temp" 9 "Reserved" 8 "Initialization" 7 "Reserved" 6 "Reserved" 4 "Reserved" 3 "Reserved" 2 "Reserved" 1 "Sig val valid secured plausibe" ;
+VAL_ 497 STAT_CL15_WUPL 0 "OFF" 1 "ON" 2 "Failure" 3 "Signal invalid" ;
+VAL_ 497 STAT_CL15_L 0 "OFF" 1 "ON" 2 "Failure" 3 "Signal invalid" ;
+VAL_ 497 STAT_CL30S_L 0 "OFF" 1 "ON" 2 "Failure" 3 "Signal invalid" ;
+VAL_ 497 STAT_CL30S_Light 0 "OFF" 1 "ON" 2 "Failure" 3 "Signal invalid" ;
+
