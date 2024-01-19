@@ -37,23 +37,114 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.listWidget_confirmed_signals.addItem(item.text(0))
         return
 
-    def write_file(
-        self, header_file, type_def, signal_name, start_bit, stop_bit, length
+    def write_struct_to_file(
+        self, header_file, type_def, signal_name,  length
     ):
         header_file.write(
             "\n\t"
             + type_def
             + " "
             + str(signal_name)
-            + "_"
-            + str(start_bit)  # Convert to string
-            + "_"
-            + str(stop_bit)  # Convert to string
             + " : "
             + str(length)
             + " ;"
         )
         return
+
+    def write_struct(self, f):
+        for row_number in range(self.listWidget_confirmed_signals.count()):
+            message = self.dbc_json[
+                self.listWidget_confirmed_signals.item(row_number).text()
+            ]
+            prefix = str(self.lineEdit_1_prefix.text())
+            if len(prefix) == 0:
+                prefix = "FEV"
+            prefix = prefix + "_" + message["message_name"]
+            f.write("\ntypedef struct {")
+            first_signal, prev_stop_bit, prev_start_bit, prev_length = True, 0, 0, 0
+            for signal in message["signals"]:
+                stop_bit = (
+                    int(signal["signal_start"]) + int(signal["signal_length"]) - 1
+                )
+                if not first_signal:
+                    if (prev_start_bit + prev_length) != int(signal["signal_start"]):
+                        reserved_bits = int(signal["signal_start"]) - prev_stop_bit - 1
+                        if reserved_bits <= 8:
+                            uint_type = "uint8"
+                        elif reserved_bits <= 16:
+                            uint_type = "uint16"
+                        elif reserved_bits <= 32:
+                            uint_type = "uint32"
+                        else:
+                            uint_type = "uint64"
+                        self.write_struct_to_file(
+                            f,
+                            uint_type,
+                            "NoUsedBits",
+                            reserved_bits,
+                        )
+                self.write_struct_to_file(
+                    f,
+                    signal["signal_type_def"],
+                    signal["signal_name"],
+                    signal["signal_length"],
+                )
+                prev_stop_bit, prev_start_bit, prev_length, first_signal = (
+                    int(stop_bit),
+                    int(signal["signal_start"]),
+                    int(signal["signal_length"]),
+                    False,
+                )
+            f.write("\n} " + prefix + " ;\n\n")
+        return
+
+    def write_get(self, f):
+        for row_number in range(self.listWidget_confirmed_signals.count()):
+            message = self.dbc_json[
+                self.listWidget_confirmed_signals.item(row_number).text()
+            ]
+            prefix = str(self.lineEdit_1_prefix.text())
+            if len(prefix) == 0:
+                prefix = "FEV"
+            prefix = prefix + "_" + message["message_name"]
+            if message["sender"] != "VCU":
+                for signal in message["signals"]:
+                    f.write(
+                        "#define get_"
+                        + signal["signal_name"]
+                        + " float32( "
+                        + prefix
+                        + "."
+                        + signal["signal_name"] 
+                        + "*"
+                        + signal["signal_factor"]
+                        + "+"
+                        + signal["signal_offset"]
+                        + " )\n"
+                    )
+        return
+    def write_set(self, f):
+        for row_number in range(self.listWidget_confirmed_signals.count()):
+            message = self.dbc_json[
+                self.listWidget_confirmed_signals.item(row_number).text()
+            ]
+            prefix = str(self.lineEdit_1_prefix.text())
+            if len(prefix) == 0:
+                prefix = "FEV"
+            prefix = prefix + "_" + message["message_name"]
+            if message["sender"] == "VCU":
+                for signal in message["signals"]:
+                    f.write(
+                        "#define set_"
+                        + signal["signal_name"]
+                        + " ( "
+                        + prefix
+                        + "."
+                        + signal["signal_name"]
+                        + " )\n"
+                    )
+        return
+
 
     def generate(self):
         header_name, ok = QInputDialog.getText(
@@ -65,65 +156,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 f.write(
                     "#ifndef FEV_VCU_DATA_H \n#define FEV_VCU_DATA_H \n#include <stdint.h>  // Include for UINT32 type\n\n"
                 )
-                self.write_struct()
-                for row_number in range(self.listWidget_confirmed_signals.count()):
-                    message = self.dbc_json[
-                        self.listWidget_confirmed_signals.item(row_number).text()
-                    ]
-                    class_name = (
-                        str(self.lineEdit_1_prefix.text())
-                        + "_"
-                        + message["message_name"]
-                    )
-                    f.write("\ntypedef struct {")
-                    first_signal = True
-                    prev_stop_bit = 0
-                    prev_start_bit = 0
-                    prev_length = 0
-                    for signal in message["signals"]:
-                        stop_bit = (
-                            int(signal["signal_start"])
-                            + int(signal["signal_length"])
-                            - 1
-                        )
-                        if not first_signal:
-                            if (prev_start_bit + prev_length) != int(
-                                signal["signal_start"]
-                            ):
-                                reserved_bits = (
-                                    int(signal["signal_start"]) - prev_stop_bit - 1
-                                )
-                                if reserved_bits <= 8:
-                                    uint_type = "uint8"
-                                elif reserved_bits <= 16:
-                                    uint_type = "uint16"
-                                elif reserved_bits <= 32:
-                                    uint_type = "uint32"
-                                else:
-                                    uint_type = "uint64"
-                                self.write_file(
-                                    f,
-                                    uint_type,
-                                    "NoUsedBits",
-                                    prev_stop_bit,
-                                    prev_stop_bit + reserved_bits,
-                                    reserved_bits,
-                                )
-                        self.write_file(
-                            f,
-                            signal["signal_type_def"],
-                            signal["signal_name"],
-                            signal["signal_start"],
-                            stop_bit,
-                            signal["signal_length"],
-                        )
-                        prev_stop_bit, prev_start_bit, prev_length, first_signal = (
-                            int(stop_bit),
-                            int(signal["signal_start"]),
-                            int(signal["signal_length"]),
-                            False,
-                        )
-                    f.write("\n} " + class_name + " ;\n")
+
+                self.write_get(f)
+                self.write_set(f)
+                self.write_struct(f)
+
                 f.write("\n\n#endif  // FEV_VCU_DATA_H")
             self.statusBar().setStyleSheet("background-color : lightgreen")
             self.statusBar().showMessage("info : Structs have been created ")

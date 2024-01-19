@@ -90,9 +90,10 @@ def parse(path):
                 line = line.strip()
                 line = line.replace(":", " ")
                 if line.startswith("BO_ ") and not (message_begin):
+                    print(line)
                     message_id = line.split(" ")[1]
                     message_name = line.split(" ")[2]
-                    sender = line.split(" ")[4]
+                    sender = line.split(" ")[5]
                     dbc_dict = add_signals(dbc_base, dbc_dict, message_id, message_name,sender)
                 if line.startswith("CM_ SG_ "):
                     dbc_dict = add_comment(line, dbc_dict)

@@ -1,6 +1,6 @@
 {
     "VCU_WarnMsg": {
-        "sender": "5",
+        "sender": "VCU",
         "message_id": "881",
         "message_name": "VCU_WarnMsg",
         "signal_num": 21,
@@ -260,7 +260,7 @@
         ]
     },
     "VCU_StatusDCDC": {
-        "sender": "12",
+        "sender": "VCU",
         "message_id": "433",
         "message_name": "VCU_StatusDCDC",
         "signal_num": 7,
@@ -352,7 +352,7 @@
         ]
     },
     "VCU_MHU_info": {
-        "sender": "7",
+        "sender": "VCU",
         "message_id": "498",
         "message_name": "VCU_MHU_info",
         "signal_num": 9,
@@ -468,7 +468,7 @@
         ]
     },
     "VCU_HVsystem_status": {
-        "sender": "6",
+        "sender": "VCU",
         "message_id": "151",
         "message_name": "VCU_HVsystem_status",
         "signal_num": 6,
@@ -548,7 +548,7 @@
         ]
     },
     "VCU_HV_DrvSys_status": {
-        "sender": "6",
+        "sender": "VCU",
         "message_id": "273",
         "message_name": "VCU_HV_DrvSys_status",
         "signal_num": 10,
@@ -676,7 +676,7 @@
         ]
     },
     "VCU_ChargingConnection": {
-        "sender": "5",
+        "sender": "VCU",
         "message_id": "277",
         "message_name": "VCU_ChargingConnection",
         "signal_num": 7,
@@ -768,7 +768,7 @@
         ]
     },
     "VCU_Batt_WarnMsg": {
-        "sender": "8",
+        "sender": "VCU",
         "message_id": "882",
         "message_name": "VCU_Batt_WarnMsg",
         "signal_num": 18,
@@ -990,7 +990,7 @@
         ]
     },
     "VCU_Batt_Info": {
-        "sender": "16",
+        "sender": "VCU",
         "message_id": "514",
         "message_name": "VCU_Batt_Info",
         "signal_num": 8,
@@ -1094,7 +1094,7 @@
         ]
     },
     "STAT_ANHAENGER": {
-        "sender": "8",
+        "sender": "ZCU_F",
         "message_id": "632",
         "message_name": "STAT_ANHAENGER",
         "signal_num": 1,
@@ -1114,7 +1114,7 @@
         ]
     },
     "ST_GWS": {
-        "sender": "4",
+        "sender": "ZCU_F",
         "message_id": "407",
         "message_name": "ST_GWS",
         "signal_num": 4,
@@ -1170,7 +1170,7 @@
         ]
     },
     "SFA_SteerWheel_Info": {
-        "sender": "8",
+        "sender": "ZCU_R",
         "message_id": "88",
         "message_name": "SFA_SteerWheel_Info",
         "signal_num": 8,
@@ -1272,7 +1272,7 @@
         ]
     },
     "RELATIVZEIT": {
-        "sender": "4",
+        "sender": "ZCU_F",
         "message_id": "1090",
         "message_name": "RELATIVZEIT",
         "signal_num": 1,
@@ -1292,7 +1292,7 @@
         ]
     },
     "Networkmanagement3_Status": {
-        "sender": "8",
+        "sender": "ZCU_F",
         "message_id": "1296",
         "message_name": "Networkmanagement3_Status",
         "signal_num": 4,
@@ -1348,7 +1348,7 @@
         ]
     },
     "KILOMETERSTAND": {
-        "sender": "8",
+        "sender": "ZCU_F",
         "message_id": "816",
         "message_name": "KILOMETERSTAND",
         "signal_num": 1,
@@ -1368,7 +1368,7 @@
         ]
     },
     "HighVoltageStorage200msNo1": {
-        "sender": "8",
+        "sender": "VCU",
         "message_id": "1107",
         "message_name": "HighVoltageStorage200msNo1",
         "signal_num": 2,
@@ -1400,7 +1400,7 @@
         ]
     },
     "HighVoltageStorage10msNo2": {
-        "sender": "48",
+        "sender": "VCU",
         "message_id": "143",
         "message_name": "HighVoltageStorage10msNo2",
         "signal_num": 3,
@@ -1444,7 +1444,7 @@
         ]
     },
     "FZZSTD": {
-        "sender": "8",
+        "sender": "ZCU_F",
         "message_id": "630",
         "message_name": "FZZSTD",
         "signal_num": 2,
@@ -1476,7 +1476,7 @@
         ]
     },
     "FZU_ChargingControl": {
-        "sender": "1",
+        "sender": "ZCU_F",
         "message_id": "451",
         "message_name": "FZU_ChargingControl",
         "signal_num": 1,
@@ -1496,7 +1496,7 @@
         ]
     },
     "FAHRGESTELLNUMMER": {
-        "sender": "7",
+        "sender": "ZCU_F",
         "message_id": "896",
         "message_name": "FAHRGESTELLNUMMER",
         "signal_num": 7,
@@ -1588,7 +1588,7 @@
         ]
     },
     "ERRM_BN_U": {
-        "sender": "2",
+        "sender": "ZCU_F",
         "message_id": "146",
         "message_name": "ERRM_BN_U",
         "signal_num": 1,
@@ -1608,7 +1608,7 @@
         ]
     },
     "DT_DISP_GRDT": {
-        "sender": "5",
+        "sender": "VCU",
         "message_id": "1021",
         "message_name": "DT_DISP_GRDT",
         "signal_num": 5,
@@ -1676,7 +1676,7 @@
         ]
     },
     "CON_VEH": {
-        "sender": "8",
+        "sender": "ZCU_F",
         "message_id": "60",
         "message_name": "CON_VEH",
         "signal_num": 6,
@@ -1756,7 +1756,7 @@
         ]
     },
     "CombinedChargerUnit10msNo2": {
-        "sender": "20",
+        "sender": "VCU",
         "message_id": "293",
         "message_name": "CombinedChargerUnit10msNo2",
         "signal_num": 7,
@@ -1848,7 +1848,7 @@
         ]
     },
     "A_TEMP": {
-        "sender": "2",
+        "sender": "ZCU_F",
         "message_id": "749",
         "message_name": "A_TEMP",
         "signal_num": 1,
@@ -1868,7 +1868,7 @@
         ]
     },
     "ABS_ESC_01": {
-        "sender": "1",
+        "sender": "ZCU_R",
         "message_id": "180",
         "message_name": "ABS_ESC_01",
         "signal_num": 1,
@@ -1888,7 +1888,7 @@
         ]
     },
     "IEB_01": {
-        "sender": "2",
+        "sender": "ZCU_R",
         "message_id": "210",
         "message_name": "IEB_01",
         "signal_num": 1,
@@ -1908,7 +1908,7 @@
         ]
     },
     "ESC_A": {
-        "sender": "4",
+        "sender": "ZCU_R",
         "message_id": "200",
         "message_name": "ESC_A",
         "signal_num": 4,
@@ -1964,7 +1964,7 @@
         ]
     },
     "Kilometerstand_2": {
-        "sender": "8",
+        "sender": "ZCU_F",
         "message_id": "490",
         "message_name": "Kilometerstand_2",
         "signal_num": 1,
@@ -1984,7 +1984,7 @@
         ]
     },
     "EBCM_STATUS": {
-        "sender": "7",
+        "sender": "ZCU_R",
         "message_id": "150",
         "message_name": "EBCM_STATUS",
         "signal_num": 13,
@@ -2148,7 +2148,7 @@
         ]
     },
     "ST_STAB_DSC_2": {
-        "sender": "8",
+        "sender": "ZCU_R",
         "message_id": "214",
         "message_name": "ST_STAB_DSC_2",
         "signal_num": 1,
@@ -2168,7 +2168,7 @@
         ]
     },
     "ST_STAB_DSC": {
-        "sender": "8",
+        "sender": "ZCU_R",
         "message_id": "213",
         "message_name": "ST_STAB_DSC",
         "signal_num": 6,
@@ -2248,7 +2248,7 @@
         ]
     },
     "TracEMacElectc1Time100msNo1": {
-        "sender": "32",
+        "sender": "VCU",
         "message_id": "314",
         "message_name": "TracEMacElectc1Time100msNo1",
         "signal_num": 1,
@@ -2267,7 +2267,7 @@
         ]
     },
     "TracEMacElectc2Time100msNo1": {
-        "sender": "32",
+        "sender": "VCU",
         "message_id": "326",
         "message_name": "TracEMacElectc2Time100msNo1",
         "signal_num": 1,
@@ -2286,7 +2286,7 @@
         ]
     },
     "BundleEAFlexrayToAECANFD10msNo1": {
-        "sender": "64",
+        "sender": "ZCU_R",
         "message_id": "296",
         "message_name": "BundleEAFlexrayToAECANFD10msNo1",
         "signal_num": 25,
@@ -2594,7 +2594,7 @@
         ]
     },
     "AVL_RPM_WHL": {
-        "sender": "12",
+        "sender": "ZCU_R",
         "message_id": "131",
         "message_name": "AVL_RPM_WHL",
         "signal_num": 10,
@@ -2722,7 +2722,7 @@
         ]
     },
     "BundleEAFlexrayToCANFD20msNo1": {
-        "sender": "32",
+        "sender": "ZCU_R",
         "message_id": "289",
         "message_name": "BundleEAFlexrayToCANFD20msNo1",
         "signal_num": 5,
@@ -2790,7 +2790,7 @@
         ]
     },
     "CLAMP_STAT": {
-        "sender": "3",
+        "sender": "ZCU_F",
         "message_id": "497",
         "message_name": "CLAMP_STAT",
         "signal_num": 6,
