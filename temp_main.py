@@ -2,7 +2,6 @@ from PyQt5 import QtWidgets, QtCore
 from can2 import Ui_MainWindow
 from PyQt5.QtWidgets import QFileDialog, QHeaderView, QInputDialog
 import ParseDbc
-#### bitslerde hata var mı bi bak
 
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -37,20 +36,25 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             item = self.treeWidget_dbc_signals.topLevelItem(row_number)
             self.listWidget_confirmed_signals.addItem(item.text(0))
         return
-    def write_file(self, header_file, signal_name, start_bit, stop_bit, length):
-            header_file.write(
-                "\n\t"
-                + "UINT32 "
-                + str(signal_name)
-                + "_"
-                + str(start_bit)  # Convert to string
-                + "_"
-                + str(stop_bit)  # Convert to string
-                + " : "
-                + str(length)
-                + " ;"
-            )
-            return
+
+    def write_file(
+        self, header_file, type_def, signal_name, start_bit, stop_bit, length
+    ):
+        header_file.write(
+            "\n\t"
+            + type_def
+            + " "
+            + str(signal_name)
+            + "_"
+            + str(start_bit)  # Convert to string
+            + "_"
+            + str(stop_bit)  # Convert to string
+            + " : "
+            + str(length)
+            + " ;"
+        )
+        return
+
     def generate(self):
         header_name, ok = QInputDialog.getText(
             self, "Input Dialog", "Enter header file name:"
@@ -61,6 +65,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 f.write(
                     "#ifndef FEV_VCU_DATA_H \n#define FEV_VCU_DATA_H \n#include <stdint.h>  // Include for UINT32 type\n\n"
                 )
+                self.write_struct()
                 for row_number in range(self.listWidget_confirmed_signals.count()):
                     message = self.dbc_json[
                         self.listWidget_confirmed_signals.item(row_number).text()
@@ -88,8 +93,17 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                                 reserved_bits = (
                                     int(signal["signal_start"]) - prev_stop_bit - 1
                                 )
+                                if reserved_bits <= 8:
+                                    uint_type = "uint8"
+                                elif reserved_bits <= 16:
+                                    uint_type = "uint16"
+                                elif reserved_bits <= 32:
+                                    uint_type = "uint32"
+                                else:
+                                    uint_type = "uint64"
                                 self.write_file(
                                     f,
+                                    uint_type,
                                     "NoUsedBits",
                                     prev_stop_bit,
                                     prev_stop_bit + reserved_bits,
@@ -97,6 +111,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                                 )
                         self.write_file(
                             f,
+                            signal["signal_type_def"],
                             signal["signal_name"],
                             signal["signal_start"],
                             stop_bit,
@@ -115,8 +130,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.listWidget_confirmed_signals.clear()
             return
 
-    
-
     def confirmed_signal_remove(self):
         self.listWidget_confirmed_signals.takeItem(
             self.listWidget_confirmed_signals.currentRow()
@@ -124,11 +137,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         return
 
     def describes_signal(self):
-        header = self.tableWidget_display_signals.horizontalHeader()
-        header.setSectionResizeMode(0, QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(1, QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(2, QHeaderView.ResizeToContents)
-        header.setMinimumSectionSize(20)
         item = self.listWidget_selected_signals.currentItem()
         for signal in self.signals_to_generate:
             if signal["signal_name"] == item.text():
@@ -147,6 +155,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.tableWidget_display_signals.item(0, 4).setText(
                     signal["signal_offset"]
                 )
+                self.tableWidget_display_signals_2.item(0, 0).setText(signal["comment"])
+
+        header = self.tableWidget_display_signals_2.horizontalHeader()
+        header.setSectionResizeMode(0, QHeaderView.ResizeToContents)
+        header.setMinimumSectionSize(20)
 
     def list_item_double_clicked(self, item):
         event = QtWidgets.QApplication.mouseButtons()
