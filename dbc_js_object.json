@@ -1,2869 +1,3773 @@
 {
     "VCU_WarnMsg": {
-        "sender": "VCU",
         "message_id": "881",
         "message_name": "VCU_WarnMsg",
+        "message_length_as_byte": "5",
+        "sender": "VCU",
         "signal_num": 21,
         "signals": [
             {
                 "signal_name": "CRC_VCU_WarnMsg",
                 "signal_start": "0",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Checksum;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Checksum\";"
             },
             {
                 "signal_name": "ALV_VCU_WarnMsg",
                 "signal_start": "8",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Alive Counter;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Alive Counter\";"
             },
             {
                 "signal_name": "VCU_GearPAtStationaryOnly",
                 "signal_start": "12",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Gear position P only when stationary;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Gear position P only when stationary\";"
             },
             {
                 "signal_name": "VCU_GearPNotPossible",
                 "signal_start": "13",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Gear P not possible Due to EPP lock is not possible gear position P may not be possible.;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Gear P not possible Due to EPP lock is not possible gear position P may not be possible.\";"
             },
             {
                 "signal_name": "VCU_PressBreakToEngageGear",
                 "signal_start": "14",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Press Brake to engage gear hint;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Press Brake to engage gear hint\";"
             },
             {
                 "signal_name": "VCU_CantChangeGear",
                 "signal_start": "15",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Unable to change gear position;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Unable to change gear position\";"
             },
             {
                 "signal_name": "VCU_MotorCoolantPumpErr",
                 "signal_start": "16",
                 "signal_length": "3",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "3",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "- Drive Motor Coolant Pump A Errors Circuit Open Circuit Short To Ground Circuit Short To Battery.;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"- Drive Motor Coolant Pump A Errors Circuit Open Circuit Short To Ground Circuit Short To Battery.\";"
             },
             {
                 "signal_name": "VCU_EmergencyShutdown",
                 "signal_start": "19",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Emergency Shutdown Immediately open the HV contactors;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Emergency Shutdown Immediately open the HV contactors\";"
             },
             {
                 "signal_name": "VCU_HeatLoopTempSensorErr",
                 "signal_start": "20",
                 "signal_length": "3",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "4",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "- Heating Loop Temp Sensor A Errors General Electric Failure Circuit Short To Ground Circuit Short To Battery Circuit Intermittent;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"- Heating Loop Temp Sensor A Errors General Electric Failure Circuit Short To Ground Circuit Short To Battery Circuit Intermittent\";"
             },
             {
                 "signal_name": "VCU_GearMalfunc",
                 "signal_start": "23",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Gear change might be not possible;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Gear change might be not possible\";"
             },
             {
                 "signal_name": "VCU_CoolingTempExceedLimit",
                 "signal_start": "24",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Warning when radiator inlet and/or outlet temperature exceed temperature high warning threshold red ;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Warning when radiator inlet and/or outlet temperature exceed temperature high warning threshold red \";"
             },
             {
                 "signal_name": "VCU_TransmissionMalfunction",
                 "signal_start": "25",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Warning given by VCU when E-Motor send warning signals;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Warning given by VCU when E-Motor send warning signals\";"
             },
             {
                 "signal_name": "VCU_ParkLockNotEngaged",
                 "signal_start": "26",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Warning given by VCU when park lock request is sent to E-Motor but actual park lock status from E-Motor is not engaged;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Warning given by VCU when park lock request is sent to E-Motor but actual park lock status from E-Motor is not engaged\";"
             },
             {
                 "signal_name": "VCU_CoolantTempHigh",
                 "signal_start": "27",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Warning given by VCU when radiator inlet and/or outlet temperature exceed temperature high warning threshold yellow ;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Warning given by VCU when radiator inlet and/or outlet temperature exceed temperature high warning threshold yellow \";"
             },
             {
                 "signal_name": "VCU_CheckDriveTrain",
                 "signal_start": "28",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Warning given by VCU when E-Motor send warning signals;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Warning given by VCU when E-Motor send warning signals\";"
             },
             {
                 "signal_name": "VCU_OBCTempHigh",
                 "signal_start": "29",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Warning is given by VCU when the temperature of OBC higher than the limitation;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Warning is given by VCU when the temperature of OBC higher than the limitation\";"
             },
             {
                 "signal_name": "VCU_DCDC_TempHigh",
                 "signal_start": "30",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Waring is given by VCU when the temperature of DCDC higher than the limitation;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Waring is given by VCU when the temperature of DCDC higher than the limitation\";"
             },
             {
                 "signal_name": "VCU_ChargingInletTempHigh",
                 "signal_start": "31",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Warning is given by VCU when the temperature of Charging Inlet higher than the limitation;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Warning is given by VCU when the temperature of Charging Inlet higher than the limitation\";"
             },
             {
                 "signal_name": "VCU_HVILErr",
                 "signal_start": "32",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "High Voltage Interlock loop circuit error;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"High Voltage Interlock loop circuit error\";"
             },
             {
                 "signal_name": "VCU_Limphome",
                 "signal_start": "33",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Speed regulation apply to e-drive system;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Speed regulation apply to e-drive system\";"
             },
             {
                 "signal_name": "VCU_HVSystemReduced",
                 "signal_start": "34",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Reduced HV System Power;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Reduced HV System Power\";"
             }
         ]
     },
     "VCU_StatusDCDC": {
-        "sender": "VCU",
         "message_id": "433",
         "message_name": "VCU_StatusDCDC",
+        "message_length_as_byte": "12",
+        "sender": "VCU",
         "signal_num": 7,
         "signals": [
             {
                 "signal_name": "CRC_VCU_StatusDCDC",
                 "signal_start": "0",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Check sum;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Check sum\";"
             },
             {
                 "signal_name": "ALV_VCU_StatusDCDC",
                 "signal_start": "8",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Alive counter;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Alive counter\";"
             },
             {
                 "signal_name": "DCDC_status",
                 "signal_start": "12",
                 "signal_length": "3",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "7",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "DCDC status;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"DCDC status\";"
             },
             {
                 "signal_name": "DCDC_maxCurrentOut",
                 "signal_start": "16",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "6553.5",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Max LV current DCDC able to output;"
+                "signal_unit": "\"A\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Max LV current DCDC able to output\";"
             },
             {
                 "signal_name": "DCDC_iOutput",
                 "signal_start": "32",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "350",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "DCDC reported 12V current;"
+                "signal_unit": "\"A\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"DCDC reported 12V current\";"
             },
             {
                 "signal_name": "DCDC_vDCInput",
                 "signal_start": "48",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.0625",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "4095",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "DCDC input voltage;"
+                "signal_unit": "\"V\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"DCDC input voltage\";"
             },
             {
                 "signal_name": "DCDC_vOutput",
                 "signal_start": "64",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.0625",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "4095",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "DCDC reported 12V voltage;"
+                "signal_unit": "\"V\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"DCDC reported 12V voltage\";"
             }
         ]
     },
     "VCU_MHU_info": {
-        "sender": "VCU",
         "message_id": "498",
         "message_name": "VCU_MHU_info",
+        "message_length_as_byte": "7",
+        "sender": "VCU",
         "signal_num": 9,
         "signals": [
             {
                 "signal_name": "CRC_VCU_MHU_info",
                 "signal_start": "0",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Checksum;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Checksum\";"
             },
             {
                 "signal_name": "ALV_VCU_MHU_info",
                 "signal_start": "8",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Alive counter;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Alive counter\";"
             },
             {
                 "signal_name": "VCU_CurPwrConsum",
                 "signal_start": "12",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Instant Power consumption;"
+                "signal_unit": "\"km/kWh\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Instant Power consumption\";"
             },
             {
                 "signal_name": "VCU_RemainingRange",
                 "signal_start": "16",
                 "signal_length": "12",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.5",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "2047.5",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Km Coverable distance with present energy in vehicle.;"
+                "signal_unit": "\"km\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Km Coverable distance with present energy in vehicle.\";"
             },
             {
                 "signal_name": "VCU_ChgGun_Status",
                 "signal_start": "28",
                 "signal_length": "3",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "7",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Charging gun status;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Charging gun status\";"
             },
             {
                 "signal_name": "VCU_BattChargingStatus",
                 "signal_start": "31",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "HV battery charging - not charging status for displaying only for both regen charging ;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"HV battery charging - not charging status for displaying only for both regen charging \";"
             },
             {
                 "signal_name": "VCU_VehChg_STS",
                 "signal_start": "32",
                 "signal_length": "3",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "7",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Vehicle Charging Status;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Vehicle Charging Status\";"
             },
             {
                 "signal_name": "VCU_ChgGunConnStatus",
                 "signal_start": "35",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Charging gun connection status;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Charging gun connection status\";"
             },
             {
                 "signal_name": "VCU_BattSOC",
                 "signal_start": "40",
                 "signal_length": "10",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "100",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "HV battery SOC for displaying only;"
+                "signal_unit": "\"%\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"HV battery SOC for displaying only\";"
             }
         ]
     },
     "VCU_HVsystem_status": {
-        "sender": "VCU",
         "message_id": "151",
         "message_name": "VCU_HVsystem_status",
+        "message_length_as_byte": "6",
+        "sender": "VCU",
         "signal_num": 6,
         "signals": [
             {
                 "signal_name": "CRC_VCU_HVsystem_status",
                 "signal_start": "0",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Checksum;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Checksum\";"
             },
             {
                 "signal_name": "ALIV_VCU_HVsystem_status",
                 "signal_start": "8",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Alive counter;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Alive counter\";"
             },
             {
                 "signal_name": "VCU_RunningRange_chrg_estSts",
                 "signal_start": "12",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "3",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Status of estimation running range after charged by current charging condition max chg.current chg.time \u2026 ;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Status of estimation running range after charged by current charging condition max chg.current chg.time \u2026 \";"
             },
             {
                 "signal_name": "VCU_HVbatSoc_charged_estStatus",
                 "signal_start": "14",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "3",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "VCU_HVbatSoc_charged_estStatus;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"VCU_HVbatSoc_charged_estStatus\";"
             },
             {
                 "signal_name": "VCU_RunningRange_charged",
                 "signal_start": "16",
                 "signal_length": "12",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.5",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "2047.5",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Estimated running range after charged by current charging condition max chg.current chg.time \u2026 ;"
+                "signal_unit": "\"km\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Estimated running range after charged by current charging condition max chg.current chg.time \u2026 \";"
             },
             {
                 "signal_name": "VCU_HVbatSoc_charged",
                 "signal_start": "32",
                 "signal_length": "10",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "100",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Estimated HVBattery SOC by current charging condition max chg.current chg.time \u2026 ;"
+                "signal_unit": "\"%\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Estimated HVBattery SOC by current charging condition max chg.current chg.time \u2026 \";"
             }
         ]
     },
     "VCU_HV_DrvSys_status": {
-        "sender": "VCU",
         "message_id": "273",
         "message_name": "VCU_HV_DrvSys_status",
+        "message_length_as_byte": "6",
+        "sender": "VCU",
         "signal_num": 10,
         "signals": [
             {
                 "signal_name": "CRC_VCU_HV_DrvSys_status",
                 "signal_start": "0",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Checksum;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Checksum\";"
             },
             {
                 "signal_name": "ALV_VCU_HV_DrvSys_bstatus",
                 "signal_start": "8",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Alive counter;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Alive counter\";"
             },
             {
                 "signal_name": "VCU_HV_SystemStatus",
                 "signal_start": "12",
                 "signal_length": "3",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "7",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "High Voltage system status;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"High Voltage system status\";"
             },
             {
                 "signal_name": "VCU_HV_DrvSystemStatus",
                 "signal_start": "16",
                 "signal_length": "3",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "7",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Status of driving system Highvoltage ;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Status of driving system Highvoltage \";"
             },
             {
                 "signal_name": "VCU_ACT_Gear",
                 "signal_start": "20",
                 "signal_length": "3",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "7",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "actual gear Provide gear shift signal;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"actual gear Provide gear shift signal\";"
             },
             {
                 "signal_name": "VCU_ACT_GearValid",
                 "signal_start": "23",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Indicate the current gear position"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Indicate the current gear position"
             },
             {
                 "signal_name": "VCU_ACPD_Percent",
                 "signal_start": "24",
                 "signal_length": "12",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.0625",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "100",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "The signal contains the actual angle of the acceleration pedal100% acceleration pedal position shall only provided in case of kick down.Without kickdown the maximum value shall be 99.;"
+                "signal_unit": "\"%\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"The signal contains the actual angle of the acceleration pedal100% acceleration pedal position shall only provided in case of kick down.Without kickdown the maximum value shall be 99.\";"
             },
             {
                 "signal_name": "VCU_ACPD_Percent_Valid",
                 "signal_start": "36",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Qualifier for corresponding signal. In value table not defined values are reserved;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Qualifier for corresponding signal. In value table not defined values are reserved\";"
             },
             {
                 "signal_name": "VCU_ACT_DriveMode",
                 "signal_start": "40",
                 "signal_length": "3",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "7",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Vehicle drive mode;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Vehicle drive mode\";"
             },
             {
                 "signal_name": "VCU_ACT_DriveModeValid",
                 "signal_start": "43",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Vehicle drive mode status;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Vehicle drive mode status\";"
             }
         ]
     },
     "VCU_ChargingConnection": {
-        "sender": "VCU",
         "message_id": "277",
         "message_name": "VCU_ChargingConnection",
+        "message_length_as_byte": "5",
+        "sender": "VCU",
         "signal_num": 7,
         "signals": [
             {
                 "signal_name": "CRC_VCU_ChargingConnection",
                 "signal_start": "0",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Checksum;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Checksum\";"
             },
             {
                 "signal_name": "ALV_VCU_ChargingConnection",
                 "signal_start": "8",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Alive Counter;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Alive Counter\";"
             },
             {
                 "signal_name": "VCU_DCChgGunIn",
                 "signal_start": "12",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Connection status of DC Fast charging Gun;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Connection status of DC Fast charging Gun\";"
             },
             {
                 "signal_name": "VCU_AcChgGunIn",
                 "signal_start": "13",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Slow Charge Gun Insert Status ;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Slow Charge Gun Insert Status \";"
             },
             {
                 "signal_name": "VCU_CPValue",
                 "signal_start": "16",
                 "signal_length": "7",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "100",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Charging port duty Cycle value PWM ;"
+                "signal_unit": "\"%\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Charging port duty Cycle value PWM \";"
             },
             {
                 "signal_name": "VCU_ACChargingVoltage",
                 "signal_start": "24",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "AC charging voltage;"
+                "signal_unit": "\"V\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"AC charging voltage\";"
             },
             {
                 "signal_name": "VCU_MaxCurrentOfACCharging",
                 "signal_start": "32",
                 "signal_length": "6",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "63",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Maximum Charging current of AC Charging;"
+                "signal_unit": "\"A\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Maximum Charging current of AC Charging\";"
             }
         ]
     },
     "VCU_Batt_WarnMsg": {
-        "sender": "VCU",
         "message_id": "882",
         "message_name": "VCU_Batt_WarnMsg",
+        "message_length_as_byte": "8",
+        "sender": "VCU",
         "signal_num": 18,
         "signals": [
             {
                 "signal_name": "CHSKM_VCU_Batt_WarnMsg",
                 "signal_start": "0",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Checksum;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Checksum\";"
             },
             {
                 "signal_name": "ALV_VCU_Batt_WarnMsg",
                 "signal_start": "8",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Alive Counter;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Alive Counter\";"
             },
             {
                 "signal_name": "BMS_PackTempSts",
                 "signal_start": "12",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "2",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Pack temperature warning;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Pack temperature warning\";"
             },
             {
                 "signal_name": "BMS_ThermalRunaway",
                 "signal_start": "14",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Thermal runaway warning;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Thermal runaway warning\";"
             },
             {
                 "signal_name": "BMS_CellTempErr",
                 "signal_start": "16",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "3",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Cell temperature warning;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Cell temperature warning\";"
             },
             {
                 "signal_name": "BMS_HVILErr",
                 "signal_start": "18",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "High Voltage Interlock loop circuit error;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"High Voltage Interlock loop circuit error\";"
             },
             {
                 "signal_name": "BMS_PackInsuErr",
                 "signal_start": "19",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Insulation check lines have problems short to ground or short to bat;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Insulation check lines have problems short to ground or short to bat\";"
             },
             {
                 "signal_name": "BMS_MalfunctionSts",
                 "signal_start": "20",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Malfunction status of battery for MHU display;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Malfunction status of battery for MHU display\";"
             },
             {
                 "signal_name": "BMS_LowBattery",
                 "signal_start": "21",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "2",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Low Battery Warning;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Low Battery Warning\";"
             },
             {
                 "signal_name": "BMS_FuseStatusErr",
                 "signal_start": "23",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ]
             },
             {
                 "signal_name": "BMS_CellVoltErr",
                 "signal_start": "24",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "3",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Cell Voltage warning;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Cell Voltage warning\";"
             },
             {
                 "signal_name": "BMS_PackVolErr",
                 "signal_start": "26",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "2",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Pack Voltage warning;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Pack Voltage warning\";"
             },
             {
                 "signal_name": "BMS_PackOverCurrErr",
                 "signal_start": "28",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "When The Over Current \u0130s Detected During Charging And Discharging For The Given Period Of Time Then The Bms_Packovercurr_Err Will Set ;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"When The Over Current \u0130s Detected During Charging And Discharging For The Given Period Of Time Then The Bms_Packovercurr_Err Will Set \";"
             },
             {
                 "signal_name": "BMS_Reserved_signal1",
                 "signal_start": "29",
                 "signal_length": "3",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "7",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Warning Message Flag Component owner Supplier align and define for this signal;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Warning Message Flag Component owner Supplier align and define for this signal\";"
             },
             {
                 "signal_name": "BMS_Reserved_signal2",
                 "signal_start": "32",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Warning Message Flag Component owner Supplier align and define for this signal;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Warning Message Flag Component owner Supplier align and define for this signal\";"
             },
             {
                 "signal_name": "BMS_Reserved_signal3",
                 "signal_start": "40",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Warning Message Flag Component owner Supplier align and define for this signal;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Warning Message Flag Component owner Supplier align and define for this signal\";"
             },
             {
                 "signal_name": "BMS_Reserved_signal4",
                 "signal_start": "48",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Warning Message Flag Component owner Supplier align and define for this signal;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Warning Message Flag Component owner Supplier align and define for this signal\";"
             },
             {
                 "signal_name": "BMS_Reserved_signal5",
                 "signal_start": "56",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ]
             }
         ]
     },
     "VCU_Batt_Info": {
-        "sender": "VCU",
         "message_id": "514",
         "message_name": "VCU_Batt_Info",
+        "message_length_as_byte": "16",
+        "sender": "VCU",
         "signal_num": 8,
         "signals": [
             {
                 "signal_name": "CRC_VCU_Batt_Info",
                 "signal_start": "0",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Checksum;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Checksum\";"
             },
             {
                 "signal_name": "ALV_VCU_Batt_Info",
                 "signal_start": "8",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Alive counter;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Alive counter\";"
             },
             {
                 "signal_name": "BMS_PackCur",
                 "signal_start": "16",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.1",
                 "signal_offset": "-1500",
                 "signal_min": "-1500",
                 "signal_max": "1500",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Battery Pack Total Current;"
+                "signal_unit": "\"A\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Battery Pack Total Current\";"
             },
             {
                 "signal_name": "BMS_PackVoltage",
                 "signal_start": "32",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "600",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Pack Voltage;"
+                "signal_unit": "\"V\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Pack Voltage\";"
             },
             {
                 "signal_name": "BMS_PackTemp",
                 "signal_start": "48",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "-40",
                 "signal_min": "-40",
                 "signal_max": "215",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Pack Temperature ;"
+                "signal_unit": "\"\u00b0C\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Pack Temperature \";"
             },
             {
                 "signal_name": "BMS_RemainChargeTime",
                 "signal_start": "56",
                 "signal_length": "12",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1500",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "BMS Remain Charging Time;"
+                "signal_unit": "\"min\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"BMS Remain Charging Time\";"
             },
             {
                 "signal_name": "BMS_ChargingVoltage",
                 "signal_start": "72",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "600",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "BMS charging voltage;"
+                "signal_unit": "\"V\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"BMS charging voltage\";"
             },
             {
                 "signal_name": "BMS_ChargingCurrent",
                 "signal_start": "88",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1500",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "BMS charging current;"
+                "signal_unit": "\"A\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"BMS charging current\";"
             }
         ]
     },
     "STAT_ANHAENGER": {
-        "sender": "ZCU_F",
         "message_id": "632",
         "message_name": "STAT_ANHAENGER",
+        "message_length_as_byte": "8",
+        "sender": "ZCU_F",
         "signal_num": 1,
         "signals": [
             {
                 "signal_name": "ST_TRAI",
                 "signal_start": "0",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "3",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This parameter / signal indicates if a trailer is really connected or not. fixed=0;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"This parameter / signal indicates if a trailer is really connected or not. fixed=0\";"
             }
         ]
     },
     "ST_GWS": {
-        "sender": "ZCU_F",
         "message_id": "407",
         "message_name": "ST_GWS",
+        "message_length_as_byte": "4",
+        "sender": "ZCU_F",
         "signal_num": 4,
         "signals": [
             {
                 "signal_name": "CRC_ST_GWS",
                 "signal_start": "0",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Standard application CRC validation"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"Standard application CRC validation"
             },
             {
                 "signal_name": "ALIV_ST_GWS",
                 "signal_start": "8",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Standard alive counter validation as per definition in the requirements specification;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"Standard alive counter validation as per definition in the requirements specification\";"
             },
             {
                 "signal_name": "OP_GWS",
                 "signal_start": "12",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "1",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "The signal indicates the current status of the gear selector switch for controlling the electrical transmission."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"The signal indicates the current status of the gear selector switch for controlling the electrical transmission."
             },
             {
                 "signal_name": "OP_GWS_PUBU_PKG",
                 "signal_start": "24",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "3",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "The signal indicates the driver request Park for controlling the electrical transmission.;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"The signal indicates the driver request Park for controlling the electrical transmission.\";"
             }
         ]
     },
     "SFA_SteerWheel_Info": {
-        "sender": "ZCU_R",
         "message_id": "88",
         "message_name": "SFA_SteerWheel_Info",
+        "message_length_as_byte": "8",
+        "sender": "ZCU_R",
         "signal_num": 8,
         "signals": [
             {
                 "signal_name": "CRC_SFA_SteerWheel_Info",
                 "signal_start": "0",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Standard application CRC validation;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Standard application CRC validation\";"
             },
             {
                 "signal_name": "ALIV_SFA_SteerWheel_Info",
                 "signal_start": "8",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Alive Counter;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Alive Counter\";"
             },
             {
                 "signal_name": "SFA_SteerWheelTorque",
                 "signal_start": "16",
                 "signal_length": "12",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.02",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "81.9",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Torque applied to the steering wheel;"
+                "signal_unit": "\"Nm\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Torque applied to the steering wheel\";"
             },
             {
                 "signal_name": "SFA_SteerWheelAngleSpeed",
                 "signal_start": "32",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "4",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1020",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "SFA_SteerWheelAngleSpeed;"
+                "signal_unit": "\"deg/s\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"SFA_SteerWheelAngleSpeed\";"
             },
             {
                 "signal_name": "SFA_SteerWheelAngle",
                 "signal_start": "40",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.02",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1310.7",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "SFA Calculated Steering Angle;"
+                "signal_unit": "\"deg\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"SFA Calculated Steering Angle\";"
             },
             {
                 "signal_name": "SFA_WarningLamp",
                 "signal_start": "56",
                 "signal_length": "3",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "7",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "SFAM Warning Lamp;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"SFAM Warning Lamp\";"
             },
             {
                 "signal_name": "SFA_EmergencyRequest",
                 "signal_start": "59",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "3",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ]
             },
             {
                 "signal_name": "SFA_CenteringStatus",
                 "signal_start": "61",
                 "signal_length": "3",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "7",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ]
             }
         ]
     },
     "RELATIVZEIT": {
-        "sender": "ZCU_F",
         "message_id": "1090",
         "message_name": "RELATIVZEIT",
+        "message_length_as_byte": "4",
+        "sender": "ZCU_F",
         "signal_num": 1,
         "signals": [
             {
                 "signal_name": "T_SEC_COU_REL",
                 "signal_start": "0",
                 "signal_length": "32",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint32",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "4294967295",
-                "signal_type_def": "uint32",
-                "signal_endian": "little Endian",
-                "comment": ""
+                "signal_unit": "\"s\"",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\""
             }
         ]
     },
     "Networkmanagement3_Status": {
-        "sender": "ZCU_F",
         "message_id": "1296",
         "message_name": "Networkmanagement3_Status",
+        "message_length_as_byte": "8",
+        "sender": "ZCU_F",
         "signal_num": 4,
         "signals": [
             {
                 "signal_name": "NM3ControlBitVector",
                 "signal_start": "0",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "64",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Using this signal the control bit vector specified in AUTOSAR NM is transmitted. For BMW only bit 6 Partial Network Information Bit is relevant; all other bits shall be set to 0"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"Using this signal the control bit vector specified in AUTOSAR NM is transmitted. For BMW only bit 6 Partial Network Information Bit is relevant; all other bits shall be set to 0"
             },
             {
                 "signal_name": "NM3SenderECUId",
                 "signal_start": "8",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This signal contains the diagnostic address of the sending electronic control unit Source Node Identifier ."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"This signal contains the diagnostic address of the sending electronic control unit Source Node Identifier ."
             },
             {
                 "signal_name": "NM3BasePartialNetworks",
                 "signal_start": "16",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "65535",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "This signal is used to communicate whether communication is required in the currently active vehicle state."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"This signal is used to communicate whether communication is required in the currently active vehicle state."
             },
             {
                 "signal_name": "NM3FunctionalPartialNetworks",
                 "signal_start": "32",
                 "signal_length": "32",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint32",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "4294967295",
-                "signal_type_def": "uint32",
-                "signal_endian": "little Endian",
-                "comment": "This signal is used to communicate which functional subnets.fixed=98304;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"This signal is used to communicate which functional subnets.fixed=98304\";"
             }
         ]
     },
     "KILOMETERSTAND": {
-        "sender": "ZCU_F",
         "message_id": "816",
         "message_name": "KILOMETERSTAND",
+        "message_length_as_byte": "8",
+        "sender": "ZCU_F",
         "signal_num": 1,
         "signals": [
             {
                 "signal_name": "MILE_KM",
                 "signal_start": "0",
                 "signal_length": "24",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint32",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "16777215",
-                "signal_type_def": "uint32",
-                "signal_endian": "little Endian",
-                "comment": "The indicated value of the odometer is made available to other nodes."
+                "signal_unit": "\"KM\"",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"The indicated value of the odometer is made available to other nodes."
             }
         ]
     },
     "HighVoltageStorage200msNo1": {
-        "sender": "VCU",
         "message_id": "1107",
         "message_name": "HighVoltageStorage200msNo1",
+        "message_length_as_byte": "8",
+        "sender": "VCU",
         "signal_num": 2,
         "signals": [
             {
                 "signal_name": "StatusServiceDisconnectionPlug",
                 "signal_start": "24",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "1",
                 "signal_max": "3",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Status of the service disconnector plugged in or not plugged in"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Status of the service disconnector plugged in or not plugged in"
             },
             {
                 "signal_name": "StsDisconnectingSwtHighVoltStorg",
                 "signal_start": "26",
                 "signal_length": "6",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "63",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Status of the disconnecting elements in the high voltage battery incl. status for the stuck welded contactor.;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Status of the disconnecting elements in the high voltage battery incl. status for the stuck welded contactor.\";"
             }
         ]
     },
     "HighVoltageStorage10msNo2": {
-        "sender": "VCU",
         "message_id": "143",
         "message_name": "HighVoltageStorage10msNo2",
+        "message_length_as_byte": "48",
+        "sender": "VCU",
         "signal_num": 3,
         "signals": [
             {
                 "signal_name": "CRC_HighVoltageStorage10msNo2",
                 "signal_start": "256",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "65535",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "This signal contains the CRC checksum for the standard validation with application.Data ID 16 bits 115 dec = 0073 hex .;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"This signal contains the CRC checksum for the standard validation with application.Data ID 16 bits 115 dec = 0073 hex .\";"
             },
             {
                 "signal_name": "ALIV_HighVoltageStorage10msNo2",
                 "signal_start": "272",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "254",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Standard alive counter validation as per definition in the requirements specification;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Standard alive counter validation as per definition in the requirements specification\";"
             },
             {
                 "signal_name": "ActualValueVoltageLinkVerified",
                 "signal_start": "296",
                 "signal_length": "12",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.25",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1023.75",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "The signal sends the link voltage as currently measured by the SME."
+                "signal_unit": "\"V\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"The signal sends the link voltage as currently measured by the SME."
             }
         ]
     },
     "FZZSTD": {
-        "sender": "ZCU_F",
         "message_id": "630",
         "message_name": "FZZSTD",
+        "message_length_as_byte": "8",
+        "sender": "ZCU_F",
         "signal_num": 2,
         "signals": [
             {
                 "signal_name": "ST_ENERG_FZM",
                 "signal_start": "16",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This signal has an equivalent on the SF-CAN.fixed=1;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"This signal has an equivalent on the SF-CAN.fixed=1\";"
             },
             {
                 "signal_name": "ST_ILK_ERRM_FZM",
                 "signal_start": "56",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "3",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Defined by means of DMA_PA_4975 of the central error memory / diagnostic master 10000504-000-14 requirements specification. Mapping the Ethernet StatusEnergy service interface to legacy buses."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"Defined by means of DMA_PA_4975 of the central error memory / diagnostic master 10000504-000-14 requirements specification. Mapping the Ethernet StatusEnergy service interface to legacy buses."
             }
         ]
     },
     "FZU_ChargingControl": {
-        "sender": "ZCU_F",
         "message_id": "451",
         "message_name": "FZU_ChargingControl",
+        "message_length_as_byte": "1",
+        "sender": "ZCU_F",
         "signal_num": 1,
         "signals": [
             {
                 "signal_name": "FZU_ChargingStopReq",
                 "signal_start": "0",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "3",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Charging shall be stopped or resumed when requested from FZU;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"Charging shall be stopped or resumed when requested from FZU\";"
             }
         ]
     },
     "FAHRGESTELLNUMMER": {
-        "sender": "ZCU_F",
         "message_id": "896",
         "message_name": "FAHRGESTELLNUMMER",
+        "message_length_as_byte": "7",
+        "sender": "ZCU_F",
         "signal_num": 7,
         "signals": [
             {
                 "signal_name": "NO_VECH_1",
                 "signal_start": "0",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This signal contains the seventh to last digit of the vehicle identification number. The individual digits are coded in ASCII characters."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"This signal contains the seventh to last digit of the vehicle identification number. The individual digits are coded in ASCII characters."
             },
             {
                 "signal_name": "NO_VECH_2",
                 "signal_start": "8",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This signal contains the seventh to last digit of the vehicle identification number. The individual digits are coded in ASCII characters."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"This signal contains the seventh to last digit of the vehicle identification number. The individual digits are coded in ASCII characters."
             },
             {
                 "signal_name": "NO_VECH_3",
                 "signal_start": "16",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This signal contains the seventh to last digit of the vehicle identification number. The individual digits are coded in ASCII characters."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"This signal contains the seventh to last digit of the vehicle identification number. The individual digits are coded in ASCII characters."
             },
             {
                 "signal_name": "NO_VECH_4",
                 "signal_start": "24",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This signal contains the seventh to last digit of the vehicle identification number. The individual digits are coded in ASCII characters."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"This signal contains the seventh to last digit of the vehicle identification number. The individual digits are coded in ASCII characters."
             },
             {
                 "signal_name": "NO_VECH_5",
                 "signal_start": "32",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This signal contains the seventh to last digit of the vehicle identification number. The individual digits are coded in ASCII characters."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"This signal contains the seventh to last digit of the vehicle identification number. The individual digits are coded in ASCII characters."
             },
             {
                 "signal_name": "NO_VECH_6",
                 "signal_start": "40",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This signal contains the seventh to last digit of the vehicle identification number. The individual digits are coded in ASCII characters."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"This signal contains the seventh to last digit of the vehicle identification number. The individual digits are coded in ASCII characters."
             },
             {
                 "signal_name": "NO_VECH_7",
                 "signal_start": "48",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This signal contains the seventh to last digit of the vehicle identification number. The individual digits are coded in ASCII characters."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"This signal contains the seventh to last digit of the vehicle identification number. The individual digits are coded in ASCII characters."
             }
         ]
     },
     "ERRM_BN_U": {
-        "sender": "ZCU_F",
         "message_id": "146",
         "message_name": "ERRM_BN_U",
+        "message_length_as_byte": "2",
+        "sender": "ZCU_F",
         "signal_num": 1,
         "signals": [
             {
                 "signal_name": "CTR_ERRM_BN_U",
                 "signal_start": "0",
                 "signal_length": "6",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "63",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "The signal Steuerung_Fehlerspeicher_Bordnetz_Spannung provides voltage thresholds for handling the error memory. fixed=0;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"The signal Steuerung_Fehlerspeicher_Bordnetz_Spannung provides voltage thresholds for handling the error memory. fixed=0\";"
             }
         ]
     },
     "DT_DISP_GRDT": {
-        "sender": "VCU",
         "message_id": "1021",
         "message_name": "DT_DISP_GRDT",
+        "message_length_as_byte": "5",
+        "sender": "VCU",
         "signal_num": 5,
         "signals": [
             {
                 "signal_name": "CRC_DT_DISP_GRDT",
                 "signal_start": "0",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Standard application CRC validation"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Standard application CRC validation"
             },
             {
                 "signal_name": "ALIV_DT_DISP_GRDT",
                 "signal_start": "8",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Standard alive counter validation as per definition in the requirements specification;"
+                "signal_unit": "\"14\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Standard alive counter validation as per definition in the requirements specification\";"
             },
             {
                 "signal_name": "DISP_PRG_GRB",
                 "signal_start": "16",
                 "signal_length": "3",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "7",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "The signal is used to activate the program information display in the instrument cluster.fixed=0;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"The signal is used to activate the program information display in the instrument cluster.fixed=0\";"
             },
             {
                 "signal_name": "DISP_PO_IDC_GRB",
                 "signal_start": "19",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "3",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "The signal defines the transmission position display type. fixed=0;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"The signal defines the transmission position display type. fixed=0\";"
             },
             {
                 "signal_name": "DISP_PO_GRB",
                 "signal_start": "21",
                 "signal_length": "3",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "7",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This signal is used to activate the transmission position display.;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"This signal is used to activate the transmission position display.\";"
             }
         ]
     },
     "CON_VEH": {
-        "sender": "ZCU_F",
         "message_id": "60",
         "message_name": "CON_VEH",
+        "message_length_as_byte": "8",
+        "sender": "ZCU_F",
         "signal_num": 6,
         "signals": [
             {
                 "signal_name": "CRC_CON_VEH",
                 "signal_start": "0",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Standard application CRC validation"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"Standard application CRC validation"
             },
             {
                 "signal_name": "ALIV_CON_VEH",
                 "signal_start": "8",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Standard alive counter validation as per definition in the requirements specification;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"Standard alive counter validation as per definition in the requirements specification\";"
             },
             {
                 "signal_name": "CTR_BS_PRTNT",
                 "signal_start": "12",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This signal is used to communicate whether communication is required in the currently active vehicle state.Duplicate from ST_CON_VEH;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"This signal is used to communicate whether communication is required in the currently active vehicle state.Duplicate from ST_CON_VEH\";"
             },
             {
                 "signal_name": "CTR_FKTN_PRTNT",
                 "signal_start": "16",
                 "signal_length": "32",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint32",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "4294967295",
-                "signal_type_def": "uint32",
-                "signal_endian": "little Endian",
-                "comment": ""
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\""
             },
             {
                 "signal_name": "ST_CON_VEH",
                 "signal_start": "48",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "The signal Status_Zustand_Fahrzeug describes the vehicle state;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"The signal Status_Zustand_Fahrzeug describes the vehicle state\";"
             },
             {
                 "signal_name": "QU_ST_CON_VEH",
                 "signal_start": "52",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "2",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "The signal indicates whether the calculated value of Status_Zustand_Fahrzeug.fixed=2;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"The signal indicates whether the calculated value of Status_Zustand_Fahrzeug.fixed=2\";"
             }
         ]
     },
     "CombinedChargerUnit10msNo2": {
-        "sender": "VCU",
         "message_id": "293",
         "message_name": "CombinedChargerUnit10msNo2",
+        "message_length_as_byte": "20",
+        "sender": "VCU",
         "signal_num": 7,
         "signals": [
             {
                 "signal_name": "PowerETractSys2LimMotMax",
                 "signal_start": "0",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "50",
                 "signal_offset": "-1638300",
                 "signal_min": "-1638300",
                 "signal_max": "1638450",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Maximum approved motorized electric power of electric machine system 2.;"
+                "signal_unit": "\"W\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Maximum approved motorized electric power of electric machine system 2.\";"
             },
             {
                 "signal_name": "PowerETractSys1LimGenMax",
                 "signal_start": "16",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "50",
                 "signal_offset": "-1638300",
                 "signal_min": "-1638300",
                 "signal_max": "1638450",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Maximum approved regenerative electric power of electric machine system 1.;"
+                "signal_unit": "\"W\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Maximum approved regenerative electric power of electric machine system 1.\";"
             },
             {
                 "signal_name": "PowerETractSys2LimGenMax",
                 "signal_start": "32",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "50",
                 "signal_offset": "-1638300",
                 "signal_min": "-1638300",
                 "signal_max": "1638450",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Maximum approved regenerative electric power of electric machine system 2.;"
+                "signal_unit": "\"W\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Maximum approved regenerative electric power of electric machine system 2.\";"
             },
             {
                 "signal_name": "PowerETractSys1LimMotMax",
                 "signal_start": "48",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "50",
                 "signal_offset": "-1638300",
                 "signal_min": "-1638300",
                 "signal_max": "1638450",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Maximum approved motorized electric power of electric machine system 1.;"
+                "signal_unit": "\"W\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Maximum approved motorized electric power of electric machine system 1.\";"
             },
             {
                 "signal_name": "OperatingModeEANActualValue",
                 "signal_start": "64",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Actual operating mode of complete electric drive system. This signal is used for the drive network. For control units that are not from the drive network the signal ST_MOT_DRV is provided.;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Actual operating mode of complete electric drive system. This signal is used for the drive network. For control units that are not from the drive network the signal ST_MOT_DRV is provided.\";"
             },
             {
                 "signal_name": "RequestExtraBoostETractSys1",
                 "signal_start": "72",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "3",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Additional torque as torque boost requested for electric machine system 1 ExtraBoost in PowerMode ."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Additional torque as torque boost requested for electric machine system 1 ExtraBoost in PowerMode ."
             },
             {
                 "signal_name": "RequestExtraBoostETractSys2",
                 "signal_start": "80",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "3",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Additional torque as torque boost requested for electric machine system 2 ExtraBoost in PowerMode ."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Additional torque as torque boost requested for electric machine system 2 ExtraBoost in PowerMode ."
             }
         ]
     },
     "A_TEMP": {
-        "sender": "ZCU_F",
         "message_id": "749",
         "message_name": "A_TEMP",
+        "message_length_as_byte": "2",
+        "sender": "ZCU_F",
         "signal_num": 1,
         "signals": [
             {
                 "signal_name": "TEMP_EX",
                 "signal_start": "0",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "0.5",
                 "signal_offset": "-40",
                 "signal_min": "-40",
                 "signal_max": "87.5",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Here the processed = filtered ambient temperature is made available to all other bus subscribers.;"
+                "signal_unit": "\"\u00b0C\"",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"Here the processed = filtered ambient temperature is made available to all other bus subscribers.\";"
             }
         ]
     },
     "ABS_ESC_01": {
-        "sender": "ZCU_R",
         "message_id": "180",
         "message_name": "ABS_ESC_01",
+        "message_length_as_byte": "1",
+        "sender": "ZCU_R",
         "signal_num": 1,
         "signals": [
             {
                 "signal_name": "ABS_ACTIVE",
                 "signal_start": "0",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "3",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "ABS activation indication;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"ABS activation indication\";"
             }
         ]
     },
     "IEB_01": {
-        "sender": "ZCU_R",
         "message_id": "210",
         "message_name": "IEB_01",
+        "message_length_as_byte": "2",
+        "sender": "ZCU_R",
         "signal_num": 1,
         "signals": [
             {
                 "signal_name": "WEstTot_Nm",
                 "signal_start": "0",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "65535",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Estimated Total Brake Torque of Wheels;"
+                "signal_unit": "\"Nm\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Estimated Total Brake Torque of Wheels\";"
             }
         ]
     },
     "ESC_A": {
-        "sender": "ZCU_R",
         "message_id": "200",
         "message_name": "ESC_A",
+        "message_length_as_byte": "4",
+        "sender": "ZCU_R",
         "signal_num": 4,
         "signals": [
             {
                 "signal_name": "AD3_PrsrVal_Fl",
                 "signal_start": "0",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "254",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Wheel brake press FL/Hydraulic Brake Pressure ;"
+                "signal_unit": "\"bar\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Wheel brake press FL/Hydraulic Brake Pressure \";"
             },
             {
                 "signal_name": "AD3_PrsrVal_Fr",
                 "signal_start": "8",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "254",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Wheel brake press Fr/Hydraulic Brake Pressure /Braking Pressure to wheel caliper;"
+                "signal_unit": "\"bar\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Wheel brake press Fr/Hydraulic Brake Pressure /Braking Pressure to wheel caliper\";"
             },
             {
                 "signal_name": "AD3_PrsrVal_Rl",
                 "signal_start": "16",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "254",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Wheel brake press Rl/Hydraulic Brake Pressure ;"
+                "signal_unit": "\"bar\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Wheel brake press Rl/Hydraulic Brake Pressure \";"
             },
             {
                 "signal_name": "AD3_PrsrVal_Rr",
                 "signal_start": "24",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "254",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Wheel brake press Rr/Hydraulic Brake Pressure ;"
+                "signal_unit": "\"bar\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Wheel brake press Rr/Hydraulic Brake Pressure \";"
             }
         ]
     },
     "Kilometerstand_2": {
-        "sender": "ZCU_F",
         "message_id": "490",
         "message_name": "Kilometerstand_2",
+        "message_length_as_byte": "8",
+        "sender": "ZCU_F",
         "signal_num": 1,
         "signals": [
             {
                 "signal_name": "MILE_KM_TOT",
                 "signal_start": "0",
                 "signal_length": "32",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint32",
                 "signal_factor": "0.001",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "4294967.295",
-                "signal_type_def": "uint32",
-                "signal_endian": "little Endian",
-                "comment": "Using this signal the odometer is sent. The value corresponds to the value displayed in the instrument cluster. However the distribution is always made in the unit km irrespective of the unit preference."
+                "signal_unit": "\"km\"",
+                "signal receiving_node": [
+                    "VCU"
+                ],
+                "comment": "\"Using this signal the odometer is sent. The value corresponds to the value displayed in the instrument cluster. However the distribution is always made in the unit km irrespective of the unit preference."
             }
         ]
     },
     "EBCM_STATUS": {
-        "sender": "ZCU_R",
         "message_id": "150",
         "message_name": "EBCM_STATUS",
+        "message_length_as_byte": "7",
+        "sender": "ZCU_R",
         "signal_num": 13,
         "signals": [
             {
                 "signal_name": "CRC_EBCM_STATUS",
                 "signal_start": "0",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Checksum;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Checksum\";"
             },
             {
                 "signal_name": "ALIV_EBCM_STATUS",
                 "signal_start": "8",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Alive counter;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Alive counter\";"
             },
             {
                 "signal_name": "MCPressure",
                 "signal_start": "12",
                 "signal_length": "12",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "1",
                 "signal_offset": "-42.5",
                 "signal_min": "0",
                 "signal_max": "465",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "MC Pressure;"
+                "signal_unit": "\"bar\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"MC Pressure\";"
             },
             {
                 "signal_name": "BreakPedalPercent",
                 "signal_start": "24",
                 "signal_length": "12",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.0625",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "100",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Break pedal percent;"
+                "signal_unit": "\"%\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Break pedal percent\";"
             },
             {
                 "signal_name": "EPBStatus",
                 "signal_start": "36",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Lamp & display message/Lamp & display MSG Automatic;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Lamp & display message/Lamp & display MSG Automatic\";"
             },
             {
                 "signal_name": "HillholderStatus",
                 "signal_start": "40",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Hillholder status;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Hillholder status\";"
             },
             {
                 "signal_name": "TCSAvailable",
                 "signal_start": "44",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Traction control system available;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Traction control system available\";"
             },
             {
                 "signal_name": "TCSActive",
                 "signal_start": "45",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Traction control system activation;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Traction control system activation\";"
             },
             {
                 "signal_name": "BreakPedalPercentValid",
                 "signal_start": "46",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Break pedal percent valid;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Break pedal percent valid\";"
             },
             {
                 "signal_name": "MCPressureSts",
                 "signal_start": "47",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "MC Pressure Status;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"MC Pressure Status\";"
             },
             {
                 "signal_name": "HillholderFault",
                 "signal_start": "48",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Hillholder fault status;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Hillholder fault status\";"
             },
             {
                 "signal_name": "EPBFault",
                 "signal_start": "49",
                 "signal_length": "1",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "EPB fault status;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"EPB fault status\";"
             },
             {
                 "signal_name": "EBCM_BrkPedlSts",
                 "signal_start": "50",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "3",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Brake pedal status signal Pressed/Not Pressed;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Brake pedal status signal Pressed/Not Pressed\";"
             }
         ]
     },
     "ST_STAB_DSC_2": {
-        "sender": "ZCU_R",
         "message_id": "214",
         "message_name": "ST_STAB_DSC_2",
+        "message_length_as_byte": "8",
+        "sender": "ZCU_R",
         "signal_num": 1,
         "signals": [
             {
                 "signal_name": "ST_SLIP_THO",
                 "signal_start": "44",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Signal includes axle-specific information indicating whether a slip threshold is exceeded on at least one wheel of the specified axle."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Signal includes axle-specific information indicating whether a slip threshold is exceeded on at least one wheel of the specified axle."
             }
         ]
     },
     "ST_STAB_DSC": {
-        "sender": "ZCU_R",
         "message_id": "213",
         "message_name": "ST_STAB_DSC",
+        "message_length_as_byte": "8",
+        "sender": "ZCU_R",
         "signal_num": 6,
         "signals": [
             {
                 "signal_name": "CRC_ST_STAB_DSC",
                 "signal_start": "0",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Standard application CRC validation"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Standard application CRC validation"
             },
             {
                 "signal_name": "ALIV_ST_STAB_DSC",
                 "signal_start": "8",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Standard alive counter validation as per definition in the requirements specification Allgemeine Bordnetzkommunikation.;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Standard alive counter validation as per definition in the requirements specification Allgemeine Bordnetzkommunikation.\";"
             },
             {
                 "signal_name": "QU_FN_FDR",
                 "signal_start": "16",
                 "signal_length": "12",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "4095",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "FDR ESC function qualifier."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"FDR ESC function qualifier."
             },
             {
                 "signal_name": "QU_FN_ABS",
                 "signal_start": "28",
                 "signal_length": "12",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "512",
                 "signal_max": "4095",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "ABS function qualifier."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"ABS function qualifier."
             },
             {
                 "signal_name": "QU_FN_ASC",
                 "signal_start": "40",
                 "signal_length": "12",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "512",
                 "signal_max": "4095",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "ASC TCS function qualifier."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"ASC TCS function qualifier."
             },
             {
                 "signal_name": "ST_BRG_DV",
                 "signal_start": "56",
                 "signal_length": "6",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "63",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Status information regarding deceleration by the driver or by driver assistance systems or by a deceleration due to recuperation.;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Status information regarding deceleration by the driver or by driver assistance systems or by a deceleration due to recuperation.\";"
             }
         ]
     },
     "TracEMacElectc1Time100msNo1": {
-        "sender": "VCU",
         "message_id": "314",
         "message_name": "TracEMacElectc1Time100msNo1",
+        "message_length_as_byte": "32",
+        "sender": "VCU",
         "signal_num": 1,
         "signals": [
             {
                 "signal_name": "OpModETractSys1ActVal",
                 "signal_start": "116",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ]
             }
         ]
     },
     "TracEMacElectc2Time100msNo1": {
-        "sender": "VCU",
         "message_id": "326",
         "message_name": "TracEMacElectc2Time100msNo1",
+        "message_length_as_byte": "32",
+        "sender": "VCU",
         "signal_num": 1,
         "signals": [
             {
                 "signal_name": "OpModETractSys2ActVal",
                 "signal_start": "116",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ]
             }
         ]
     },
     "BundleEAFlexrayToAECANFD10msNo1": {
-        "sender": "ZCU_R",
         "message_id": "296",
         "message_name": "BundleEAFlexrayToAECANFD10msNo1",
+        "message_length_as_byte": "64",
+        "sender": "ZCU_R",
         "signal_num": 25,
         "signals": [
             {
                 "signal_name": "CRC_EXTS_ARB_INTF",
                 "signal_start": "128",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This signal contains the CRC checksum for the extended standard application CRC validation according to application profile 1C E2E Protection;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"This signal contains the CRC checksum for the extended standard application CRC validation according to application profile 1C E2E Protection\";"
             },
             {
                 "signal_name": "ALIV_EXTS_ARB_INTF",
                 "signal_start": "136",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Standard alive counter validation as per definition in the requirements specification Allgemeine Bordnetzkommunikation.;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Standard alive counter validation as per definition in the requirements specification Allgemeine Bordnetzkommunikation.\";"
             },
             {
                 "signal_name": "CHL_EXTS_ARB_INTF",
                 "signal_start": "140",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This signal explicitly contains the value of the extension ID = 4 dec = 4 hex for the extended CRC validation according to Autosar_SWS_E2ELibrary profile 1C."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"This signal explicitly contains the value of the extension ID = 4 dec = 4 hex for the extended CRC validation according to Autosar_SWS_E2ELibrary profile 1C."
             },
             {
                 "signal_name": "AVL_BRTORQ_WHL_RS_LH_EXT",
                 "signal_start": "144",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "1",
                 "signal_offset": "-32000",
                 "signal_min": "-32000",
                 "signal_max": "33535",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Current wheel-related friction braking torque of the DSC control unit."
+                "signal_unit": "\"Nm\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Current wheel-related friction braking torque of the DSC control unit."
             },
             {
                 "signal_name": "AVL_BRTORQ_WHL_RS_RH_EXT",
                 "signal_start": "160",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "1",
                 "signal_offset": "-32000",
                 "signal_min": "-32000",
                 "signal_max": "33535",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Current wheel-related friction braking torque of the DSC control unit."
+                "signal_unit": "\"Nm\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Current wheel-related friction braking torque of the DSC control unit."
             },
             {
                 "signal_name": "AVL_BRTORQ_WHL_FS_LH_EXT",
                 "signal_start": "176",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "1",
                 "signal_offset": "-32000",
                 "signal_min": "-32000",
                 "signal_max": "33535",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Current wheel-related friction braking torque of the DSC control unit."
+                "signal_unit": "\"Nm\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Current wheel-related friction braking torque of the DSC control unit."
             },
             {
                 "signal_name": "AVL_BRTORQ_WHL_FS_RH_EXT",
                 "signal_start": "192",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "1",
                 "signal_offset": "-32000",
                 "signal_min": "-32000",
                 "signal_max": "33535",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Current wheel-related friction braking torque of the DSC control unit."
+                "signal_unit": "\"Nm\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Current wheel-related friction braking torque of the DSC control unit."
             },
             {
                 "signal_name": "CRC_RQ_RPM_BAX",
                 "signal_start": "256",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This signal contains the CRC checksum for the extended standard application CRC validation according to application profile 1C E2E Protection Autosar SWS 428 . ;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"This signal contains the CRC checksum for the extended standard application CRC validation according to application profile 1C E2E Protection Autosar SWS 428 . \";"
             },
             {
                 "signal_name": "ALIV_RQ_RPM_BAX",
                 "signal_start": "264",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Standard alive counter validation as per definition in the requirements specification Allgemeine Bordnetzkommunikation;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Standard alive counter validation as per definition in the requirements specification Allgemeine Bordnetzkommunikation\";"
             },
             {
                 "signal_name": "CHL_RQ_RPM_BAX",
                 "signal_start": "268",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This signal explicitly contains the value of the extension ID = 6 dec = 6 hex for the extended CRC validation according to Autosar_SWS_E2ELibrary profile 1C."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"This signal explicitly contains the value of the extension ID = 6 dec = 6 hex for the extended CRC validation according to Autosar_SWS_E2ELibrary profile 1C."
             },
             {
                 "signal_name": "TAR_RPM_MAX_BAX",
                 "signal_start": "272",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.01",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "655.35",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Maximum wheel speed at the rear axle."
+                "signal_unit": "\"rad/s\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Maximum wheel speed at the rear axle."
             },
             {
                 "signal_name": "TAR_RPM_MIN_BAX",
                 "signal_start": "288",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.01",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "655.35",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Minimum wheel speed at the rear axle."
+                "signal_unit": "\"rad/s\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Minimum wheel speed at the rear axle."
             },
             {
                 "signal_name": "ST_TAR_RPM_BAX",
                 "signal_start": "304",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "With this status the limits to the minimum and maximum wheel speed limit for the rear axle can be activated or deactivated."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"With this status the limits to the minimum and maximum wheel speed limit for the rear axle can be activated or deactivated."
             },
             {
                 "signal_name": "TAR_STIF_SPCO",
                 "signal_start": "308",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Standardized value for the regulator stiffness. Valid for all speed regulators on the EA side."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Standardized value for the regulator stiffness. Valid for all speed regulators on the EA side."
             },
             {
                 "signal_name": "CRC_RQ_RPM_FTAX",
                 "signal_start": "320",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This signal contains the CRC checksum for the extended standard application CRC validation according to application profile 1C E2E Protection Autosar SWS 428 .;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"This signal contains the CRC checksum for the extended standard application CRC validation according to application profile 1C E2E Protection Autosar SWS 428 .\";"
             },
             {
                 "signal_name": "ALIV_RQ_RPM_FTAX",
                 "signal_start": "328",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Standard alive counter validation as per definition in the requirements specification Allgemeine Bordnetzkommunikation.;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Standard alive counter validation as per definition in the requirements specification Allgemeine Bordnetzkommunikation.\";"
             },
             {
                 "signal_name": "CHL_RQ_RPM_FTAX",
                 "signal_start": "332",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This signal explicitly contains the value of the extension ID = 7 dec = 7 hex for the extended CRC validation according to Autosar_SWS_E2ELibrary profile 1C."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"This signal explicitly contains the value of the extension ID = 7 dec = 7 hex for the extended CRC validation according to Autosar_SWS_E2ELibrary profile 1C."
             },
             {
                 "signal_name": "TAR_RPM_MAX_FTAX",
                 "signal_start": "336",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.01",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "655.35",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Maximum wheel speed at the front axle."
+                "signal_unit": "\"rad/s\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Maximum wheel speed at the front axle."
             },
             {
                 "signal_name": "TAR_RPM_MIN_FTAX",
                 "signal_start": "352",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.01",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "655.35",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Minimum wheel speed at the front axle."
+                "signal_unit": "\"rad/s\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Minimum wheel speed at the front axle."
             },
             {
                 "signal_name": "ST_TAR_RPM_FTAX",
                 "signal_start": "368",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "With this status the limits to the minimum and maximum wheel speed limit for the front axle can be activated or deactivated."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"With this status the limits to the minimum and maximum wheel speed limit for the front axle can be activated or deactivated."
             },
             {
                 "signal_name": "StatusSlipThresholdsRearAxle",
                 "signal_start": "372",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Communication of slip status for front and rear axle. This information is relevant for deactivation of comfort functions i. e. ASD and for functional safety"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Communication of slip status for front and rear axle. This information is relevant for deactivation of comfort functions i. e. ASD and for functional safety"
             },
             {
                 "signal_name": "CRC_StatusSlipThresholds",
                 "signal_start": "456",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This signal contains the CRC checksum for the extended standard application CRC validation according to application profile 1C E2E Protection Autosar SWS 428 .;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"This signal contains the CRC checksum for the extended standard application CRC validation according to application profile 1C E2E Protection Autosar SWS 428 .\";"
             },
             {
                 "signal_name": "ALIV_StatusSlipThresholds",
                 "signal_start": "464",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Standard protection alive counter as defined in the on-board data communication requirements specification.;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Standard protection alive counter as defined in the on-board data communication requirements specification.\";"
             },
             {
                 "signal_name": "CHL_StatusSlipThresholds",
                 "signal_start": "468",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This signal explicitly contains the value of the extension ID = 3 dez = 3 hex \u00a0 for the extended CRC validation according to Autosar_SWS_E2ELibrary profile 1C."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"This signal explicitly contains the value of the extension ID = 3 dez = 3 hex \u00a0 for the extended CRC validation according to Autosar_SWS_E2ELibrary profile 1C."
             },
             {
                 "signal_name": "StatusSlipThresholdsFrontAxle",
                 "signal_start": "472",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Communication of slip status for front and rear axle. This information is relevant for deactivation of comfort functions i. e. ASD and for functional safety"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Communication of slip status for front and rear axle. This information is relevant for deactivation of comfort functions i. e. ASD and for functional safety"
             }
         ]
     },
     "AVL_RPM_WHL": {
-        "sender": "ZCU_R",
         "message_id": "131",
         "message_name": "AVL_RPM_WHL",
+        "message_length_as_byte": "12",
+        "sender": "ZCU_R",
         "signal_num": 10,
         "signals": [
             {
                 "signal_name": "CRC_AVL_RPM_WHL",
                 "signal_start": "0",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "This signal uses the application CRC ID = 17\u00a0 dec ;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"This signal uses the application CRC ID = 17\u00a0 dec \";"
             },
             {
                 "signal_name": "ALIV_AVL_RPM_WHL",
                 "signal_start": "8",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Alive counter;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Alive counter\";"
             },
             {
                 "signal_name": "AVL_RPM_WHL_RLH",
                 "signal_start": "16",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.015625",
                 "signal_offset": "-511.984375",
                 "signal_min": "-400",
                 "signal_max": "512",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Measured speed of the left rear wheel.;"
+                "signal_unit": "\"rad/s\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Measured speed of the left rear wheel.\";"
             },
             {
                 "signal_name": "AVL_RPM_WHL_RRH",
                 "signal_start": "32",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.015625",
                 "signal_offset": "-511.984375",
                 "signal_min": "-400",
                 "signal_max": "512",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Measured speed of the right rear wheel.;"
+                "signal_unit": "\"rad/s\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Measured speed of the right rear wheel.\";"
             },
             {
                 "signal_name": "AVL_RPM_WHL_FLH",
                 "signal_start": "48",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.015625",
                 "signal_offset": "-511.984375",
                 "signal_min": "-400",
                 "signal_max": "512",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Measured speed of the left front wheel.;"
+                "signal_unit": "\"rad/s\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Measured speed of the left front wheel.\";"
             },
             {
                 "signal_name": "AVL_RPM_WHL_FRH",
                 "signal_start": "64",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.015625",
                 "signal_offset": "-511.984375",
                 "signal_min": "-400",
                 "signal_max": "512",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Measured speed of the right front wheel.;"
+                "signal_unit": "\"rad/s\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Measured speed of the right front wheel.\";"
             },
             {
                 "signal_name": "QU_AVL_RPM_WHL_RLH",
                 "signal_start": "80",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "1",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Status qualifier for signal Ist_Drehzahl_Rad_HL."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Status qualifier for signal Ist_Drehzahl_Rad_HL."
             },
             {
                 "signal_name": "QU_AVL_RPM_WHL_RRH",
                 "signal_start": "84",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "1",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Status qualifier for signal Ist_Drehzahl_Rad_HR."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Status qualifier for signal Ist_Drehzahl_Rad_HR."
             },
             {
                 "signal_name": "QU_AVL_RPM_WHL_FLH",
                 "signal_start": "88",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "1",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Status qualifier for signal Ist_Drehzahl_Rad_VL."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Status qualifier for signal Ist_Drehzahl_Rad_VL."
             },
             {
                 "signal_name": "QU_AVL_RPM_WHL_FRH",
                 "signal_start": "92",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "1",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Status qualifier for signal Ist_Drehzahl_Rad_VR."
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Status qualifier for signal Ist_Drehzahl_Rad_VR."
             }
         ]
     },
     "BundleEAFlexrayToCANFD20msNo1": {
-        "sender": "ZCU_R",
         "message_id": "289",
         "message_name": "BundleEAFlexrayToCANFD20msNo1",
+        "message_length_as_byte": "32",
+        "sender": "ZCU_R",
         "signal_num": 5,
         "signals": [
             {
                 "signal_name": "CRC_V_VEH",
                 "signal_start": "128",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Standard application CRC validation This signal uses application CRC ID = 12 dec \u00a0 The checksum does not have an invalidity identifier!\u00a0;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Standard application CRC validation This signal uses application CRC ID = 12 dec \u00a0 The checksum does not have an invalidity identifier!\u00a0\";"
             },
             {
                 "signal_name": "ALIV_V_VEH",
                 "signal_start": "136",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Transp.MOST-GW-Migration 01.09.2006 Fusion of parameter AliveSpeed 1 with signal Alive_Geschwindigkeit_Fahrzeug 1 .;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Transp.MOST-GW-Migration 01.09.2006 Fusion of parameter AliveSpeed 1 with signal Alive_Geschwindigkeit_Fahrzeug 1 .\";"
             },
             {
                 "signal_name": "V_VEH_COG",
                 "signal_start": "143",
                 "signal_length": "16",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint16",
                 "signal_factor": "0.015625",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "350",
-                "signal_type_def": "uint16",
-                "signal_endian": "little Endian",
-                "comment": "Absolute speed of the vehicle's center of gravity; contains the ratios from vehicle longitudinal and lateral speed.\u00a0 This signal is mainly based on the four wheel speeds. ;"
+                "signal_unit": "\"km/h\"",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Absolute speed of the vehicle's center of gravity; contains the ratios from vehicle longitudinal and lateral speed.\u00a0 This signal is mainly based on the four wheel speeds. \";"
             },
             {
                 "signal_name": "QU_V_VEH_COG",
                 "signal_start": "160",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "1",
                 "signal_max": "15",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Status qualifier for the signal Geschwindigkeit_Fahrzeug_Schwerpunkt.\u00a0 Minimum requirements for sending a valid signal value starting from 2008-06-10 the following applies for L6/L7/F25"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "ZCU_F"
+                ],
+                "comment": "\"Status qualifier for the signal Geschwindigkeit_Fahrzeug_Schwerpunkt.\u00a0 Minimum requirements for sending a valid signal value starting from 2008-06-10 the following applies for L6/L7/F25"
             },
             {
                 "signal_name": "SecOcDataP2V_VEH",
                 "signal_start": "168",
                 "signal_length": "64",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint64",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "1.84467E",
-                "signal_type_def": "uint64",
-                "signal_endian": "little Endian",
-                "comment": "SecOcDataP2V_VEH"
+                "signal_unit": "+019",
+                "signal receiving_node": [
+                    "None",
+                    "ZCU_F"
+                ],
+                "comment": "\"SecOcDataP2V_VEH"
             }
         ]
     },
     "CLAMP_STAT": {
-        "sender": "ZCU_F",
         "message_id": "497",
         "message_name": "CLAMP_STAT",
+        "message_length_as_byte": "3",
+        "sender": "ZCU_F",
         "signal_num": 6,
         "signals": [
             {
                 "signal_name": "CRC_CLAMP_STAT",
                 "signal_start": "0",
                 "signal_length": "8",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "255",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU",
+                    "ZCU_R"
+                ]
             },
             {
                 "signal_name": "ALIV_CLAMP_STAT",
                 "signal_start": "8",
                 "signal_length": "4",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "14",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "Alive counter;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU",
+                    "ZCU_R"
+                ],
+                "comment": "\"Alive counter\";"
             },
             {
                 "signal_name": "STAT_CL15_L",
                 "signal_start": "12",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "3",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU",
+                    "ZCU_R"
+                ]
             },
             {
                 "signal_name": "STAT_CL30S_L",
                 "signal_start": "14",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "3",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "fixed=0;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU",
+                    "ZCU_R"
+                ],
+                "comment": "\"fixed=0\";"
             },
             {
                 "signal_name": "STAT_CL30S_Light",
                 "signal_start": "16",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "3",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "fixed=0;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU",
+                    "ZCU_R"
+                ],
+                "comment": "\"fixed=0\";"
             },
             {
                 "signal_name": "STAT_CL15_WUPL",
                 "signal_start": "18",
                 "signal_length": "2",
+                "signal_endian": "Little Endian[1-intel]",
+                "signal_type_def": "uint8",
                 "signal_factor": "1",
                 "signal_offset": "0",
                 "signal_min": "0",
                 "signal_max": "3",
-                "signal_type_def": "uint8",
-                "signal_endian": "little Endian",
-                "comment": "fixed=0;"
+                "signal_unit": "None",
+                "signal receiving_node": [
+                    "VCU",
+                    "ZCU_R"
+                ],
+                "comment": "\"fixed=0\";"
             }
         ]
     }

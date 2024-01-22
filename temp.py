@@ -1,7 +1,18 @@
 from PyQt5 import QtWidgets, QtCore
-from can2 import Ui_MainWindow
+from can import Ui_MainWindow
 from PyQt5.QtWidgets import QFileDialog, QHeaderView, QInputDialog
 import ParseDbc
+
+
+### struct NO USED BITS HATALI
+
+# *************#
+# ****MEHMET***#
+# *****KOSE****#
+# *****FEV*****#
+# ****TURKEY***#
+# *************#
+sign = "#*************#\n#****MEHMET***#\n#*****KOSE****#\n#*****FEV*****#\n#****TURKEY***#\n#*************#"
 
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -37,68 +48,85 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.listWidget_confirmed_signals.addItem(item.text(0))
         return
 
-    def write_struct_to_file(
-        self, header_file, type_def, signal_name,  length
-    ):
+    def write_struct_to_file(self, header_file, type_def, signal_name, length):
         header_file.write(
-            "\n\t"
-            + type_def
-            + " "
-            + str(signal_name)
-            + " : "
-            + str(length)
-            + " ;"
+            "\n\t" + type_def + " " + str(signal_name) + " : " + str(length) + " ;"
         )
         return
 
-    def write_struct(self, f):
-        for row_number in range(self.listWidget_confirmed_signals.count()):
-            message = self.dbc_json[
-                self.listWidget_confirmed_signals.item(row_number).text()
-            ]
-            prefix = str(self.lineEdit_1_prefix.text())
-            if len(prefix) == 0:
-                prefix = "FEV"
-            prefix = prefix + "_" + message["message_name"]
-            f.write("\ntypedef struct {")
-            first_signal, prev_stop_bit, prev_start_bit, prev_length = True, 0, 0, 0
-            for signal in message["signals"]:
-                stop_bit = (
-                    int(signal["signal_start"]) + int(signal["signal_length"]) - 1
-                )
-                if not first_signal:
-                    if (prev_start_bit + prev_length) != int(signal["signal_start"]):
-                        reserved_bits = int(signal["signal_start"]) - prev_stop_bit - 1
-                        if reserved_bits <= 8:
-                            uint_type = "uint8"
-                        elif reserved_bits <= 16:
-                            uint_type = "uint16"
-                        elif reserved_bits <= 32:
-                            uint_type = "uint32"
-                        else:
-                            uint_type = "uint64"
-                        self.write_struct_to_file(
-                            f,
-                            uint_type,
-                            "NoUsedBits",
-                            reserved_bits,
-                        )
+    def get_uint_type(self,reserved_bits):
+        if reserved_bits <= 8:
+            uint_type = "uint8"
+        elif reserved_bits <= 16:
+            uint_type = "uint16"
+        elif reserved_bits <= 32:
+            uint_type = "uint32"
+        else:
+            uint_type = "uint64"
+        return uint_type
+
+    def write_struct_motorola(self,file,signal,first_signal,prev_stop_bit,number_no_used_bits) :
+        if (
+            first_signal == True
+            or prev_stop_bit + signal["signal_length"] == signal["signal_stop"]
+        ):
+            self.write_struct_to_file(
+                file,
+                signal["signal_type_def"],
+                signal["signal_name"],
+                signal["signal_length"],
+            )
+        #                elif  prev_signal_stop + signal["signal_length"] == signal["signal_stop"]:
+        #                       self.write_struct_to_file(file, signal["signal_typedef"],signal_name)
+        else:
+            reserved_bits = (
+                int(signal["signal_stop"])
+                - int(signal["signal_length"])
+                - prev_stop_bit
+            )
+            uint_type = self.get_uint_type(reserved_bits)
+            self.write_struct_to_file(
+                file,
+                uint_type,
+                "NoUsedBits" + str(reserved_bits),
+                reserved_bits,
+            )
+            number_no_used_bits += 1
+        prev_stop_bit = signal["signal_stop"]
+        return 
+
+    def write_struct_intel(self,file,signal,first_signal,prev_stop_bit, prev_start_bit,prev_length,number_no_used_bits):
+
+        stop_bit = (
+            int(signal["signal_start"]) + int(signal["signal_length"]) - 1
+        )
+        if not first_signal:
+            if (prev_start_bit + prev_length) != int(signal["signal_start"]):
+                reserved_bits = int(signal["signal_start"]) - prev_stop_bit - 1
+                uint_type = self.get_uint_type(reserved_bits)
                 self.write_struct_to_file(
-                    f,
-                    signal["signal_type_def"],
-                    signal["signal_name"],
-                    signal["signal_length"],
+                    file,
+                    uint_type,
+                    "NoUsedBits" + str(number_no_used_bits),
+                    reserved_bits,
                 )
-                prev_stop_bit, prev_start_bit, prev_length, first_signal = (
-                    int(stop_bit),
-                    int(signal["signal_start"]),
-                    int(signal["signal_length"]),
-                    False,
-                )
-            f.write("\n} " + prefix + " ;\n\n")
+                number_no_used_bits += 1
+        self.write_struct_to_file(
+            file,
+            signal["signal_type_def"],
+            signal["signal_name"],
+            signal["signal_length"],
+        )
+        prev_stop_bit, prev_start_bit, prev_length, first_signal = (
+            int(stop_bit),
+            int(signal["signal_start"]),
+            int(signal["signal_length"]),
+            False,
+        )
         return
 
-    def write_get(self, f):
+    def write_get(self, file):
+        file.write("\n\n#get macros\n")
         for row_number in range(self.listWidget_confirmed_signals.count()):
             message = self.dbc_json[
                 self.listWidget_confirmed_signals.item(row_number).text()
@@ -109,21 +137,24 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             prefix = prefix + "_" + message["message_name"]
             if message["sender"] != "VCU":
                 for signal in message["signals"]:
-                    f.write(
+                    file.write(
                         "#define get_"
                         + signal["signal_name"]
+                        + "()"
                         + " float32( "
                         + prefix
                         + "."
-                        + signal["signal_name"] 
+                        + signal["signal_name"]
                         + "*"
                         + signal["signal_factor"]
-                        + "+"
+                        + "+ ("
                         + signal["signal_offset"]
-                        + " )\n"
+                        + ") )\n"
                     )
         return
-    def write_set(self, f):
+
+    def write_set(self, file):
+        file.write("\n\n#set macros\n")
         for row_number in range(self.listWidget_confirmed_signals.count()):
             message = self.dbc_json[
                 self.listWidget_confirmed_signals.item(row_number).text()
@@ -134,9 +165,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             prefix = prefix + "_" + message["message_name"]
             if message["sender"] == "VCU":
                 for signal in message["signals"]:
-                    f.write(
+                    file.write(
                         "#define set_"
                         + signal["signal_name"]
+                        + "()"
                         + " ( "
                         + prefix
                         + "."
@@ -145,23 +177,50 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     )
         return
 
-
     def generate(self):
         header_name, ok = QInputDialog.getText(
             self, "Input Dialog", "Enter header file name:"
         )
         if ok:
             header_name = header_name + ".h"
-            with open(header_name, "w") as f:
-                f.write(
-                    "#ifndef FEV_VCU_DATA_H \n#define FEV_VCU_DATA_H \n#include <stdint.h>  // Include for UINT32 type\n\n"
+            with open(header_name, "w") as file:
+                file.write(
+                    "\n#ifndef FEV_VCU_DATA_H \n#define FEV_VCU_DATA_H \n#include <stdint.h>  // Include for UINT32 type\n\n"
                 )
+                file.write(sign)
+                self.write_get(file)
+                self.write_set(file)
 
-                self.write_get(f)
-                self.write_set(f)
-                self.write_struct(f)
+                for row_number in range(self.listWidget_confirmed_signals.count()):
+                    message = self.dbc_json[
+                        self.listWidget_confirmed_signals.item(row_number).text()
+                    ]
+                    prefix = str(self.lineEdit_1_prefix.text())
+                    if len(prefix) != 0:
+                        prefix = prefix + "_" + message["message_name"]
+                    else:
+                        prefix = message["message_name"]
 
-                f.write("\n\n#endif  // FEV_VCU_DATA_H")
+                    file.write("\ntypedef struct {")  # start signals definition
+                    (   first_signal,
+                        prev_stop_bit,
+                        prev_start_bit,
+                        prev_length,
+                        number_no_used_bits,
+                    ) = (True, 0, 0, 0, 1)
+                    for signal in message["signals"]:
+                        if signal["signal_endian"] == "Big Endian[0-motorola]" :
+                            self.write_struct_motorola(file,signal,first_signal,prev_stop_bit,number_no_used_bits)   
+                        else :
+                            self.write_struct_intel(file,signal,first_signal,prev_stop_bit, prev_start_bit,prev_length,number_no_used_bits)
+                    file.write("\n} " + prefix + " ;\n\n")
+
+                file.write("\n\n#endif  // FEV_VCU_DATA_H")
+                for i in range(30):
+                    file.write("\n")
+                file.write(
+                    "#ups you scrolled down too much, you see me even. now you may go to up:D:D "
+                )
             self.statusBar().setStyleSheet("background-color : lightgreen")
             self.statusBar().showMessage("info : Structs have been created ")
             self.listWidget_confirmed_signals.clear()
@@ -192,8 +251,15 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.tableWidget_display_signals.item(0, 4).setText(
                     signal["signal_offset"]
                 )
-                self.tableWidget_display_signals_2.item(0, 0).setText(signal["comment"])
-
+                try:
+                    self.tableWidget_display_signals_2.item(0, 0).setText(
+                        signal["comment"]
+                    )
+                except:
+                    self.statusBar().setStyleSheet("background-color : orange")
+                    self.statusBar().showMessage(
+                        "exception occured : signal has not got comment"
+                    )
         header = self.tableWidget_display_signals_2.horizontalHeader()
         header.setSectionResizeMode(0, QHeaderView.ResizeToContents)
         header.setMinimumSectionSize(20)
