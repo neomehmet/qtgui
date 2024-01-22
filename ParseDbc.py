@@ -10,15 +10,15 @@ def parse_line(line):
     line = line.replace("]", " ")
     line = line.replace("[", " ")
     line = line.replace(",", " ")
-    line = line.replace(":", " ")
+    line = line.replace(";", " ")
     line = line.replace('""', "None")
+    line = line.replace('"', "")
     line = line.replace("+", " +")
     line = line.replace("  ", " ")
     line = line.replace("   ", " ")
     line = line.split(" ")
     line = [x for x in line if x != ""]
     return line
-
 
 def add_comment(line, dbc_dict):
     line = line.strip()
@@ -31,73 +31,83 @@ def add_comment(line, dbc_dict):
                     signal["comment"] = " ".join(line[4:])
     return dbc_dict
 
+def get_uint(line_signal):
+    if int(line_signal[3]) <= 8 and line_signal[5] == "+":
+        type_uint = "uint8"
+    elif int(line_signal[3]) <= 8 and line_signal[5] != "+":
+        type_uint = "int8"
+    elif int(line_signal[3]) <= 16 and line_signal[5] == "+":
+        type_uint = "uint16"
+    elif int(line_signal[3]) <= 16 and line_signal[5] != "+":
+        type_uint = "int16"
+    elif int(line_signal[3]) <= 32 and line_signal[5] == "+":
+        type_uint = "uint32"
+    elif int(line_signal[3]) <= 32 and line_signal[5] != "+":
+        type_uint = "int32"
+    elif int(line_signal[3]) <= 64 and line_signal[5] == "+":
+        type_uint = "uint64"
+    else:
+        type_uint = "int64"
+    return type_uint
+
+def append_signal_intel(signals, line_signal, type_uint):
+    signals.append(
+        {
+            "signal_name": line_signal[1],
+            "signal_start": line_signal[2],
+            "signal_length": line_signal[3],
+            "signal_endian": "Little Endian[1-intel]",
+            "signal_type_def": type_uint,
+            "signal_factor": line_signal[6],
+            "signal_offset": line_signal[7],
+            "signal_min": line_signal[8],
+            "signal_max": line_signal[9],
+            "signal_unit": line_signal[10],
+            "signal receiving_node": line_signal[11:],
+        }
+    )
+    return 1, signals
+
+def append_signal_motorola(signals, line_signal, type_uint):
+    signals.append(
+        {
+            "signal_name": line_signal[1],
+            "signal_stop": line_signal[2],
+            "signal_length": line_signal[3],
+            "signal_endian": "Big Endian[0-motorola]",
+            "signal_type_def": type_uint,
+            "signal_factor": line_signal[6],
+            "signal_offset": line_signal[7],
+            "signal_min": line_signal[8],
+            "signal_max": line_signal[9],
+            "signal_unit": line_signal[10],
+            "signal receiving_node": line_signal[11:],
+        }
+    )
+    return 0, signals
 
 def add_signals_in_messages(file, dbc_dict, message_attributes):
     signal_number = 0
     signals = list()
     for line_signal in file:
         line_signal = line_signal.strip()
-        
         if line_signal.startswith("SG_ "):
             line_signal = parse_line(line_signal)
             signal_number += 1
-
-            if int(line_signal[3]) <= 8 and line_signal[5] == "+":
-                type_uint = "uint8"
-            elif int(line_signal[3]) <= 8 and line_signal[5] != "+":
-                type_uint = "int8"
-            elif int(line_signal[3]) <= 16 and line_signal[5] == "+":
-                type_uint = "uint16"
-            elif int(line_signal[3]) <= 16 and line_signal[5] != "+":
-                type_uint = "int16"
-            elif int(line_signal[3]) <= 32 and line_signal[5] == "+":
-                type_uint = "uint32"
-            elif int(line_signal[3]) <= 32 and line_signal[5] != "+":
-                type_uint = "int32"
-            elif int(line_signal[3]) <= 64 and line_signal[5] == "+":
-                type_uint = "uint64"
-            else:
-                type_uint = "int64"
-
-            if line_signal[4] == "1": # if signal intel == 1
-                big_or_litte = 1
-                signals.append(
-                    {
-                        "signal_name": line_signal[1],
-                        "signal_start": line_signal[2],
-                        "signal_length": line_signal[3],
-                        "signal_endian": "Little Endian[1-intel]",
-                        "signal_type_def": type_uint,
-                        "signal_factor": line_signal[6],
-                        "signal_offset": line_signal[7],
-                        "signal_min": line_signal[8],
-                        "signal_max": line_signal[9],
-                        "signal_unit": line_signal[10],
-                        "signal receiving_node": line_signal[11:],
-                    }
+            type_uint = get_uint(line_signal)
+            if line_signal[4] == "1":  # if signal intel == 1
+                big_or_litte, signals = append_signal_intel(
+                    signals, line_signal, type_uint
                 )
             else:
-                big_or_litte = 0 # signal is motorola
-                signals.append(
-                    {
-                        "signal_name": line_signal[1],
-                        "signal_stop": line_signal[2],
-                        "signal_length": line_signal[3],
-                        "signal_endian": "Big Endian[0-motorola]",
-                        "signal_type_def": type_uint,
-                        "signal_factor": line_signal[6],
-                        "signal_offset": line_signal[7],
-                        "signal_min": line_signal[8],
-                        "signal_max": line_signal[9],
-                        "signal_unit": line_signal[10],
-                        "signal receiving_node": line_signal[11:],
-                    }
+                big_or_litte, signals = append_signal_motorola(
+                    signals, line_signal, type_uint
                 )
         else:
             signals.reverse()
-            if big_or_litte == 1: #  it is == 1 so little Endian
+            if big_or_litte == 1:  #  it is == 1 so little Endian
                 signals.sort(key=lambda x: int(x["signal_start"]))
-            elif big_or_litte == 0: # it is big endian 
+            elif big_or_litte == 0:  # it is big endian
                 signals.sort(key=lambda x: int(x["signal_stop"]))
 
             dbc_dict[message_attributes[1]] = {
