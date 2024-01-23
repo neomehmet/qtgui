@@ -3,9 +3,6 @@ from can import Ui_MainWindow
 from PyQt5.QtWidgets import QFileDialog, QHeaderView, QInputDialog
 import ParseDbc
 
-
-### struct NO USED BITS HATALI
-
 # *************#
 # ****MEHMET***#
 # *****KOSE****#
@@ -23,6 +20,14 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.dbc_json = {}
         self.messages_to_generate = {}
         self.signals_to_generate = list()
+
+        self.first_signal = True
+        self.prev_stop_bit = 0
+        self.prev_start_bit = 0
+        self.prev_length = 0
+        self.number_no_used_bits = 1
+        self.reserved_bits = 0
+        self.stop_bit = 0
 
         tabs.tabCloseRequested.connect(self.close_tab)
 
@@ -54,7 +59,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         )
         return
 
-    def get_uint_type(self,reserved_bits):
+    def get_uint_type(self, reserved_bits):
         if reserved_bits <= 8:
             uint_type = "uint8"
         elif reserved_bits <= 16:
@@ -65,60 +70,94 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             uint_type = "uint64"
         return uint_type
 
-    def write_struct_motorola(self,file,signal,first_signal,prev_stop_bit,number_no_used_bits) :
-        if (
-            first_signal == True
-            or prev_stop_bit + signal["signal_length"] == signal["signal_stop"]
-        ):
+    def write_struct_motorola(
+        self,
+        file,
+        signal,
+    ):
+        if self.first_signal == True:
             self.write_struct_to_file(
                 file,
                 signal["signal_type_def"],
                 signal["signal_name"],
                 signal["signal_length"],
             )
-        #                elif  prev_signal_stop + signal["signal_length"] == signal["signal_stop"]:
-        #                       self.write_struct_to_file(file, signal["signal_typedef"],signal_name)
-        else:
-            reserved_bits = (
+        elif int(self.prev_stop_bit) + int(signal["signal_length"]) < int(
+            signal["signal_stop"]
+        ):
+            self.reserved_bits = (
                 int(signal["signal_stop"])
                 - int(signal["signal_length"])
-                - prev_stop_bit
+                - int(self.prev_stop_bit)
             )
-            uint_type = self.get_uint_type(reserved_bits)
+            # uint_type = self.get_uint_type(self.reserved_bits)
+            self.write_struct_to_file(
+                file,
+                self.get_uint_type(self.reserved_bits),
+                "NoUsedBits" + str(self.number_no_used_bits),
+                self.reserved_bits,
+            )
+            self.write_struct_to_file(
+                file,
+                signal["signal_type_def"],
+                signal["signal_name"],
+                signal["signal_length"],
+            )
+            self.number_no_used_bits += 1
+        else:
+            self.write_struct_to_file(
+                file,
+                signal["signal_type_def"],
+                signal["signal_name"],
+                signal["signal_length"],
+            )
+        self.reserved_bits = (
+            int(signal["signal_stop"])
+            - int(signal["signal_length"])
+            - int(self.prev_stop_bit)
+        )
+
+        self.prev_stop_bit = signal["signal_stop"]
+        self.first_signal = False
+        return
+
+    def write_struct_intel(self, file, signal):
+        self.stop_bit = int(signal["signal_start"]) + int(signal["signal_length"]) - 1
+
+        if self.first_signal is True:
+            self.write_struct_to_file(
+                file,
+                signal["signal_type_def"],
+                signal["signal_name"],
+                signal["signal_length"],
+            )
+
+        elif (self.prev_start_bit + self.prev_length) < int(signal["signal_start"]):
+            self.reserved_bits = int(signal["signal_start"]) - self.prev_stop_bit - 1
+            uint_type = self.get_uint_type(self.reserved_bits)
             self.write_struct_to_file(
                 file,
                 uint_type,
-                "NoUsedBits" + str(reserved_bits),
-                reserved_bits,
+                "NoUsedBits" + str(self.number_no_used_bits),
+                self.reserved_bits,
             )
-            number_no_used_bits += 1
-        prev_stop_bit = signal["signal_stop"]
-        return 
+            self.write_struct_to_file(
+                file,
+                signal["signal_type_def"],
+                signal["signal_name"],
+                signal["signal_length"],
+            )
+            self.number_no_used_bits += 1
 
-    def write_struct_intel(self,file,signal,first_signal,prev_stop_bit, prev_start_bit,prev_length,number_no_used_bits):
-
-        stop_bit = (
-            int(signal["signal_start"]) + int(signal["signal_length"]) - 1
-        )
-        if not first_signal:
-            if (prev_start_bit + prev_length) != int(signal["signal_start"]):
-                reserved_bits = int(signal["signal_start"]) - prev_stop_bit - 1
-                uint_type = self.get_uint_type(reserved_bits)
-                self.write_struct_to_file(
-                    file,
-                    uint_type,
-                    "NoUsedBits" + str(number_no_used_bits),
-                    reserved_bits,
-                )
-                number_no_used_bits += 1
-        self.write_struct_to_file(
-            file,
-            signal["signal_type_def"],
-            signal["signal_name"],
-            signal["signal_length"],
-        )
-        prev_stop_bit, prev_start_bit, prev_length, first_signal = (
-            int(stop_bit),
+        else:
+            self.write_struct_to_file(
+                file,
+                signal["signal_type_def"],
+                signal["signal_name"],
+                signal["signal_length"],
+            )
+        self.prev_stop_bit, self.prev_start_bit, self.prev_length, self.first_signal = (
+            int(self.stop_bit),
             int(signal["signal_start"]),
             int(signal["signal_length"]),
             False,
@@ -132,9 +171,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.listWidget_confirmed_signals.item(row_number).text()
             ]
             prefix = str(self.lineEdit_1_prefix.text())
-            if len(prefix) == 0:
-                prefix = "FEV"
-            prefix = prefix + "_" + message["message_name"]
+            if len(prefix) != 0:
+                prefix = prefix + "_" + message["message_name"]
+            else:
+                prefix = message["message_name"]
             if message["sender"] != "VCU":
                 for signal in message["signals"]:
                     file.write(
@@ -160,9 +200,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.listWidget_confirmed_signals.item(row_number).text()
             ]
             prefix = str(self.lineEdit_1_prefix.text())
-            if len(prefix) == 0:
-                prefix = "FEV"
-            prefix = prefix + "_" + message["message_name"]
+            if len(prefix) != 0:
+                prefix = prefix + "_" + message["message_name"]
+            else:
+                prefix = message["message_name"]
+
             if message["sender"] == "VCU":
                 for signal in message["signals"]:
                     file.write(
@@ -200,27 +242,25 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                         prefix = prefix + "_" + message["message_name"]
                     else:
                         prefix = message["message_name"]
+                    self.first_signal = True
+                    self.prev_stop_bit = 0
+                    self.prev_start_bit = 0
+                    self.prev_length = 0
+                    self.number_no_used_bits = 1
+                    self.reserved_bits = 0
+                    self.stop_bit = 0
 
                     file.write("\ntypedef struct {")  # start signals definition
-                    (   first_signal,
-                        prev_stop_bit,
-                        prev_start_bit,
-                        prev_length,
-                        number_no_used_bits,
-                    ) = (True, 0, 0, 0, 1)
+
                     for signal in message["signals"]:
-                        if signal["signal_endian"] == "Big Endian[0-motorola]" :
-                            self.write_struct_motorola(file,signal,first_signal,prev_stop_bit,number_no_used_bits)   
-                        else :
-                            self.write_struct_intel(file,signal,first_signal,prev_stop_bit, prev_start_bit,prev_length,number_no_used_bits)
+                        if signal["signal_endian"] == "Big Endian[0-motorola]":
+                            self.write_struct_motorola(file, signal)
+                        else:
+                            self.write_struct_intel(file, signal)
+                        self.first_signal = False
                     file.write("\n} " + prefix + " ;\n\n")
 
                 file.write("\n\n#endif  // FEV_VCU_DATA_H")
-                for i in range(30):
-                    file.write("\n")
-                file.write(
-                    "#ups you scrolled down too much, you see me even. now you may go to up:D:D "
-                )
             self.statusBar().setStyleSheet("background-color : lightgreen")
             self.statusBar().showMessage("info : Structs have been created ")
             self.listWidget_confirmed_signals.clear()
