@@ -1,11 +1,12 @@
-
-from can_designer import Ui_Form
+""" etc """
+from CanDesigner import Ui_Form
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QFileDialog, QHeaderView, QInputDialog
 import ParseDbc
-sign = "#*************#\n#****MEHMET***#\n#*****KOSE****#\n#*****FEV*****#\n#****TURKEY***#\n#*************#"
 
-class Can_Widget(QtWidgets.QMainWindow, Ui_Form):
+# can window """
+class CanWidget(QtWidgets.QMainWindow, Ui_Form):
+    """ can window """
     def __init__(self):
         super(QtWidgets.QMainWindow, self).__init__()  # Call QMainWindow's constructor
         self.setupUi(self)
@@ -37,7 +38,6 @@ class Can_Widget(QtWidgets.QMainWindow, Ui_Form):
         self.pushButton_2_generate.clicked.connect(self.generate)
         self.pushButton_3_select_all_messages.clicked.connect(self.select_all_messages)
 
-
     def select_all_messages(self):
         self.listWidget_confirmed_signals.clear()
         for row_number in range(self.treeWidget_dbc_signals.topLevelItemCount()):
@@ -62,12 +62,8 @@ class Can_Widget(QtWidgets.QMainWindow, Ui_Form):
             uint_type = "uint64"
         return uint_type
 
-    def write_struct_motorola(
-        self,
-        file,
-        signal,
-    ):
-        if self.first_signal == True:
+    def write_struct_motorola(self, file, signal):
+        if self.first_signal:
             self.write_struct_to_file(
                 file,
                 signal["signal_type_def"],
@@ -114,6 +110,7 @@ class Can_Widget(QtWidgets.QMainWindow, Ui_Form):
         return
 
     def write_struct_intel(self, file, signal):
+        """a"""
         self.stop_bit = int(signal["signal_start"]) + int(signal["signal_length"]) - 1
 
         if self.first_signal is True:
@@ -157,6 +154,7 @@ class Can_Widget(QtWidgets.QMainWindow, Ui_Form):
         return
 
     def write_get(self, file):
+        """a"""
         file.write("\n\n#get macros\n")
         for row_number in range(self.listWidget_confirmed_signals.count()):
             message = self.dbc_json[
@@ -186,6 +184,7 @@ class Can_Widget(QtWidgets.QMainWindow, Ui_Form):
         return
 
     def write_set(self, file):
+        """a"""
         file.write("\n\n#set macros\n")
         for row_number in range(self.listWidget_confirmed_signals.count()):
             message = self.dbc_json[
@@ -212,6 +211,7 @@ class Can_Widget(QtWidgets.QMainWindow, Ui_Form):
         return
 
     def generate(self):
+        """ a """
         header_name, ok = QInputDialog.getText(
             self, "Input Dialog", "Enter header file name:"
         )
@@ -219,9 +219,8 @@ class Can_Widget(QtWidgets.QMainWindow, Ui_Form):
             header_name = header_name + ".h"
             with open(header_name, "w") as file:
                 file.write(
-                    "\n#ifndef FEV_VCU_DATA_H \n#define FEV_VCU_DATA_H \n#include <stdint.h>  // Include for UINT32 type\n\n"
+                    "\n#ifndef FEV_VCU_DATA_H\n#define FEV_VCU_DATA_H\n#include <stdint.h>  //Include for UINT32 type\n\n"
                 )
-                file.write(sign)
                 self.write_get(file)
                 self.write_set(file)
 
@@ -259,12 +258,14 @@ class Can_Widget(QtWidgets.QMainWindow, Ui_Form):
             return
 
     def confirmed_signal_remove(self):
+        """ a """
         self.listWidget_confirmed_signals.takeItem(
             self.listWidget_confirmed_signals.currentRow()
         )
         return
 
     def describes_signal(self):
+        """ a """
         item = self.listWidget_selected_signals.currentItem()
         for signal in self.signals_to_generate:
             if signal["signal_name"] == item.text():
@@ -363,6 +364,21 @@ class Can_Widget(QtWidgets.QMainWindow, Ui_Form):
             return
 
 
-
-
-
+def fd_open_explorer(self):
+    try:
+        dialog = QFileDialog()
+        dialog.setViewMode(QFileDialog.Detail)  # Set view mode to Detail
+        dialog.setNameFilter(("FD excell (*.xlxs)"))
+        path = dialog.getOpenFileName(None, "FD Open File", "", "(*.xlsx)")
+        path = self.get_file_name_and_path_as_str(path)
+        df = self.fd_open_excel_as_pandas_frame(path)
+        self.add_row_to_tree_wigdet_fd_signals(df)
+        self.statusBar().setStyleSheet("background-color : lightgreen")
+        self.statusBar().showMessage(" Info : File Exprolere is Opened.")
+        return
+    except Exception as e:
+        self.statusBar().setStyleSheet("background-color : crimson")
+        self.statusBar().showMessage(
+            "Error : An error occurred when the file was openning"
+        )
+        print(e)
