@@ -63,7 +63,8 @@ def append_signal_intel(signals, line_signal, type_uint):
             "signal_min": line_signal[8],
             "signal_max": line_signal[9],
             "signal_unit": line_signal[10],
-            "signal receiving_node": line_signal[11:],
+            "signal_receiving_node": line_signal[11:],
+            "comment" : "None",
         }
     )
     return 1, signals
@@ -81,7 +82,8 @@ def append_signal_motorola(signals, line_signal, type_uint):
             "signal_min": line_signal[8],
             "signal_max": line_signal[9],
             "signal_unit": line_signal[10],
-            "signal receiving_node": line_signal[11:],
+            "signal_receiving_node": line_signal[11:],
+            "comment" : "None",
         }
     )
     return 0, signals
@@ -119,7 +121,6 @@ def add_signals_in_messages(file, dbc_dict, message_attributes):
                 "signals": signals,
             }
             return dbc_dict
-
 
 def parse(path):
     dbc_dict = {}

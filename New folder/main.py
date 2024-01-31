@@ -9,12 +9,14 @@
 """ etc """
 from Can import CanWidget
 from PyQt5 import QtWidgets
-from main_designer import Ui_MainWindow
+from MainDesigner import Ui_MainWindow
 
 
+# lineEdit prefix okuyup write motorola intel fonksiyonlarına gondermemisim unutmmusum
 #
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
-    """ main windows class derived main_designer.py"""
+    """main windows class derived main_designer.py"""
+
     def __init__(self):
         super(MainWindow, self).__init__()
         self.setupUi(self)
@@ -22,15 +24,15 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.actionOpen.triggered.connect(self.open_can)
 
-
     def open_can(self):
-        """ Open CAN dbc and display it on the GUI """
+        """Open CAN dbc and display it on the GUI"""
         self.can.showNormal()
         return
 
-app = QtWidgets.QApplication([])
-window = MainWindow()
-window.setStyleSheet("background-color: white")
-# window.showFullScreen()
-window.showNormal()
-app.exec_()
+
+if __name__ == "__main__":
+    app = QtWidgets.QApplication([])
+    window = MainWindow()
+    window.setStyleSheet("background-color: white")
+    window.showNormal()
+    app.exec_()

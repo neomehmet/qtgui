@@ -1,19 +1,23 @@
 """ etc """
 from CanDesigner import Ui_Form
 from PyQt5 import QtWidgets, QtCore
-from PyQt5.QtWidgets import QFileDialog, QHeaderView, QInputDialog
+from PyQt5.QtWidgets import QFileDialog, QInputDialog, QLineEdit
+import pandas as pd
 import ParseDbc
 
-# can window """
+
+# can window
 class CanWidget(QtWidgets.QMainWindow, Ui_Form):
-    """ can window """
+    """can window"""
+
     def __init__(self):
         super(QtWidgets.QMainWindow, self).__init__()  # Call QMainWindow's constructor
         self.setupUi(self)
 
         self.dbc_json = {}
-        self.messages_to_generate = {}
-        self.signals_to_generate = list()
+        self.safcih_json = {}
+        self.signals_selected_message = {}
+        self.fd_signals = None
 
         self.first_signal = True
         self.prev_stop_bit = 0
@@ -26,19 +30,31 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
         self.treeWidget_dbc_signals.itemDoubleClicked.connect(
             self.tree_item_double_clicked_add_signal
         )
+        self.treeWidget_dbc_signals.itemClicked.connect(
+            self.tree_item_double_clicked_add_signal
+        )
+
         self.listWidget_selected_signals.itemDoubleClicked.connect(
             self.list_item_double_clicked
         )
-        self.listWidget_selected_signals.itemClicked.connect(self.describes_signal)
+        self.listWidget_selected_signals.itemClicked.connect(self.describes)
+        self.listWidget_safcih_signals.itemClicked.connect(self.describes)
         self.listWidget_confirmed_signals.itemDoubleClicked.connect(
-            self.confirmed_signal_remove
+            lambda: self.listWidget_confirmed_signals.takeItem(
+                self.listWidget_confirmed_signals.currentRow()
+            )
         )
 
         self.pushButton_1_select_dbc.clicked.connect(self.open_explorer_dbc)
         self.pushButton_2_generate.clicked.connect(self.generate)
         self.pushButton_3_select_all_messages.clicked.connect(self.select_all_messages)
+        self.pushButton_4_select_excell.clicked.connect(self.fd_open_explorer)
+
+    def closeEvent(self, event):
+        event.accept()
 
     def select_all_messages(self):
+        """all messages add from messages to confirmed"""
         self.listWidget_confirmed_signals.clear()
         for row_number in range(self.treeWidget_dbc_signals.topLevelItemCount()):
             item = self.treeWidget_dbc_signals.topLevelItem(row_number)
@@ -46,12 +62,14 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
         return
 
     def write_struct_to_file(self, header_file, type_def, signal_name, length):
+        """a"""
         header_file.write(
             "\n\t" + type_def + " " + str(signal_name) + " : " + str(length) + " ;"
         )
         return
 
     def get_uint_type(self, reserved_bits):
+        """to detect are there any reserved bits when the signals ara will write to header"""
         if reserved_bits <= 8:
             uint_type = "uint8"
         elif reserved_bits <= 16:
@@ -63,6 +81,7 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
         return uint_type
 
     def write_struct_motorola(self, file, signal):
+        """a"""
         if self.first_signal:
             self.write_struct_to_file(
                 file,
@@ -78,7 +97,6 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
                 - int(signal["signal_length"])
                 - int(self.prev_stop_bit)
             )
-            # uint_type = self.get_uint_type(self.reserved_bits)
             self.write_struct_to_file(
                 file,
                 self.get_uint_type(self.reserved_bits),
@@ -155,7 +173,7 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
 
     def write_get(self, file):
         """a"""
-        file.write("\n\n#get macros\n")
+        file.write("\n\n//get macros\n")
         for row_number in range(self.listWidget_confirmed_signals.count()):
             message = self.dbc_json[
                 self.listWidget_confirmed_signals.item(row_number).text()
@@ -185,7 +203,7 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
 
     def write_set(self, file):
         """a"""
-        file.write("\n\n#set macros\n")
+        file.write("\n\n//set macros\n")
         for row_number in range(self.listWidget_confirmed_signals.count()):
             message = self.dbc_json[
                 self.listWidget_confirmed_signals.item(row_number).text()
@@ -211,7 +229,7 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
         return
 
     def generate(self):
-        """ a """
+        """to header file generate ask file name and go"""
         header_name, ok = QInputDialog.getText(
             self, "Input Dialog", "Enter header file name:"
         )
@@ -229,6 +247,7 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
                         self.listWidget_confirmed_signals.item(row_number).text()
                     ]
                     prefix = str(self.lineEdit_1_prefix.text())
+
                     if len(prefix) != 0:
                         prefix = prefix + "_" + message["message_name"]
                     else:
@@ -256,48 +275,75 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
             self.statusBar().showMessage("info : Structs have been created ")
             self.listWidget_confirmed_signals.clear()
             return
+        else:
+            self.statusBar().setStyleSheet("background-color : orange")
+            self.statusBar().showMessage("Error : header can not generate ")
 
-    def confirmed_signal_remove(self):
-        """ a """
-        self.listWidget_confirmed_signals.takeItem(
-            self.listWidget_confirmed_signals.currentRow()
+    def describe_SafCIH(self, signal):
+        self.tableWidget_display_signals.item(0, 0).setText(signal["Name"])
+        self.tableWidget_display_signals.item(0, 2).setText(signal["Min"])
+        self.tableWidget_display_signals.item(0, 3).setText(signal["Max"])
+        self.tableWidget_display_signals.item(0, 1).setText("None")
+        self.tableWidget_display_signals.item(0, 4).setText("none")
+        self.tableWidget_display_signals_2.item(0, 0).setText(
+            str(signal["Description"])
+            + ",  StorageClass: "
+            + str(signal["StorageClass"])
+            + ", Typedef: "
+            + str(signal["Typedef"])
         )
         return
 
-    def describes_signal(self):
-        """ a """
-        item = self.listWidget_selected_signals.currentItem()
-        for signal in self.signals_to_generate:
-            if signal["signal_name"] == item.text():
-                self.tableWidget_display_signals.item(0, 0).setText(
-                    signal["signal_name"]
-                )
-                self.tableWidget_display_signals.item(0, 2).setText(
-                    signal["signal_min"]
-                )
-                self.tableWidget_display_signals.item(0, 3).setText(
-                    signal["signal_max"]
-                )
-                self.tableWidget_display_signals.item(0, 1).setText(
-                    signal["signal_factor"]
-                )
-                self.tableWidget_display_signals.item(0, 4).setText(
-                    signal["signal_offset"]
-                )
-                try:
-                    self.tableWidget_display_signals_2.item(0, 0).setText(
-                        signal["comment"]
-                    )
-                except:
-                    self.statusBar().setStyleSheet("background-color : orange")
-                    self.statusBar().showMessage(
-                        "exception occured : signal has not got comment"
-                    )
-        header = self.tableWidget_display_signals_2.horizontalHeader()
-        header.setSectionResizeMode(0, QHeaderView.ResizeToContents)
-        header.setMinimumSectionSize(20)
+    def describe_selected(self, signal):
+        self.tableWidget_display_signals.item(0, 0).setText(signal["signal_name"])
+        self.tableWidget_display_signals.item(0, 2).setText(signal["signal_min"])
+        self.tableWidget_display_signals.item(0, 3).setText(signal["signal_max"])
+        self.tableWidget_display_signals.item(0, 1).setText(signal["signal_factor"])
+        self.tableWidget_display_signals.item(0, 4).setText(signal["signal_offset"])
+        try:
+            self.tableWidget_display_signals_2.item(0, 0).setText(signal["comment"])
+        except:
+            self.statusBar().setStyleSheet("background-color : orange")
+            self.statusBar().showMessage(
+                "exception occured : signal has not got comment"
+            )
+        return
+
+    def describes_dbc(self, signal):
+        try:
+            self.tableWidget_display_signals.item(0, 0).setText(signal["signal_name"])
+            self.tableWidget_display_signals.item(0, 2).setText(signal["signal_min"])
+            self.tableWidget_display_signals.item(0, 3).setText(signal["signal_max"])
+            self.tableWidget_display_signals.item(0, 1).setText(signal["signal_factor"])
+            self.tableWidget_display_signals.item(0, 4).setText(signal["signal_offset"])
+
+            self.tableWidget_display_signals_2.item(0, 0).setText(signal["comment"])
+        except Exception as e:
+            self.statusBar().setStyleSheet("background-color : orange")
+            self.statusBar().showMessage(
+                "exception occured : signal has not got comment" + str(e)
+            )
+            print(e)
+        self.tableWidget_display_signals.resizeRowsToContents()
+        self.tableWidget_display_signals.resizeColumnsToContents()
+        self.tableWidget_display_signals_2.resizeRowsToContents()
+        self.tableWidget_display_signals_2.resizeColumnsToContents()
+        return
+
+    def describes(self, item):
+        """display signal attributes"""
+        if self.sender() is self.listWidget_selected_signals:
+            self.describe_selected(self.signals_selected_message[item.text()])
+        elif self.sender() is self.treeWidget_dbc_signals:
+            self.describes_dbc(self.dbc_json[item.text(0)])
+        else:
+            self.describe_SafCIH(self.safcih_json[str(item.text())])
+        self.tableWidget_display_signals.resizeColumnsToContents()
+        self.tableWidget_display_signals_2.resizeColumnsToContents()
+        return
 
     def list_item_double_clicked(self, item):
+        """a"""
         event = QtWidgets.QApplication.mouseButtons()
         try:
             if event == QtCore.Qt.LeftButton:
@@ -317,28 +363,67 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
             )
             return
 
+    def add_selected_message(self, signal):
+        if signal["signal_endian"] == "Big Endian[0-motorola]":
+            self.signals_selected_message[signal["signal_name"]] = {
+                "signal_name": signal["signal_name"],
+                "signal_stop": signal["signal_stop"],
+                "signal_length": signal["signal_length"],
+                "signal_endian": signal["signal_endian"],
+                "signal_type_def": signal["signal_type_def"],
+                "signal_factor": signal["signal_factor"],
+                "signal_offset": signal["signal_offset"],
+                "signal_min": signal["signal_min"],
+                "signal_max": signal["signal_max"],
+                "signal_unit": signal["signal_unit"],
+                "signal_receiving_node": signal["signal_receiving_node"],
+                "comment": str(signal["comment"]),
+            }
+        else:
+            self.signals_selected_message[signal["signal_name"]] = {
+                "signal_name": signal["signal_name"],
+                "signal_start": signal["signal_start"],
+                "signal_length": signal["signal_length"],
+                "signal_endian": signal["signal_endian"],
+                "signal_type_def": signal["signal_type_def"],
+                "signal_factor": signal["signal_factor"],
+                "signal_offset": signal["signal_offset"],
+                "signal_min": signal["signal_min"],
+                "signal_max": signal["signal_max"],
+                "signal_unit": signal["signal_unit"],
+                "signal_receiving_node": signal["signal_receiving_node"],
+                "comment": str(signal["comment"]),
+            }
+        return
+
     def tree_item_double_clicked_add_signal(self, item):
-        event = QtWidgets.QApplication.mouseButtons()
-        if event == QtCore.Qt.LeftButton:  # left click control
-            # did the signal selected before it controls below
-            confirmed_or_not = True
-            self.listWidget_selected_signals.clear()
+        """the signals add to listWidget_selected for describing from messages part"""
+        if not item.parent():  # when parent clicked run this block
+            event = QtWidgets.QApplication.mouseButtons()
+            if event == QtCore.Qt.LeftButton:  # left click control
+                # did the signal selected before it controls below
+                confirmed_or_not = True
+                self.listWidget_selected_signals.clear()
+                for row_number in range(self.listWidget_confirmed_signals.count()):
+                    row = self.listWidget_confirmed_signals.item(row_number)
+                    if item.text(0) == row.text():
+                        confirmed_or_not = False
 
-            for row_number in range(self.listWidget_confirmed_signals.count()):
-                row = self.listWidget_confirmed_signals.item(row_number)
-                if item.text(0) == row.text():
-                    confirmed_or_not = False
+                if confirmed_or_not:
+                    self.listWidget_confirmed_signals.addItem(item.text(0))
 
-            if confirmed_or_not:
-                self.listWidget_confirmed_signals.addItem(item.text(0))
-
-            for signal in self.dbc_json[item.text(0)]["signals"]:
-                self.listWidget_selected_signals.addItem(signal["signal_name"])
-                self.signals_to_generate.append(signal)
-            # self.messages_to_generate[item.text(0)] = self.dbc_json[item.text(0)]
-            return
+                for signal in self.dbc_json[item.text(0)]["signals"]:
+                    self.listWidget_selected_signals.addItem(signal["signal_name"])
+                    self.add_selected_message(signal)
+                return
+        else:
+            for signal in self.dbc_json[item.parent().text(0)]["signals"]:
+                if item.text(0) == signal["signal_name"]:
+                    self.describes_dbc(signal)
+                    return
 
     def open_explorer_dbc(self):
+        """a window to select dbc file"""
         try:
             dialog = QFileDialog()
             dialog.setViewMode(QFileDialog.Detail)  # Set view mode to Detail
@@ -349,6 +434,13 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
             for message_name in self.dbc_json:  # to add messages from dbc to treeWidget
                 item_0 = QtWidgets.QTreeWidgetItem(self.treeWidget_dbc_signals)
                 item_0.setText(order, message_name)
+
+                for signal in self.dbc_json[message_name]["signals"]:
+                    child_item = QtWidgets.QTreeWidgetItem(
+                        item_0, [str(signal["signal_name"])]
+                    )
+                    item_0.addChild(child_item)
+
                 self.treeWidget_dbc_signals.topLevelItem(order).setText(0, message_name)
                 order += 1
 
@@ -363,22 +455,79 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
             print(e)
             return
 
+    def fd_open_explorer(self):
+        """to import matlab exported excell"""
+        try:
+            dialog = QFileDialog()
+            dialog.setViewMode(QFileDialog.Detail)  # Set view mode to Detail
 
-def fd_open_explorer(self):
-    try:
-        dialog = QFileDialog()
-        dialog.setViewMode(QFileDialog.Detail)  # Set view mode to Detail
-        dialog.setNameFilter(("FD excell (*.xlxs)"))
-        path = dialog.getOpenFileName(None, "FD Open File", "", "(*.xlsx)")
-        path = self.get_file_name_and_path_as_str(path)
-        df = self.fd_open_excel_as_pandas_frame(path)
-        self.add_row_to_tree_wigdet_fd_signals(df)
-        self.statusBar().setStyleSheet("background-color : lightgreen")
-        self.statusBar().showMessage(" Info : File Exprolere is Opened.")
-        return
-    except Exception as e:
-        self.statusBar().setStyleSheet("background-color : crimson")
-        self.statusBar().showMessage(
-            "Error : An error occurred when the file was openning"
+            path = dialog.getOpenFileName(None, "FD Open File", "", "(*.xlsx)")
+
+            self.fd_signals = self.fd_open_excel_as_pandas_frame(
+                self.get_file_name_and_path_as_str(path)
+            )
+
+            if self.fd_signals is None:
+                return  # if the sheet wont select
+
+            self.fd_signals = self.fd_signals.to_dict(orient="records")
+
+            prefix, ok = QInputDialog.getText(
+                self,
+                "Input Dialog",
+                "Enter prefix to import signals:",
+                QLineEdit.Normal,
+                "",
+            )
+            if ok == True:
+                self.listWidget_safcih_signals.clear()
+                for row in self.fd_signals:
+                    if (
+                        prefix in row["Name"]
+                    ):  # if the prefix was not given all signals will add
+                        self.safcih_json[row["Name"]] = row
+                        self.listWidget_safcih_signals.addItem(row["Name"])
+                self.statusBar().setStyleSheet("background-color : lightgreen")
+                self.statusBar().showMessage(" Info : File Exprolere is Opened.")
+                return
+            else:
+                self.statusBar().setStyleSheet("background-color : orange")
+                self.statusBar().showMessage(" Info : Prefix was not selected .")
+                return
+
+        except Exception as e:
+            self.statusBar().setStyleSheet("background-color : crimson")
+            self.statusBar().showMessage(
+                "Error : An error occurred when the file was openning"
+            )
+            print(e)
+
+    def get_file_name_and_path_as_str(self, path):
+        path = "".join(path)
+        file_name = path.split("/")[-1]
+        file_name = file_name.replace("(*.xlsx)", "")
+        path = path.replace("(*.xlsx)", "")
+        return path
+
+    def fd_open_excel_as_pandas_frame(self, file_path):
+        try:
+            temp = pd.ExcelFile(file_path)
+            self.sheet_name = self.get_sheet_name(temp.sheet_names)
+            if self.sheet_name is None:
+                return None
+            df = pd.read_excel(file_path, self.sheet_name)
+            return df
+        except Exception as e:
+            print("hata :", e)
+            return
+
+    def get_sheet_name(self, sheet_names):
+        selected_sheet, ok = QInputDialog.getItem(
+            None, "Select sheet", "sheet Names", sheet_names, 0, False
         )
-        print(e)
+        if ok:
+            return selected_sheet
+        else:
+            self.statusBar().setStyleSheet("background-color : orange")
+            self.statusBar().showMessage(" Info : Sheet name was not selected .")
+            return None
