@@ -115,7 +115,7 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
         self.pushButton_1_select_dbc.clicked.connect(self.open_explorer_dbc)
         # self.pushButton_2_generate.clicked.connect(self.generate)
         self.pushButton_3_select_all_messages.clicked.connect(self.select_all_messages)
-        self.pushButton_4_select_excell.clicked.connect(self.excell_open_explorer2)
+        self.pushButton_4_select_excell.clicked.connect(self.excell_open_explorer)
         self.pushButton_5_clear_bswio_signals.clicked.connect(self.clear_widget)
         self.pushButton_6_clear_msg.clicked.connect(self.clear_widget)
         self.pushButton_7_clear_signals_pair.clicked.connect(self.clear_widget)
@@ -453,7 +453,8 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
         return
 
     def generate_h_from_dbc(self):
-        # to generate header file messages structs and its signals define as struct attributes, set and get macros from dbc
+        # to generate header file messages structs and its signals define as struct attributes, 
+        # set and get macros from dbc
         """to header file generate ask file name and go"""
         header_name, ok = QInputDialog.getText(
             self, "Input Dialog", "Enter header file name:"
@@ -463,7 +464,8 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
             header_name = header_name + ".h"
             with open(header_name, "w") as file:
                 file.write(
-                    "\n#ifndef FEV_VCU_DATA_H\n#define FEV_VCU_DATA_H\n#include <stdint.h>  //Include for UINT32 type\n\n"
+                    "\n#ifndef FEV_VCU_DATA_H\n#define FEV_VCU_DATA_H\n#include <stdint.h> "
+                    + "//Include for UINT32 type\n\n"
                 )
 
                 self.write_get(file)
@@ -480,51 +482,21 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
         else:
             self.update_status_bar("Error : header can not generate .", "crimson")
 
-    def describe_SafCIH(self, signal):
-        """ this func is not necessary anymore"""
-        """
-        self.tableWidget_display_signals.item(0, 0).setText(signal[str(self.bswio.selected_colon)])
-        self.tableWidget_display_signals.item(0, 2).setText(signal["Min"])
-        self.tableWidget_display_signals.item(0, 3).setText(signal["Max"])
-        self.tableWidget_display_signals.item(0, 1).setText(signal["Offset"])
-        self.tableWidget_display_signals.item(0, 4).setText("none")"""
-        data = ""
-        for key, value in signal.items():
-            data += str(key) + ": " + str(value) + "\n"
-        self.textBrowser.setPlainText(data)
-        return
-
-    def describes_dbc(self, signal):
-        """ this func is not necessary anymore"""
-        try:
-            """self.tableWidget_display_signals.item(0, 0).setText(signal["signal_name"])
-            self.tableWidget_display_signals.item(0, 2).setText(signal["signal_min"])
-            self.tableWidget_display_signals.item(0, 3).setText(signal["signal_max"])
-            self.tableWidget_display_signals.item(0, 1).setText(signal["signal_factor"])
-            self.tableWidget_display_signals.item(0, 4).setText(signal["signal_offset"])
-            """
+    def describes(self, item):
+        """display signal attributes"""
+        if self.sender() is self.treeWidget_dbc_signals:
+            signal = self.dbc_json[item.text(0)]
             data = ""
             for key, value in signal.items():
                 data += str(key) + ": " + str(value) + "\n"
             self.textBrowser.setPlainText(data)
-        except Exception as e:
-            report = "exception occured : signal has not got comment" + str(e)
-            self.update_status_bar(report, "orange")
-        return
-
-    def describes(self, item):
-        """display signal attributes"""
-        if self.sender() is self.treeWidget_dbc_signals:
-            # self.describes_dbc(self.dbc_json[item.text(0)])
-            signal = self.dbc_json[item.text(0)]
         else:
             if item.parent():  # if child is clicked
-                # self.describe_SafCIH(self.exported_json[str(item.text(0))]  )
                 signal = self.exported_json[str(item.text(0))]
-        data = ""
-        for key, value in signal.items():
-            data += str(key) + ": " + str(value) + "\n"
-        self.textBrowser.setPlainText(data)
+                data = ""
+                for key, value in signal.items():
+                    data += str(key) + ": " + str(value) + "\n"
+                self.textBrowser.setPlainText(data)
         return
 
     def add_selected_message(self, signal):
@@ -580,7 +552,10 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
         else:
             for signal in self.dbc_json[item.parent().text(0)]["signals"]:
                 if item.text(0) == signal["signal_name"]:
-                    self.describes_dbc(signal)
+                    data = ""
+                    for key, value in signal.items():
+                        data += str(key) + ": " + str(value) + "\n"
+                    self.textBrowser.setPlainText(data)
                     return
 
     def open_explorer_dbc(self):
@@ -613,7 +588,7 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
             self.update_status_bar(report, "crimson")
             return
 
-    def excell_open_explorer2(self):
+    def excell_open_explorer(self):
 
         self.bswio = BSWIOData()  # create and get sheet and column
         prefix, ok = QInputDialog.getText(
@@ -651,81 +626,6 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
         self.treeWidget_safcih_signals.addTopLevelItem(item_0)
         self.update_status_bar(" Info : File Exprolere is Opened.", "lightgreen")
 
-    def excell_open_explorer(self):
-        """to import matlab exported excell"""
-        try:
-            dialog = QFileDialog()
-            dialog.setViewMode(QFileDialog.Detail)  # Set view mode to Detail
-            path = self.get_file_name_and_path_as_str(
-                dialog.getOpenFileName(None, "FD Open File", "", "(*.xlsx)")
-            )
-
-            excell_bswio = pd.ExcelFile(path)
-
-            selected_sheet, ok = QInputDialog.getItem(
-                None, "Select sheet", "sheet Names", excell_bswio.sheet_names, 0, False
-            )
-
-            if not ok:
-                self.update_status_bar(" Info : Sheet was not selected .", "orange")
-                return
-            selected_colon, ok = QInputDialog.getItem(
-                None,
-                "Select column",
-                "column Names",
-                excell_bswio.parse(selected_sheet).columns.tolist(),
-                0,
-                False,
-            )
-            if not ok:
-                self.update_status_bar(" Info : Colon was not selected .", "orange")
-                return
-
-            temp_bswio = excell_bswio.parse(selected_sheet)  # it is a dataframe
-            self.bswio_signals = temp_bswio.to_dict(orient="records")
-            print(type(self.bswio_signals))
-            prefix, ok = QInputDialog.getText(
-                self,
-                "Input Dialog",
-                "Enter prefix to import signals:",
-                QLineEdit.Normal,
-                "",
-            )
-
-            if ok:
-                item_0 = QtWidgets.QTreeWidgetItem(self.treeWidget_safcih_signals)
-                item_0.setText(0, str(selected_sheet))
-                for signal in self.bswio_signals:  ## prefixi regex yapabiliriz....
-                    if (
-                        prefix in signal[selected_colon]
-                    ):  #  all signals will add, if the prefix was not given
-                        self.exported_json[signal[selected_colon]] = (
-                            signal  # create a dictionary to store bsw signals
-                        )
-                        child_item = QtWidgets.QTreeWidgetItem(
-                            item_0, [signal[selected_colon]]
-                        )
-                        item_0.addChild(child_item)
-                items = self.treeWidget_safcih_signals.findItems(
-                    selected_sheet, QtCore.Qt.MatchExactly
-                )
-                for item in items:  # check if parent already exist and delete it
-                    if item.text(0) == selected_sheet:
-                        self.treeWidget_safcih_signals.takeTopLevelItem(
-                            self.treeWidget_safcih_signals.indexOfTopLevelItem(item)
-                        )
-                self.treeWidget_safcih_signals.addTopLevelItem(item_0)
-                self.update_status_bar(
-                    " Info : File Exprolere is Opened.", "lightgreen"
-                )
-                return
-            else:
-                self.update_status_bar(" Info : Prefix was not selected .", "orange")
-                return
-        except Exception as e:
-            report = "exception occured : " + str(e)
-            self.update_status_bar(report, "crimson")
-
     def get_file_name_and_path_as_str(self, path):
         path = "".join(path)
         file_name = path.split("/")[-1]
@@ -733,6 +633,7 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
         path = path.replace("(*.xlsx)", "")
         return path
 
+    """    
     def open_excel_as_pandas_frame(self, file_path):
         try:
             temp = pd.ExcelFile(file_path)
@@ -760,6 +661,7 @@ class CanWidget(QtWidgets.QMainWindow, Ui_Form):
         else:
             self.update_status_bar(" Info : Sheet name was not selected .", "orange")
             return None
+    """
 
     def update_status_bar(self, report, color):
         """color : crimson error,
