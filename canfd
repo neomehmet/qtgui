@@ -1,0 +1,40 @@
+def canfd(self, file, message):
+    file.write(
+        "\ntypedef union{"
+        + "\n\tuint8 raw_data["
+        + str(message["message_length_as_byte"])
+        + "] ;"
+    )
+    buffer = ""
+    start = int(message["signals"][0]["signal_start"])
+    nthSixtyFour = 0
+    if start != 0:
+        while start >= 0:
+            start -= 64
+            if start > 0:
+                nthSixtyFour += 1
+                buffer += "\n\tstruct{"
+                buffer += "\n\t\tuint64_t NousedBits : 64 aa;"
+                buffer += "\n\t}signals_" + str((64 * nthSixtyFour) - 1) + ";"
+            elif start == 0:
+                nthSixtyFour += 1
+                buffer += "\n\tstruct{"
+                buffer += "\n\t\tuint64_t NousedBits : 64 bb ;"
+                buffer += "\n\t}signals_" + str((64 * nthSixtyFour) - 1) + ";"
+                file.write(buffer)
+                file.write(
+                    "\n}CANFD_" + str(message["message_name"]) + "_DATA_t;\n"
+                )
+                break
+            else:
+                nthSixtyFour += 1
+                buffer += "\n\tstruct{"
+                if nthSixtyFour != 0:
+                    no_used_size = 64 - int(message["signals"][0]["signal_length"])
+                    buffer += (
+                        "\n\t\tuint64_t NousedBits : "
+                        + str(no_used_size)
+                        + " cc ;"
+                    )
+                signal_suffix = 64 * (nthSixtyFour)
+                sixtyfour = 64 * (nthSixtyFour)
