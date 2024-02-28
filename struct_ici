@@ -1,0 +1,39 @@
+        self.stop_bit = int(signal["signal_start"]) + int(signal["signal_length"]) - 1
+        if self.first_signal is True:
+            self.write_in_struct_to_file(
+                file,
+                typedef,
+                signal["signal_name"],
+                signal["signal_length"],
+            )
+        elif (self.prev_start_bit + self.prev_length) < int(signal["signal_start"]):
+            self.reserved_bits = int(signal["signal_start"]) - self.prev_stop_bit - 1
+            # uint_type = self.get_uint_type(self.reserved_bits)
+            self.write_in_struct_to_file(
+                file,
+                typedef,
+                "NoUsedBits" + str(self.number_no_used_bits),
+                self.reserved_bits,
+            )
+            self.write_in_struct_to_file(
+                file,
+                typedef,
+                signal["signal_name"],
+                signal["signal_length"],
+            )
+            self.number_no_used_bits += 1
+        else:
+            self.write_in_struct_to_file(
+                file,
+                typedef,
+                signal["signal_name"],
+                signal["signal_length"],
+            )
+
+        self.prev_stop_bit, self.prev_start_bit, self.prev_length, self.first_signal = (
+            int(self.stop_bit),
+            int(signal["signal_start"]),
+            int(signal["signal_length"]),
+            False,
+        )
+        return
